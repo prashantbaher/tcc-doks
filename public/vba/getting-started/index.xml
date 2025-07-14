@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on The CAD Coder</title>
+    <link>http://localhost:1313/vba/getting-started/</link>
+    <description>Recent content in Getting Started on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/vba/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Basic for Application Introduction</title>
+      <link>http://localhost:1313/vba/vba-Introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/vba-Introduction/</guid>
+      <description>&lt;p&gt;To understand &lt;code&gt;Visual Basic for Application&lt;/code&gt;, lets look at the following &lt;em&gt;questions&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-visual-basic-for-application&#34;&gt;What is Visual Basic for Application?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;Visual Basic for Applications&lt;/code&gt; also known as &lt;code&gt;VBA&lt;/code&gt;, is a &lt;em&gt;programming language&lt;/em&gt; developed by &lt;strong&gt;Microsoft&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visual Basic Editor (VBE)</title>
+      <link>http://localhost:1313/vba/vba-vbe-editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/vba-vbe-editor/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Visual Basic Editor&lt;/code&gt; or &lt;code&gt;VBE&lt;/code&gt; is a &lt;em&gt;separate&lt;/em&gt; application in your &lt;em&gt;CAD application&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this &lt;em&gt;application&lt;/em&gt; you &lt;code&gt;write&lt;/code&gt; and &lt;code&gt;edit&lt;/code&gt; your &lt;em&gt;Macro code&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBE Windows</title>
+      <link>http://localhost:1313/vba/vba-windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/vba-windows/</guid>
+      <description>&lt;p&gt;In this post we look at the following windows in &lt;code&gt;Visual Basic Editor&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Project Window&lt;/li&gt;&#xA;&lt;li&gt;Code Window&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;project-window&#34;&gt;Project Window&lt;/h2&gt;&#xA;&lt;p&gt;When you are working in &lt;code&gt;VBE&lt;/code&gt;, each file open is called a Project.&lt;br&gt;&#xA;You can think of a &lt;code&gt;project&lt;/code&gt; as a &lt;code&gt;collection&lt;/code&gt; of objects.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sub and Function Procedures</title>
+      <link>http://localhost:1313/vba/sub-and-function-procedure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/sub-and-function-procedure/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;VBA&lt;/code&gt; code that you write in the &lt;code&gt;Visual Basic Editor&lt;/code&gt; is known as a &lt;code&gt;procedure&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The two most common types of procedures are &lt;code&gt;Sub&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Executing Sub and Function Procedures</title>
+      <link>http://localhost:1313/vba/executing-procedures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/executing-procedures/</guid>
+      <description>&lt;p&gt;Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/constants/">
+
+  <link rel="canonical" href="http://localhost:1313/vba/constants/">
+
+
+<title>VBA Constants  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/vba/constants/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="VBA Constants">
+  <meta property="og:description" content="A variable’s value may (and usually does) change while your procedure is executing.
+That’s why they call it a variable.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="vba">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="VBA Constants">
+  <meta name="twitter:description" content="A variable’s value may (and usually does) change while your procedure is executing.
+That’s why they call it a variable.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/vba/",
+       "name": "Vbas",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/vba/programming-concepts/",
+       "name": "Programming Concepts",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Vba Constants",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section vba" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Vba</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/vba-Introduction/">Visual Basic for Application Introduction</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-vbe-editor/">Visual Basic Editor (VBE)</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-windows/">VBE Windows</a>
+  </li>
+
+  <li>
+      <a href="/vba/sub-and-function-procedure/">Sub and Function Procedures</a>
+  </li>
+
+  <li>
+      <a href="/vba/executing-procedures/">Executing Sub and Function Procedures</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Programming Concepts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/programming-concepts/">Programming Concepts, Comments and Data-types</a>
+  </li>
+
+  <li>
+      <a href="/vba/variables/">VBA Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/declaring-and-scoping-of-variables/">Declaring and Scoping of Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/variable-scope/">Variable Scope</a>
+  </li>
+
+  <li>
+      <a href="/vba/public-static-and-variables-life/">Public, Static and Variable&#39;s Life</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/vba/constants/">VBA Constants</a>
+  </li>
+
+  <li>
+      <a href="/vba/string-basics/">VBA String Basics</a>
+  </li>
+
+  <li>
+      <a href="/vba/assignment-statements-and-operators/">VBA Assignment Statements And Operators</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/arrays/">VBA Arrays</a>
+  </li>
+
+  <li>
+      <a href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions/">VBA Functions</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions-that-do-more/">VBA Functions that do more</a>
+  </li>
+
+  <li>
+      <a href="/vba/controlling-program-flow-and-making-decisions/">Controlling Program Flow and Making Decisions</a>
+  </li>
+
+  <li>
+      <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks/solidworks-vba-macro/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wix4-tutorials/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/vba-Introduction/">Visual Basic for Application Introduction</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-vbe-editor/">Visual Basic Editor (VBE)</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-windows/">VBE Windows</a>
+  </li>
+
+  <li>
+      <a href="/vba/sub-and-function-procedure/">Sub and Function Procedures</a>
+  </li>
+
+  <li>
+      <a href="/vba/executing-procedures/">Executing Sub and Function Procedures</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Programming Concepts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/programming-concepts/">Programming Concepts, Comments and Data-types</a>
+  </li>
+
+  <li>
+      <a href="/vba/variables/">VBA Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/declaring-and-scoping-of-variables/">Declaring and Scoping of Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/variable-scope/">Variable Scope</a>
+  </li>
+
+  <li>
+      <a href="/vba/public-static-and-variables-life/">Public, Static and Variable&#39;s Life</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/vba/constants/">VBA Constants</a>
+  </li>
+
+  <li>
+      <a href="/vba/string-basics/">VBA String Basics</a>
+  </li>
+
+  <li>
+      <a href="/vba/assignment-statements-and-operators/">VBA Assignment Statements And Operators</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/arrays/">VBA Arrays</a>
+  </li>
+
+  <li>
+      <a href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions/">VBA Functions</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions-that-do-more/">VBA Functions that do more</a>
+  </li>
+
+  <li>
+      <a href="/vba/controlling-program-flow-and-making-decisions/">Controlling Program Flow and Making Decisions</a>
+  </li>
+
+  <li>
+      <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#pre-made-constants">Pre-made constants</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>VBA Constants</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pre-made-constants">Pre-made constants</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>A variable’s value may (and usually does) change while your procedure is executing.</p>
+<p>That’s why they call it a <strong>variable</strong>.</p>
+<p>Sometimes you need to refer to a <strong>value</strong> or <strong>string</strong> that never changes.</p>
+<p>In such a case, you need a <strong>constant</strong> — a named element whose value doesn’t change.</p>
+<p>As shown in the following examples, you declare <strong>constants</strong> by using the <code>Const</code> statement.</p>
+<p>The declaration statement also gives the constant its value:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Const</span> <span class="n">BlockLength</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="o">=</span> <span class="n">4</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="k">Const</span> <span class="n">BlockThickness</span> <span class="o">=</span> <span class="p">.</span><span class="n">5</span>
+</span></span><span class="line"><span class="cl"><span class="k">Const</span> <span class="n">PartName</span> <span class="ow">As</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&#34;Part Name:&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">Public</span> <span class="k">Const</span> <span class="n">AppName</span> <span class="ow">As</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&#34;Part Calculation&#34;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Using <em>constants</em> in place of hard-coded <em>values</em> or <em>strings</em> is an excellent programming practice.</p>
+<p>For example, if your procedure needs to refer to a specific value (such as <em>sheet thickness</em>) several times.</p>
+<p>It is better to declare the value as a <em>constant</em> and refer to its <em>name</em> rather than the <em>value</em>.</p>
+<p>This makes your code more readable and easier to change.</p>
+<p>When sheet thickness changes, you have to change only one statement rather than several.</p>
+<p>Like variables, constants have a scope. Keep these points in mind:</p>
+<ul>
+<li>To make a <em>constant</em> available within only a <em>single procedure</em>, declare the constant after the procedure’s <code>Sub</code> or <code>Function</code> statement.</li>
+<li>To make a <em>constant</em> available to <em>all procedures</em> in a module, declare the constant in the <strong>Declarations</strong> section for the module.</li>
+<li>To make a <em>constant</em> available to <em>all modules</em>, use the <code>Public</code> keyword and declare the constant in the <strong>Declarations</strong> section of any module.</li>
+</ul>
+<p>If you attempt to change the value of a constant in a <strong>VBA routine</strong>, you get an error.</p>
+<p>This isn’t too surprising because a Constant is <code>constant</code>.</p>
+<p>Unlike a variable, the value of a constant <em>does not</em> vary.</p>
+<p>If you need to change the value of a constant while your code is running, what you really need is a variable.</p>
+<h2 id="pre-made-constants">Pre-made constants<a href="#pre-made-constants" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Your <strong>CAD Application</strong> and <strong>VBA</strong> contain many predefined constants, which you can use without the need to declare them yourself.</p>
+<p>The macro recorder (in <em>Solidworks</em>) usually uses constants rather than actual values.</p>
+<p>In general, you don’t need to know the value of these constants to use them.</p>
+<p>The following simple procedure uses a <strong>built-in</strong> constant <code>swDefaultTemplatePart</code> to select the default part template while opening a new file.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">set</span> <span class="n">swPart</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span> _
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">),</span><span class="n">0</span><span class="p">,</span><span class="n">0</span><span class="p">,</span><span class="n">0</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above example, <em>Solidworks</em> did not record these constants.</p>
+<p>It simply generates the direct path to open part document.</p>
+<p>To find the actual value of a built-in constant, use the &ldquo;Immediate window&rdquo; in the VBE, and execute a VBA statement such as the following:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="err">?</span><span class="n">swDefaultTemplatePart</span></span></span></code></pre></div>
+  </figure>
+</div>
+<blockquote>
+<p>If the Immediate window isn’t visible, press <code>Ctrl+G</code>. The question mark is a shortcut for typing <code>Print</code>.</p></blockquote>
+<p>Next post will be about <em><strong>VBA Strings Basics</strong></em>.</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/vba/public-static-and-variables-life/" class="stretched-link text-reset text-decoration-none">Public, Static and Variable&#39;s Life</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/vba/string-basics/" class="stretched-link text-reset text-decoration-none">VBA String Basics</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

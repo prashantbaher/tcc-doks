@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The CAD Coder</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/aboutMe/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutMe/</guid>
+      <description>&lt;p&gt;👋 Hi, I&amp;rsquo;m Prashant — The CAD Coder&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a &lt;strong&gt;Lead Software Developer&lt;/strong&gt; in the IT department of a mechanical‑engineering company.&lt;br&gt;&#xA;Before that, I spent &lt;strong&gt;8 years as a SolidWorks design engineer&lt;/strong&gt;, so I know exactly where real‑world CAD workflows bog down.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Resources</title>
+      <link>http://localhost:1313/resources/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resources/</guid>
+      <description>&lt;p&gt;🚀 Tools &amp;amp; Resources I Use (and Recommend)&lt;/p&gt;&#xA;&lt;p&gt;This is a curated list of the &lt;strong&gt;resources&lt;/strong&gt; that have helped me learn &lt;strong&gt;programming&lt;/strong&gt; and &lt;strong&gt;SolidWorks API automation&lt;/strong&gt; — including books, tutorials, tools, and frameworks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visual Basic for Application Introduction</title>
+      <link>http://localhost:1313/vba/vba-Introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/vba-Introduction/</guid>
+      <description>&lt;p&gt;To understand &lt;code&gt;Visual Basic for Application&lt;/code&gt;, lets look at the following &lt;em&gt;questions&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-visual-basic-for-application&#34;&gt;What is Visual Basic for Application?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;Visual Basic for Applications&lt;/code&gt; also known as &lt;code&gt;VBA&lt;/code&gt;, is a &lt;em&gt;programming language&lt;/em&gt; developed by &lt;strong&gt;Microsoft&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visual Basic Editor (VBE)</title>
+      <link>http://localhost:1313/vba/vba-vbe-editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/vba-vbe-editor/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Visual Basic Editor&lt;/code&gt; or &lt;code&gt;VBE&lt;/code&gt; is a &lt;em&gt;separate&lt;/em&gt; application in your &lt;em&gt;CAD application&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this &lt;em&gt;application&lt;/em&gt; you &lt;code&gt;write&lt;/code&gt; and &lt;code&gt;edit&lt;/code&gt; your &lt;em&gt;Macro code&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBE Windows</title>
+      <link>http://localhost:1313/vba/vba-windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/vba-windows/</guid>
+      <description>&lt;p&gt;In this post we look at the following windows in &lt;code&gt;Visual Basic Editor&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Project Window&lt;/li&gt;&#xA;&lt;li&gt;Code Window&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;project-window&#34;&gt;Project Window&lt;/h2&gt;&#xA;&lt;p&gt;When you are working in &lt;code&gt;VBE&lt;/code&gt;, each file open is called a Project.&lt;br&gt;&#xA;You can think of a &lt;code&gt;project&lt;/code&gt; as a &lt;code&gt;collection&lt;/code&gt; of objects.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sub and Function Procedures</title>
+      <link>http://localhost:1313/vba/sub-and-function-procedure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/sub-and-function-procedure/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;VBA&lt;/code&gt; code that you write in the &lt;code&gt;Visual Basic Editor&lt;/code&gt; is known as a &lt;code&gt;procedure&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The two most common types of procedures are &lt;code&gt;Sub&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Executing Sub and Function Procedures</title>
+      <link>http://localhost:1313/vba/executing-procedures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/executing-procedures/</guid>
+      <description>&lt;p&gt;Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://localhost:1313/privacy/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/privacy/</guid>
+      <description>How The CAD Coder collects, stores, and protects your data.</description>
+    </item>
+    <item>
+      <title>Example Post</title>
+      <link>http://localhost:1313/blog/example-post/</link>
+      <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
+      <guid>http://localhost:1313/blog/example-post/</guid>
+      <description>You can use blog posts for announcing product updates and features.</description>
+    </item>
+    <item>
+      <title>Example Guide</title>
+      <link>http://localhost:1313/docs/example-guide/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/example-guide/</guid>
+      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

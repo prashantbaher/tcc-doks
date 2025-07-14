@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/debugger/">
+
+  <link rel="canonical" href="http://localhost:1313/vba/debugger/">
+
+
+<title>VBA Debugger  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/vba/debugger/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="VBA Debugger">
+  <meta property="og:description" content="In this section, I discuss the details of using the VBA debugging tools.
+These tools are much more powerful than the techniques I discuss in the previous section.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="vba">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="VBA Debugger">
+  <meta name="twitter:description" content="In this section, I discuss the details of using the VBA debugging tools.
+These tools are much more powerful than the techniques I discuss in the previous section.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/vba/",
+       "name": "Vbas",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/vba/programming-concepts/",
+       "name": "Programming Concepts",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Vba Debugger",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section vba" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Vba</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/vba-Introduction/">Visual Basic for Application Introduction</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-vbe-editor/">Visual Basic Editor (VBE)</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-windows/">VBE Windows</a>
+  </li>
+
+  <li>
+      <a href="/vba/sub-and-function-procedure/">Sub and Function Procedures</a>
+  </li>
+
+  <li>
+      <a href="/vba/executing-procedures/">Executing Sub and Function Procedures</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Programming Concepts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/programming-concepts/">Programming Concepts, Comments and Data-types</a>
+  </li>
+
+  <li>
+      <a href="/vba/variables/">VBA Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/declaring-and-scoping-of-variables/">Declaring and Scoping of Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/variable-scope/">Variable Scope</a>
+  </li>
+
+  <li>
+      <a href="/vba/public-static-and-variables-life/">Public, Static and Variable&#39;s Life</a>
+  </li>
+
+  <li>
+      <a href="/vba/constants/">VBA Constants</a>
+  </li>
+
+  <li>
+      <a href="/vba/string-basics/">VBA String Basics</a>
+  </li>
+
+  <li>
+      <a href="/vba/assignment-statements-and-operators/">VBA Assignment Statements And Operators</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/arrays/">VBA Arrays</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions/">VBA Functions</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions-that-do-more/">VBA Functions that do more</a>
+  </li>
+
+  <li>
+      <a href="/vba/controlling-program-flow-and-making-decisions/">Controlling Program Flow and Making Decisions</a>
+  </li>
+
+  <li>
+      <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks/solidworks-vba-macro/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wix4-tutorials/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/vba-Introduction/">Visual Basic for Application Introduction</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-vbe-editor/">Visual Basic Editor (VBE)</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-windows/">VBE Windows</a>
+  </li>
+
+  <li>
+      <a href="/vba/sub-and-function-procedure/">Sub and Function Procedures</a>
+  </li>
+
+  <li>
+      <a href="/vba/executing-procedures/">Executing Sub and Function Procedures</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Programming Concepts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/programming-concepts/">Programming Concepts, Comments and Data-types</a>
+  </li>
+
+  <li>
+      <a href="/vba/variables/">VBA Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/declaring-and-scoping-of-variables/">Declaring and Scoping of Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/variable-scope/">Variable Scope</a>
+  </li>
+
+  <li>
+      <a href="/vba/public-static-and-variables-life/">Public, Static and Variable&#39;s Life</a>
+  </li>
+
+  <li>
+      <a href="/vba/constants/">VBA Constants</a>
+  </li>
+
+  <li>
+      <a href="/vba/string-basics/">VBA String Basics</a>
+  </li>
+
+  <li>
+      <a href="/vba/assignment-statements-and-operators/">VBA Assignment Statements And Operators</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/arrays/">VBA Arrays</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions/">VBA Functions</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions-that-do-more/">VBA Functions that do more</a>
+  </li>
+
+  <li>
+      <a href="/vba/controlling-program-flow-and-making-decisions/">Controlling Program Flow and Making Decisions</a>
+  </li>
+
+  <li>
+      <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#setting-breakpoints-in-your-code">Setting breakpoints in your code</a>
+      <ul>
+        <li><a href="#using-the-immediate-window">Using the Immediate window</a></li>
+        <li><a href="#stepping-through-your-code">Stepping through your code</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-the-watch-window">Using the Watch window</a></li>
+    <li><a href="#using-the-locals-window">Using the Locals window</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>VBA Debugger</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting-breakpoints-in-your-code">Setting breakpoints in your code</a>
+      <ul>
+        <li><a href="#using-the-immediate-window">Using the Immediate window</a></li>
+        <li><a href="#stepping-through-your-code">Stepping through your code</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-the-watch-window">Using the Watch window</a></li>
+    <li><a href="#using-the-locals-window">Using the Locals window</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>In this section, I discuss the details of using the VBA debugging tools.</p>
+<p>These tools are much more powerful than the techniques I discuss in the previous section.</p>
+<p>But along with power comes responsibility. Using the debugging tools takes a bit of setup work.</p>
+<h2 id="setting-breakpoints-in-your-code">Setting breakpoints in your code<a href="#setting-breakpoints-in-your-code" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In earlier sections, I discuss using <code>MsgBox</code> functions in your code to monitor the values of certain variables.</p>
+<p>Displaying a message box essentially halts your code in mid-execution, and clicking the <strong>OK</strong> button resumes execution.</p>
+<p>Wouldn’t it be nice if you could halt a routine’s execution, take a look at the value of any of your variables, and then continue execution?</p>
+<p>Well, that’s exactly what you can do by setting a <em>breakpoint</em>.</p>
+<p>You can set a <em>breakpoint</em> in your VBA code in several ways:</p>
+<ul>
+<li>Move the cursor to the statement at which you want execution to stop; then press <code>F9</code>.</li>
+<li>Click in the <em>gray</em> margin to the left of the statement at which you want execution to stop. <em>This is I used mainly.</em></li>
+<li>Position the insertion point in the statement at which you want execution to stop. Then use the <strong>Debug -&gt; Toggle Breakpoint</strong> command.</li>
+<li><em>Right-click</em> a statement and choose <strong>Toggle -&gt; Breakpoint</strong> from the shortcut menu.</li>
+</ul>
+<p>The results of setting a breakpoint are shown in below figure.</p>
+<p><em>VBE</em> highlights the line to remind you that you set a breakpoint there; it also inserts a large dot in the gray margin.</p>
+<p>
+
+<img
+  src="/vba/programming-concepts/1.BreakpointInProcedure_hu_7ce7b49c49b79f60.webp"
+  width="1351"
+  height="701"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Breakpoint-in-procedure"id="h-rh-i-0"
+/></p>
+<p>When you execute the procedure, VBE goes into Break mode before the line with the breakpoint is executed.</p>
+<p>In <em>Break mode</em>, the word <em><strong>break</strong></em> is displayed in the VBE title bar.</p>
+<p>To get out of Break mode and continue execution, press <code>F5</code> or click the <strong>Run Sub/UserForm</strong> button in the VBE toolbar.</p>
+<p>To quickly remove a breakpoint, click the large dot in the gray margin or move the cursor to the highlighted line and press <code>F9</code>.</p>
+<p>To remove all breakpoints in the module, press <code>Ctrl+Shift+F9</code>.</p>
+<p>What is Break mode? You can think of it as a state of suspended animation.</p>
+<p>Your VBA code stops running and the current statement is highlighted in bright yellow. In Break mode, you can</p>
+<ul>
+<li>Type VBA statements in the <em>Immediate window</em>.</li>
+<li>Press <code>F8</code> to step through your code one line at a time to check various things while the program is paused.</li>
+<li>Move the mouse pointer over a variable to display its value in a small pop-up window.</li>
+<li>Skip the next statement(s) and continue execution there (or even go back a couple of statements).</li>
+<li>Edit a statement and then continue.</li>
+</ul>
+<p>Below figure shows some debugging action.</p>
+<p>A breakpoint is set (notice the big dot), and I’m using the <code>F8</code> key to step through the code line by line (notice the arrow that points to the current statement).</p>
+<p>I used the <em>Immediate window</em> to print <code>Hello world</code>.</p>
+<p>
+
+<img
+  src="/vba/programming-concepts/2.BreakMode_hu_3da9e421fc7cf829.webp"
+  width="1366"
+  height="729"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Break-mode"id="h-rh-i-1"
+/></p>
+<h3 id="using-the-immediate-window">Using the Immediate window<a href="#using-the-immediate-window" class="anchor" aria-hidden="true">#</a> </h3>
+<p>The <em>Immediate window</em> may not be visible in the VBE.</p>
+<p>You can display the VBE’s <em>Immediate window</em> at any time by pressing <code>Ctrl+G</code>.</p>
+<p>In Break mode, the Immediate window is particularly useful for finding the current value of any variable in your program.</p>
+<p>For example, if you want to know the current value of a variable, enter the following in the Immediate window and press <code>Enter</code>.</p>
+<p>The Immediate window lets you do other things besides check variable values.</p>
+<p>For example, you can change the value of a variable, try for a new condition.</p>
+<p>Just make sure that the command you enter is a valid VBA statement.</p>
+<h3 id="stepping-through-your-code">Stepping through your code<a href="#stepping-through-your-code" class="anchor" aria-hidden="true">#</a> </h3>
+<p>While in <em>Break mode</em>, you can also step through your code line by line.</p>
+<p>One statement is executed each time you press <code>F8</code>.</p>
+<p>Throughout this line-by-line execution of your code, you can activate the Immediate window at any time to check the status of your variables.</p>
+<p>You can use your mouse to change which statement VBA will execute next.</p>
+<p>If you put your mouse pointer in the gray margin to the left of the currently highlighted statement (which will usually be yellow), your pointer changes to a right-pointing arrow.</p>
+<p>Simply drag your mouse to the statement you want done next and watch that statement turn yellow.</p>
+<h2 id="using-the-watch-window">Using the Watch window<a href="#using-the-watch-window" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In some cases, you may want to know whether a certain variable or expression takes on a particular value.</p>
+<p>For example, suppose that a procedure loops through <strong>1,000 times</strong>.</p>
+<p>You notice that a problem occurs during the <strong>800th</strong> iteration of the loop.</p>
+<p>Well, you could insert a breakpoint in the loop, but that would mean responding to <strong>799</strong> prompts before the code finally gets to the iteration you want to see (and that gets boring real fast).</p>
+<p>A more efficient solution involves setting a <strong>watch</strong> expression.</p>
+<p>For example, you can create a watch expression that puts the procedure into Break mode whenever a certain variable takes on a specific value — for example, <code>AnyNumber=800</code>.</p>
+<p>To create a watch expression, choose <strong>Debug -&gt; Add Watch</strong> to display the Add Watch dialog box. See below figure.</p>
+<p>
+
+<img
+  src="/vba/programming-concepts/3.WatchWindowDialogBox_hu_829a0751d77c81e6.webp"
+  width="1168"
+  height="513"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Break-mode"id="h-rh-i-2"
+/></p>
+<p>The Add Watch dialog has three parts:</p>
+<ul>
+<li>
+<p><em>Expression</em>: Enter a valid VBA expression or a variable here. For example, <code>AnyNumber=900</code> or just <code>AnyNumber</code>.</p>
+</li>
+<li>
+<p><em>Context</em>: Select the procedure and the module you want to watch. Note that you can select All Procedures and All Modules.</p>
+</li>
+<li>
+<p><em>Watch Type</em>: Select the type of watch by clicking an option button. Your choice here depends on the expression you enter. The first choice, Watch Expression, does not cause a break; it simply displays the expression’s value when a break occurs.</p>
+</li>
+</ul>
+<p>Execute your procedure after setting up your watch expression(s).</p>
+<p>Things run normally until your watch expression is satisfied (based on the Watch Type you specified).</p>
+<p>When that happens, VBE enters Break mode (you did set the Watch Type to “Break When Value Is True,” didn’t you?).</p>
+<p>From there, you can step through the code or use the Immediate window to debug your code.</p>
+<p>When you create a watch, VBE displays the Watches window shown in below figure.</p>
+<p>This window displays the value of all watches that you’ve defined.</p>
+<p>In this figure, when the value hit <code>800</code>, which caused VBE to enter Break mode.</p>
+<p>
+
+<img
+  src="/vba/programming-concepts/4.WatchWindowDialogBoxWithAllWatches_hu_8cd4ee8969c35239.webp"
+  width="1170"
+  height="513"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Watch-window-dialog-box-with-all-watches"id="h-rh-i-3"
+/></p>
+<p>The best way to understand how this Watch business works is to use it and try various options.</p>
+<p>Before long, you’ll probably wonder how you ever got along without it.</p>
+<h2 id="using-the-locals-window">Using the Locals window<a href="#using-the-locals-window" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Another useful debugging aid is the Locals window.</p>
+<p>You can show this window by choosing <strong>View -&gt; Locals</strong> Window from the VBE’s menu.</p>
+<p>When you are in Break mode, this window will show you a list of all variables that are local to the current procedure (see below figure).</p>
+<p>The nice thing about this window is that you don’t have to add a load of watches manually if you want to look at the content of many variables.</p>
+<p>The VBE has done all the hard workfor you.</p>
+<p>
+
+<img
+  src="/vba/programming-concepts/5.LocalWindow_hu_89ce15f89704daa9.webp"
+  width="1170"
+  height="513"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Local-window"id="h-rh-i-4"
+/></p>
+<p>Next post will be about <em><strong>VBA Bug Reduction Tips</strong></em>.</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/vba/arrays/" class="stretched-link text-reset text-decoration-none">VBA Arrays</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/vba/functions/" class="stretched-link text-reset text-decoration-none">VBA Functions</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

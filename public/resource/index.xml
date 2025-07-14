@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources on The CAD Coder</title>
+    <link>http://localhost:1313/resource/</link>
+    <description>Recent content in Resources on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/resource/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resources</title>
+      <link>http://localhost:1313/resources/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resources/</guid>
+      <description>&lt;p&gt;🚀 Tools &amp;amp; Resources I Use (and Recommend)&lt;/p&gt;&#xA;&lt;p&gt;This is a curated list of the &lt;strong&gt;resources&lt;/strong&gt; that have helped me learn &lt;strong&gt;programming&lt;/strong&gt; and &lt;strong&gt;SolidWorks API automation&lt;/strong&gt; — including books, tutorials, tools, and frameworks.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
