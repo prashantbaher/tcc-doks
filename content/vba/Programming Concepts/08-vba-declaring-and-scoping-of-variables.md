@@ -68,7 +68,7 @@ You find it in the **Editor tab** of the **Options dialog box** (in the VBE, cho
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
 
-> I highly recommend doing so.
+I highly recommend doing so.
 
 {{< /callout >}}
 
@@ -119,11 +119,11 @@ Below Table describes the scopes:
 
 ### VBA’s Variable’s Scope
 
-| Scope                        | How the Variable is Declared                                                                                      |
-|-----------------------------|---------------------------------------------------------------------------------------------------------------------|
-| Procedure only              | By using a **Dim** or a **Static** statement in the procedure that uses the variable.                              |
-| Module only                 | By using a **Dim** or a **Private** statement before the first **Sub** or **Function** statement in the module.     |
-| All procedures in all modules | By using a **Public** statement before the first **Sub** or **Function** statement in the module.                   |
+| Scope                         | How the Variable is Declared                                                                                    |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Procedure only                | By using a **Dim** or a **Static** statement in the procedure that uses the variable.                           |
+| Module only                   | By using a **Dim** or a **Private** statement before the first **Sub** or **Function** statement in the module. |
+| All procedures in all modules | By using a **Public** statement before the first **Sub** or **Function** statement in the module.               |
 
 If you get confused keep reading next post on these topics.
 

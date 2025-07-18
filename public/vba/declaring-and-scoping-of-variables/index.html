@@ -227,27 +227,11 @@ In this topic, you discover how to declare a variable as a certain data type.">
   </li>
 
   <li>
-      <a href="/vba/looping/">VBA Looping</a>
-  </li>
-
-  <li>
-      <a href="/vba/bug-finding/">Bug Finding</a>
-  </li>
-
-  <li>
       <a href="/vba/arrays/">VBA Arrays</a>
   </li>
 
   <li>
-      <a href="/vba/debugger/">VBA Debugger</a>
-  </li>
-
-  <li>
       <a href="/vba/functions/">VBA Functions</a>
-  </li>
-
-  <li>
-      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
   </li>
 
   <li>
@@ -260,6 +244,46 @@ In this topic, you discover how to declare a variable as a certain data type.">
 
   <li>
       <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Dialog Boxes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/dialog-boxes/">VBA Dialog Boxes</a>
+  </li>
+
+  <li>
+      <a href="/vba/msgBox-function/">VBA MsgBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/inputbox-function/">VBA InputBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a>
   </li>
       </ul>
     </details>
@@ -498,27 +522,11 @@ In this topic, you discover how to declare a variable as a certain data type.">
   </li>
 
   <li>
-      <a href="/vba/looping/">VBA Looping</a>
-  </li>
-
-  <li>
-      <a href="/vba/bug-finding/">Bug Finding</a>
-  </li>
-
-  <li>
       <a href="/vba/arrays/">VBA Arrays</a>
   </li>
 
   <li>
-      <a href="/vba/debugger/">VBA Debugger</a>
-  </li>
-
-  <li>
       <a href="/vba/functions/">VBA Functions</a>
-  </li>
-
-  <li>
-      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
   </li>
 
   <li>
@@ -531,6 +539,46 @@ In this topic, you discover how to declare a variable as a certain data type.">
 
   <li>
       <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Dialog Boxes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/dialog-boxes/">VBA Dialog Boxes</a>
+  </li>
+
+  <li>
+      <a href="/vba/msgBox-function/">VBA MsgBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/inputbox-function/">VBA InputBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a>
   </li>
       </ul>
     </details>
@@ -592,6 +640,21 @@ In this topic, you discover how to declare a variable as a certain data type.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
@@ -600,6 +663,9 @@ In this topic, you discover how to declare a variable as a certain data type.">
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>When this <em>statement</em> is present, you won’t be able to run your code if it contains any undeclared <em>variables</em>.</p>
 <p>You need to use <code>Option Explicit</code> only once: at the <em>beginning</em> of your module, prior to the declaration of any procedures in the module.</p>
 <p>Keep in mind that the <code>Option Explicit</code> statement applies only to the module in which it resides.</p>
@@ -607,6 +673,21 @@ In this topic, you discover how to declare a variable as a certain data type.">
 <p>Suppose that you use an <em>undeclared variable</em> (that is, a <code>Variant</code>) named <code>myDimension</code>.</p>
 <p>At some point in your routine, you insert the following statement:</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -617,6 +698,9 @@ In this topic, you discover how to declare a variable as a certain data type.">
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">myDimnsion</span> <span class="o">=</span> <span class="n">11</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>This misspelled <em>variable</em>, which is difficult to spot, will probably cause your routine to give incorrect results.</p>
 <p>If you use <code>Option Explicit</code> at the beginning of your module (forcing you to declare the <code>myDimension</code> variable), <code>VBE</code> generates an error if it encounters a misspelled variation of that variable.</p>
 <p>To ensure that the <code>Option Explicit</code> statement is inserted automatically whenever you insert a new <code>VBA</code> module; turn on the <em>Require Variable Definition option</em>.</p>
@@ -645,8 +729,7 @@ In this topic, you discover how to declare a variable as a certain data type.">
 
       </div>
     <div class="callout-body">
-      <blockquote>
-<p>I highly recommend doing so.</p></blockquote>
+      <p>I highly recommend doing so.</p>
 
     </div>
   </div>
@@ -662,6 +745,21 @@ In this topic, you discover how to declare a variable as a certain data type.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
@@ -673,6 +771,9 @@ In this topic, you discover how to declare a variable as a certain data type.">
 </span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">X</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The first <em>three</em> variables are declared as a specific <em>data type</em>.</p>
 <p>The last variable, <strong>X</strong>, is not declared as a specific <em>data type</em>, so it’s treated as a <code>Variant</code> (it can be anything).</p>
 <p>Besides <code>Dim</code>, <code>VBA</code> has <em>three</em> other keywords that are used to declare variables:</p>

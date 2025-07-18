@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dialog Boxes on The CAD Coder</title>
+    <link>http://localhost:1313/vba/dialog-boxes/</link>
+    <description>Recent content in Dialog Boxes on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/vba/dialog-boxes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VBA Dialog Boxes</title>
+      <link>http://localhost:1313/vba/dialog-boxes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/dialog-boxes/</guid>
+      <description>&lt;p&gt;You can’t use VBA very long without being exposed to dialog boxes.&lt;/p&gt;&#xA;&lt;p&gt;They seem to pop up almost every time you select a command.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA MsgBox Function</title>
+      <link>http://localhost:1313/vba/msgBox-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/msgBox-function/</guid>
+      <description>&lt;p&gt;You’re probably already familiar with the VBA &lt;code&gt;MsgBox&lt;/code&gt; function — I use it quite a bit in the examples.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;MsgBox&lt;/code&gt; function, which accepts the arguments shown in below table, is handy for displaying information and getting simple user input.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA InputBox Function</title>
+      <link>http://localhost:1313/vba/inputbox-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/inputbox-function/</guid>
+      <description>&lt;p&gt;The VBA&amp;rsquo;s &lt;code&gt;InputBox&lt;/code&gt; function is useful for obtaining a single piece of information from the user.&lt;/p&gt;&#xA;&lt;p&gt;That information could be &lt;em&gt;a value&lt;/em&gt;, &lt;em&gt;a text string&lt;/em&gt;, or even &lt;em&gt;a range address&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</title>
+      <link>http://localhost:1313/vba/other-dialogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/other-dialogs/</guid>
+      <description>&lt;p&gt;If your VBA procedure needs to ask the user for a filename, you could use the &lt;em&gt;InputBox&lt;/em&gt; function.&lt;/p&gt;&#xA;&lt;p&gt;An input box usually isn’t the best tool for this job, however, because most users find it difficult to remember paths, backslashes, filenames, and file extensions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

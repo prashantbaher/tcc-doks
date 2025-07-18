@@ -153,19 +153,19 @@ VBA does not require that you declare the variables that you use, but it’s def
 
 VBA has a variety of built-in data types. Below table lists the most common types of data that VBA can handle.
 
-| Data Type | Byte used | Range of values |
-|---|---|---|
-| Boolean | 2 | True or False |
-| Integer | 2 | –32,768 to 32,767 |
-| Long | 4 | –2,147,483,648 to 2,147,483,647 |
-| Single | 4 | –3.402823E38 to 1.401298E45 |
-| Double (negative) | 8 | –1.79769313486232E308 to –4.94065645841247E-324 |
-| Double (positive) | 8 | 4.94065645841247E–324 to 1.79769313486232E308 |
-| Currency | 8 | –922,337,203,685,477.5808 to 922,337,203,685,477.5807 |
-| Date | 8 | 1/1/100 to 12/31/9999 |
-| String | 1 per char | varies |
-| Object | 4 | Any defined object |
-| Variant | Varies | Any data type |
-| User defined | Varies | Varies |
+| Data Type         | Byte used  | Range of values                                       |
+| ----------------- | ---------- | ----------------------------------------------------- |
+| Boolean           | 2          | True or False                                         |
+| Integer           | 2          | –32,768 to 32,767                                     |
+| Long              | 4          | –2,147,483,648 to 2,147,483,647                       |
+| Single            | 4          | –3.402823E38 to 1.401298E45                           |
+| Double (negative) | 8          | –1.79769313486232E308 to –4.94065645841247E-324       |
+| Double (positive) | 8          | 4.94065645841247E–324 to 1.79769313486232E308         |
+| Currency          | 8          | –922,337,203,685,477.5808 to 922,337,203,685,477.5807 |
+| Date              | 8          | 1/1/100 to 12/31/9999                                 |
+| String            | 1 per char | varies                                                |
+| Object            | 4          | Any defined object                                    |
+| Variant           | Varies     | Any data type                                         |
+| User defined      | Varies     | Varies                                                |
 
 Next post will be about VBA Variables.

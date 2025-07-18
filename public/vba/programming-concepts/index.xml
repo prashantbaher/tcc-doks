@@ -66,18 +66,18 @@
       <description>&lt;p&gt;An &lt;em&gt;assignment statement&lt;/em&gt; is a &lt;em&gt;VBA statement&lt;/em&gt; that assigns the result of an expression to a variable or an object.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>VBA Looping</title>
-      <link>http://localhost:1313/vba/looping/</link>
+      <title>VBA Arrays</title>
+      <link>http://localhost:1313/vba/arrays/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/looping/</guid>
-      <description>&lt;p&gt;The term &lt;em&gt;looping&lt;/em&gt; refers to repeating a block of VBA statements numerous times.&lt;/p&gt;&#xA;&lt;p&gt;VBA provides various looping command for repeating code to make correct decision making.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/vba/arrays/</guid>
+      <description>&lt;p&gt;Most programming languages support &lt;code&gt;arrays&lt;/code&gt;. An &lt;em&gt;array&lt;/em&gt; is a group of variables that share a common name.&lt;/p&gt;&#xA;&lt;p&gt;You refer to a &lt;em&gt;specific variable&lt;/em&gt; in the &lt;code&gt;array&lt;/code&gt; by using the &lt;em&gt;array name&lt;/em&gt; and an &lt;em&gt;index number&lt;/em&gt; in &lt;em&gt;parentheses&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Bug Finding</title>
-      <link>http://localhost:1313/vba/bug-finding/</link>
+      <title>VBA Functions</title>
+      <link>http://localhost:1313/vba/functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/bug-finding/</guid>
-      <description>&lt;p&gt;A &lt;strong&gt;bug&lt;/strong&gt; is an error in your programming. Here I cover the topic of programming bugs — how to identify them and how to remove them from your module.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/vba/functions/</guid>
+      <description>&lt;p&gt;A &lt;code&gt;function&lt;/code&gt; essentially performs a calculation and returns a single value.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;SUM&lt;/code&gt; function in &lt;strong&gt;MS Excel&lt;/strong&gt; returns the sum of a range of values.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

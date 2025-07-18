@@ -59,25 +59,25 @@
       <description>&lt;p&gt;Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Privacy Policy</title>
-      <link>http://localhost:1313/privacy/</link>
-      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/privacy/</guid>
-      <description>How The CAD Coder collects, stores, and protects your data.</description>
+      <title>Programming Concepts, Comments and Data-types</title>
+      <link>http://localhost:1313/vba/programming-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/programming-concepts/</guid>
+      <description>&lt;p&gt;Visual Basic for application (VBA) is a real, live programming language, it uses many elements common to all programming languages.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Post</title>
-      <link>http://localhost:1313/blog/example-post/</link>
-      <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
-      <guid>http://localhost:1313/blog/example-post/</guid>
-      <description>You can use blog posts for announcing product updates and features.</description>
+      <title>VBA Variables</title>
+      <link>http://localhost:1313/vba/variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/variables/</guid>
+      <description>&lt;p&gt;&lt;code&gt;VBA’s&lt;/code&gt; main purpose is to manipulate data. &lt;code&gt;VBA&lt;/code&gt; stores the &lt;em&gt;data&lt;/em&gt; in your computer’s &lt;em&gt;memory&lt;/em&gt;; it may or may not end up on disk.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/example-guide/</link>
-      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <title>Declaring and Scoping of Variables</title>
+      <link>http://localhost:1313/vba/declaring-and-scoping-of-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/declaring-and-scoping-of-variables/</guid>
+      <description>&lt;p&gt;If you read the previous topics, you now know a bit about 🚀&lt;strong&gt;&lt;a href=&#34;http://localhost:1313/vba/variables&#34;&gt;Variables&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/vba/programming-concepts#data-types-in-vba&#34;&gt;Data-types&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this topic, you discover how to &lt;strong&gt;declare&lt;/strong&gt; a &lt;code&gt;variable&lt;/code&gt; as a certain &lt;em&gt;data type&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
