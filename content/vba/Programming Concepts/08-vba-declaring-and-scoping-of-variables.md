@@ -26,9 +26,15 @@ If `VBA` knows a *variable’s data type*, it doesn’t have to investigate and 
 
 To force yourself to declare all the variables you use, include the following as the first statement in your `VBA` module:
 
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
 ```vb
 Option Explicit
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 When this *statement* is present, you won’t be able to run your code if it contains any undeclared *variables*.
 
@@ -42,9 +48,15 @@ Suppose that you use an *undeclared variable* (that is, a `Variant`) named `myDi
 
 At some point in your routine, you insert the following statement:
 
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
 ```vb
 myDimnsion = 11
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 This misspelled *variable*, which is difficult to spot, will probably cause your routine to give incorrect results.
 
@@ -74,12 +86,18 @@ The most common way is to use a `Dim` statement.
 
 Here are some examples of variables being declared:
 
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
 ```vb
 Dim YourName as String
 Dim PartLength as Long
 Dim bRet as Boolean
 Dim X
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The first *three* variables are declared as a specific *data type*.
 
@@ -93,9 +111,9 @@ Besides `Dim`, `VBA` has *three* other keywords that are used to declare variabl
 
 I explain more about the `Dim, Static, Public`, and `Private` keywords later on, but first I must cover two other topics that are relevant here: **a variable’s scope** and **a variable’s life**.
 
-Recall that your code can have any number of `VBA modules` and a `VBA module` can have any number of `Sub` and `Function` procedures. 
+Recall that your code can have any number of `VBA modules` and a `VBA module` can have any number of `Sub` and `Function` procedures.
 
-A variable’s scope determines which modules and procedures can use the variable. 
+A variable’s scope determines which modules and procedures can use the variable.
 
 Below Table describes the scopes:
 
