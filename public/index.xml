@@ -31,11 +31,32 @@
       <description>&lt;p&gt;To understand &lt;code&gt;Visual Basic for Application&lt;/code&gt;, lets look at the following &lt;em&gt;questions&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-visual-basic-for-application&#34;&gt;What is Visual Basic for Application?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;Visual Basic for Applications&lt;/code&gt; also known as &lt;code&gt;VBA&lt;/code&gt;, is a &lt;em&gt;programming language&lt;/em&gt; developed by &lt;strong&gt;Microsoft&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Wix4 Introduction</title>
+      <link>http://localhost:1313/knowledge-base/wix4-introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/knowledge-base/wix4-introduction/</guid>
+      <description>&lt;p&gt;Hello all,&lt;/p&gt;&#xA;&lt;p&gt;As mentioned in previous article, I need to learn some topics for my work.&lt;/p&gt;&#xA;&lt;p&gt;One of those topics is Wix4 Toolset.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Visual Basic Editor (VBE)</title>
       <link>http://localhost:1313/vba/vba-vbe-editor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vba/vba-vbe-editor/</guid>
       <description>&lt;p&gt;&lt;code&gt;Visual Basic Editor&lt;/code&gt; or &lt;code&gt;VBE&lt;/code&gt; is a &lt;em&gt;separate&lt;/em&gt; application in your &lt;em&gt;CAD application&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this &lt;em&gt;application&lt;/em&gt; you &lt;code&gt;write&lt;/code&gt; and &lt;code&gt;edit&lt;/code&gt; your &lt;em&gt;Macro code&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wix4 Visual Studio Extension</title>
+      <link>http://localhost:1313/knowledge-base/wix-vs-extension/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/knowledge-base/wix-vs-extension/</guid>
+      <description>&lt;p&gt;In this article we&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Install Wix4 Visual Studio Extension&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/info-circle svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-info-circle&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0&#34; /&gt;&#xA;  &lt;path d=&#34;M12 9h.01&#34; /&gt;&#xA;  &lt;path d=&#34;M11 12h1v4h1&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;Note&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understand Wix V4 Project</title>
+      <link>http://localhost:1313/knowledge-base/wix-understand-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/knowledge-base/wix-understand-project/</guid>
+      <description>&lt;p&gt;In this article we&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;Understand &lt;strong&gt;Wix V4 Files&lt;/strong&gt; and &lt;strong&gt;Project Structure&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Different types of files in Project&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Purpose of those files&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;wix-project&#34;&gt;Wix Project&lt;/h2&gt;&#xA;&lt;p&gt;In previous 🚀 &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/knowledge-base/wix-vs-extension&#34;&gt;Wix4 Visual Studio Extension&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}&lt;/strong&gt; article, we created a new Wix V4 project.&lt;/p&gt;</description>
     </item>
     <item>
       <title>VBE Windows</title>
@@ -52,32 +73,11 @@
       <description>&lt;p&gt;The &lt;code&gt;VBA&lt;/code&gt; code that you write in the &lt;code&gt;Visual Basic Editor&lt;/code&gt; is known as a &lt;code&gt;procedure&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The two most common types of procedures are &lt;code&gt;Sub&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Executing Sub and Function Procedures</title>
-      <link>http://localhost:1313/vba/executing-procedures/</link>
+      <title>Wix Add Remove Program Details</title>
+      <link>http://localhost:1313/knowledge-base/wix-add-remove-program-details/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/executing-procedures/</guid>
-      <description>&lt;p&gt;Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programming Concepts, Comments and Data-types</title>
-      <link>http://localhost:1313/vba/programming-concepts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/programming-concepts/</guid>
-      <description>&lt;p&gt;Visual Basic for application (VBA) is a real, live programming language, it uses many elements common to all programming languages.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>VBA Variables</title>
-      <link>http://localhost:1313/vba/variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/variables/</guid>
-      <description>&lt;p&gt;&lt;code&gt;VBA’s&lt;/code&gt; main purpose is to manipulate data. &lt;code&gt;VBA&lt;/code&gt; stores the &lt;em&gt;data&lt;/em&gt; in your computer’s &lt;em&gt;memory&lt;/em&gt;; it may or may not end up on disk.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Declaring and Scoping of Variables</title>
-      <link>http://localhost:1313/vba/declaring-and-scoping-of-variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/declaring-and-scoping-of-variables/</guid>
-      <description>&lt;p&gt;If you read the previous topics, you now know a bit about 🚀&lt;strong&gt;&lt;a href=&#34;http://localhost:1313/vba/variables&#34;&gt;Variables&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/vba/programming-concepts#data-types-in-vba&#34;&gt;Data-types&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this topic, you discover how to &lt;strong&gt;declare&lt;/strong&gt; a &lt;code&gt;variable&lt;/code&gt; as a certain &lt;em&gt;data type&lt;/em&gt;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/knowledge-base/wix-add-remove-program-details/</guid>
+      <description>&lt;p&gt;In this article we create MSI Details for Add/Remove Program details.&lt;/p&gt;&#xA;&lt;p&gt;Please see below 👇🏻 image of &lt;strong&gt;Visual Studio&lt;/strong&gt; for reference.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
