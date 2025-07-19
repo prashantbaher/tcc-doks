@@ -524,7 +524,7 @@ After the function complete following are the results:
 
 Below image shows our **form** in SOLIDWORKS.
 
-![userform-in-solidworks](/assets/vba-images/browse-solidworks-files/userform-in-solidworks.png "Our userform in Solidworks")
+![userform-in-solidworks](userform-in-solidworks.png "Our userform in Solidworks")
 
 Below image shows the opened window.
 
