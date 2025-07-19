@@ -1,9 +1,11 @@
-<div class="relative w-full overflow-hidden pb-[56.25%]"> <!-- 16:9 Aspect Ratio -->
-  <iframe class="absolute top-0 left-0 w-full h-full"
-    src="https://www.youtube.com/embed/{{ .Get "id" }}"
-    title="YouTube video player"
+{{- $id := .Get "id" -}}
+<div class="responsive-video-container">
+  <iframe
+    src="https://www.youtube.com/embed/{{ $id }}"
+    title="YouTube video"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
   </iframe>
+  <br>
 </div>
