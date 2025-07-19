@@ -1,4 +1,3 @@
-<!-- filepath: c:\Workspace\Dev\tcc-doks\content\vba\Dialog Boxes\26-vba-other-dialog.md -->
 ---
 title: VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name
 url: /vba/other-dialogs/
