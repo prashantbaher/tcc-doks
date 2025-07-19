@@ -15,6 +15,8 @@ Please see below video on **Solidworks VBA Macro - Open new Part document** in S
 <iframe src="https://www.youtube.com/embed/pXMMSDeXEwo" frameborder="0" allowfullscreen></iframe>
 <br>
 
+{{< youtube id="pXMMSDeXEwo" >}}
+
 Please note that there are **no explaination** in the video. 
 
 **Explaination** of each line and why we write code this way is given in this post.
