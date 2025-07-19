@@ -85,3 +85,6 @@ bgColor = "#ffffff"
 hint = "photo"
 quality = 85
 resampleFilter = "Lanczos"
+
+
+googleAnalytics = "UA-117501871-2"
