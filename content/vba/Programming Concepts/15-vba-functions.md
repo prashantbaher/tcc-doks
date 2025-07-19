@@ -31,11 +31,17 @@ This useful function displays a message in a pop-up dialog box.
 
 The first example uses VBA’s `Date` function to display the current system date in a message box:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowDate()
   MsgBox Date
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Notice that the `Date` function doesn’t use an argument. 
 
@@ -45,11 +51,17 @@ In fact, if you type an empty set of parentheses, the VBE will promptly remove t
 
 To get the system time, use the `Time` function. And if you want it all, use the `Now` function to return both the date and the time. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowDate()
   MsgBox Now
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Finding a string length
 
@@ -59,7 +71,10 @@ The `Len` function takes one argument: the `string`.
 
 When you execute this procedure, the *message box* displays **11** because the argument has **11** characters. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub StringLength()
   Dim MyString As String
   Dim StringLength As Integer
@@ -69,11 +84,17 @@ Sub StringLength()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 ## Displaying the integer part of a number
 
 The following procedure uses the `Fix` function, which returns the integer portion of a value — *the value without any decimal digits*: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GetIntegerPart()
   Dim MyValue As Double
   Dim IntValue As Integer
@@ -82,6 +103,9 @@ Sub GetIntegerPart()
   MsgBox IntValue
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In this case, the message box displays **123**.
 
@@ -101,7 +125,10 @@ The following `Sub` procedure displays the size, in bytes, of the executable fil
 
 It finds this value by using the `FileLen` function. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GetFileSize()
   Dim TheFile As String
   TheFile “C:\ProgramFiles\Program File\SolidworksCorp\SLDWORKS\SLDWORKS.exe”
@@ -109,15 +136,24 @@ Sub GetFileSize()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Notice that this routine hard codes the filename (that is, it explicitly states the path). 
 
 Generally, this **isn’t** a good idea. The file might not be on the *C drive*, or the Program File folder may have a different location. 
 
 The following statement shows a better approach: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 TheFile = Application.Path & “\SLDWORKS.EXE” 
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Path is a property of the Application object. 
 
@@ -127,13 +163,19 @@ It simply returns the name of the folder in which the application (that is, *Sol
 
 The following procedure uses the `TypeName` function, which returns the type of the selection (as a `string`): 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowSelectionType()
   Dim SelType As String
   SelType = TypeName(Selection)
   MsgBox SelType
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 This could be *a Sketch, a Part, a Assembly* or any *other type* of object that can be selected.
 

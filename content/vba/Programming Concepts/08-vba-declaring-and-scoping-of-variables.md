@@ -29,7 +29,7 @@ To force yourself to declare all the variables you use, include the following as
 {{< tabs "vba-code" >}}
 {{< tab "vba" >}}
 
-```vb
+```vb {lineNos=true lineNoStart=1}
 Option Explicit
 ```
 
@@ -51,7 +51,7 @@ At some point in your routine, you insert the following statement:
 {{< tabs "vba-code" >}}
 {{< tab "vba" >}}
 
-```vb
+```vb {lineNos=true lineNoStart=1}
 myDimnsion = 11
 ```
 
@@ -89,7 +89,7 @@ Here are some examples of variables being declared:
 {{< tabs "vba-code" >}}
 {{< tab "vba" >}}
 
-```vb
+```vb {lineNos=true lineNoStart=1}
 Dim YourName as String
 Dim PartLength as Long
 Dim bRet as Boolean

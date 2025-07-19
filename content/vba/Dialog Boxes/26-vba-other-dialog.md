@@ -24,10 +24,16 @@ Then you can write code to do whatever you want with the filename.
 
 The official syntax for the **GetOpenFilename** method is as follows:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' The GetOpenFilename method syntax
 object.GetOpenFilename ([fileFilter], [filterIndex], [title],[buttonText], [multiSelect])
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The GetOpenFilename method takes the optional arguments shown in below Table.
 
@@ -48,22 +54,40 @@ This argument consists of pairs of file filter strings followed by the wild card
 
 If omitted, this argument defaults to the following:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' A GetOpenFilename example
 All Files (*.*), *.*
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Notice that this string consists of two parts:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 All Files (*.*)
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 and
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 *.*
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The first part of this string is the text displayed in the Files of Type dropdown list. 
 
@@ -75,7 +99,10 @@ The procedure defines five file filters.
 
 Notice that I use the VBA line continuation sequence to set up the Filter variable; doing so helps simplify this rather complicated argument.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' A GetOpenFilename example
 Sub GetImportFileName()
   Dim Finfo As String
@@ -109,6 +136,9 @@ Sub GetImportFileName()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Notice that the `FileName` variable is declared as a Variant data type. 
 
 If the user clicks `Cancel`, that variable contains a Boolean value (False). 
@@ -125,10 +155,16 @@ It’s up to you to write code that actually saves the file.
 
 The syntax for this method follows:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' The GetSaveAsFilename method syntax
 object.GetSaveAsFilename ([InitialFilename], [FileFilter], [FilterIndex], [Title], [ButtonText])
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The *GetSaveAsFilename* method takes below arguments, all of which are optional.
 
@@ -151,24 +187,11 @@ The following procedure displays a dialog box that allows the user to select a d
 
 The selected directory name (or “Canceled”) is then displayed by using the `MsgBox` function.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' FileDialog example
 Sub GetAFolder()
   With Application.FileDialog(msoFileDialogFolderPicker)
-    .InitialFileName = Application.DefaultFilePath & "\"
-    .Title = "Please select a location for the backup"
-    .Show
-    If .SelectedItems.Count = 0 Then
-      MsgBox "Canceled"
-    Else
-      MsgBox .SelectedItems(1)
-    End If
-  End With
-End Sub
-```
-
-The *FileDialog* object lets you specify the starting directory by specifying a value for the InitialFileName property. 
-
-In this case, the code uses default file path as the starting directory.
-
-Next post will be about ***VBA UserForms***.
+    .InitialFileName = Application.DefaultFilePath & "\

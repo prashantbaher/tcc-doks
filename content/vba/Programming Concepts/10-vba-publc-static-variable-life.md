@@ -26,6 +26,16 @@ In practice, sharing a variable across modules is hardly ever done.
 
 But I guess it’s nice to know that it can be done. 
 
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
+Public swApp As Object
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 ## Static Variables
 
 Normally, when a procedure ends, all the procedure’s variables are reset. 
@@ -35,6 +45,20 @@ Normally, when a procedure ends, all the procedure’s variables are reset.
 You declare a static variable at the *procedure level*. 
 
 A static variable may be useful if you need to track the number of times you execute a procedure. 
+
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
+Sub CountCalls()
+    Static callCount As Integer
+    callCount = callCount + 1
+    MsgBox "This procedure has been called " & callCount & " times."
+End Sub
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Life of Variables
 
@@ -50,10 +74,24 @@ You can *purge* (remove) all variables from memory by using three methods:
 
 * Include an `End` statement anywhere in your code. This is not the same as an `End Sub` or `End Function` statement. Generally it is an Exit statement. 
 
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
+End
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 Otherwise, only procedure-level variables will be removed from memory when the *macro code* has completed running.
  
 Static variables, module level variables, and global (`public`) variables all retain their values in between runs of your code. 
 
-> If you use *module-level* or *global-level* variables, make sure they have the value you expect them to have. You never know whether one of the situations I just mentioned may have caused your variables to lose their content! 
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+If you use *module-level* or *global-level* variables, make sure they have the value you expect them to have. You never know whether one of the situations I just mentioned may have caused your variables to lose their content! 
+
+{{< /callout >}}
 
 Next post will be about ***VBA Constants***.

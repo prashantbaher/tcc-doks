@@ -10,7 +10,11 @@ In this post, we **test** our **Open new Assembly and Drawing document** code sa
 
 This post is supplement of **[VBA Userforms - Open new Assembly and Drawing document](/vba/open-assembly-and-drawing-from-userform/)** post.
 
-> *Please visit above post before this post.*
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+*Please visit above post before this post.*
+
+{{< /callout >}}
 
 From **[VBA Userforms - Open new Assembly and Drawing document](/vba/open-assembly-and-drawing-from-userform/)** post we expect following results :
 
@@ -30,7 +34,10 @@ For testing our VBA macro, we apply some checks so that macro perform same at al
 
 Below is code block where we want to apply our check.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Option Explicit
 
 ' Creating variable for Solidworks application
@@ -66,6 +73,8 @@ Private Sub OpenDocumentButton_Click()
     
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 ---
 
@@ -79,7 +88,10 @@ For this, we need to put an `If` condition before opening a new document.
 
 Please see below code for condition.
 
-``` vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Checking if we got template path
 If defaultTemplate = vbNullString Then
     ' If template path is empty then show message and exit from procedure.
@@ -87,6 +99,8 @@ If defaultTemplate = vbNullString Then
     Exit Sub
 End If
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 In above code, we check *if got the template path or not*.
 
@@ -99,7 +113,10 @@ If template path is **empty** then
 
 After adding our check, procedure has following code.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Private function of Open New Part Button
 Private Sub OpenDocumentButton_Click()
 
@@ -127,7 +144,7 @@ Private Sub OpenDocumentButton_Click()
   ' Setting Solidworks document to new Assembly document
   Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
   
-  ' Hiding the Window aft er opening the selected document
+  ' Hiding the Window after opening the selected document
   OpenDocumentWindow.Hide
   
   ' Reset the Index of Combo Box to "0" again
@@ -135,10 +152,14 @@ Private Sub OpenDocumentButton_Click()
     
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 ---
 
 ## Cause of Error
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
 
 *You might wondering how can we have such error?*
 
@@ -153,6 +174,8 @@ As you can see, in my machine these value are already set.
 But they are empty in case of fresh installation.
 
 Hence if someone runs this macro on fresh SOLIDWORKS copy, they might get error message which we give.
+
+{{< /callout >}}
 
 ---
 

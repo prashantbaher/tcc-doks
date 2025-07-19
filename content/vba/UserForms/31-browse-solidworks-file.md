@@ -52,7 +52,11 @@ This button is called ***insert userform***.
 
 As the name suggest, function of this button is *inserting a userform*.
 
-> Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.
+
+{{< /callout >}}
 
 After clicking the ***insert userform*** button we get the userform window as shown in above image.
 
@@ -164,23 +168,35 @@ For this goto main `Sub procedure` inside the **main Module**.
 
 Code inside the main Module is as given below.
 
-{% highlight vb %}
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim swApp As Object
 Sub main()
 
 Set swApp = Application.SldWorks
 End Sub
-{% endhighlight %}
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 To call our `Userform`, replace above code with below code:
 
-{% highlight vb %}
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Main function of our VBA program
 Sub main()
   ' Calling our window to show
   BrowseDocumentWindow.Show
 End Sub
-{% endhighlight %}
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Above function call our window to appears on screen.
 
@@ -208,7 +224,10 @@ We need to update this code for opening new part after clicking the button.
 
 For this replace all above code with below code.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Option Explicit
 
 ' Creating variable for Solidworks application
@@ -240,6 +259,9 @@ Private Sub BrowseDocumentButton_Click()
     
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ---
 
@@ -514,7 +536,7 @@ Below image shows the **multi-selection** in opened window.
 
 ```vb
 ' Show the selected file's full path in text box
-SelectedFileTextBox.Text = fileName
+SelectedFileTextBox.Text = strFile
 ```
 
 Now we set the value of text box to **browsed** file name.

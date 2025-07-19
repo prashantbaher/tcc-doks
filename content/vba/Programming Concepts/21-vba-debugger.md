@@ -71,6 +71,16 @@ In Break mode, the Immediate window is particularly useful for finding the curre
 
 For example, if you want to know the current value of a variable, enter the following in the Immediate window and press `Enter`.
 
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
+?MyVariable
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 The Immediate window lets you do other things besides check variable values. 
 
 For example, you can change the value of a variable, try for a new condition. 
@@ -147,7 +157,7 @@ When you are in Break mode, this window will show you a list of all variables th
 
 The nice thing about this window is that you don’t have to add a load of watches manually if you want to look at the content of many variables. 
 
-The VBE has done all the hard workfor you.
+The VBE has done all the hard work for you.
 
 ![Local-window](5.LocalWindow.PNG)
 

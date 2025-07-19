@@ -6,9 +6,13 @@ weight: 13
 
 An *assignment statement* is a *VBA statement* that assigns the result of an expression to a variable or an object. 
 
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
 In a book I read Excel’s Help system defines the term expression as: 
 
 > "Combination of keywords, operators, variables, and constants that yields a string, number, or object. An expression can be used to perform a calculation, manipulate characters, or test data." 
+
+{{< /callout >}}
 
 Much of your work in VBA involves *developing (and debugging)* expressions. 
 
@@ -18,17 +22,27 @@ With a formula, Excel displays the result in a cell.
 
 A VBA expression, on the other hand, can be assigned to a variable. 
 
-> For understanding purpose, I used Excel as an example. Please don't get confused with it. 
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+For understanding purpose, I used Excel as an example. Please don't get confused with it. 
+
+{{< /callout >}}
 
 In the assignment statement examples that follow, the expressions are to the right of the equal sign: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 X = 1
 X = x + 1
 X = (y * 2) / (z * 2)
 NumberOfParts = 15
 SelectObject = True
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 **Expressions** can be as complex as you need them to be; use the line continuation character (a space followed by an underscore) to make lengthy expressions easier to read. 
 
@@ -40,9 +54,15 @@ You’re probably accustomed to using an `equal` sign as a mathematical symbol f
 
 Therefore, an assignment statement like the following may cause you to raise your eyebrows: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 x = x + 1
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 How can the variable `x` be equal to itself plus 1? 
 
@@ -150,9 +170,15 @@ You can use *parentheses* to change the natural precedence order, making whateve
 
 Take a look at this code: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 z = x + 5 * y
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 When this code is executed, what’s the value of `z`? 
 
@@ -166,10 +192,20 @@ By the way, I can never remember how operator precedence works, so I tend to use
 
 For example, in real life I would write that last assignment statement like this: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 z = x + (5 * y)
 ```
 
-> Don’t be shy about using *parentheses* even if they aren’t required — especially if doing so makes your code easier to understand. VBA doesn’t care if you use *extra parentheses*. 
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+Don’t be shy about using *parentheses* even if they aren’t required — especially if doing so makes your code easier to understand. VBA doesn’t care if you use *extra parentheses*. 
+
+{{< /callout >}}
 
 Next post will be about ***VBA Arrays***.

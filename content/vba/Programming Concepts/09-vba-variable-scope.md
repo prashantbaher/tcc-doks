@@ -28,7 +28,10 @@ You usually place `Dim` statements immediately after the `Sub` or `Function` sta
 
 The following example shows some procedure-only variables declared by using `Dim` statements:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub MySub()
   Dim x As Integer
   Dim First As Long
@@ -38,22 +41,37 @@ Sub MySub()
 End Sub 
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Notice that the last `Dim` statement in the preceding example doesn’t declare a data type; it declares only the variable itself. The effect is that the variable `MyValue` is a *Variant*.
 
 By the way, you can also declare several variables with a single `Dim` statement, as in the following example:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim x As Integer, y As Integer, z As Integer
 Dim First As Long, Last As Double
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Unlike some languages, **VBA** doesn’t allow you to declare a *group* of variables to be a particular *data type* by separating the variables with **commas**.
 
 For example, though valid, the following statement does not declare all the variables as *Integers*:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim i, j, k As Integer
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In this example, only `k` is declared to be an *Integer*; the other variables are declared to be *Variants*.
 

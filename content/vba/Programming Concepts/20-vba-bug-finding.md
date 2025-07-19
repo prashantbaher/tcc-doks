@@ -106,10 +106,17 @@ Use these statements to print the value of one or more variables in the *Immedia
 
 Here’s an example that displays a message of "This condition is working fine". 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 If swPart Is Nothing Then
   Debug.Print "This condition is working fine."
+End If
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 If VBE’s **Immediate** window is not visible, press `Ctrl+G`.
 

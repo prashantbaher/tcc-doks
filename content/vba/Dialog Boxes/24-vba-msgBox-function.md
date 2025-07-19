@@ -18,10 +18,16 @@ Keep reading to see exactly how it works.
 
 Here’s a simplified version of the syntax for the MsgBox function:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' MsgBox Structure
 MsgBox(prompt[, buttons][, title])
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 | Arguments | What it does                                                                                      |
 | --------- | ------------------------------------------------------------------------------------------------- |
@@ -40,12 +46,18 @@ The following example simply displays a message and does not return a result.
 
 When the message is displayed, the code stops until the user clicks `OK`.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' MsgBox function Example
 Sub main()
   MsgBox "Hello, world!"
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Below figure shows how this message box looks:
 
@@ -61,7 +73,10 @@ You can assign the result of the MsgBox function to a variable.
 
 In the following code, I use some built-in constants that make it easy to work with the values returned by `MsgBox`:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' MsgBox built-in constants Example
 Sub GetAnswer()
   Dim Ans as Integer
@@ -75,6 +90,9 @@ Sub GetAnswer()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Below figure shows how it looks. 
 
 When you execute this procedure, the `Ans` variable is assigned a value of either `vbYes` or `vbNo`, depending on which button the user clicks. 
@@ -85,7 +103,10 @@ The `Select` Case statement uses the `Ans` value to determine which action the c
 
 You can also use the `MsgBox` function result without using a variable, as the following example demonstrates:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' MsgBox without variable
 Sub GetAnswer2()
   If MsgBox ("Continue?", vbYesNo) = vbYes Then
@@ -95,6 +116,9 @@ Sub GetAnswer2()
   End If
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Customizing message boxes
 
@@ -129,10 +153,16 @@ For using more than one of these constants as an argument, just connect them wit
 
 For example, to display a message box with `Yes` and `No` buttons and an exclamation icon, use the following expression as the second *MsgBox* argument:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Using multiple MsgBox built-in constants
 vbYesNo + vbExclamation
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Or, if you prefer to make your code less understandable, use a value of *52 (that is, 4 + 48)*.
 
@@ -142,7 +172,10 @@ The constant `vbDefaultButton2` designates the second button (`No`) as the defau
 
 For simplicity, we assign these constants to the `Config` variable and then use `Config` as the second argument in the *MsgBox* function:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Using multiple MsgBox built-in constants
 Sub GetAnswer3()
   Dim Config As Integer
@@ -152,6 +185,9 @@ Sub GetAnswer3()
   If Ans = vbYes Then OpenPart
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Below figure shows the message box application displays when you execute the `GetAnswer3` procedure. 
 

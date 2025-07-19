@@ -18,7 +18,7 @@ Please see below video how visually we *Open new Assembly and Drawing document* 
 Please note that there are **no explanation** in the video. 
 
 **Explanation** of each line and why we write code this way is given in this post.
-@
+
 ## Create a new macro
 
 1st we need to create a **new macro** in *Solidworks 3D CAD Software*.
@@ -41,7 +41,11 @@ This button is called ***insert userform***.
 
 As the name suggest, function of this button is *inserting a userform*.
 
-> Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.
+
+{{< /callout >}}
 
 After clicking the ***insert userform*** button we get the userform window.
 
@@ -97,13 +101,25 @@ In below image, I have shown the properties of `Userform1` and update the proper
 
 Update the value of *Name* property from `UserForm1` to `OpenDocumentWindow`.
 
-- From *Name* property, we access the Userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Name* property, we access the Userform.
+
+{{< /callout >}}
 
 Update the value of *Caption* property from `UserForm1` to `Open Document`.
 
-- From *Caption* property, we update the text appears in the window of our Userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
 
-> Please note that it is **not necessary** to update properties but it is a good habit to update them for our purpose. 
+From *Caption* property, we update the text appears in the window of our Userform.
+
+{{< /callout >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+Please note that it is **not necessary** to update properties but it is a good habit to update them for our purpose. 
+
+{{< /callout >}}
 
 ### Updating Properties of the ComboBox
 
@@ -117,7 +133,11 @@ In below image, I have shown the properties of `ComboBox1` and update the proper
 
 Update the value of *Name* property from `ComboBox1` to `DocumentTypeComboBox`.
 
-- From *Name* property, we access the ComboBox.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Name* property, we access the ComboBox.
+
+{{< /callout >}}
 
 ### Updating Properties of the Command Button
 
@@ -133,11 +153,19 @@ In below image, I have shown the properties of `CommandButton1` and update the p
 
 Update the value of *Name* property from `CommandButton1` to `OpenDocumentButton`.
 
-> From *Name* property, we access the Command Button.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Name* property, we access the Command Button.
+
+{{< /callout >}}
 
 Update the value of *Caption* property from `CommandButton1` to `Open Selected Document`.
 
-> From *Caption* property, we update the text appears in the Command Button of our Userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Caption* property, we update the text appears in the Command Button of our Userform.
+
+{{< /callout >}}
 
 ## Calling UserForm in Main Module
 
@@ -147,23 +175,33 @@ For this goto main `Sub procedure` inside the **main Module**.
 
 Code inside the main Module is as given below.
 
-{% highlight vb %}
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim swApp As Object
 Sub main()
 
 Set swApp = Application.SldWorks
 End Sub
-{% endhighlight %}
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 To call our `Userform`, replace above code with below code:
 
-{% highlight vb %}
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Main function of our VBA program
 Sub main()
   ' Calling our window to show
   OpenDocumentWindow.Show
 End Sub
-{% endhighlight %}
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 Above function call our window to appears on screen.
 
@@ -199,7 +237,10 @@ For this we need to create an `Initialize Function`.
 
 Below `Code` is that `Initialize Function` which load document lists in our combobox.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Call when user load
 Private Sub UserForm_Initialize()
   ' Adding items in Combo Box and also set index to '0'
@@ -211,6 +252,8 @@ Private Sub UserForm_Initialize()
   End With
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 Now, above code is ***fully commented*** and ***self explanatory*** hence I will not explain it.
 
@@ -246,17 +289,25 @@ To add functionality in our `Open Selected Button`, just double click the `Open 
 
 This will add give some code behind the designer and opens the **code window** of Userform designer.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Private Sub OpenDocumentButton_Click()
 
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 We need to update this code for opening new part after clicking the button.
 
 For this replace all above code with below code.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Option Explicit
 
 ' Creating variable for Solidworks application
@@ -292,12 +343,17 @@ Private Sub OpenDocumentButton_Click()
     
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 Now I have added codes in **2 parts**.
 
 In **1st part** I added below code lines *at top* of the code window.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Option Explicit
 
 ' Creating variable for Solidworks application
@@ -305,6 +361,8 @@ Dim swApp As SldWorks.SldWorks
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 Please see below image for more reference.
 

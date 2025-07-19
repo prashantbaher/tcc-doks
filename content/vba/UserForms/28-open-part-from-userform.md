@@ -28,6 +28,7 @@ If you don't know how to create a new macro in Solidworks, please go to [VBA in 
 This will open a new macro in Visual Basic Editor with some code as shown in below image.
 
 ![new_macro_window](1.new_macro_window.PNG)
+
 ## Insert userform in the macro
 
 After this we need to insert a userform in our macro.
@@ -39,11 +40,16 @@ This button is called ***insert userform***.
 
 As the name suggest, function of this button is *inserting a userform*.
 
-> Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.
+
+{{< /callout >}}
 
 After clicking the ***insert userform*** button we get the userform window as shown in below image.
 
 ![userform-window](3.userform-window.PNG)
+
 ## Adding a Button
 
 Now in our userform window, we add a `Command Button` at center of window.
@@ -59,7 +65,11 @@ You can place command button at your desire. I placed it at center of the userfo
 
 Now we update some properties of Command Button and Userform Windows for our use.
 
-> It is not necessary to update properties but it is a good habit to update them for our purpose. 
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+It is not necessary to update properties but it is a good habit to update them for our purpose. 
+
+{{< /callout >}}
 
 1st we update the properties of Userform.
 
@@ -73,11 +83,19 @@ In below image, I have shown the properties of `Userform1` and update following 
 
 Update the value of *Name* property from `UserForm1` to `OurWindow`.
 
-> From *Name* property, we access the Userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Name* property, we access the Userform.
+
+{{< /callout >}}
 
 Update the value of *Caption* property from `UserForm1` to `Our Window`.
 
-> From *Caption* property, we update the text appears in the window of our Userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Caption* property, we update the text appears in the window of our Userform.
+
+{{< /callout >}}
 
 Now, we repeat the same process for Command Button.
 
@@ -89,11 +107,19 @@ Now, we repeat the same process for Command Button.
 
 Update the value of *Name* property from `CommandButton1` to `OpenNewPartButton`.
 
-> From *Name* property, we access the Command Button.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Name* property, we access the Command Button.
+
+{{< /callout >}}
 
 Update the value of *Caption* property from `CommandButton1` to `Open NewPart Button`.
 
-> From *Caption* property, we update the text appears in the Command Button of our Userform.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+From *Caption* property, we update the text appears in the Command Button of our Userform.
+
+{{< /callout >}}
 
 ## Add Functionality to Open NewPart Button
 
@@ -101,17 +127,25 @@ To add functionality in our `Open NewPart Button`, just double click the `Open N
 
 This will add give some code behind the designer and opens the **code window** of Userform designer.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Private Sub OpenNewPartButton_Click()
 
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 We need to update this code for opening new part after clicking the button.
 
 For this replace all above code with below code.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Option Explicit
 
 ' Creating variable for Solidworks application
@@ -135,4 +169,6 @@ Private Sub OpenNewPartButton_Click()
 
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 

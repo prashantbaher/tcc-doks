@@ -10,14 +10,23 @@ The `String` data type represents a series of characters. This topic introduces 
 
 An instance of a string can be assigned a value that represents a series of characters as shown in below example:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim MyString As String
 MyString = "This is an example of the String data type"
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 A `String` variable can also accept any expression that evaluates to a string as shown in below example:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim OneString As String
 Dim TwoString As String
 OneString = "one, two, three, four, five"
@@ -27,22 +36,35 @@ OneString = "1"
 TwoString = OneString & "1" ' Output -> "11".
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Any [literal](https://binged.it/2T4EH0s) that is assigned to a `String` variable must be enclosed in quotation marks (""). 
 
 This means that a quotation mark ("") within a string cannot be represented by a quotation mark. 
 
 For example, the following code causes a compiler error:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim myString As String
 
 ' This line would cause an error.
 myString = "He said, "Look at this example!""
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
 This code causes an *error* because the compiler terminates the string after the second quotation mark, and the remainder of the string is interpreted as code. 
 
 This means compiler think `He said, ` is a string and `Look at this example!` as a VB code.
+
+{{< /callout >}}
 
 But we want compiler to know that we want `He said, "Look at this example!"` as a string value.
 
@@ -50,12 +72,22 @@ To solve this problem, Visual Basic interprets two quotation marks in a string l
 
 The following example shows the correct way to include a quotation mark in a string:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' The value of myString is: He said, "Look at this example!"
 myString = "He said, ""Look at this example!"" "
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
 In the preceding example, the *two quotation marks* before and after the word `Look` become *one quotation mark* in the string. 
+
+{{< /callout >}}
 
 ## The Immutability of Strings
 
@@ -63,10 +95,16 @@ A string is *immutable*, which means its value cannot be changed once it has bee
 
 However, this does not prevent us from assigning more than one value to a string variable as shown in below example:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim myString As String = "This string is immutable"
 myString = "Or is it?"
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Here, a `string` variable is created, given a value, and then its value is changed.
 

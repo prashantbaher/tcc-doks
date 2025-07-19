@@ -14,13 +14,19 @@ We will go through them in following topics:
 
 The simplest type of loop is a `For-Next` loop. Here’s the syntax for this structure:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 For counter = start To end [Step stepval]
 [statements]
 [Exit For]
 [statements]
 Next [counter]
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The *looping* is controlled by a counter variable, which starts at one value and stops at another value. 
 
@@ -34,7 +40,10 @@ The following example shows a `For-Next` loop that doesn’t use the optional St
 
 This routine loops 10 times and uses the VBA `MsgBox` function to show a number from 1 to 10: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowNumbers1()
   Dim i As Integer
   For i = 1 to 10
@@ -42,6 +51,9 @@ Sub ShowNumbers1()
   Next i
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In this example, `i` (the loop counter variable) starts with a value of 1 and increases by 1 each time through the loop. 
 
@@ -51,7 +63,10 @@ The first time through the *loop*, `i` is 1 and the procedure shows a number.
 
 The second time through (i = 2), the procedure show a number, and so on. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowNumbers2()
   Dim i As Integer Step 2
   For i = 1 to 10
@@ -59,6 +74,9 @@ Sub ShowNumbers2()
   Next i
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Count starts out as 1 and then takes on a value of 3, 5, 7, and 9. The final Count value is 9. 
 
@@ -72,7 +90,10 @@ When VBA encounters this statement, the loop terminates immediately.
 
 Here’s the same procedure as in the preceding section, rewritten to insert random numbers. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowNumbers3()
   Dim i As Integer Step 2
   For i = 1 to 10
@@ -85,6 +106,9 @@ Sub ShowNumbers3()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 This routine performs the as earlier but when the variable i reached to 5, it shows a message, stating that this is a mid value and exit from loop. 
 
 ## Do-While Loop
@@ -95,7 +119,10 @@ Unlike a For-Next loop, a `Do-While` loop continues until a specified condition 
 
 Here’s the `Do-While` loop syntax:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Do-While Structure
 Do [While condition]
   [statements]
@@ -104,11 +131,17 @@ Do [While condition]
 Loop
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 The following example uses a `Do-While` loop. This routine uses 1 as a starting point and runs through next numbers. 
 
 The loop continues until the routine encounter the condition of `i = 8`. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Do-While Example
 Sub ShowNumbers4()
   Dim i As Integer
@@ -119,11 +152,17 @@ Sub ShowNumbers4()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Some people prefer to code a `Do-While` loop as a `Do-Loop While` loop. 
 
 This example performs exactly as the previous procedure but uses different loop syntax:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Do-Loop While Example
 Sub ShowNumbers5()
   Dim i As Integer
@@ -134,7 +173,10 @@ Sub ShowNumbers5()
 End Sub
 ```
 
-Here’s the key difference between the `Do-While` and `Do-Loop While` loops. 
+{{< /tab >}}
+{{< /tabs >}}
+
+Here’s the key difference between the `Do-while` and `Do-Loop While` loops. 
 
 The `Do-While` loop always performs its conditional test first. If the test is not true, the instructions inside the loop are never executed. 
 
@@ -154,7 +196,10 @@ A program continues to execute a `Do-While` loop while the condition remains tru
 
 In a `Do-Until` loop, the program executes the loop until the condition is true. Here’s the `Do-Until` syntax: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Do-Until Structure
 Do [Until condition]
   [statements]
@@ -163,9 +208,15 @@ Do [Until condition]
 Loop
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 The following example is the same one presented for the `Do-While` loop but recoded to use a `Do-Until` loop: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowNumbers6()
   Dim i As Integer
   Do Until i <> 8
@@ -175,11 +226,17 @@ Sub ShowNumbers6()
 End Sub
 ```
 
-Just like with the `Do-While` loop, you may encounter a different form of the `Do-Until` loop — a `Do-Loop Until` loop. 
+{{< /tab >}}
+{{< /tabs >}}
+
+Just like with the `Do-while` loop, you may encounter a different form of the `Do-Until` loop — a `Do-Loop Until` loop. 
 
 The following example, which has the same effect as the preceding procedure, demonstrates an alternate syntax for this type of loop: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub ShowNumbers7()
 ' Do-Loop Until Example
   Dim i As Integer
@@ -189,6 +246,9 @@ Sub ShowNumbers7()
   Loop Until i <> 8
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 There is a subtle difference in how the `Do-Until` loop and the `Do-Loop Until` loop operate. 
 
@@ -216,7 +276,10 @@ For example, a drawing file in any CAD application is a collection of Sheets, an
 
 When you need to loop through each object in a collection, use the For Each-Next structure. The syntax is 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' For Each-Next Structure
 For Each element In collection
   [statements]
@@ -225,9 +288,15 @@ For Each element In collection
 Next [element]
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 The following example loops through each drawing sheet in the active drawing and shows name of each active drawing sheet: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' For Each-Next Example
 Option Explicit
 Dim swApp As SldWorks.SldWorks
@@ -246,6 +315,9 @@ Sub ShowSheetName()
   Next SheetName
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In this example, first we get the list of all sheet names in opened drawing, then we loop through each sheet name in collection and show sheet name in a message box. 
 

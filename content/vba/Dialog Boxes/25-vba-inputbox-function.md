@@ -14,10 +14,16 @@ This is a good alternative to developing a `UserForm` when you need to get only 
 
 Here’s a simplified version of the syntax for the *InputBox* function:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' InputBox syntax
 InputBox(prompt[, title][, default])
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The InputBox function accepts the arguments listed in below.
 
@@ -32,10 +38,16 @@ The InputBox function accepts the arguments listed in below.
 
 Here’s an example showing how you can use the *InputBox* function:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' InputBox example
 TheName = InputBox("What is your name?", "Greetings")
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 When you execute this VBA statement, application displays the dialog box shown in below figure. 
 
@@ -55,7 +67,10 @@ If the string does contain a number, all is fine.
 
 If the user’s entry cannot be interpreted as a number, the code displays a message box.
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' InputBox example
 Sub GetDrawingSheetNumber()
   Dim NumberOfSheets as String
@@ -70,4 +85,7 @@ Sub GetDrawingSheetNumber()
   End If
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 

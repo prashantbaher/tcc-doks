@@ -200,7 +200,11 @@ Each control has its own set of properties (although many controls have some com
 
 If you select the **UserForm** itself (not a **control** on the UserForm), you can use the Properties window to adjust UserForm properties
 
-> Some of the UserForm properties serve as default settings for new controls you drag onto the UserForm. For example, if you change the Font property for a UserForm, controls that you add will use that same font. Controls that are already on the UserForm are not affected.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+Some of the UserForm properties serve as default settings for new controls you drag onto the UserForm. For example, if you change the Font property for a UserForm, controls that you add will use that same font. Controls that are already on the UserForm are not affected.
+
+{{< /callout >}}
 
 ## Viewing the UserForm Code window
 
@@ -226,13 +230,18 @@ The macro that displays the dialog box must be in a VBA module — not in the Co
 
 The following procedure displays the dialog box named `UserForm1`:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ' Showing the UserForm
 Sub ShowDialogBox()
   UserForm.Show
   'Other statements can go here
 End Sub
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 When Solidworks displays the dialog box, the `ShowDialogBox` macro halts until the user closes the dialog box. 
 
@@ -252,19 +261,33 @@ For example, if you add a `CheckBox` control to a UserForm named `UserForm1`, th
 
 The following statement makes this control appear with a check mark:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 UserForm1.CheckBox1.Value = True
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 Most of the time, you write the code for a UserForm in the UserForm’s code module. 
 
 If that’s the case, you can omit the UserForm object qualifier and write the statement like this:
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 CheckBox1.Value = True
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
-> I recommend that you change the default name the VBE has given to your controls to something more meaningful.
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+I recommend that you change the default name the VBE has given to your controls to something more meaningful.
+
+{{< /callout >}}
 
 This will sum-up our tutorials on Visual Basic for Application. From now on I will give tutorials on how to use Solidworks commands with the help of VBA Macro.
 

@@ -10,9 +10,15 @@ As in many other aspects of life, effective *decision-making* is the key to succ
 
 The `If-Then` structure has this basic syntax: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 If condition Then statements [Else elsestatements]
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Use the **If-Then** structure when you want to execute one or more statements conditionally. 
 
@@ -24,11 +30,17 @@ Sound confusing? Don’t worry; a few examples make this crystal clear.
 
 The following routine demonstrates the `If-Then` structure without the optional Else clause: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning()
   If Time < 0.5 Then MsgBox “Good Morning.”
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 The `GoodMorning` procedure uses VBA’s `Time` function to get the system time. 
 
@@ -38,12 +50,18 @@ If Time is greater than or equal to *.5*, the routine ends and nothing happens.
 
 To display a different greeting if Time is greater than or equal to *.5*, add another *If-Then* statement after the first one: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning2()
   If Time < 0.5 Then MsgBox “Good Morning.”
   If Time >= 0.5 Then MsgBox “Good Afternoon.”
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Notice that I used `>=` (greater than or equal to) for the second *If-Then* statement. 
 
@@ -55,12 +73,18 @@ Another approach to the preceding problem uses the `Else` clause.
 
 Here’s the same routine recoded to use the `If-Then-Else` structure: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning3()
   If Time < 0.5 Then MsgBox “Good Morning.” Else _
   MsgBox “Good Afternoon.”
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Notice that I use the *line continuation character (underscore)* in the preceding example. 
 
@@ -70,7 +94,10 @@ VBA provides a slightly different way of coding **If-Then-Else** constructs that
 
 Therefore, the `GoodMorning` procedure can be rewritten as: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning4()
   If Time < 0.5 Then
     MsgBox “Good Morning.”
@@ -79,6 +106,9 @@ Sub GoodMorning4()
   End If
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In fact, you can insert any number of statements under the `If` part, and any number of statements under the `Else` part. 
 
@@ -92,7 +122,10 @@ You have two options: Use three `If-Then` statements or use a nested `If-Then-El
 
 The first approach, the three statements, is simplest: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning5()
   If Time < 0.5 Then Msg = “Morning.”
   If Time >= 0.5 And Time < 0.75 Then Msg = “Afternoon.”
@@ -101,13 +134,19 @@ Sub GoodMorning5()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 The `Msg` variable gets a different text value, depending on the time of day. 
 
 The final `MsgBox` statement displays the greeting: *Good Morning, Good Afternoon, or Good Evening*. 
 
 The following routine performs the same action but uses an **If-Then-End If** structure: 
 
-```VB
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning6()
   Dim Msg As String
   If Time < 0.5 Then
@@ -120,6 +159,9 @@ Sub GoodMorning6()
   MsgBox “Good” & Msg
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## If-ElseIf-Else examples
 
@@ -135,7 +177,10 @@ But for larger applications in which speed is important, you should know about a
 
 The `ElseIf` syntax follows: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 If condition Then
 [statements]
 [Else condition-n Then
@@ -144,9 +189,15 @@ If condition Then
 [elsestatements]]
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 Here’s how you can rewrite the `GreetMe` routine by using this syntax: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub GoodMorning7()
   Dim Msg As String
   If Time < 0.5 Then
@@ -160,6 +211,9 @@ Sub GoodMorning7()
 End Sub
 ```
 
+{{< /tab >}}
+{{< /tabs >}}
+
 When a condition is `true`, VBA executes the conditional statements and the If structure ends. 
 
 In other words, VBA doesn’t waste time evaluating the extraneous conditions, which makes this procedure a bit more efficient than the previous examples. 
@@ -172,7 +226,10 @@ The `Select` Case structure is useful for decisions involving three or more opti
 
 The syntax for the `Select` Case structure follows: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Select Case testexpression
 [Case expressionlist-n 
   [statements-n]]
@@ -180,6 +237,9 @@ Select Case testexpression
   [elsestatements]]
 End Select
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Don’t be scared off by this official syntax. Using the **Select Case structure** is quite easy. 
 
@@ -189,7 +249,10 @@ The following example shows how to use the **Select Case structure**.
 
 This also shows another way to code the examples presented in the previous section: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Sub SelectPartLength()
   Dim PartNumber As Integer
   Dim PartLength As Integer
@@ -205,6 +268,9 @@ Sub SelectPartLength()
   MsgBox “Part Length for this” & PartNumber & “is” & PartLength
 End Sub
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In this example, the `PartNumber` variable is being evaluated. 
 

@@ -12,10 +12,16 @@ For example, you can define an array of 12 string variables to hold the names of
 
 If you name the array `MonthNames`, you can refer to the first element of the array as `MonthNames(1)`, the second element as `MonthNames(2)`, and so on. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim MonthNames("Jan", "Feb", "Mar", "April", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec") As string
 print(MonthNames(1))    'print Feb
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Declaring Arrays
 
@@ -31,33 +37,61 @@ You do this by specifying the *first index number*, the keyword To, and the last
 
 The following example shows how to declare an array of **100 integers**: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim MyArray(1 To 100) As Integer
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 When you declare an `array`, you can choose to specify only the *upper index*. 
 
 VBA assumes that 0 is the *lower index*. Therefore, both of the following statements declare the same *101-element* array: 
 
-```vb
-Dim MyArray(1 To 100) As Integer
-Dim MyArray(1 To 100)
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
+Dim MyArray(0 To 100) As Integer
+Dim MyArray(100)
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
 
 If you want VBA to assume that **1** (rather than **0**) is the *lower index* for your arrays, include the following statement in the Declarations section of your module: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Option Base 1
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 This statement forces VBA to use **1** as the first index number for arrays that declare only the *upper index*. 
 
 If above statement is present, the following statements are identical, both declaring a 100-element array: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Dim MyArray(1 To 100) As Integer
-Dim MyArray(1 To 100)
+Dim MyArray(100)
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< /callout >}}
 
 There are two other arrays
 
@@ -65,6 +99,6 @@ There are two other arrays
 
 * Dynamic array
 
-But I don’t think these two are that much useful for use to learn hence we **will not** delve into them.
+But I don’t think these two are that much useful for us to learn hence we **will not** delve into them.
 
 Next post will be about ***VBA Functions***.

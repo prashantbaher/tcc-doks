@@ -16,12 +16,18 @@ As shown in the following examples, you declare **constants** by using the `Cons
 
 The declaration statement also gives the constant its value: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 Const BlockLength As Integer = 4.
 Const BlockThickness = .5
 Const PartName As String = "Part Name:"
 Public Const AppName As String = "Part Calculation"
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Using *constants* in place of hard-coded *values* or *strings* is an excellent programming practice. 
 
@@ -57,10 +63,16 @@ In general, you don’t need to know the value of these constants to use them.
 
 The following simple procedure uses a **built-in** constant `swDefaultTemplatePart` to select the default part template while opening a new file. 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 set swPart = swApp.NewDocument(swApp.GetUserPreferenceStringValue _
     (swUserPreferenceStringValue_e.swDefaultTemplatePart),0,0,0)
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 In above example, *Solidworks* did not record these constants. 
 
@@ -68,10 +80,20 @@ It simply generates the direct path to open part document.
 
 To find the actual value of a built-in constant, use the "Immediate window" in the VBE, and execute a VBA statement such as the following: 
 
-```vb
+{{< tabs "vba-code" >}}
+{{< tab "vba" >}}
+
+```vb {lineNos=true lineNoStart=1}
 ?swDefaultTemplatePart
 ```
 
-> If the Immediate window isn’t visible, press `Ctrl+G`. The question mark is a shortcut for typing `Print`. 
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+If the Immediate window isn’t visible, press `Ctrl+G`. The question mark is a shortcut for typing `Print`. 
+
+{{< /callout >}}
 
 Next post will be about ***VBA Strings Basics***.
