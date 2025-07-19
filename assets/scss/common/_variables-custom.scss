@@ -1,1 +1,15 @@
 // Put your custom SCSS variables here
+.docs-content {
+  width: 100% !important;
+  /* or any value you prefer */
+  max-width: none;
+  /* remove Bootstrap's max-width */
+}
+
+@media (max-width: 768px) {
+  .docs-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100% !important;
+  }
+}

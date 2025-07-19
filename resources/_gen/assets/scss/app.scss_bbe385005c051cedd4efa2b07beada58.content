@@ -180,6 +180,18 @@
   --ec-frm-tooltipSuccessBg: #158744;
   --ec-frm-tooltipSuccessFg: white; }
 
+.docs-content {
+  width: 100% !important;
+  /* or any value you prefer */
+  max-width: none;
+  /* remove Bootstrap's max-width */ }
+
+@media (max-width: 768px) {
+  .docs-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100% !important; } }
+
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #3347ff;
@@ -14561,5 +14573,9 @@ body {
   background-color: {{ site.Params.doks.backGround }};
 }
 */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto; }
 
 /*# sourceMappingURL=main.css.map */
