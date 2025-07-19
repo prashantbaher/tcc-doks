@@ -12,8 +12,7 @@ For this please we need to do following steps as described below.
 
 Please see below video how visually we *Open new Assembly and Drawing document* in **Solidworks VBA macro Userform**.
 
-<iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
-<br>
+{{< youtube id="AQ3Fyw78ExI" >}}
 
 Please note that there are **no explanation** in the video. 
 

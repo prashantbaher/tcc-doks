@@ -16,22 +16,6 @@ In this article, I explain about ***2 different methods*** which are listed belo
 
 Methods from these objects are ***updated*** methods, hence ***use any one of them*** for browsing SOLIDWORKS file(s).
 
-***
-<!--
-## Video of Code on YouTube
-
-Please see below video how visually we *browse SOLIDWORKS file(s)* in **SOLIDWORKS VBA Userform**.
-
-<iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
-<br>
-
-Please note that there are **no explanation** in the video. 
-
-**Explanation** of each line and why we write code this way is given in this post.
-
----
--->
-
 ## Creating Userform
 
 1st we need to create a **new macro** in *SOLIDWORKS*.

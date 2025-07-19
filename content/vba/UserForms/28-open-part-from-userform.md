@@ -12,9 +12,6 @@ For this please we need to do following steps as described below.
 
 Please see below video on **Solidworks VBA Macro - Open new Part document** in Solidwoks VBA Userforms.
 
-<iframe src="https://www.youtube.com/embed/pXMMSDeXEwo" frameborder="0" allowfullscreen></iframe>
-<br>
-
 {{< youtube id="pXMMSDeXEwo" >}}
 
 Please note that there are **no explaination** in the video. 
