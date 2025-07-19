@@ -21,6 +21,13 @@
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
+    
+    <url>
+      <loc>http://localhost:1313/vba/userforms/</loc>
+      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
     <url>
         <loc>http://localhost:1313/vba/vba-Introduction/</loc>
         <changefreq>monthly</changefreq>
@@ -148,6 +155,31 @@
       </url>
       <url>
         <loc>http://localhost:1313/vba/other-dialogs/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/vba/userform/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/vba/open-part-from-userform/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/vba/open-assembly-and-drawing-from-userform/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/vba/testing-open-assembly-and-drawing-document-macro/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/vba/browse-solidworks-file/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>

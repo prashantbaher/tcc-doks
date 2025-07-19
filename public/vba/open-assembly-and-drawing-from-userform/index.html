@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/open-assembly-and-drawing-from-userform/">
+
+  <link rel="canonical" href="http://localhost:1313/vba/open-assembly-and-drawing-from-userform/">
+
+
+<title>VBA Userforms - Open new Assembly and Drawing document  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/vba/open-assembly-and-drawing-from-userform/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="VBA Userforms - Open new Assembly and Drawing document">
+  <meta property="og:description" content="In this post, we learn how can we Open new Assembly and Drawing document from a Visual Basic for Application’s Userform.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="vba">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="VBA Userforms - Open new Assembly and Drawing document">
+  <meta name="twitter:description" content="In this post, we learn how can we Open new Assembly and Drawing document from a Visual Basic for Application’s Userform.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/vba/",
+       "name": "Vbas",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/vba/userforms/",
+       "name": "User Forms",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Vba Userforms Open New Assembly and Drawing Document",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section vba" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Vba</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/vba-Introduction/">Visual Basic for Application Introduction</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-vbe-editor/">Visual Basic Editor (VBE)</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-windows/">VBE Windows</a>
+  </li>
+
+  <li>
+      <a href="/vba/sub-and-function-procedure/">Sub and Function Procedures</a>
+  </li>
+
+  <li>
+      <a href="/vba/executing-procedures/">Executing Sub and Function Procedures</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Programming Concepts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/programming-concepts/">Programming Concepts, Comments and Data-types</a>
+  </li>
+
+  <li>
+      <a href="/vba/variables/">VBA Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/declaring-and-scoping-of-variables/">Declaring and Scoping of Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/variable-scope/">Variable Scope</a>
+  </li>
+
+  <li>
+      <a href="/vba/public-static-and-variables-life/">Public, Static and Variable&#39;s Life</a>
+  </li>
+
+  <li>
+      <a href="/vba/constants/">VBA Constants</a>
+  </li>
+
+  <li>
+      <a href="/vba/string-basics/">VBA String Basics</a>
+  </li>
+
+  <li>
+      <a href="/vba/assignment-statements-and-operators/">VBA Assignment Statements And Operators</a>
+  </li>
+
+  <li>
+      <a href="/vba/arrays/">VBA Arrays</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions/">VBA Functions</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions-that-do-more/">VBA Functions that do more</a>
+  </li>
+
+  <li>
+      <a href="/vba/controlling-program-flow-and-making-decisions/">Controlling Program Flow and Making Decisions</a>
+  </li>
+
+  <li>
+      <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Dialog Boxes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/dialog-boxes/">VBA Dialog Boxes</a>
+  </li>
+
+  <li>
+      <a href="/vba/msgBox-function/">VBA MsgBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/inputbox-function/">VBA InputBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>UserForms</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/userform/">VBA UserForms</a>
+  </li>
+
+  <li>
+      <a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks/solidworks-vba-macro/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wix4-tutorials/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/vba-Introduction/">Visual Basic for Application Introduction</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-vbe-editor/">Visual Basic Editor (VBE)</a>
+  </li>
+
+  <li>
+      <a href="/vba/vba-windows/">VBE Windows</a>
+  </li>
+
+  <li>
+      <a href="/vba/sub-and-function-procedure/">Sub and Function Procedures</a>
+  </li>
+
+  <li>
+      <a href="/vba/executing-procedures/">Executing Sub and Function Procedures</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Programming Concepts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/programming-concepts/">Programming Concepts, Comments and Data-types</a>
+  </li>
+
+  <li>
+      <a href="/vba/variables/">VBA Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/declaring-and-scoping-of-variables/">Declaring and Scoping of Variables</a>
+  </li>
+
+  <li>
+      <a href="/vba/variable-scope/">Variable Scope</a>
+  </li>
+
+  <li>
+      <a href="/vba/public-static-and-variables-life/">Public, Static and Variable&#39;s Life</a>
+  </li>
+
+  <li>
+      <a href="/vba/constants/">VBA Constants</a>
+  </li>
+
+  <li>
+      <a href="/vba/string-basics/">VBA String Basics</a>
+  </li>
+
+  <li>
+      <a href="/vba/assignment-statements-and-operators/">VBA Assignment Statements And Operators</a>
+  </li>
+
+  <li>
+      <a href="/vba/arrays/">VBA Arrays</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions/">VBA Functions</a>
+  </li>
+
+  <li>
+      <a href="/vba/functions-that-do-more/">VBA Functions that do more</a>
+  </li>
+
+  <li>
+      <a href="/vba/controlling-program-flow-and-making-decisions/">Controlling Program Flow and Making Decisions</a>
+  </li>
+
+  <li>
+      <a href="/vba/if-then-structure-select-case/">If-Then-Else and Select Case structure</a>
+  </li>
+
+  <li>
+      <a href="/vba/looping/">VBA Looping</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-finding/">Bug Finding</a>
+  </li>
+
+  <li>
+      <a href="/vba/debugger/">VBA Debugger</a>
+  </li>
+
+  <li>
+      <a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Dialog Boxes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/dialog-boxes/">VBA Dialog Boxes</a>
+  </li>
+
+  <li>
+      <a href="/vba/msgBox-function/">VBA MsgBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/inputbox-function/">VBA InputBox Function</a>
+  </li>
+
+  <li>
+      <a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>UserForms</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/vba/userform/">VBA UserForms</a>
+  </li>
+
+  <li>
+      <a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#create-a-new-macro">Create a new macro</a></li>
+    <li><a href="#insert-userform-in-the-macro">Insert userform in the macro</a></li>
+    <li><a href="#adding-controls-into-userform">Adding Controls into Userform</a>
+      <ul>
+        <li><a href="#adding-combobox">Adding ComboBox</a></li>
+        <li><a href="#adding-commandbutton">Adding CommandButton</a></li>
+      </ul>
+    </li>
+    <li><a href="#updating-properties">Updating Properties</a>
+      <ul>
+        <li><a href="#updating-properties-of-the-userform">Updating Properties of the UserForm</a></li>
+        <li><a href="#updating-properties-of-the-combobox">Updating Properties of the ComboBox</a></li>
+        <li><a href="#updating-properties-of-the-command-button">Updating Properties of the Command Button</a></li>
+      </ul>
+    </li>
+    <li><a href="#calling-userform-in-main-module">Calling UserForm in Main Module</a></li>
+    <li><a href="#adding-document-list">Adding Document list</a></li>
+    <li><a href="#first-test-of-macro">First Test of Macro</a></li>
+    <li><a href="#add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button</a></li>
+    <li><a href="#exercise-to-do">Exercise to do</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>VBA Userforms - Open new Assembly and Drawing document</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#create-a-new-macro">Create a new macro</a></li>
+    <li><a href="#insert-userform-in-the-macro">Insert userform in the macro</a></li>
+    <li><a href="#adding-controls-into-userform">Adding Controls into Userform</a>
+      <ul>
+        <li><a href="#adding-combobox">Adding ComboBox</a></li>
+        <li><a href="#adding-commandbutton">Adding CommandButton</a></li>
+      </ul>
+    </li>
+    <li><a href="#updating-properties">Updating Properties</a>
+      <ul>
+        <li><a href="#updating-properties-of-the-userform">Updating Properties of the UserForm</a></li>
+        <li><a href="#updating-properties-of-the-combobox">Updating Properties of the ComboBox</a></li>
+        <li><a href="#updating-properties-of-the-command-button">Updating Properties of the Command Button</a></li>
+      </ul>
+    </li>
+    <li><a href="#calling-userform-in-main-module">Calling UserForm in Main Module</a></li>
+    <li><a href="#adding-document-list">Adding Document list</a></li>
+    <li><a href="#first-test-of-macro">First Test of Macro</a></li>
+    <li><a href="#add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button</a></li>
+    <li><a href="#exercise-to-do">Exercise to do</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>In this post, we learn how can we <strong>Open new Assembly and Drawing document</strong> from a Visual Basic for Application&rsquo;s <strong>Userform</strong>.</p>
+<p>For this please we need to do following steps as described below.</p>
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube<a href="#video-of-code-on-youtube" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Please see below video how visually we <em>Open new Assembly and Drawing document</em> in <strong>Solidworks VBA macro Userform</strong>.</p>
+<iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
+<br>
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+<p><strong>Explanation</strong> of each line and why we write code this way is given in this post.
+@</p>
+<h2 id="create-a-new-macro">Create a new macro<a href="#create-a-new-macro" class="anchor" aria-hidden="true">#</a> </h2>
+<p>1st we need to create a <strong>new macro</strong> in <em>Solidworks 3D CAD Software</em>.</p>
+<p>If you don&rsquo;t know how to create a new macro in Solidworks, please go to <a href="/solidworks-macros/vba-in-solidworks/">VBA in Solidworks</a> post for this.</p>
+<p>This will open a new macro in Visual Basic Editor with some code as shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/open-new-macro_hu_7c408c3f995b5ec3.webp"
+  width="1366"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="open-new-macro"id="h-rh-i-0"
+/></p>
+<h2 id="insert-userform-in-the-macro">Insert userform in the macro<a href="#insert-userform-in-the-macro" class="anchor" aria-hidden="true">#</a> </h2>
+<p>After this we need to insert <em>a userform</em> in our macro.</p>
+<p>For this, select the button shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/insert-userform-into-macro_hu_3c40b72da9cd6eae.webp"
+  width="1366"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="insert-userform-into-macro"id="h-rh-i-1"
+/></p>
+<p>This button is called <em><strong>insert userform</strong></em>.</p>
+<p>As the name suggest, function of this button is <em>inserting a userform</em>.</p>
+<blockquote>
+<p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p></blockquote>
+<p>After clicking the <em><strong>insert userform</strong></em> button we get the userform window.</p>
+<h2 id="adding-controls-into-userform">Adding Controls into Userform<a href="#adding-controls-into-userform" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now in our userform window, we add following controls:</p>
+<ol>
+<li>
+<p><strong>A ComboBox</strong></p>
+</li>
+<li>
+<p><strong>A CommandButton</strong></p>
+</li>
+</ol>
+<h3 id="adding-combobox">Adding ComboBox<a href="#adding-combobox" class="anchor" aria-hidden="true">#</a> </h3>
+<p>You can find <code>ComboBox</code> option, as highlighted in <em>Red Square</em> in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/insert-combox-into-userform_hu_d5306cd809e85b78.webp"
+  width="1368"
+  height="740"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="insert-combox-into-userform"id="h-rh-i-2"
+/></p>
+<p>After adding ComboBox, we get window as shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/combobox-into-userform_hu_7c1d8d5658d10760.webp"
+  width="1368"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="combobox-into-userform"id="h-rh-i-3"
+/></p>
+<h3 id="adding-commandbutton">Adding CommandButton<a href="#adding-commandbutton" class="anchor" aria-hidden="true">#</a> </h3>
+<p>You can find <code>CommandButton</code> option, as highlighted in <em>Red Square</em> in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/insert-command-button-into-userform_hu_8b8efb1113a2e934.webp"
+  width="563"
+  height="541"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="insert-command-button-into-userform"id="h-rh-i-4"
+/></p>
+<p>After adding CommandButton, we get window as shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/command-button-into-userform_hu_c1d81f59004cb1f0.webp"
+  width="573"
+  height="541"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="command-button-into-userform"id="h-rh-i-5"
+/></p>
+<h2 id="updating-properties">Updating Properties<a href="#updating-properties" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now we update some properties of following:</p>
+<ol>
+<li>
+<p><strong>UserForm</strong></p>
+</li>
+<li>
+<p><strong>ComboBox</strong></p>
+</li>
+<li>
+<p><strong>CommandButton</strong></p>
+</li>
+</ol>
+<h3 id="updating-properties-of-the-userform">Updating Properties of the UserForm<a href="#updating-properties-of-the-userform" class="anchor" aria-hidden="true">#</a> </h3>
+<p>We update following properties of the Userform:</p>
+<ol>
+<li>
+<p>Name of Userform</p>
+</li>
+<li>
+<p>Caption of Userform</p>
+</li>
+</ol>
+<p>In below image, I have shown the properties of <code>Userform1</code> and update the properties:</p>
+<p>
+
+<img
+  src="/vba/userforms/update-userform-properties_hu_56b630e1eec33b74.webp"
+  width="605"
+  height="655"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="update-userform-properties"id="h-rh-i-6"
+/></p>
+<p>Update the value of <em>Name</em> property from <code>UserForm1</code> to <code>OpenDocumentWindow</code>.</p>
+<ul>
+<li>From <em>Name</em> property, we access the Userform.</li>
+</ul>
+<p>Update the value of <em>Caption</em> property from <code>UserForm1</code> to <code>Open Document</code>.</p>
+<ul>
+<li>From <em>Caption</em> property, we update the text appears in the window of our Userform.</li>
+</ul>
+<blockquote>
+<p>Please note that it is <strong>not necessary</strong> to update properties but it is a good habit to update them for our purpose.</p></blockquote>
+<h3 id="updating-properties-of-the-combobox">Updating Properties of the ComboBox<a href="#updating-properties-of-the-combobox" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Now, we update following property of the ComboBox:</p>
+<ol>
+<li>Name of ComboBox</li>
+</ol>
+<p>In below image, I have shown the properties of <code>ComboBox1</code> and update the properties:</p>
+<p>
+
+<img
+  src="/vba/userforms/update-combobox-properties_hu_81859ba87086ac38.webp"
+  width="1374"
+  height="740"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="update-combobox-properties"id="h-rh-i-7"
+/></p>
+<p>Update the value of <em>Name</em> property from <code>ComboBox1</code> to <code>DocumentTypeComboBox</code>.</p>
+<ul>
+<li>From <em>Name</em> property, we access the ComboBox.</li>
+</ul>
+<h3 id="updating-properties-of-the-command-button">Updating Properties of the Command Button<a href="#updating-properties-of-the-command-button" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Now, we update following property of the Command Button:</p>
+<ol>
+<li>
+<p>Name of Command Button</p>
+</li>
+<li>
+<p>Caption of Command Button</p>
+</li>
+</ol>
+<p>In below image, I have shown the properties of <code>CommandButton1</code> and update the properties:</p>
+<p>
+
+<img
+  src="/vba/userforms/update-command-button-properties_hu_847934bd2627f696.webp"
+  width="637"
+  height="669"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="update-command-button-properties"id="h-rh-i-8"
+/></p>
+<p>Update the value of <em>Name</em> property from <code>CommandButton1</code> to <code>OpenDocumentButton</code>.</p>
+<blockquote>
+<p>From <em>Name</em> property, we access the Command Button.</p></blockquote>
+<p>Update the value of <em>Caption</em> property from <code>CommandButton1</code> to <code>Open Selected Document</code>.</p>
+<blockquote>
+<p>From <em>Caption</em> property, we update the text appears in the Command Button of our Userform.</p></blockquote>
+<h2 id="calling-userform-in-main-module">Calling UserForm in Main Module<a href="#calling-userform-in-main-module" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now, we need to call the our <em>Userform</em> inside main <em><strong>module</strong></em>.</p>
+<p>For this goto main <code>Sub procedure</code> inside the <strong>main Module</strong>.</p>
+<p>Code inside the main Module is as given below.</p>
+<p>{% highlight vb %}
+Dim swApp As Object
+Sub main()</p>
+<p>Set swApp = Application.SldWorks
+End Sub
+{% endhighlight %}</p>
+<p>To call our <code>Userform</code>, replace above code with below code:</p>
+<p>{% highlight vb %}
+&rsquo; Main function of our VBA program
+Sub main()
+&rsquo; Calling our window to show
+OpenDocumentWindow.Show
+End Sub
+{% endhighlight %}</p>
+<p>Above function call our window to appears on screen.</p>
+<p>When the window appears on screen, we <em>1st</em> select the document we want to <em>open</em> and <em>then</em> hit the button to open selected document.</p>
+<h2 id="adding-document-list">Adding Document list<a href="#adding-document-list" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Before anything we need to <em>add</em> a <em>list</em> of documents inside our combobox.</p>
+<p>From this list, we select the document which we want to open.</p>
+<p>In this post, we are listing only &ldquo;<strong>Assembly</strong>&rdquo; and &ldquo;<strong>Drawing</strong>&rdquo; documents.</p>
+<p>For &ldquo;<strong>Part</strong>&rdquo; document, I will give you a simple exercise.</p>
+<p>To add documents list inside our combobox, we 1st need to go in <strong>Code Window</strong> of userform.</p>
+<p>For this, we need to <strong>right click</strong> on userform and select &ldquo;<strong>View Code</strong>&rdquo; option.</p>
+<p>Please see below image for &ldquo;<em>how to open code window of userform</em>&rdquo;.</p>
+<p>
+
+<img
+  src="/vba/userforms/select-view-code-option_hu_9caae2c45b39c945.webp"
+  width="1380"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="select-view-code-option"id="h-rh-i-9"
+/></p>
+<p>After selecting &ldquo;<strong>View Code</strong>&rdquo; a <em>Code window</em> appears, which is shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/behind-userform-code-window_hu_2b6e182fe08e206b.webp"
+  width="1378"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="behind-userform-code-window"id="h-rh-i-10"
+/></p>
+<p>Now <em>before</em> adding document list we need to understand <strong>one important thing</strong>!!!</p>
+<p>We want to add document list, when we <strong>load</strong> our <code>Userform</code>.</p>
+<p>For this we need to create an <code>Initialize Function</code>.</p>
+<p>Below <code>Code</code> is that <code>Initialize Function</code> which load document lists in our combobox.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Call when user load
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">UserForm_Initialize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Adding items in Combo Box and also set index to &#39;0&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">&#39; &#39;0&#39; index means by default we can see &#34;Assembly Document&#34; as already filled
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">With</span> <span class="n">DocumentTypeComboBox</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">AddItem</span> <span class="s">&#34;Assembly Document&#34;</span>    <span class="c">&#39; Adding Assembly Document in Combo Box
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="p">.</span><span class="n">AddItem</span> <span class="s">&#34;Drawing Document&#34;</span>     <span class="c">&#39; Adding Drawing Document in Combo Box
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="p">.</span><span class="n">ListIndex</span> <span class="o">=</span> <span class="n">0</span>                  <span class="c">&#39; Select list index for default value to show in combobox
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">End</span> <span class="k">With</span>
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Now, above code is <em><strong>fully commented</strong></em> and <em><strong>self explanatory</strong></em> hence I will not explain it.</p>
+<h2 id="first-test-of-macro">First Test of Macro<a href="#first-test-of-macro" class="anchor" aria-hidden="true">#</a> </h2>
+<p>After writing code sample in previous section, we will test if every thing is working correct?</p>
+<p>By working correct means:</p>
+<ol>
+<li>
+<p>When we <code>Run</code> macro, is <strong>Open Document</strong> window appears or not?</p>
+</li>
+<li>
+<p>If window appears, then combobox has documents listed in it?</p>
+</li>
+<li>
+<p>If both item listed, then &ldquo;<strong>Assembly document</strong>&rdquo; is showing as pre-filled value or not?</p>
+</li>
+<li>
+<p>Since we have not given any functionality to &ldquo;<strong>Open Document</strong>&rdquo; button, hence it should not any done anything when clicking!!!</p>
+</li>
+</ol>
+<p>For testing all the above points we need to <code>Run</code> the macro as shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/first-test-of-macro_hu_8a2536394b612e74.webp"
+  width="1382"
+  height="736"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="first-test-of-macro"id="h-rh-i-11"
+/></p>
+<p>After running the window we got a window as shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/sample-userform-window_hu_976b010c7f9b79af.webp"
+  width="311"
+  height="236"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="sample-userform-window"id="h-rh-i-12"
+/></p>
+<p>Please <em><strong>do check</strong></em> if your macro is running perfectly till now or not!</p>
+<p>If not, then I suggest you to read this article again.</p>
+<h2 id="add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button<a href="#add-functionality-to-open-newpart-button" class="anchor" aria-hidden="true">#</a> </h2>
+<p>To add functionality in our <code>Open Selected Button</code>, just double click the <code>Open NewPart Button</code>.</p>
+<p>This will add give some code behind the designer and opens the <strong>code window</strong> of Userform designer.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenDocumentButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>We need to update this code for opening new part after clicking the button.</p>
+<p>For this replace all above code with below code.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Private function of Open New Part Button 
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenDocumentButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Creating string type variable for storing default Assembly location
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">If</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&#34;Assembly Document&#34;</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default Assembly template&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Else</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default drawing template&#34; without define paper size
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks document to new Assembly document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Hiding the Window after opening the selected document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">OpenDocumentWindow</span><span class="p">.</span><span class="n">Hide</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Reset the Index of Combo Box to &#34;0&#34; again
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">ListIndex</span> <span class="o">=</span> <span class="n">0</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Now I have added codes in <strong>2 parts</strong>.</p>
+<p>In <strong>1st part</strong> I added below code lines <em>at top</em> of the code window.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Please see below image for more reference.</p>
+<p>
+
+<img
+  src="/vba/userforms/add-code-at-top-of-userform-codewindow_hu_ab9cb40216da9997.webp"
+  width="1384"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="add-code-at-top-of-userform-codewindow"id="h-rh-i-13"
+/></p>
+<p>In <strong>2nd part</strong> I added <code>OpenDocumentButton_Click</code> function in the code window as shown in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/code-when-button-clicked_hu_e60a81b7a7be108c.webp"
+  width="1370"
+  height="740"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="code-when-button-clicked"id="h-rh-i-14"
+/></p>
+<p>I have already explained code inside <code>OpenDocumentButton_Click</code> function in <a href="/solidworks-macros/open-assembly-and-drawing">Open Assembly and Drawing document</a>.</p>
+<p>But here, I have added a condition which is shown in Red colored box in below image.</p>
+<p>
+
+<img
+  src="/vba/userforms/condition-that-control-opening-document_hu_74c2074c4adc0198.webp"
+  width="1366"
+  height="738"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="condition-that-control-opening-document"id="h-rh-i-15"
+/></p>
+<p>Basically, this condition stated that, if we select &ldquo;<em>Assembly Document</em>&rdquo; in combobox, then by clicking &ldquo;<em>Open Select Document</em>&rdquo; button our macro open &ldquo;<strong>Assembly</strong>&rdquo; document in <em>Solidworks</em>.</p>
+<p>Otherwise, it will always open &ldquo;<strong>Drawing</strong>&rdquo; document in <em>Solidworks</em>.</p>
+<p>The above code will <em>open New part document</em> when we click the button.</p>
+<p><code>Run</code> the macro, and check wheather our macro is working correct document or not!!</p>
+<p>If not, send your macro and I will guide you in doing it correctly!</p>
+<h2 id="exercise-to-do">Exercise to do<a href="#exercise-to-do" class="anchor" aria-hidden="true">#</a> </h2>
+<p>For those who wants to do more I have an exercise!!</p>
+<ol>
+<li>
+<p>Add &ldquo;<strong>Part Document</strong>&rdquo; in ComboBox list.</p>
+</li>
+<li>
+<p>Make &ldquo;<strong>Part Document</strong>&rdquo; as <em>pre-filled</em> value in ComboBox.</p>
+</li>
+<li>
+<p>Change the <strong>conditional statement</strong>, so that it can handle <strong>all 3 conditions</strong>!!</p>
+</li>
+</ol>
+<p>Send me the Code of macro in my below <strong>e-mail</strong> and I will <em><strong>verify</strong></em> it.</p>
+<p>That&rsquo;s it for now.</p>
+<p>Hope you learn some use of Userforms and by this post you can get the idea how they works.</p>
+<p>I will provide more tutorials on using of Userform time to time.</p>
+<p><em><strong>Till then do come to visit this blog and Happy learning!!!</strong></em></p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/vba/open-part-from-userform/" class="stretched-link text-reset text-decoration-none">VBA Userforms - Open new Part document</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/vba/testing-open-assembly-and-drawing-document-macro/" class="stretched-link text-reset text-decoration-none">VBA Userforms - Testing Open new Assembly and Drawing document</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

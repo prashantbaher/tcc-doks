@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UserForms on The CAD Coder</title>
+    <link>http://localhost:1313/vba/userforms/</link>
+    <description>Recent content in UserForms on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/vba/userforms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VBA UserForms</title>
+      <link>http://localhost:1313/vba/userform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/userform/</guid>
+      <description>&lt;p&gt;A &lt;em&gt;UserForm&lt;/em&gt; is useful if your VBA macro needs to get information from a user.&lt;/p&gt;&#xA;&lt;p&gt;For example, your macro may have some options that can be specified in a UserForm.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA Userforms - Open new Part document</title>
+      <link>http://localhost:1313/vba/open-part-from-userform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/open-part-from-userform/</guid>
+      <description>&lt;p&gt;In this post, we learn how can we &lt;em&gt;open a part document&lt;/em&gt; from a Visual Basic for Application&amp;rsquo;s &lt;em&gt;Userform&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;For this please we need to do following steps as described below.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA Userforms - Open new Assembly and Drawing document</title>
+      <link>http://localhost:1313/vba/open-assembly-and-drawing-from-userform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/open-assembly-and-drawing-from-userform/</guid>
+      <description>&lt;p&gt;In this post, we learn how can we &lt;strong&gt;Open new Assembly and Drawing document&lt;/strong&gt; from a Visual Basic for Application&amp;rsquo;s &lt;strong&gt;Userform&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA Userforms - Testing Open new Assembly and Drawing document</title>
+      <link>http://localhost:1313/vba/testing-open-assembly-and-drawing-document-macro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/testing-open-assembly-and-drawing-document-macro/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this post, we &lt;strong&gt;test&lt;/strong&gt; our &lt;strong&gt;Open new Assembly and Drawing document&lt;/strong&gt; code sample.&lt;/p&gt;&#xA;&lt;p&gt;This post is supplement of &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/vba/open-assembly-and-drawing-from-userform/&#34;&gt;VBA Userforms - Open new Assembly and Drawing document&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VBA Userforms - Browse SOLIDWORKS file(s)</title>
+      <link>http://localhost:1313/vba/browse-solidworks-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vba/browse-solidworks-file/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we learn &lt;strong&gt;how to browse SOLIDWORKS file(s)&lt;/strong&gt; from a &lt;strong&gt;SOLIDWORKS VBA Userform&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this article, I explain about &lt;em&gt;&lt;strong&gt;2 different methods&lt;/strong&gt;&lt;/em&gt; which are listed below.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
