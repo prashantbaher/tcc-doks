@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/variable-scope/">
 
@@ -693,47 +693,101 @@ Procedure-only Variables The lowest level of scope for a variable is at the proc
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">MySub</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">x</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">First</span> <span class="ow">As</span> <span class="kt">Long</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">PartDimension</span> <span class="ow">As</span> <span class="k">Single</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">myValue</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; ...[The procedure’s code goes here]...
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">End</span> <span class="k">Sub</span> </span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">MySub</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">x</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">Dim</span> <span class="n">First</span> <span class="ow">As</span> <span class="kt">Long</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="k">Dim</span> <span class="n">PartDimension</span> <span class="ow">As</span> <span class="k">Single</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="k">Dim</span> <span class="n">myValue</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c">&#39; ...[The procedure’s code goes here]...
+</span></span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c"></span><span class="k">End</span> <span class="k">Sub</span> </span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Notice that the last <code>Dim</code> statement in the preceding example doesn’t declare a data type; it declares only the variable itself. The effect is that the variable <code>MyValue</code> is a <em>Variant</em>.</p>
 <p>By the way, you can also declare several variables with a single <code>Dim</code> statement, as in the following example:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">x</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">,</span> <span class="n">y</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">,</span> <span class="n">z</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">First</span> <span class="ow">As</span> <span class="kt">Long</span><span class="p">,</span> <span class="n">Last</span> <span class="ow">As</span> <span class="kt">Double</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">x</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">,</span> <span class="n">y</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">,</span> <span class="n">z</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">Dim</span> <span class="n">First</span> <span class="ow">As</span> <span class="kt">Long</span><span class="p">,</span> <span class="n">Last</span> <span class="ow">As</span> <span class="kt">Double</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Unlike some languages, <strong>VBA</strong> doesn’t allow you to declare a <em>group</em> of variables to be a particular <em>data type</em> by separating the variables with <strong>commas</strong>.</p>
 <p>For example, though valid, the following statement does not declare all the variables as <em>Integers</em>:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">As</span> <span class="kt">Integer</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">As</span> <span class="kt">Integer</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this example, only <code>k</code> is declared to be an <em>Integer</em>; the other variables are declared to be <em>Variants</em>.</p>
 <p>If you declare a variable with <em>procedure-only</em> scope, other procedures in the same module can use the same variable name, but each instance of the variable is unique to its own procedure.</p>
 <blockquote>

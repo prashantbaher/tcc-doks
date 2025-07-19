@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/string-basics/">
 
@@ -682,83 +682,231 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MyString</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl"><span class="n">MyString</span> <span class="o">=</span> <span class="s">&#34;This is an example of the String data type&#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">MyString</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">MyString</span> <span class="o">=</span> <span class="s">&#34;This is an example of the String data type&#34;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>A <code>String</code> variable can also accept any expression that evaluates to a string as shown in below example:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">OneString</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">TwoString</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl"><span class="n">OneString</span> <span class="o">=</span> <span class="s">&#34;one, two, three, four, five&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">TwoString</span> <span class="o">=</span> <span class="n">OneString</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span> <span class="c">&#39; Output -&gt; &#34;two&#34;.
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>
-</span></span><span class="line"><span class="cl"><span class="n">OneString</span> <span class="o">=</span> <span class="s">&#34;1&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">TwoString</span> <span class="o">=</span> <span class="n">OneString</span> <span class="o">&amp;</span> <span class="s">&#34;1&#34;</span> <span class="err">&#39;</span> <span class="n">Output</span> <span class="o">-&gt;</span> <span class="s">&#34;11&#34;</span><span class="p">.</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">OneString</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">Dim</span> <span class="n">TwoString</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">OneString</span> <span class="o">=</span> <span class="s">&#34;one, two, three, four, five&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">TwoString</span> <span class="o">=</span> <span class="n">OneString</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span> <span class="c">&#39; Output -&gt; &#34;two&#34;.
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">OneString</span> <span class="o">=</span> <span class="s">&#34;1&#34;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="n">TwoString</span> <span class="o">=</span> <span class="n">OneString</span> <span class="o">&amp;</span> <span class="s">&#34;1&#34;</span> <span class="err">&#39;</span> <span class="n">Output</span> <span class="o">-&gt;</span> <span class="s">&#34;11&#34;</span><span class="p">.</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Any <a href="https://binged.it/2T4EH0s">literal</a> that is assigned to a <code>String</code> variable must be enclosed in quotation marks (&quot;&quot;).</p>
 <p>This means that a quotation mark (&quot;&quot;) within a string cannot be represented by a quotation mark.</p>
 <p>For example, the following code causes a compiler error:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">myString</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; This line would cause an error.
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">myString</span> <span class="o">=</span> <span class="s">&#34;He said, &#34;</span><span class="n">Look</span> <span class="n">at</span> <span class="n">this</span> <span class="n">example</span><span class="p">!</span><span class="s">&#34;&#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">myString</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c">&#39; This line would cause an error.
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c"></span><span class="n">myString</span> <span class="o">=</span> <span class="s">&#34;He said, &#34;</span><span class="n">Look</span> <span class="n">at</span> <span class="n">this</span> <span class="n">example</span><span class="p">!</span><span class="s">&#34;&#34;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>This code causes an <em>error</em> because the compiler terminates the string after the second quotation mark, and the remainder of the string is interpreted as code.</p>
+</div>
+  </div>
+
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>This code causes an <em>error</em> because the compiler terminates the string after the second quotation mark, and the remainder of the string is interpreted as code.</p>
 <p>This means compiler think <code>He said, </code> is a string and <code>Look at this example!</code> as a VB code.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>But we want compiler to know that we want <code>He said, &quot;Look at this example!&quot;</code> as a string value.</p>
 <p>To solve this problem, Visual Basic interprets two quotation marks in a string literal as one quotation mark in the string.</p>
 <p>The following example shows the correct way to include a quotation mark in a string:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; The value of myString is: He said, &#34;Look at this example!&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">myString</span> <span class="o">=</span> <span class="s">&#34;He said, &#34;&#34;Look at this example!&#34;&#34; &#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; The value of myString is: He said, &#34;Look at this example!&#34;
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">myString</span> <span class="o">=</span> <span class="s">&#34;He said, &#34;&#34;Look at this example!&#34;&#34; &#34;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>In the preceding example, the <em>two quotation marks</em> before and after the word <code>Look</code> become <em>one quotation mark</em> in the string.</p>
+</div>
+  </div>
+
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>In the preceding example, the <em>two quotation marks</em> before and after the word <code>Look</code> become <em>one quotation mark</em> in the string.</p>
+
+    </div>
+  </div>
+</div>
+
 <h2 id="the-immutability-of-strings">The Immutability of Strings<a href="#the-immutability-of-strings" class="anchor" aria-hidden="true">#</a> </h2>
 <p>A string is <em>immutable</em>, which means its value cannot be changed once it has been created.</p>
 <p>However, this does not prevent us from assigning more than one value to a string variable as shown in below example:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">myString</span> <span class="ow">As</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&#34;This string is immutable&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">myString</span> <span class="o">=</span> <span class="s">&#34;Or is it?&#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">myString</span> <span class="ow">As</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&#34;This string is immutable&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">myString</span> <span class="o">=</span> <span class="s">&#34;Or is it?&#34;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Here, a <code>string</code> variable is created, given a value, and then its value is changed.</p>
 <p>In the first line, an instance of type <code>String</code> is created and given the value <em>This string is immutable</em>.</p>
 <p>In the second line of the example, a new instance is created and given the value <em>Or is it?</em>, and the string variable discards its reference to the first instance and stores a reference to the new instance.</p>

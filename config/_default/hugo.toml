@@ -10,7 +10,8 @@ enableRobotsTXT = true
 languageCode = "en-US"
 pagerSize = 10
 rssLimit = 10
-summarylength = 20     # 70 (default)
+summarylength = 20                 # 70 (default)
+googleAnalytics = "UA-117501871-2"
 
 # Multilingual
 defaultContentLanguage = "en"
@@ -60,6 +61,7 @@ tag = "tags"
 blog = "/blog/:slug/"
 docs = "/docs/:sections[1:]/:slug/"
 vba = "/vba/:sections[1:]/:slug/"
+wix-tutorials = "/wix-tutorials/:sections[1:]/:slug/"
 # docs = "/docs/1.0/:sections[1:]/:slug/"
 
 [minify.tdewolff.html]
@@ -85,6 +87,3 @@ bgColor = "#ffffff"
 hint = "photo"
 quality = 85
 resampleFilter = "Lanczos"
-
-
-googleAnalytics = "UA-117501871-2"

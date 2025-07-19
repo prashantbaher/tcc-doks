@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/arrays/">
 
@@ -683,15 +683,33 @@ You refer to a specific variable in the array by using the array name and an ind
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MonthNames</span><span class="p">(</span><span class="s">&#34;Jan&#34;</span><span class="p">,</span> <span class="s">&#34;Feb&#34;</span><span class="p">,</span> <span class="s">&#34;Mar&#34;</span><span class="p">,</span> <span class="s">&#34;April&#34;</span><span class="p">,</span> <span class="s">&#34;May&#34;</span><span class="p">,</span> <span class="s">&#34;Jun&#34;</span><span class="p">,</span> <span class="s">&#34;July&#34;</span><span class="p">,</span> <span class="s">&#34;Aug&#34;</span><span class="p">,</span> <span class="s">&#34;Sep&#34;</span><span class="p">,</span> <span class="s">&#34;Oct&#34;</span><span class="p">,</span> <span class="s">&#34;Nov&#34;</span><span class="p">,</span> <span class="s">&#34;Dec&#34;</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">string</span>
-</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">MonthNames</span><span class="p">(</span><span class="n">1</span><span class="p">))</span>    <span class="err">&#39;</span><span class="n">print</span> <span class="n">Feb</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">MonthNames</span><span class="p">(</span><span class="s">&#34;Jan&#34;</span><span class="p">,</span> <span class="s">&#34;Feb&#34;</span><span class="p">,</span> <span class="s">&#34;Mar&#34;</span><span class="p">,</span> <span class="s">&#34;April&#34;</span><span class="p">,</span> <span class="s">&#34;May&#34;</span><span class="p">,</span> <span class="s">&#34;Jun&#34;</span><span class="p">,</span> <span class="s">&#34;July&#34;</span><span class="p">,</span> <span class="s">&#34;Aug&#34;</span><span class="p">,</span> <span class="s">&#34;Sep&#34;</span><span class="p">,</span> <span class="s">&#34;Oct&#34;</span><span class="p">,</span> <span class="s">&#34;Nov&#34;</span><span class="p">,</span> <span class="s">&#34;Dec&#34;</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">MonthNames</span><span class="p">(</span><span class="n">1</span><span class="p">))</span>    <span class="err">&#39;</span><span class="n">print</span> <span class="n">Feb</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <h2 id="declaring-arrays">Declaring Arrays<a href="#declaring-arrays" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Before you can use an <code>array</code>, you must declare it. No exceptions.</p>
 <p>Unlike normal <em>variables</em>, VBA is very strict about this rule.</p>
@@ -702,54 +720,133 @@ You refer to a specific variable in the array by using the array name and an ind
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>When you declare an <code>array</code>, you can choose to specify only the <em>upper index</em>.</p>
 <p>VBA assumes that 0 is the <em>lower index</em>. Therefore, both of the following statements declare the same <em>101-element</em> array:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">0</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">100</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>If you want VBA to assume that <strong>1</strong> (rather than <strong>0</strong>) is the <em>lower index</em> for your arrays, include the following statement in the Declarations section of your module:</p>
+</div>
+  </div>
 
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
 
-
+      </div>
+    <div class="callout-body">
+      <p>If you want VBA to assume that <strong>1</strong> (rather than <strong>0</strong>) is the <em>lower index</em> for your arrays, include the following statement in the Declarations section of your module:</p>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Base</span> <span class="n">1</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Option</span> <span class="n">Base</span> <span class="n">1</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
 <p>This statement forces VBA to use <strong>1</strong> as the first index number for arrays that declare only the <em>upper index</em>.</p>
 <p>If above statement is present, the following statements are identical, both declaring a 100-element array:</p>
-
-
-
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">Dim</span> <span class="n">MyArray</span><span class="p">(</span><span class="n">100</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
 <p>There are two other arrays</p>
 <ul>
 <li>
@@ -759,7 +856,7 @@ You refer to a specific variable in the array by using the array name and an ind
 <p>Dynamic array</p>
 </li>
 </ul>
-<p>But I don’t think these two are that much useful for use to learn hence we <strong>will not</strong> delve into them.</p>
+<p>But I don’t think these two are that much useful for us to learn hence we <strong>will not</strong> delve into them.</p>
 <p>Next post will be about <em><strong>VBA Functions</strong></em>.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">

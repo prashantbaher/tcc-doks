@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/testing-open-assembly-and-drawing-document-macro/">
 
@@ -685,8 +685,36 @@ This post is supplement of VBA Userforms - Open new Assembly and Drawing documen
 			<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true">#</a> </h2>
 <p>In this post, we <strong>test</strong> our <strong>Open new Assembly and Drawing document</strong> code sample.</p>
 <p>This post is supplement of <strong><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></strong> post.</p>
-<blockquote>
-<p><em>Please visit above post before this post.</em></p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p><em>Please visit above post before this post.</em></p>
+
+    </div>
+  </div>
+</div>
+
 <p>From <strong><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></strong> post we expect following results :</p>
 <ol>
 <li>
@@ -705,47 +733,65 @@ This post is supplement of VBA Userforms - Open new Assembly and Drawing documen
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Private function of Open New Part Button 
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenDocumentButton_Click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Creating string type variable for storing default Assembly location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">If</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&#34;Assembly Document&#34;</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default Assembly template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Else</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default drawing template&#34; without define paper size
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks document to new Assembly document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Hiding the Window after opening the selected document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">OpenDocumentWindow</span><span class="p">.</span><span class="n">Hide</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Reset the Index of Combo Box to &#34;0&#34; again
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">ListIndex</span> <span class="o">=</span> <span class="n">0</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c">&#39; Private function of Open New Part Button 
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenDocumentButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="c">&#39; Creating string type variable for storing default Assembly location
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="k">If</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&#34;Assembly Document&#34;</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default Assembly template&#34;
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  <span class="k">Else</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default drawing template&#34; without define paper size
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl">  <span class="c">&#39; Setting Solidworks document to new Assembly document
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  <span class="c">&#39; Hiding the Window after opening the selected document
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c"></span>  <span class="n">OpenDocumentWindow</span><span class="p">.</span><span class="n">Hide</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">  
+</span></span><span class="line"><span class="ln">31</span><span class="cl">  <span class="c">&#39; Reset the Index of Combo Box to &#34;0&#34; again
+</span></span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c"></span>  <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">ListIndex</span> <span class="o">=</span> <span class="n">0</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h2 id="apply-check">Apply check<a href="#apply-check" class="anchor" aria-hidden="true">#</a> </h2>
 <p>In above code there is only <strong>one</strong> check we apply.</p>
@@ -755,19 +801,37 @@ This post is supplement of VBA Userforms - Open new Assembly and Drawing documen
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Checking if we got template path
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">vbNullString</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; If template path is empty then show message and exit from procedure.
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="s">&#34;Failed to open &#34;</span> <span class="o">+</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">+</span> <span class="s">&#34; template.&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
-</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Checking if we got template path
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">vbNullString</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="c">&#39; If template path is empty then show message and exit from procedure.
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="s">&#34;Failed to open &#34;</span> <span class="o">+</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">+</span> <span class="s">&#34; template.&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above code, we check <em>if got the template path or not</em>.</p>
 <p>If template path is <strong>empty</strong> then</p>
 <ol>
@@ -789,50 +853,92 @@ This post is supplement of VBA Userforms - Open new Assembly and Drawing documen
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Private function of Open New Part Button
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenDocumentButton_Click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Creating string type variable for storing default Assembly location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">If</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&#34;Assembly Document&#34;</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default Assembly template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Else</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default drawing template&#34; without define paper size
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Checking if we got template path
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">vbNullString</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; If template path is empty then show message and exit from procedure.
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="s">&#34;Failed to open &#34;</span> <span class="o">+</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">+</span> <span class="s">&#34; template.&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks document to new Assembly document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Hiding the Window aft er opening the selected document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">OpenDocumentWindow</span><span class="p">.</span><span class="n">Hide</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Reset the Index of Combo Box to &#34;0&#34; again
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">ListIndex</span> <span class="o">=</span> <span class="n">0</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c">&#39; Private function of Open New Part Button
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenDocumentButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  <span class="c">&#39; Creating string type variable for storing default Assembly location
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">If</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&#34;Assembly Document&#34;</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default Assembly template&#34;
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="k">Else</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default drawing template&#34; without define paper size
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  
+</span></span><span class="line"><span class="ln">18</span><span class="cl">  <span class="c">&#39; Checking if we got template path
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">vbNullString</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="c">&#39; If template path is empty then show message and exit from procedure.
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="s">&#34;Failed to open &#34;</span> <span class="o">+</span> <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">Value</span> <span class="o">+</span> <span class="s">&#34; template.&#34;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl">  <span class="c">&#39; Setting Solidworks document to new Assembly document
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  <span class="c">&#39; Hiding the Window after opening the selected document
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c"></span>  <span class="n">OpenDocumentWindow</span><span class="p">.</span><span class="n">Hide</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">  
+</span></span><span class="line"><span class="ln">31</span><span class="cl">  <span class="c">&#39; Reset the Index of Combo Box to &#34;0&#34; again
+</span></span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c"></span>  <span class="n">DocumentTypeComboBox</span><span class="p">.</span><span class="n">ListIndex</span> <span class="o">=</span> <span class="n">0</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h2 id="cause-of-error">Cause of Error<a href="#cause-of-error" class="anchor" aria-hidden="true">#</a> </h2>
-<p><em>You might wondering how can we have such error?</em></p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p><em>You might wondering how can we have such error?</em></p>
 <p>We have this error, if the value of templates path is <strong>not set</strong> in option setting.</p>
 <p>For reference please see below image.</p>
 <p>
@@ -844,11 +950,16 @@ This post is supplement of VBA Userforms - Open new Assembly and Drawing documen
   decoding="async"
   fetchpriority="auto"
   loading="lazy"
-  alt="default-template-options"id="h-rh-i-1"
+  alt="default-template-options"id="h-rh-i-0"
 /></p>
 <p>As you can see, in my machine these value are already set.</p>
 <p>But they are empty in case of fresh installation.</p>
 <p>Hence if someone runs this macro on fresh SOLIDWORKS copy, they might get error message which we give.</p>
+
+    </div>
+  </div>
+</div>
+
 <hr>
 <p><strong>This is it !!!</strong></p>
 <p><em>I hope this be will helpful to someone!</em></p>

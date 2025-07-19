@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/browse-solidworks-file/">
 
@@ -742,33 +742,66 @@ In this article, I explain about 2 different methods which are listed below.">
 </li>
 </ol>
 <p>Methods from these objects are <em><strong>updated</strong></em> methods, hence <em><strong>use any one of them</strong></em> for browsing SOLIDWORKS file(s).</p>
-<hr>
-<!--
-## Video of Code on YouTube
-
-Please see below video how visually we *browse SOLIDWORKS file(s)* in **SOLIDWORKS VBA Userform**.
-
-<iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
-<br>
-
-Please note that there are **no explanation** in the video. 
-
-**Explanation** of each line and why we write code this way is given in this post.
-
----
--->
 <h2 id="creating-userform">Creating Userform<a href="#creating-userform" class="anchor" aria-hidden="true">#</a> </h2>
 <p>1st we need to create a <strong>new macro</strong> in <em>SOLIDWORKS</em>.</p>
 <p>If you don&rsquo;t know how to create a new macro in Solidworks, please go to <strong><a href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks</a></strong> post for this.</p>
 <p>This opens a <strong>Visual Basic Editor</strong> with some code as shown in below image.</p>
-<!-- ![solidworks-vba-window](solidworks-vba-window.png) -->
+<p>
+
+<img
+  src="/vba/userforms/solidworks-vba-window_hu_c9e49a04502d4ba2.webp"
+  width="1278"
+  height="711"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="solidworks-vba-window"id="h-rh-i-0"
+/></p>
 <p>After this we need to insert <em>a userform</em> in our macro.</p>
 <p>For this, select the button shown in below image.</p>
-<!-- ![insert-userform-button](insert-userform-button.png) -->
+<p>
+
+<img
+  src="/vba/userforms/insert-userform-button_hu_dd7c5a59ea247c.webp"
+  width="832"
+  height="462"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="insert-userform-button"id="h-rh-i-1"
+/></p>
 <p>This button is called <em><strong>insert userform</strong></em>.</p>
 <p>As the name suggest, function of this button is <em>inserting a userform</em>.</p>
-<blockquote>
-<p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>After clicking the <em><strong>insert userform</strong></em> button we get the userform window as shown in above image.</p>
 <hr>
 <h2 id="adding-controls-into-userform">Adding Controls into Userform<a href="#adding-controls-into-userform" class="anchor" aria-hidden="true">#</a> </h2>
@@ -783,14 +816,54 @@ Please note that there are **no explanation** in the video.
 </ol>
 <h3 id="adding-combobox">Adding ComboBox<a href="#adding-combobox" class="anchor" aria-hidden="true">#</a> </h3>
 <p>You can find <code>TextBox</code> option, as highlighted in <em>Red Square</em> in below image.</p>
-<!-- ![textbox-in-userform](textbox-in-userform.png) -->
+<p>
+
+<img
+  src="/vba/userforms/textbox-in-userform_hu_b8d721afdf072636.webp"
+  width="910"
+  height="538"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="textbox-in-userform"id="h-rh-i-2"
+/></p>
 <p>After adding ComboBox, we get window as shown in below image.</p>
-<!-- ![textbox-inside-userform](textbox-inside-userform.png) -->
+<p>
+
+<img
+  src="/vba/userforms/textbox-inside-userform_hu_181aa02ca20fd755.webp"
+  width="575"
+  height="523"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="textbox-inside-userform"id="h-rh-i-3"
+/></p>
 <h3 id="adding-commandbutton">Adding CommandButton<a href="#adding-commandbutton" class="anchor" aria-hidden="true">#</a> </h3>
 <p>You can find <code>CommandButton</code> option, as highlighted in <em>Red Square</em> in below image.</p>
-<!-- ![insert-command-button-into-userform](insert-command-button-into-userform.png) -->
+<p>
+
+<img
+  src="/vba/userforms/insert-command-button-into-userform_hu_8b8efb1113a2e934.webp"
+  width="563"
+  height="541"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="insert-command-button-into-userform"id="h-rh-i-4"
+/></p>
 <p>After adding CommandButton, we get window as shown in below image.</p>
-<!-- ![command-button-into-userform](command-button-into-userform.png) -->
+<p>
+
+<img
+  src="/vba/userforms/command-button-into-userform_hu_c1d81f59004cb1f0.webp"
+  width="573"
+  height="541"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="command-button-into-userform"id="h-rh-i-5"
+/></p>
 <hr>
 <h2 id="updating-properties">Updating Properties<a href="#updating-properties" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we update some properties of following:</p>
@@ -816,7 +889,17 @@ Please note that there are **no explanation** in the video.
 </li>
 </ol>
 <p>In below image, I have shown the properties of <code>Userform1</code> and update the properties:</p>
-<!-- ![update-userform-properties](update-userform-properties.png) -->
+<p>
+
+<img
+  src="/vba/userforms/update-userform-properties_hu_56b630e1eec33b74.webp"
+  width="605"
+  height="655"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="update-userform-properties"id="h-rh-i-6"
+/></p>
 <p>Update the value of <em>Name</em> property from <code>UserForm1</code> to <code>BrowseDocumentWindow</code>.</p>
 <ul>
 <li>From <em>Name</em> property, we access the Userform.</li>
@@ -833,7 +916,17 @@ Please note that there are **no explanation** in the video.
 <li>Name of TextBox</li>
 </ol>
 <p>In below image, I have shown the properties of <code>TextBox</code> and update the properties:</p>
-<!-- ![update-textbox-properties](update-textbox-properties.png) -->
+<p>
+
+<img
+  src="/vba/userforms/update-textbox-properties_hu_452d33c8b494716b.webp"
+  width="605"
+  height="655"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="update-textbox-properties"id="h-rh-i-7"
+/></p>
 <p>Update the value of <em>Name</em> property from <code>TextBox</code> to <code>SelectedFileTextBox</code>.</p>
 <ul>
 <li>From <em>Name</em> property, we access the TextBox <em>properties</em> like <strong>Text</strong> we want to show.</li>
@@ -849,7 +942,17 @@ Please note that there are **no explanation** in the video.
 </li>
 </ol>
 <p>In below image, I have shown the properties of <code>CommandButton1</code> and update the properties:</p>
-<!-- ![update-command-button-properties](update-command-button-properties.png) -->
+<p>
+
+<img
+  src="/vba/userforms/update-command-button-properties_hu_847934bd2627f696.webp"
+  width="637"
+  height="669"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="update-command-button-properties"id="h-rh-i-8"
+/></p>
 <p>Update the value of <em>Name</em> property from <code>CommandButton1</code> to <code>BrowseDocumentButton</code>.</p>
 <blockquote>
 <p>From <em>Name</em> property, we access the Command Button.</p></blockquote>
@@ -861,20 +964,73 @@ Please note that there are **no explanation** in the video.
 <p>Now, we need to call the our <em>Userform</em> inside main <em><strong>module</strong></em>.</p>
 <p>For this goto main <code>Sub procedure</code> inside the <strong>main Module</strong>.</p>
 <p>Code inside the main Module is as given below.</p>
-<p>{% highlight vb %}
-Dim swApp As Object
-Sub main()</p>
-<p>Set swApp = Application.SldWorks
-End Sub
-{% endhighlight %}</p>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="kt">Object</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
 <p>To call our <code>Userform</code>, replace above code with below code:</p>
-<p>{% highlight vb %}
-&rsquo; Main function of our VBA program
-Sub main()
-&rsquo; Calling our window to show
-BrowseDocumentWindow.Show
-End Sub
-{% endhighlight %}</p>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="c">&#39; Calling our window to show
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c"></span>  <span class="n">BrowseDocumentWindow</span><span class="p">.</span><span class="n">Show</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
 <p>Above function call our window to appears on screen.</p>
 <p>When the window appears on screen, we hit the <em>Browse button</em> to browse SOLIDWORKS File(s).</p>
 <hr>
@@ -901,43 +1057,61 @@ End Sub
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Private function of Open New Part Button
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">BrowseDocumentButton_Click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Solidworks file filter string
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">swFilter</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Method parameters
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">fileName</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">fileConfig</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">fileDispName</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">fileOptions</span> <span class="ow">As</span> <span class="kt">Long</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set filters for different Solidworks files.
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swFilter</span> <span class="o">=</span> <span class="s">&#34;SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw&#34;</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Browse and get the Selected file name
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">fileName</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetOpenFileName</span><span class="p">(</span><span class="s">&#34;Browse Document&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swFilter</span><span class="p">,</span> <span class="n">fileOptions</span><span class="p">,</span> <span class="n">fileConfig</span><span class="p">,</span> <span class="n">fileDispName</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Show the selected file&#39;s full path in text box
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">fileName</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c">&#39; Private function of Open New Part Button
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">BrowseDocumentButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="c">&#39; Solidworks file filter string
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">swFilter</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="c">&#39; Method parameters
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">fileName</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="k">Dim</span> <span class="n">fileConfig</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">  <span class="k">Dim</span> <span class="n">fileDispName</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="k">Dim</span> <span class="n">fileOptions</span> <span class="ow">As</span> <span class="kt">Long</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  <span class="c">&#39; Set filters for different Solidworks files.
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="c"></span>  <span class="n">swFilter</span> <span class="o">=</span> <span class="s">&#34;SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw&#34;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  
+</span></span><span class="line"><span class="ln">24</span><span class="cl">  <span class="c">&#39; Browse and get the Selected file name
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c"></span>  <span class="n">fileName</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetOpenFileName</span><span class="p">(</span><span class="s">&#34;Browse Document&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swFilter</span><span class="p">,</span> <span class="n">fileOptions</span><span class="p">,</span> <span class="n">fileConfig</span><span class="p">,</span> <span class="n">fileDispName</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  <span class="c">&#39; Show the selected file&#39;s full path in text box
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="c"></span>  <span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">fileName</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h3 id="understanding-method-1">Understanding Method 1<a href="#understanding-method-1" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
@@ -1055,9 +1229,29 @@ End Sub
 <li><em>Path and file name of the file to open.</em></li>
 </ul>
 <p>Below image shows our <strong>form</strong> in SOLIDWORKS.</p>
-<!-- ![userform-in-solidworks](userform-in-solidworks.png "Our userform in Solidworks") -->
+<p>
+
+<img
+  src="/vba/userforms/userform-in-solidworks_hu_e74d6d1e9f5fc145.webp"
+  width="331"
+  height="253"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="userform-in-solidworks"title="Our userform in Solidworks"id="h-rh-i-9"
+/></p>
 <p>Below image shows the opened window.</p>
-<!-- ![browse-window](browse-window.png "Browsing window") -->
+<p>
+
+<img
+  src="/vba/userforms/browse-window_hu_43a7661e223ad9d8.webp"
+  width="784"
+  height="611"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="browse-window"title="Browsing window"id="h-rh-i-10"
+/></p>
 
 
 
@@ -1072,7 +1266,17 @@ End Sub
 </div>
 <p>Now we set the value of text box to <strong>browsed</strong> file name.</p>
 <p>Final window of method 1 is shown below/.</p>
-<!-- ![final-window-of-method-first](final-window-of-method-first.png "Final window from Method 1") -->
+<p>
+
+<img
+  src="/vba/userforms/final-window-of-method-first_hu_5ad2e4f524f3df33.webp"
+  width="331"
+  height="253"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="final-window-of-method-first"title="Final window from Method 1"id="h-rh-i-11"
+/></p>
 <hr>
 <h2 id="method-2---from-microsoft-excel-externally">Method 2 - From <strong>Microsoft Excel</strong> externally<a href="#method-2---from-microsoft-excel-externally" class="anchor" aria-hidden="true">#</a> </h2>
 <p><strong>Prerequisite</strong>:</p>
@@ -1090,15 +1294,45 @@ End Sub
 <ol>
 <li>Select reference option as shown in below image.</li>
 </ol>
-<!-- ![select-reference-option](select-reference-option.png "Select reference option from Tools options") -->
+<p>
+
+<img
+  src="/vba/userforms/select-reference-option_hu_f757f45bf4f2a881.webp"
+  width="609"
+  height="187"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="select-reference-option"title="Select reference option from Tools options"id="h-rh-i-12"
+/></p>
 <ol start="2">
 <li>This open Reference window as shown in below image.</li>
 </ol>
-<!-- ![reference-window](reference-window.png "Reference window") -->
+<p>
+
+<img
+  src="/vba/userforms/reference-window_hu_5d169aa889d3eef8.webp"
+  width="447"
+  height="365"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="reference-window"title="Reference window"id="h-rh-i-13"
+/></p>
 <ol start="3">
 <li>Now select option given in below images and Press OK after selecting files..</li>
 </ol>
-<!-- ![add-excel-reference](add-excel-reference.png "Select reference file highlighted in red box") -->
+<p>
+
+<img
+  src="/vba/userforms/add-excel-reference_hu_efe20b7e88d34797.webp"
+  width="449"
+  height="369"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="add-excel-reference"title="Select reference file highlighted in red box"id="h-rh-i-14"
+/></p>
 <p>Now, replace code in <em><a href="#add-functionality-to-button">Add Functionality to Button</a></em> with below code sample.</p>
 
 
@@ -1265,11 +1499,41 @@ End Sub
 <li><em>Path and file name of the selected file(s).</em></li>
 </ul>
 <p>Below image shows our <strong>form</strong> in SOLIDWORKS.</p>
-<!-- ![userform-in-solidworks](/assets/vba-images/browse-solidworks-files/userform-in-solidworks.png "Our userform in Solidworks") -->
+<p>
+
+<img
+  src="/vba/userforms/userform-in-solidworks_hu_e74d6d1e9f5fc145.webp"
+  width="331"
+  height="253"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="userform-in-solidworks"title="Our userform in Solidworks"id="h-rh-i-15"
+/></p>
 <p>Below image shows the opened window.</p>
-<!-- ![excel-browse-window](excel-browse-window.png "Browsing window using MS Excel") -->
+<p>
+
+<img
+  src="/vba/userforms/excel-browse-window_hu_835a20dca76ce470.webp"
+  width="677"
+  height="482"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="excel-browse-window"title="Browsing window using MS Excel"id="h-rh-i-16"
+/></p>
 <p>Below image shows the <strong>multi-selection</strong> in opened window.</p>
-<!-- ![multiple-select-window](multiple-select-window.png "Multilpe file selection in Browsing window using MS Excel") -->
+<p>
+
+<img
+  src="/vba/userforms/multiple-select-window_hu_5644ae140eed8748.webp"
+  width="681"
+  height="485"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="multiple-select-window"title="Multilpe file selection in Browsing window using MS Excel"id="h-rh-i-17"
+/></p>
 
 
 
@@ -1279,12 +1543,22 @@ End Sub
     <span class="title"></span>
   </figcaption>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Show the selected file&#39;s full path in text box
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">fileName</span></span></span></code></pre></div>
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">strFile</span></span></span></code></pre></div>
   </figure>
 </div>
 <p>Now we set the value of text box to <strong>browsed</strong> file name.</p>
 <p>Final window of method 1 is shown below/.</p>
-<!-- ![final-window-of-method-second](final-window-of-method-first.png "Final window from Method 2") -->
+<p>
+
+<img
+  src="/vba/userforms/final-window-of-method-first_hu_5ad2e4f524f3df33.webp"
+  width="331"
+  height="253"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="final-window-of-method-first"title="Final window from Method 2"id="h-rh-i-18"
+/></p>
 <p><em>Final window of both method is same.</em></p>
 <hr>
 <h2 id="final-words">Final words<a href="#final-words" class="anchor" aria-hidden="true">#</a> </h2>

@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/inputbox-function/">
 
@@ -686,15 +686,33 @@ That information could be a value, a text string, or even a range address.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; InputBox syntax
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">InputBox</span><span class="p">(</span><span class="n">prompt</span><span class="o">[</span><span class="p">,</span> <span class="n">title</span><span class="o">][</span><span class="p">,</span> <span class="k">default</span><span class="o">]</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; InputBox syntax
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">InputBox</span><span class="p">(</span><span class="n">prompt</span><span class="o">[</span><span class="p">,</span> <span class="n">title</span><span class="o">][</span><span class="p">,</span> <span class="k">default</span><span class="o">]</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The InputBox function accepts the arguments listed in below.</p>
 <table>
   <thead>
@@ -723,15 +741,33 @@ That information could be a value, a text string, or even a range address.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; InputBox example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">TheName</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">&#34;What is your name?&#34;</span><span class="p">,</span> <span class="s">&#34;Greetings&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; InputBox example
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">TheName</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">&#34;What is your name?&#34;</span><span class="p">,</span> <span class="s">&#34;Greetings&#34;</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>When you execute this VBA statement, application displays the dialog box shown in below figure.</p>
 <p>Notice that this example uses only the first two arguments and does not supply a default value.</p>
 <p>When the user enters a value and clicks <code>OK</code>, the routine assigns the value to the variable <code>TheName</code>.</p>
@@ -754,26 +790,44 @@ That information could be a value, a text string, or even a range address.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; InputBox example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">GetDrawingSheetNumber</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">NumberOfSheets</span> <span class="ow">as</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="n">Prompt</span> <span class="o">=</span> <span class="s">&#34;How many sheets drawing have?&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">NumberOfSheets</span> <span class="o">=</span> <span class="n">InputBox</span> <span class="p">(</span><span class="n">Prompt</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">If</span> <span class="n">NumberOfSheets</span> <span class="o">=</span> <span class="s">&#34;&#34;</span> <span class="k">Then</span> <span class="k">Exit</span> <span class="k">Sub</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">If</span> <span class="p">(</span><span class="n">IsNumeric</span><span class="p">)</span><span class="n">NumberOfSheets</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39;......[Some code here]....
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Else</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;Please enter a number.&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c">&#39; InputBox example
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">GetDrawingSheetNumber</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">Dim</span> <span class="n">NumberOfSheets</span> <span class="ow">as</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="n">Prompt</span> <span class="o">=</span> <span class="s">&#34;How many sheets drawing have?&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="n">NumberOfSheets</span> <span class="o">=</span> <span class="n">InputBox</span> <span class="p">(</span><span class="n">Prompt</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  <span class="k">If</span> <span class="n">NumberOfSheets</span> <span class="o">=</span> <span class="s">&#34;&#34;</span> <span class="k">Then</span> <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="nf">If</span> <span class="p">(</span><span class="n">IsNumeric</span><span class="p">)</span><span class="n">NumberOfSheets</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="c">&#39;......[Some code here]....
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c"></span>    <span class="k">Else</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;Please enter a number.&#34;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>

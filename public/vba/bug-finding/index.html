@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/bug-finding/">
 
@@ -757,15 +757,34 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">If</span> <span class="n">swPart</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">&#34;This condition is working fine.&#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">If</span> <span class="n">swPart</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">&#34;This condition is working fine.&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">End</span> <span class="k">If</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>If VBE’s <strong>Immediate</strong> window is not visible, press <code>Ctrl+G</code>.</p>
 <p>Unlike <code>MsgBox</code>, <code>Debug.Print</code> statements do not halt your code.</p>
 <p>So you’ll need to keep an eye on the <strong>Immediate</strong> window to see what’s going on.</p>

@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/assignment-statements-and-operators/">
 
@@ -675,17 +675,89 @@
 
 			</nav>
 			<p>An <em>assignment statement</em> is a <em>VBA statement</em> that assigns the result of an expression to a variable or an object.</p>
-<p>In a book I read Excel’s Help system defines the term expression as:</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>In a book I read Excel’s Help system defines the term expression as:</p>
 <blockquote>
 <p>&ldquo;Combination of keywords, operators, variables, and constants that yields a string, number, or object. An expression can be used to perform a calculation, manipulate characters, or test data.&rdquo;</p></blockquote>
+
+    </div>
+  </div>
+</div>
+
 <p>Much of your work in VBA involves <em>developing (and debugging)</em> expressions.</p>
 <p>If you know how to create simple formulas in Excel, you’ll have no trouble creating expressions.</p>
 <p>With a formula, Excel displays the result in a cell.</p>
 <p>A VBA expression, on the other hand, can be assigned to a variable.</p>
-<blockquote>
-<p>For understanding purpose, I used Excel as an example. Please don&rsquo;t get confused with it.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>For understanding purpose, I used Excel as an example. Please don&rsquo;t get confused with it.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>In the assignment statement examples that follow, the expressions are to the right of the equal sign:</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -693,13 +765,16 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">NumberOfParts</span> <span class="o">=</span> <span class="n">15</span>
-</span></span><span class="line"><span class="cl"><span class="n">SelectObject</span> <span class="o">=</span> <span class="k">True</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">NumberOfParts</span> <span class="o">=</span> <span class="n">15</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">SelectObject</span> <span class="o">=</span> <span class="k">True</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p><strong>Expressions</strong> can be as complex as you need them to be; use the line continuation character (a space followed by an underscore) to make lengthy expressions easier to read.</p>
 <h1 id="operators">Operators</h1>
 <p>As you can see in the VBA uses the equal sign as its <em>assignment operator</em>.</p>
@@ -708,14 +783,32 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">1</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">1</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>How can the variable <code>x</code> be equal to itself plus 1?</p>
 <p>Answer: It can’t.</p>
 <p>In this case, the assignment statement is increasing the value of <code>x</code> by <strong>1</strong>.</p>
@@ -724,83 +817,85 @@
 <h2 id="smooth-operators">Smooth Operators<a href="#smooth-operators" class="anchor" aria-hidden="true">#</a> </h2>
 <p><code>Operators</code> play a major role in VBA. Besides the assignment operator i.e. equal sign (discussed in the previous topic), VBA provides several other operators.</p>
 <p>Below table lists these operators.</p>
-<table class="w3-table-all w3-mobile w3-card-4">
-    <tr>
-        <th class="w3-center" colspan="2">VBA’s Operators</th>
-    </tr>
-    <tr>
-        <th>Function</th>
-        <th>Operator Symbol</th>
-    </tr>
-    <tr>
-        <td>Addition</td>
-        <td>+</td>
-    </tr>
-    <tr>
-        <td>Multiplication</td>
-        <td>*</td>
-    </tr>
-    <tr>
-        <td>Division</td>
-        <td>/</td>
-    </tr>
-    <tr>
-        <td>Subtraction</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>Exponentiation</td>
-        <td>^</td>
-    </tr>
-    <tr>
-        <td>String concatenation</td>
-        <td>&#38;</td>
-    </tr>
-    <tr>
-        <td>Integer division (the result is always an integer)</td>
-        <td>\</td>
-    </tr>
-    <tr>
-        <td>Modulo arithmetic (returns the remainder of a division operation)</td>
-        <td>Mod</td>
-    </tr>
+<table>
+  <thead>
+      <tr>
+          <th>Function</th>
+          <th>Operator Symbol</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Addition</td>
+          <td>+</td>
+      </tr>
+      <tr>
+          <td>Multiplication</td>
+          <td>*</td>
+      </tr>
+      <tr>
+          <td>Division</td>
+          <td>/</td>
+      </tr>
+      <tr>
+          <td>Subtraction</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Exponentiation</td>
+          <td>^</td>
+      </tr>
+      <tr>
+          <td>String concatenation</td>
+          <td>&amp;</td>
+      </tr>
+      <tr>
+          <td>Integer division (the result is always an integer)</td>
+          <td>\</td>
+      </tr>
+      <tr>
+          <td>Modulo arithmetic (returns the remainder of a division operation)</td>
+          <td>Mod</td>
+      </tr>
+  </tbody>
 </table>
 <p>The term <strong>concatenation</strong> is programmer speak for “join together”.</p>
 <p>Thus, if you concatenate strings, you are combining strings to make a new and improved string.</p>
 <p>VBA also provides a full set of logical operators. Below table, shows some of logical operators.</p>
-<table class="w3-table-all w3-mobile w3-card-4">
-    <tr>
-        <th class="w3-center" colspan="2">VBA’s Logical Operators</th>
-    </tr>
-    <tr>
-        <th>Operator</th>
-        <th>What is does</th>
-    </tr>
-    <tr>
-        <td>Not</td>
-        <td>Performs a logical negation on an expression.</td>
-    </tr>
-    <tr>
-        <td>And</td>
-        <td>Performs a logical conjunction on two expressions.</td>
-    </tr>
-    <tr>
-        <td>Or</td>
-        <td>Performs a logical disjunction on two expressions.</td>
-    </tr>
-    <tr>
-        <td>XoR</td>
-        <td>Performs a logical exclusion on two expressions.</td>
-    </tr>
-    <tr>
-        <td>Eqv</td>
-        <td>Performs a logical equivalence on two expressions.</td>
-    </tr>
-    <tr>
-        <td>Imp</td>
-        <td>Performs a logical implication on two expressions.</td>
-    </tr>
-</table> 
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>What it does</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Not</td>
+          <td>Performs a logical negation on an expression.</td>
+      </tr>
+      <tr>
+          <td>And</td>
+          <td>Performs a logical conjunction on two expressions.</td>
+      </tr>
+      <tr>
+          <td>Or</td>
+          <td>Performs a logical disjunction on two expressions.</td>
+      </tr>
+      <tr>
+          <td>XoR</td>
+          <td>Performs a logical exclusion on two expressions.</td>
+      </tr>
+      <tr>
+          <td>Eqv</td>
+          <td>Performs a logical equivalence on two expressions.</td>
+      </tr>
+      <tr>
+          <td>Imp</td>
+          <td>Performs a logical implication on two expressions.</td>
+      </tr>
+  </tbody>
+</table>
 <p>The precedence order for <em>operators</em> in VBA is exactly the same as in <em>Excel formulas</em>.</p>
 <p><em>Exponentiation</em> has the highest precedence. <em>multiplication</em> and <em>division</em> come next, followed by <em>addition</em> and <em>subtraction</em>.</p>
 <p>You can use <em>parentheses</em> to change the natural precedence order, making whatever’s operation in parentheses come before any operator.</p>
@@ -808,14 +903,32 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">5</span> <span class="o">*</span> <span class="n">y</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">5</span> <span class="o">*</span> <span class="n">y</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>When this code is executed, what’s the value of <code>z</code>?</p>
 <p>If you answered <strong>13</strong>, you get a gold star that proves you understand the concept of operator precedence.</p>
 <p>If you answered <strong>16</strong>, read this: The <em>multiplication</em> operation (5 * y) is performed first, and that result is added to <code>x</code>.</p>
@@ -825,16 +938,62 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">5</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">5</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
-<blockquote>
-<p>Don’t be shy about using <em>parentheses</em> even if they aren’t required — especially if doing so makes your code easier to understand. VBA doesn’t care if you use <em>extra parentheses</em>.</p></blockquote>
+</div>
+  </div>
+
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Don’t be shy about using <em>parentheses</em> even if they aren’t required — especially if doing so makes your code easier to understand. VBA doesn’t care if you use <em>extra parentheses</em>.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Next post will be about <em><strong>VBA Arrays</strong></em>.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">

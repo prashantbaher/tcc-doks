@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/looping/">
 
@@ -700,18 +700,36 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">For</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">start</span> <span class="k">To</span> <span class="k">end</span> <span class="o">[</span><span class="k">Step</span> <span class="n">stepval</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="k">Exit</span> <span class="k">For</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="o">[</span><span class="n">counter</span><span class="o">]</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">For</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">start</span> <span class="k">To</span> <span class="k">end</span> <span class="o">[</span><span class="k">Step</span> <span class="n">stepval</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="o">[</span><span class="k">Exit</span> <span class="k">For</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">Next</span> <span class="o">[</span><span class="n">counter</span><span class="o">]</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The <em>looping</em> is controlled by a counter variable, which starts at one value and stops at another value.</p>
 <p>The statements between the <code>For</code> statement and the <code>Next</code> statement are the statements that get repeated in the loop.</p>
 <p>To see how this works, keep reading.</p>
@@ -721,19 +739,37 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers1</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">to</span> <span class="n">10</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers1</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">to</span> <span class="n">10</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this example, <code>i</code> (the loop counter variable) starts with a value of 1 and increases by 1 each time through the loop.</p>
 <p>Because I didn’t specify a Step value the <code>MsgBox</code> method uses the value of i as an argument.</p>
 <p>The first time through the <em>loop</em>, <code>i</code> is 1 and the procedure shows a number.</p>
@@ -741,19 +777,37 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers2</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="k">Step</span> <span class="n">2</span>
-</span></span><span class="line"><span class="cl">  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">to</span> <span class="n">10</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers2</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="k">Step</span> <span class="n">2</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">to</span> <span class="n">10</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Count starts out as 1 and then takes on a value of 3, 5, 7, and 9. The final Count value is 9.</p>
 <p>The Step value determines how the counter is <em>incremented</em>. Notice that the upper loop value (9) is not used because the highest value of Count after 9 would be 11, and 11 is larger than 10.</p>
 <h3 id="for-next-example-with-an-exit-for-statement">For-Next example with an Exit For statement<a href="#for-next-example-with-an-exit-for-statement" class="anchor" aria-hidden="true">#</a> </h3>
@@ -763,23 +817,41 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers3</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="k">Step</span> <span class="n">2</span>
-</span></span><span class="line"><span class="cl">  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">to</span> <span class="n">10</span>
-</span></span><span class="line"><span class="cl">    <span class="k">If</span> <span class="n">i</span> <span class="o">=</span> <span class="n">5</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="err">“</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">mid</span> <span class="n">value</span><span class="err">”</span>
-</span></span><span class="line"><span class="cl">      <span class="k">Exit</span> <span class="k">For</span>
-</span></span><span class="line"><span class="cl">    <span class="k">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers3</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="k">Step</span> <span class="n">2</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">to</span> <span class="n">10</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">If</span> <span class="n">i</span> <span class="o">=</span> <span class="n">5</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">      <span class="n">MsgBox</span> <span class="err">“</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">mid</span> <span class="n">value</span><span class="err">”</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">      <span class="k">Exit</span> <span class="k">For</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>This routine performs the as earlier but when the variable i reached to 5, it shows a message, stating that this is a mid value and exit from loop.</p>
 <h2 id="do-while-loop">Do-While Loop<a href="#do-while-loop" class="anchor" aria-hidden="true">#</a> </h2>
 <p>VBA supports another type of looping structure known as a <code>Do-While</code> loop.</p>
@@ -788,60 +860,114 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Do-While Structure
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Do</span> <span class="o">[</span><span class="k">While</span> <span class="n">condition</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="k">Exit</span> <span class="k">Do</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">Loop</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Do-While Structure
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Do</span> <span class="o">[</span><span class="k">While</span> <span class="n">condition</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="o">[</span><span class="k">Exit</span> <span class="k">Do</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">Loop</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The following example uses a <code>Do-While</code> loop. This routine uses 1 as a starting point and runs through next numbers.</p>
 <p>The loop continues until the routine encounter the condition of <code>i = 8</code>.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Do-While Example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">ShowNumbers4</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Do</span> <span class="k">While</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Loop</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Do-While Example
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">ShowNumbers4</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="k">Do</span> <span class="k">While</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">  <span class="k">Loop</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Some people prefer to code a <code>Do-While</code> loop as a <code>Do-Loop While</code> loop.</p>
 <p>This example performs exactly as the previous procedure but uses different loop syntax:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Do-Loop While Example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">ShowNumbers5</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Do</span> 
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Loop</span> <span class="k">While</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Do-Loop While Example
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">ShowNumbers5</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="k">Do</span> 
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">  <span class="k">Loop</span> <span class="k">While</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>Here’s the key difference between the <code>Do-While</code> and <code>Do-Loop While</code> loops.</p>
+</div>
+  </div>
+
+<p>Here’s the key difference between the <code>Do-while</code> and <code>Do-Loop While</code> loops.</p>
 <p>The <code>Do-While</code> loop always performs its conditional test first. If the test is not true, the instructions inside the loop are never executed.</p>
 <p>The <code>Do-Loop While</code> loop, on the other hand, always performs its conditional test after the instructions inside the loop are executed.</p>
 <p>Thus, the loop instructions are always executed at least once, regardless of the test.</p>
@@ -854,57 +980,111 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Do-Until Structure
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Do</span> <span class="o">[</span><span class="n">Until</span> <span class="n">condition</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="k">Exit</span> <span class="k">Do</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">Loop</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Do-Until Structure
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Do</span> <span class="o">[</span><span class="n">Until</span> <span class="n">condition</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="o">[</span><span class="k">Exit</span> <span class="k">Do</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">Loop</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The following example is the same one presented for the <code>Do-While</code> loop but recoded to use a <code>Do-Until</code> loop:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers6</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Do</span> <span class="n">Until</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Loop</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers6</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">Do</span> <span class="n">Until</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">  <span class="k">Loop</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>Just like with the <code>Do-While</code> loop, you may encounter a different form of the <code>Do-Until</code> loop — a <code>Do-Loop Until</code> loop.</p>
+</div>
+  </div>
+
+<p>Just like with the <code>Do-while</code> loop, you may encounter a different form of the <code>Do-Until</code> loop — a <code>Do-Loop Until</code> loop.</p>
 <p>The following example, which has the same effect as the preceding procedure, demonstrates an alternate syntax for this type of loop:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers7</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Do-Loop Until Example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Do</span> 
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Loop</span> <span class="n">Until</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowNumbers7</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c">&#39; Do-Loop Until Example
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="k">Do</span> 
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">  <span class="k">Loop</span> <span class="n">Until</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="n">8</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>There is a subtle difference in how the <code>Do-Until</code> loop and the <code>Do-Loop Until</code> loop operate.</p>
 <p>In the former, the test is performed at the beginning of the loop, before anything in the body of the loop is executed.</p>
 <p>This means that it is possible that the code in the loop body will not be executed if the test condition is met.</p>
@@ -921,47 +1101,83 @@ VBA provides various looping command for repeating code to make correct decision
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; For Each-Next Structure
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="k">Each</span> <span class="n">element</span> <span class="ow">In</span> <span class="n">collection</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="k">Exit</span> <span class="k">For</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="o">[</span><span class="n">element</span><span class="o">]</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; For Each-Next Structure
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">For</span> <span class="k">Each</span> <span class="n">element</span> <span class="ow">In</span> <span class="n">collection</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="o">[</span><span class="k">Exit</span> <span class="k">For</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="o">[</span><span class="n">statements</span><span class="o">]</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">Next</span> <span class="o">[</span><span class="n">element</span><span class="o">]</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The following example loops through each drawing sheet in the active drawing and shows name of each active drawing sheet:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; For Each-Next Example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">swPart</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">swDwg</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">SheetNamesList</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</span></span><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowSheetName</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Set</span> <span class="n">swPart</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Set</span> <span class="n">swDwg</span> <span class="o">=</span> <span class="n">swPart</span>
-</span></span><span class="line"><span class="cl">  <span class="n">SheetNamesList</span> <span class="o">=</span> <span class="n">swDwg</span><span class="p">.</span><span class="n">GetSheetNames</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">SheetName</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</span></span><span class="line"><span class="cl">  <span class="k">For</span> <span class="k">Each</span> <span class="n">SheetName</span> <span class="ow">In</span> <span class="n">SheetNamesList</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="n">SheetName</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">SheetName</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c">&#39; For Each-Next Example
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">Dim</span> <span class="n">swPart</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">Dim</span> <span class="n">swDwg</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">Dim</span> <span class="n">SheetNamesList</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowSheetName</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">Set</span> <span class="n">swPart</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="k">Set</span> <span class="n">swDwg</span> <span class="o">=</span> <span class="n">swPart</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="n">SheetNamesList</span> <span class="o">=</span> <span class="n">swDwg</span><span class="p">.</span><span class="n">GetSheetNames</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="k">Dim</span> <span class="n">SheetName</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="k">For</span> <span class="k">Each</span> <span class="n">SheetName</span> <span class="ow">In</span> <span class="n">SheetNamesList</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">MsgBox</span> <span class="n">SheetName</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="k">Next</span> <span class="n">SheetName</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this example, first we get the list of all sheet names in opened drawing, then we loop through each sheet name in collection and show sheet name in a message box.</p>
 <p>For this example please notes that we did not need to load all sheet, this code can work on non-activate and non-loaded sheets also.</p>
 <p>Next post will be about <em><strong>Bug Finding</strong></em>.</p>

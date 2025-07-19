@@ -4,7 +4,7 @@ description = "Automate CAD with powerful macros and tools!"
 images = ["logo.png"]
 
 # mainSections
-mainSections = ["docs", "blog", "vba"]
+mainSections = ["docs", "blog", "vba", "wix-tutorials"]
 
 [social]
   # twitter = "getdoks"

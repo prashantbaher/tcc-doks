@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/open-part-from-userform/">
 
@@ -690,8 +690,17 @@ For this please we need to do following steps as described below.">
 <p>For this please we need to do following steps as described below.</p>
 <h2 id="video-of-code-on-youtube">Video of Code on YouTube<a href="#video-of-code-on-youtube" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Please see below video on <strong>Solidworks VBA Macro - Open new Part document</strong> in Solidwoks VBA Userforms.</p>
-<iframe src="https://www.youtube.com/embed/pXMMSDeXEwo" frameborder="0" allowfullscreen></iframe>
-<br>
+<div class="responsive-video-container">
+  <iframe
+    src="https://www.youtube.com/embed/pXMMSDeXEwo"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+  <br>
+</div>
+
 <p>Please note that there are <strong>no explaination</strong> in the video.</p>
 <p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
 <h2 id="create-a-new-macro">Create a new macro<a href="#create-a-new-macro" class="anchor" aria-hidden="true">#</a> </h2>
@@ -725,8 +734,36 @@ For this please we need to do following steps as described below.">
 />
 This button is called <em><strong>insert userform</strong></em>.</p>
 <p>As the name suggest, function of this button is <em>inserting a userform</em>.</p>
-<blockquote>
-<p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>After clicking the <em><strong>insert userform</strong></em> button we get the userform window as shown in below image.</p>
 <p>
 
@@ -767,8 +804,36 @@ You can place command button at your desire. I placed it at center of the userfo
 /></p>
 <h2 id="updating-properties-of-command-button-and-userform-windows">Updating Properties of Command Button and Userform Windows<a href="#updating-properties-of-command-button-and-userform-windows" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we update some properties of Command Button and Userform Windows for our use.</p>
-<blockquote>
-<p>It is not necessary to update properties but it is a good habit to update them for our purpose.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>It is not necessary to update properties but it is a good habit to update them for our purpose.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>1st we update the properties of Userform.</p>
 <p>In below image, I have shown the properties of <code>Userform1</code> and update following properties:</p>
 <ol>
@@ -791,11 +856,67 @@ You can place command button at your desire. I placed it at center of the userfo
   alt="properties-to-change-in-userform"id="h-rh-i-5"
 /></p>
 <p>Update the value of <em>Name</em> property from <code>UserForm1</code> to <code>OurWindow</code>.</p>
-<blockquote>
-<p>From <em>Name</em> property, we access the Userform.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>From <em>Name</em> property, we access the Userform.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Update the value of <em>Caption</em> property from <code>UserForm1</code> to <code>Our Window</code>.</p>
-<blockquote>
-<p>From <em>Caption</em> property, we update the text appears in the window of our Userform.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>From <em>Caption</em> property, we update the text appears in the window of our Userform.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Now, we repeat the same process for Command Button.</p>
 <p>1st we need to select the Command Button in the user form after that we update same properties of Command Button.</p>
 <ol>
@@ -807,61 +928,153 @@ You can place command button at your desire. I placed it at center of the userfo
 </li>
 </ol>
 <p>Update the value of <em>Name</em> property from <code>CommandButton1</code> to <code>OpenNewPartButton</code>.</p>
-<blockquote>
-<p>From <em>Name</em> property, we access the Command Button.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>From <em>Name</em> property, we access the Command Button.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Update the value of <em>Caption</em> property from <code>CommandButton1</code> to <code>Open NewPart Button</code>.</p>
-<blockquote>
-<p>From <em>Caption</em> property, we update the text appears in the Command Button of our Userform.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>From <em>Caption</em> property, we update the text appears in the Command Button of our Userform.</p>
+
+    </div>
+  </div>
+</div>
+
 <h2 id="add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button<a href="#add-functionality-to-open-newpart-button" class="anchor" aria-hidden="true">#</a> </h2>
 <p>To add functionality in our <code>Open NewPart Button</code>, just double click the <code>Open NewPart Button</code>.</p>
 <p>This will add give some code behind the designer and opens the <strong>code window</strong> of Userform designer.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenNewPartButton_Click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenNewPartButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>We need to update this code for opening new part after clicking the button.</p>
 <p>For this replace all above code with below code.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Private function of Open New Part Button 
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenNewPartButton_Click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Creating string type variable for storing default part location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting Solidworks document to new part document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c">&#39; Private function of Open New Part Button 
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"></span><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenNewPartButton_Click</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="c">&#39; Creating string type variable for storing default part location
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c"></span>    <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="c">&#39; Setting Solidworks document to new part document
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>

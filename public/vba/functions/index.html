@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/functions/">
 
@@ -705,16 +705,34 @@ The SUM function in MS Excel returns the sum of a range of values.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowDate</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="kt">Date</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowDate</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="n">MsgBox</span> <span class="kt">Date</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Notice that the <code>Date</code> function doesn’t use an argument.</p>
 <p>A VBA function with no argument doesn’t require an empty set of parentheses.</p>
 <p>In fact, if you type an empty set of parentheses, the VBE will promptly remove them.</p>
@@ -722,16 +740,34 @@ The SUM function in MS Excel returns the sum of a range of values.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowDate</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="n">Now</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowDate</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="n">MsgBox</span> <span class="n">Now</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <h2 id="finding-a-string-length">Finding a string length<a href="#finding-a-string-length" class="anchor" aria-hidden="true">#</a> </h2>
 <p>The following procedure uses the VBA&rsquo;s <code>Len</code> function, which returns the length of a text string.</p>
 <p>The <code>Len</code> function takes one argument: the <code>string</code>.</p>
@@ -739,39 +775,75 @@ The SUM function in MS Excel returns the sum of a range of values.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">StringLength</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">MyString</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">StringLength</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MyString</span> <span class="o">=</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">”</span>
-</span></span><span class="line"><span class="cl">  <span class="n">StringLength</span> <span class="o">=</span> <span class="n">Len</span><span class="p">(</span><span class="n">MyString</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="n">StringLength</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">StringLength</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">MyString</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">Dim</span> <span class="n">StringLength</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="n">MyString</span> <span class="o">=</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">”</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="n">StringLength</span> <span class="o">=</span> <span class="n">Len</span><span class="p">(</span><span class="n">MyString</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">  <span class="n">MsgBox</span> <span class="n">StringLength</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <h2 id="displaying-the-integer-part-of-a-number">Displaying the integer part of a number<a href="#displaying-the-integer-part-of-a-number" class="anchor" aria-hidden="true">#</a> </h2>
 <p>The following procedure uses the <code>Fix</code> function, which returns the integer portion of a value — <em>the value without any decimal digits</em>:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">GetIntegerPart</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">MyValue</span> <span class="ow">As</span> <span class="kt">Double</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">IntValue</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MyValue</span> <span class="o">=</span> <span class="n">123</span><span class="p">.</span><span class="n">456</span>
-</span></span><span class="line"><span class="cl">  <span class="n">IntValue</span> <span class="o">=</span> <span class="n">Fix</span><span class="p">(</span><span class="n">MyValue</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="n">IntValue</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">GetIntegerPart</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">MyValue</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="k">Dim</span> <span class="n">IntValue</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="n">MyValue</span> <span class="o">=</span> <span class="n">123</span><span class="p">.</span><span class="n">456</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="n">IntValue</span> <span class="o">=</span> <span class="n">Fix</span><span class="p">(</span><span class="n">MyValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">  <span class="n">MsgBox</span> <span class="n">IntValue</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this case, the message box displays <strong>123</strong>.</p>
 <p>VBA has a similar function called <code>Int</code> Function.</p>
 <p>The difference between <code>Int</code> and <code>Fix</code> is how each deals with negative numbers.</p>
@@ -784,32 +856,68 @@ The SUM function in MS Excel returns the sum of a range of values.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">GetFileSize</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">TheFile</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="n">TheFile</span> <span class="err">“</span><span class="n">C</span><span class="p">:</span><span class="o">\</span><span class="n">ProgramFiles</span><span class="o">\</span><span class="n">Program</span> <span class="n">File</span><span class="o">\</span><span class="n">SolidworksCorp</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="p">.</span><span class="n">exe</span><span class="err">”</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="n">FileLen</span><span class="p">(</span><span class="n">TheFile</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">GetFileSize</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">TheFile</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="n">TheFile</span> <span class="err">“</span><span class="n">C</span><span class="p">:</span><span class="o">\</span><span class="n">ProgramFiles</span><span class="o">\</span><span class="n">Program</span> <span class="n">File</span><span class="o">\</span><span class="n">SolidworksCorp</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="p">.</span><span class="n">exe</span><span class="err">”</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="n">MsgBox</span> <span class="n">FileLen</span><span class="p">(</span><span class="n">TheFile</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Notice that this routine hard codes the filename (that is, it explicitly states the path).</p>
 <p>Generally, this <strong>isn’t</strong> a good idea. The file might not be on the <em>C drive</em>, or the Program File folder may have a different location.</p>
 <p>The following statement shows a better approach:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">TheFile</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">Path</span> <span class="o">&amp;</span> <span class="err">“</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="p">.</span><span class="n">EXE</span><span class="err">”</span> </span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">TheFile</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">Path</span> <span class="o">&amp;</span> <span class="err">“</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="p">.</span><span class="n">EXE</span><span class="err">”</span> </span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Path is a property of the Application object.</p>
 <p>It simply returns the name of the folder in which the application (that is, <em>Solidworks</em>) is installed (without a trailing backslash).</p>
 <h2 id="identifying-the-type-of-a-selected-object">Identifying the type of a selected object<a href="#identifying-the-type-of-a-selected-object" class="anchor" aria-hidden="true">#</a> </h2>
@@ -817,18 +925,36 @@ The SUM function in MS Excel returns the sum of a range of values.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ShowSelectionType</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">SelType</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="n">SelType</span> <span class="o">=</span> <span class="n">TypeName</span><span class="p">(</span><span class="n">Selection</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="n">SelType</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">ShowSelectionType</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="k">Dim</span> <span class="n">SelType</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="n">SelType</span> <span class="o">=</span> <span class="n">TypeName</span><span class="p">(</span><span class="n">Selection</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="n">MsgBox</span> <span class="n">SelType</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>This could be <em>a Sketch, a Part, a Assembly</em> or any <em>other type</em> of object that can be selected.</p>
 <p>The <code>TypeName</code> function is very versatile. You can also use this function to determine the data type of a variable.</p>
 <p>Next post will be about <em><strong>VBA Functions that do more</strong></em>.</p>

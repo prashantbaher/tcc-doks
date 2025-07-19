@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/public-static-and-variables-life/">
 
@@ -705,11 +705,73 @@ Let’s look at them one by one.">
 <p>If you would like a variable to be available to other modules, you must declare the variable as <code>Public</code>.</p>
 <p>In practice, sharing a variable across modules is hardly ever done.</p>
 <p>But I guess it’s nice to know that it can be done.</p>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Public</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="kt">Object</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
 <h2 id="static-variables">Static Variables<a href="#static-variables" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Normally, when a procedure ends, all the procedure’s variables are reset.</p>
 <p><strong>Static</strong> variables are a special case because they retain their value even when the procedure ends.</p>
 <p>You declare a static variable at the <em>procedure level</em>.</p>
 <p>A static variable may be useful if you need to track the number of times you execute a procedure.</p>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Sub</span> <span class="nf">CountCalls</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">Static</span> <span class="n">callCount</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">callCount</span> <span class="o">=</span> <span class="n">callCount</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;This procedure has been called &#34;</span> <span class="o">&amp;</span> <span class="n">callCount</span> <span class="o">&amp;</span> <span class="s">&#34; times.&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
 <h2 id="life-of-variables">Life of Variables<a href="#life-of-variables" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Nothing lives forever, including <strong>variables</strong>.</p>
 <p>The scope of a variable not only determines where that variable may be used, it also affects under which circumstances the variable is removed from memory.</p>
@@ -725,10 +787,67 @@ Let’s look at them one by one.">
 <p>Include an <code>End</code> statement anywhere in your code. This is not the same as an <code>End Sub</code> or <code>End Function</code> statement. Generally it is an Exit statement.</p>
 </li>
 </ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">End</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
 <p>Otherwise, only procedure-level variables will be removed from memory when the <em>macro code</em> has completed running.</p>
 <p>Static variables, module level variables, and global (<code>public</code>) variables all retain their values in between runs of your code.</p>
-<blockquote>
-<p>If you use <em>module-level</em> or <em>global-level</em> variables, make sure they have the value you expect them to have. You never know whether one of the situations I just mentioned may have caused your variables to lose their content!</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>If you use <em>module-level</em> or <em>global-level</em> variables, make sure they have the value you expect them to have. You never know whether one of the situations I just mentioned may have caused your variables to lose their content!</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Next post will be about <em><strong>VBA Constants</strong></em>.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">

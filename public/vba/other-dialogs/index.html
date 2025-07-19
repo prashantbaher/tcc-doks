@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.135e0bc6e0616c15f75c4fbe7615a731d642c2630bd63206e1ef98b8f9e563ea2721d62e5f2e70164ff1225fbf44f3aca8589b6847fdfa7b34d1c48d312b5b61.css" integrity="sha512-E14LxuBhbBX3XE&#43;&#43;dhWnMdZCwmML1jIG4e&#43;YuPnlY&#43;onIdYuXy5wFk/xIl&#43;/RPOsqFibaEf9&#43;ns00cSNMStbYQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.9fe5dd4b8682e2d9bfe4e28fccd85f6873a29e89e869152bdec09dc9b2b87915bd1a4ab19d149522ab09b8f0aad0d0fa1993efcf93b48ad4a9b2122406fb4664.css" integrity="sha512-n&#43;XdS4aC4tm/5OKPzNhfaHOinonoaRUr3sCdybK4eRW9GkqxnRSVIqsJuPCq0ND6GZPvz5O0itSpshIkBvtGZA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/vba/other-dialogs/">
 
@@ -695,15 +695,33 @@ An input box usually isn’t the best tool for this job, however, because most u
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; The GetOpenFilename method syntax
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="kt">object</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="o">[</span><span class="n">fileFilter</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">filterIndex</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">title</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="n">buttonText</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">multiSelect</span><span class="o">]</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; The GetOpenFilename method syntax
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="kt">object</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="o">[</span><span class="n">fileFilter</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">filterIndex</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">title</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="n">buttonText</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">multiSelect</span><span class="o">]</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The GetOpenFilename method takes the optional arguments shown in below Table.</p>
 <table>
   <thead>
@@ -746,39 +764,93 @@ An input box usually isn’t the best tool for this job, however, because most u
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; A GetOpenFilename example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="p">),</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; A GetOpenFilename example
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="p">),</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Notice that this string consists of two parts:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>and</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="o">*</span><span class="p">.</span><span class="o">*</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">*</span><span class="p">.</span><span class="o">*</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The first part of this string is the text displayed in the Files of Type dropdown list.</p>
 <p>The second part determines which files the dialog box displays. For example, <em>.</em> means all files.</p>
 <p>The code in the following example brings up a dialog box that asks the user for a filename.</p>
@@ -787,44 +859,62 @@ An input box usually isn’t the best tool for this job, however, because most u
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; A GetOpenFilename example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">GetImportFileName</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">Finfo</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">FilterIndex</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">Title</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">FileName</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;Set up list of file filters
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="p">(</span><span class="n">IsNumeric</span><span class="p">)</span><span class="n">NumberOfSheets</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">  <span class="n">FInfo</span> <span class="o">=</span> <span class="s">&#34;Text Files (*.txt),*.txt,&#34;</span> <span class="o">&amp;</span> _
-</span></span><span class="line"><span class="cl">  <span class="s">&#34;Lotus Files (*.prn),*.prn,&#34;</span> <span class="o">&amp;</span> _
-</span></span><span class="line"><span class="cl">  <span class="s">&#34;Comma Separated Files (*.csv),*.csv,&#34;</span> <span class="o">&amp;</span> _
-</span></span><span class="line"><span class="cl">  <span class="s">&#34;ASCII Files (*.asc),*.asc,&#34;</span> <span class="o">&amp;</span> _
-</span></span><span class="line"><span class="cl">  <span class="s">&#34;All Files (*.*),*.*&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;Display *.* by default
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">FilterIndex</span> <span class="o">=</span> <span class="n">5</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;Set the dialog box caption
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">Title</span> <span class="o">=</span> <span class="s">&#34;Select a File to Import&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;Get the filename
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">FileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="n">FInfo</span><span class="p">,</span> <span class="n">FilterIndex</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;Handle return info from dialog box
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">FileName</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;No file was selected.&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Else</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;You selected &#34;</span> <span class="o">&amp;</span> <span class="n">FileName</span>
-</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c">&#39; A GetOpenFilename example
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">GetImportFileName</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">Dim</span> <span class="n">Finfo</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">Dim</span> <span class="n">FilterIndex</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="k">Dim</span> <span class="n">Title</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">  <span class="k">Dim</span> <span class="n">FileName</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="c">&#39;Set up list of file filters
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="p">(</span><span class="n">IsNumeric</span><span class="p">)</span><span class="n">NumberOfSheets</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="n">FInfo</span> <span class="o">=</span> <span class="s">&#34;Text Files (*.txt),*.txt,&#34;</span> <span class="o">&amp;</span> _
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="s">&#34;Lotus Files (*.prn),*.prn,&#34;</span> <span class="o">&amp;</span> _
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="s">&#34;Comma Separated Files (*.csv),*.csv,&#34;</span> <span class="o">&amp;</span> _
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="s">&#34;ASCII Files (*.asc),*.asc,&#34;</span> <span class="o">&amp;</span> _
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="s">&#34;All Files (*.*),*.*&#34;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="c">&#39;Display *.* by default
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c"></span>  <span class="n">FilterIndex</span> <span class="o">=</span> <span class="n">5</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="c">&#39;Set the dialog box caption
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c"></span>  <span class="n">Title</span> <span class="o">=</span> <span class="s">&#34;Select a File to Import&#34;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  <span class="c">&#39;Get the filename
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c"></span>  <span class="n">FileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="n">FInfo</span><span class="p">,</span> <span class="n">FilterIndex</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl">  <span class="c">&#39;Handle return info from dialog box
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">FileName</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;No file was selected.&#34;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  <span class="k">Else</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">MsgBox</span> <span class="s">&#34;You selected &#34;</span> <span class="o">&amp;</span> <span class="n">FileName</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">  <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Notice that the <code>FileName</code> variable is declared as a Variant data type.</p>
 <p>If the user clicks <code>Cancel</code>, that variable contains a Boolean value (False).</p>
 <p>Otherwise, FileName is a <code>string</code>. Therefore, using a Variant data type handles both possibilities.</p>
@@ -836,15 +926,33 @@ An input box usually isn’t the best tool for this job, however, because most u
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; The GetSaveAsFilename method syntax
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="kt">object</span><span class="p">.</span><span class="n">GetSaveAsFilename</span> <span class="p">(</span><span class="o">[</span><span class="n">InitialFilename</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">FileFilter</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">FilterIndex</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">Title</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">ButtonText</span><span class="o">]</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; The GetSaveAsFilename method syntax
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="kt">object</span><span class="p">.</span><span class="n">GetSaveAsFilename</span> <span class="p">(</span><span class="o">[</span><span class="n">InitialFilename</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">FileFilter</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">FilterIndex</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">Title</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">ButtonText</span><span class="o">]</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The <em>GetSaveAsFilename</em> method takes below arguments, all of which are optional.</p>
 <table>
   <thead>
@@ -884,26 +992,44 @@ An input box usually isn’t the best tool for this job, however, because most u
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; FileDialog example
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">GetAFolder</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">With</span> <span class="n">Application</span><span class="p">.</span><span class="n">FileDialog</span><span class="p">(</span><span class="n">msoFileDialogFolderPicker</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">InitialFileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">DefaultFilePath</span> <span class="o">&amp;</span> <span class="s">&#34;\&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">&#34;Please select a location for the backup&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">Show</span>
-</span></span><span class="line"><span class="cl">    <span class="k">If</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">.</span><span class="n">Count</span> <span class="o">=</span> <span class="n">0</span> <span class="k">Then</span>
-</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="s">&#34;Canceled&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">Else</span>
-</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">(</span><span class="n">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">End</span> <span class="k">If</span>
-</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">With</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c">&#39; FileDialog example
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">GetAFolder</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">With</span> <span class="n">Application</span><span class="p">.</span><span class="n">FileDialog</span><span class="p">(</span><span class="n">msoFileDialogFolderPicker</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="p">.</span><span class="n">InitialFileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">DefaultFilePath</span> <span class="o">&amp;</span> <span class="s">&#34;\&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="p">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">&#34;Please select a location for the backup&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="p">.</span><span class="n">Show</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">If</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">.</span><span class="n">Count</span> <span class="o">=</span> <span class="n">0</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">      <span class="n">MsgBox</span> <span class="s">&#34;Canceled&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">Else</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">      <span class="n">MsgBox</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">(</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="k">End</span> <span class="k">With</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>The <em>FileDialog</em> object lets you specify the starting directory by specifying a value for the InitialFileName property.</p>
 <p>In this case, the code uses default file path as the starting directory.</p>
 <p>Next post will be about <em><strong>VBA UserForms</strong></em>.</p>
