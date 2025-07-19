@@ -16,44 +16,13 @@ The secret is in several programming constructs that most programming languages 
 
 Following table provides a quick summary of these constructs. 
 
-<table class="w3-table-all w3-mobile w3-card-4">
-    <tr>
-        <th class="w3-center" colspan="2">Programming Constructs for Making Decisions</th>
-    </tr>
-    <tr>
-        <th>Construct</th>
-        <th>How it works</th>
-    </tr>
-    <tr>
-        <td>If-Then structure</td>
-        <td>
-            Does something if something else is true.
-        </td>
-    </tr>
-    <tr>
-        <td>Select Case</td>
-        <td>
-            Does any of several things, depending on something’s value.
-        </td>
-    </tr>
-    <tr>
-        <td>For-Next loop</td>
-        <td>
-            Executes a series of statements a specified number of times.
-        </td>
-    </tr>
-    <tr>
-        <td>Do-While loop</td>
-        <td>
-            Does something as long as something else remains true.
-        </td>
-    </tr>
-    <tr>
-        <td>Do-Until loop</td>
-        <td>
-            Does something until something else becomes true.
-        </td>
-    </tr>
-</table>
+| Construct         | How it works                                               |
+|-------------------|-----------------------------------------------------------|
+| If-Then structure | Does something if something else is true.                 |
+| Select Case       | Does any of several things, depending on something’s value.|
+| For-Next loop     | Executes a series of statements a specified number of times.|
+| Do-While loop     | Does something as long as something else remains true.    |
+| Do-Until loop     | Does something until something else becomes true.         |
+
 
 Next post will be about ***If-Then-Else and Select Case structure***.

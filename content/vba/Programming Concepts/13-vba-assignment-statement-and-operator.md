@@ -80,47 +80,16 @@ Just remember that an assignment uses the *equal* sign as an `operator`, not a s
 
 Below table lists these operators. 
 
-<table class="w3-table-all w3-mobile w3-card-4">
-    <tr>
-        <th class="w3-center" colspan="2">VBA’s Operators</th>
-    </tr>
-    <tr>
-        <th>Function</th>
-        <th>Operator Symbol</th>
-    </tr>
-    <tr>
-        <td>Addition</td>
-        <td>+</td>
-    </tr>
-    <tr>
-        <td>Multiplication</td>
-        <td>*</td>
-    </tr>
-    <tr>
-        <td>Division</td>
-        <td>/</td>
-    </tr>
-    <tr>
-        <td>Subtraction</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>Exponentiation</td>
-        <td>^</td>
-    </tr>
-    <tr>
-        <td>String concatenation</td>
-        <td>&#38;</td>
-    </tr>
-    <tr>
-        <td>Integer division (the result is always an integer)</td>
-        <td>\</td>
-    </tr>
-    <tr>
-        <td>Modulo arithmetic (returns the remainder of a division operation)</td>
-        <td>Mod</td>
-    </tr>
-</table>
+| Function                                            | Operator Symbol |
+|-----------------------------------------------------|-----------------|
+| Addition                                            | +               |
+| Multiplication                                      | *               |
+| Division                                            | /               |
+| Subtraction                                         | -               |
+| Exponentiation                                      | ^               |
+| String concatenation                                | &               |
+| Integer division (the result is always an integer)  | \               |
+| Modulo arithmetic (returns the remainder of a division operation) | Mod |
 
 The term **concatenation** is programmer speak for “join together”. 
 
@@ -128,39 +97,15 @@ Thus, if you concatenate strings, you are combining strings to make a new and im
 
 VBA also provides a full set of logical operators. Below table, shows some of logical operators. 
 
-<table class="w3-table-all w3-mobile w3-card-4">
-    <tr>
-        <th class="w3-center" colspan="2">VBA’s Logical Operators</th>
-    </tr>
-    <tr>
-        <th>Operator</th>
-        <th>What is does</th>
-    </tr>
-    <tr>
-        <td>Not</td>
-        <td>Performs a logical negation on an expression.</td>
-    </tr>
-    <tr>
-        <td>And</td>
-        <td>Performs a logical conjunction on two expressions.</td>
-    </tr>
-    <tr>
-        <td>Or</td>
-        <td>Performs a logical disjunction on two expressions.</td>
-    </tr>
-    <tr>
-        <td>XoR</td>
-        <td>Performs a logical exclusion on two expressions.</td>
-    </tr>
-    <tr>
-        <td>Eqv</td>
-        <td>Performs a logical equivalence on two expressions.</td>
-    </tr>
-    <tr>
-        <td>Imp</td>
-        <td>Performs a logical implication on two expressions.</td>
-    </tr>
-</table> 
+| Operator | What it does                                      |
+|----------|---------------------------------------------------|
+| Not      | Performs a logical negation on an expression.     |
+| And      | Performs a logical conjunction on two expressions.|
+| Or       | Performs a logical disjunction on two expressions.|
+| XoR      | Performs a logical exclusion on two expressions.  |
+| Eqv      | Performs a logical equivalence on two expressions.|
+| Imp      | Performs a logical implication on two expressions.|
+
 
 The precedence order for *operators* in VBA is exactly the same as in *Excel formulas*. 
 
