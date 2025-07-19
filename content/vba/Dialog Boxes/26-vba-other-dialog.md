@@ -1,3 +1,4 @@
+<!-- filepath: c:\Workspace\Dev\tcc-doks\content\vba\Dialog Boxes\26-vba-other-dialog.md -->
 ---
 title: VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name
 url: /vba/other-dialogs/
@@ -194,4 +195,23 @@ The selected directory name (or “Canceled”) is then displayed by using the `
 ' FileDialog example
 Sub GetAFolder()
   With Application.FileDialog(msoFileDialogFolderPicker)
-    .InitialFileName = Application.DefaultFilePath & "\
+    .InitialFileName = Application.DefaultFilePath & "\"
+    .Title = "Please select a location for the backup"
+    .Show
+    If .SelectedItems.Count = 0 Then
+      MsgBox "Canceled"
+    Else
+      MsgBox .SelectedItems(1)
+    End If
+  End With
+End Sub
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+The *FileDialog* object lets you specify the starting directory by specifying a value for the InitialFileName property. 
+
+In this case, the code uses default file path as the starting directory.
+
+Next post will be about ***VBA UserForms***.
