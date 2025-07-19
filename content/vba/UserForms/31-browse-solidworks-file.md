@@ -40,13 +40,13 @@ If you don't know how to create a new macro in Solidworks, please go to **[VBA i
 
 This opens a **Visual Basic Editor** with some code as shown in below image.
 
-<!-- ![solidworks-vba-window](solidworks-vba-window.png) -->
+![solidworks-vba-window](solidworks-vba-window.png)
 
 After this we need to insert *a userform* in our macro.
 
 For this, select the button shown in below image.
 
-<!-- ![insert-userform-button](insert-userform-button.png) -->
+![insert-userform-button](insert-userform-button.png)
 
 This button is called ***insert userform***. 
 
@@ -74,21 +74,21 @@ Now in our userform window, we add following controls:
 
 You can find `TextBox` option, as highlighted in *Red Square* in below image.
 
-<!-- ![textbox-in-userform](textbox-in-userform.png) -->
+![textbox-in-userform](textbox-in-userform.png)
 
 After adding ComboBox, we get window as shown in below image.
 
-<!-- ![textbox-inside-userform](textbox-inside-userform.png) -->
+![textbox-inside-userform](textbox-inside-userform.png)
 
 ### Adding CommandButton
 
 You can find `CommandButton` option, as highlighted in *Red Square* in below image.
 
-<!-- ![insert-command-button-into-userform](insert-command-button-into-userform.png) -->
+![insert-command-button-into-userform](insert-command-button-into-userform.png)
 
 After adding CommandButton, we get window as shown in below image.
 
-<!-- ![command-button-into-userform](command-button-into-userform.png) -->
+![command-button-into-userform](command-button-into-userform.png)
 
 ***
 
@@ -112,7 +112,7 @@ We update following properties of the Userform:
 
 In below image, I have shown the properties of `Userform1` and update the properties:
 
-<!-- ![update-userform-properties](update-userform-properties.png) -->
+![update-userform-properties](update-userform-properties.png)
 
 Update the value of *Name* property from `UserForm1` to `BrowseDocumentWindow`.
 
@@ -132,7 +132,7 @@ We update following property of the TextBox:
 
 In below image, I have shown the properties of `TextBox` and update the properties:
 
-<!-- ![update-textbox-properties](update-textbox-properties.png) -->
+![update-textbox-properties](update-textbox-properties.png)
 
 Update the value of *Name* property from `TextBox` to `SelectedFileTextBox`.
 
@@ -148,7 +148,7 @@ We update following properties of the Command Button:
 
 In below image, I have shown the properties of `CommandButton1` and update the properties:
 
-<!-- ![update-command-button-properties](update-command-button-properties.png) -->
+![update-command-button-properties](update-command-button-properties.png)
 
 Update the value of *Name* property from `CommandButton1` to `BrowseDocumentButton`.
 
@@ -346,11 +346,11 @@ After the function complete following are the results:
 
 Below image shows our **form** in SOLIDWORKS.
 
-<!-- ![userform-in-solidworks](userform-in-solidworks.png "Our userform in Solidworks") -->
+![userform-in-solidworks](userform-in-solidworks.png "Our userform in Solidworks")
 
 Below image shows the opened window.
 
-<!-- ![browse-window](browse-window.png "Browsing window") -->
+![browse-window](browse-window.png "Browsing window")
 
 ```vb
 ' Show the selected file's full path in text box
@@ -361,7 +361,7 @@ Now we set the value of text box to **browsed** file name.
 
 Final window of method 1 is shown below/.
 
-<!-- ![final-window-of-method-first](final-window-of-method-first.png "Final window from Method 1") -->
+![final-window-of-method-first](final-window-of-method-first.png "Final window from Method 1")
 
 ---
 
@@ -381,15 +381,15 @@ Please see following steps for adding reference files:
 
   1. Select reference option as shown in below image.
 
-<!-- ![select-reference-option](select-reference-option.png "Select reference option from Tools options") -->
+![select-reference-option](select-reference-option.png "Select reference option from Tools options")
 
   2. This open Reference window as shown in below image.
 
-<!-- ![reference-window](reference-window.png "Reference window") -->
+![reference-window](reference-window.png "Reference window")
 
   3. Now select option given in below images and Press OK after selecting files..
 
-<!-- ![add-excel-reference](add-excel-reference.png "Select reference file highlighted in red box") -->
+![add-excel-reference](add-excel-reference.png "Select reference file highlighted in red box")
 
 Now, replace code in *[Add Functionality to Button](#add-functionality-to-button)* with below code sample.
 
@@ -524,15 +524,15 @@ After the function complete following are the results:
 
 Below image shows our **form** in SOLIDWORKS.
 
-<!-- ![userform-in-solidworks](/assets/vba-images/browse-solidworks-files/userform-in-solidworks.png "Our userform in Solidworks") -->
+![userform-in-solidworks](/assets/vba-images/browse-solidworks-files/userform-in-solidworks.png "Our userform in Solidworks")
 
 Below image shows the opened window.
 
-<!-- ![excel-browse-window](excel-browse-window.png "Browsing window using MS Excel") -->
+![excel-browse-window](excel-browse-window.png "Browsing window using MS Excel")
 
 Below image shows the **multi-selection** in opened window.
 
-<!-- ![multiple-select-window](multiple-select-window.png "Multilpe file selection in Browsing window using MS Excel") -->
+![multiple-select-window](multiple-select-window.png "Multilpe file selection in Browsing window using MS Excel")
 
 ```vb
 ' Show the selected file's full path in text box
@@ -543,7 +543,7 @@ Now we set the value of text box to **browsed** file name.
 
 Final window of method 1 is shown below/.
 
-<!-- ![final-window-of-method-second](final-window-of-method-first.png "Final window from Method 2") -->
+![final-window-of-method-first](final-window-of-method-first.png "Final window from Method 2")
 
 *Final window of both method is same.*
 
