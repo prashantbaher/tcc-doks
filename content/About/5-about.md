@@ -41,7 +41,7 @@ This site fixes that by:
 
 - 👉 [Browse SolidWorks C# Tutorials](/Solidworks-csharp-api-tutorials/)  
 - 👉 [Check out my YouTube channel](https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg)  
-- [🎁 Download 5 Free SolidWorks Macros →](https://gitlab.com/prashantbaher/the-cad-coder-updated/-/raw/main/Files/starter-pack.zip?ref_type=heads&inline=false)
+<!-- - [🎁 Download 5 Free SolidWorks Macros →](https://gitlab.com/prashantbaher/the-cad-coder-updated/-/raw/main/Files/starter-pack.zip?ref_type=heads&inline=false) -->
 
 Cut hours of repetitive work with real macros I use daily —  
 for drawing export, renaming files, and updating properties.
