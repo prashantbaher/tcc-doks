@@ -180,24 +180,11 @@
   --ec-frm-tooltipSuccessBg: #158744;
   --ec-frm-tooltipSuccessFg: white; }
 
-.docs-content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100% !important;
-  max-width: none;
-  /* remove Bootstrap's max-width */ }
-
 @media (max-width: 768px) {
   .docs-content {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100% !important; } }
-
-@media (max-width: 1920px) {
-  .docs-content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 85% !important; } }
 
 :root,
 [data-bs-theme="light"] {

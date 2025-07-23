@@ -197,7 +197,7 @@
   .docs-content {
     padding-left: 1rem;
     padding-right: 1rem;
-    width: 85% !important; } }
+    width: 100% !important; } }
 
 :root,
 [data-bs-theme="light"] {

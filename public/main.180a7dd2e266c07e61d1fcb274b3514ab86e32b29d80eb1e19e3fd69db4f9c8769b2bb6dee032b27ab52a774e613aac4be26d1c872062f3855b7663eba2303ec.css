@@ -193,12 +193,6 @@
     padding-right: 1rem;
     width: 100% !important; } }
 
-@media (max-width: 1920px) {
-  .docs-content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 85% !important; } }
-
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #3347ff;
