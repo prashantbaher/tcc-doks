@@ -89,6 +89,7 @@
       "card",
       "card-body",
       "card-list",
+      "card-terms",
       "categories",
       "chroma",
       "col",
@@ -295,6 +296,7 @@
       "visually-hidden",
       "w-100",
       "wix-tutorials",
+      "wpf-tutorials",
       "wrap"
     ],
     "ids": [
