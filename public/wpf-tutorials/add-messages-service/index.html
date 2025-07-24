@@ -1,0 +1,1726 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.bab684b26596a2dcba6a02b02e2b149eadf3a3dd9e456fec02d38341a5245af04c0393043025773e73cca325feb4fc1360dc55438502c1adbefbb02f9d52eda5.css" integrity="sha512-uraEsmWWoty6agKwLisUnq3zo92eRW/sAtODQaUkWvBMA5MEMCV3PnPMoyX&#43;tPwTYNxVQ4UCwa2&#43;&#43;7AvnVLtpQ==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/wpf-tutorials/add-messages-service/">
+
+  <link rel="canonical" href="http://localhost:1313/wpf-tutorials/add-messages-service/">
+
+
+<title>Add Message Service  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/wpf-tutorials/add-messages-service/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Add Message Service">
+  <meta property="og:description" content="Objective I want to:
+Show Confirmation message to user before deleting browsed file.
+After deleting file, show information message to user.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="wpf-tutorials">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="Add Message Service">
+  <meta name="twitter:description" content="Objective I want to:
+Show Confirmation message to user before deleting browsed file.
+After deleting file, show information message to user.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/wpf-tutorials/",
+       "name": "Wpf Tutorials",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/wpf-tutorials/getting-started/",
+       "name": "Getting Started",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Add Message Service",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section wpf-tutorials" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Wpf tutorials</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community Version</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/wpf-tutorials/add-messages-service/">Add Message Service</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/create-line-ui-part-2/">Create Line UI - Part 2</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks/solidworks-vba-macro/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/syncfusion-account-signup/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/wix4-introduction/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open open>
+      <summary>Getting Started</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community Version</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/wpf-tutorials/add-messages-service/">Add Message Service</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a>
+  </li>
+
+  <li>
+      <a href="/wpf-tutorials/create-line-ui-part-2/">Create Line UI - Part 2</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+			<div class="col container-fw d-lg-flex flex-lg-row justify-content-center mx-auto">
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#demo-video">Demo Video</a></li>
+    <li><a href="#add-service-for-messaging-in-application">Add Service for Messaging in application</a></li>
+    <li><a href="#register-services">Register Services</a></li>
+    <li><a href="#understand-service-methods">Understand Service Methods</a>
+      <ul>
+        <li><a href="#understand-confirmationmessages-method">Understand <code>ConfirmationMessages</code> method</a></li>
+        <li><a href="#understand-informationmessages-method">Understand <code>InformationMessages</code> method</a></li>
+        <li><a href="#understand-errormessages-method">Understand <code>ErrorMessages</code> method</a></li>
+      </ul>
+    </li>
+    <li><a href="#update-mainwindowviewmodel-for-message-service">Update <code>MainWindowViewModel</code> For Message Service</a>
+      <ul>
+        <li><a href="#show-message-for-empty-filepath-property">Show message for Empty <code>FilePath</code> property</a></li>
+        <li><a href="#show-message-if-browsed-file-exist-or-not">Show message if browsed file exist or not</a></li>
+        <li><a href="#get-confirmation-from-user">Get Confirmation From User</a></li>
+        <li><a href="#when-user-declined-confirmation">When User Declined Confirmation</a></li>
+        <li><a href="#when-user-give-confirmation-for-deleting-file">When User Give Confirmation for Deleting File</a></li>
+        <li><a href="#show-success-message-to-user">Show Success Message To User</a></li>
+      </ul>
+    </li>
+    <li><a href="#final-result">Final Result</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>Add Message Service</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#demo-video">Demo Video</a></li>
+    <li><a href="#add-service-for-messaging-in-application">Add Service for Messaging in application</a></li>
+    <li><a href="#register-services">Register Services</a></li>
+    <li><a href="#understand-service-methods">Understand Service Methods</a>
+      <ul>
+        <li><a href="#understand-confirmationmessages-method">Understand <code>ConfirmationMessages</code> method</a></li>
+        <li><a href="#understand-informationmessages-method">Understand <code>InformationMessages</code> method</a></li>
+        <li><a href="#understand-errormessages-method">Understand <code>ErrorMessages</code> method</a></li>
+      </ul>
+    </li>
+    <li><a href="#update-mainwindowviewmodel-for-message-service">Update <code>MainWindowViewModel</code> For Message Service</a>
+      <ul>
+        <li><a href="#show-message-for-empty-filepath-property">Show message for Empty <code>FilePath</code> property</a></li>
+        <li><a href="#show-message-if-browsed-file-exist-or-not">Show message if browsed file exist or not</a></li>
+        <li><a href="#get-confirmation-from-user">Get Confirmation From User</a></li>
+        <li><a href="#when-user-declined-confirmation">When User Declined Confirmation</a></li>
+        <li><a href="#when-user-give-confirmation-for-deleting-file">When User Give Confirmation for Deleting File</a></li>
+        <li><a href="#show-success-message-to-user">Show Success Message To User</a></li>
+      </ul>
+    </li>
+    <li><a href="#final-result">Final Result</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h2 id="objective">Objective<a href="#objective" class="anchor" aria-hidden="true">#</a> </h2>
+<p>I want to:</p>
+<ul>
+<li>
+<p><em><strong>Show Confirmation message to user before deleting browsed file.</strong></em></p>
+</li>
+<li>
+<p><em><strong>After deleting file, show information message to user.</strong></em></p>
+</li>
+<li>
+<p><em><strong>We will continue from previous article 🚀 <a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a>{:target=&quot;_blank&quot;}.</strong></em></p>
+</li>
+</ul>
+<h2 id="demo-video">Demo Video<a href="#demo-video" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Below 🎬 video shows how to <strong>Add Message Service</strong> in <em>Visual Studio 2022</em>.</p>
+<div class="responsive-video-container">
+  <iframe
+    src="https://www.youtube.com/embed/BjhwkP96Vgo"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+  <br>
+</div>
+
+<hr>
+<h2 id="add-service-for-messaging-in-application">Add Service for Messaging in application<a href="#add-service-for-messaging-in-application" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>
+<p>Now we add <strong><code>MessagesService</code></strong> class to &ldquo;<strong><code>Service</code></strong>&rdquo; folder.</p>
+</li>
+<li>
+<p>Please see below 👇🏻 image for reference.</p>
+</li>
+</ul>
+<p><a href="add-message-service/add-messageservicefile-service.png">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/add-messageservicefile-service_hu_9bae75035c7ee24a.webp"
+  width="326"
+  height="499"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="add-messageservicefile-service"id="h-rh-i-0"
+/></a></p>
+<p>For reference, how to add <em>Service class</em>, please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#add-service-for-browsing-file-dialog">Add Service for Browsing File Dialog</a>{:target=&quot;_blank&quot;}</strong></em> article.</p>
+<p>Now we will add following services to this newly created <strong><code>MessagesService</code></strong> class.</p>
+<ul>
+<li>
+<p><strong><code>ConfirmationMessagesService</code></strong></p>
+</li>
+<li>
+<p><strong><code>InformationMessagesService</code></strong></p>
+</li>
+<li>
+<p><strong><code>ErrorMessagesService</code></strong></p>
+</li>
+</ul>
+<p>Please see below 👇🏻 image for reference.</p>
+<p><a href="add-message-service/add-services.png">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/add-services_hu_f5c1c32a9081a3c2.webp"
+  width="1336"
+  height="557"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="add-services"id="h-rh-i-1"
+/></a></p>
+<ul>
+<li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Services</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">ConfirmationMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">InformationMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">ErrorMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<ul>
+<li>
+<p>For more details on how to add <em>Services</em>, please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#add-service-for-browsing-file-dialog">Add Service for Browsing File Dialog</a>{:target=&quot;_blank&quot;}</strong></em> article.</p>
+</li>
+<li>
+<p>In above line, we add <strong><code>&lt;string&gt;</code></strong> to all <strong><code>PubSubEvent</code></strong> class.</p>
+</li>
+<li>
+<p>This indicate that, when we <strong>Publish</strong> our service, we need to give a <strong><code>string</code></strong> as passing parameter to <strong>Publish</strong> service.</p>
+</li>
+<li>
+<p>For example, we will pass a <strong>question</strong> as <strong><code>string</code></strong> when we <strong>Publish</strong> <strong><code>ConfirmationMessagesService</code></strong> service.</p>
+</li>
+</ul>
+<hr>
+<h2 id="register-services">Register Services<a href="#register-services" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>
+<p>Open <strong><code>MainWindow.xaml.cs</code></strong> file.</p>
+</li>
+<li>
+<p>Pass <strong><code>IEventAggregator</code></strong> to constructor, and assigned it to private field.</p>
+</li>
+<li>
+<p>Please see below 👇🏻 image for reference.</p>
+</li>
+</ul>
+<p><a href="add-message-service/pass-parameter-to-constructor.png">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/pass-parameter-to-constructor_hu_3e63065c37d5f5cc.webp"
+  width="872"
+  height="424"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="pass-parameter-to-constructor"id="h-rh-i-2"
+/></a></p>
+<ul>
+<li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Syncfusion.Windows.Shared</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.Services</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.ViewModels</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Views</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// Interaction logic for MainWindow.xaml</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">ChromelessWindow</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<ul>
+<li>
+<p>Now, we <strong>register</strong> our services.</p>
+</li>
+<li>
+<p>When these service is called, some functions will gets executed.</p>
+</li>
+<li>
+<p>These registration and execution is handle by <strong><code>eventAggregator</code></strong> field.</p>
+</li>
+<li>
+<p>Please see below 👇🏻 code sample for reference.</p>
+</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Syncfusion.Windows.Shared</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.Services</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.ViewModels</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Views</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// Interaction logic for MainWindow.xaml</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">ChromelessWindow</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">BrowseFileDialogService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">BrowseFile</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">ConfirmationMessages</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">InformationMessages</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">ErrorMessages</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">BrowseFile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">OpenFileDialog</span> <span class="n">openFileDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OpenFileDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">openFileDialog</span><span class="p">.</span><span class="n">Filter</span> <span class="p">=</span> <span class="s">&#34;Solidworks Part|*.sldprt|Solidworks Assembly|*.sldasm|Solidworks Drawing|*.slddrw&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">openFileDialog</span><span class="p">.</span><span class="n">DefaultExt</span> <span class="p">=</span> <span class="s">&#34;*.sldprt&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kt">bool?</span> <span class="n">result</span> <span class="p">=</span> <span class="n">openFileDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">||</span> <span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">openFileDialog</span><span class="p">.</span><span class="n">FileName</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">viewModel</span><span class="p">.</span><span class="n">FilePath</span> <span class="p">=</span> <span class="n">openFileDialog</span><span class="p">.</span><span class="n">FileName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Information&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h2 id="understand-service-methods">Understand Service Methods<a href="#understand-service-methods" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>
+<p>In above code, we register 4 services. They are as follows:</p>
+<ul>
+<li><strong><code>BrowseFileDialogService</code></strong></li>
+<li><strong><code>ConfirmationMessagesService</code></strong></li>
+<li><strong><code>InformationMessagesService</code></strong></li>
+<li><strong><code>ErrorMessagesService</code></strong></li>
+</ul>
+</li>
+<li>
+<p><strong><code>BrowseFileDialogService</code></strong> is already explained in 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#understand-service-call-execute-function">Understand Service Call Execute Function</a>{:target=&quot;_blank&quot;}</strong></em> article.</p>
+</li>
+<li>
+<p>Please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#understand-service-call-execute-function">Understand Service Call Execute Function</a>{:target=&quot;_blank&quot;}</strong></em> article for more details.</p>
+</li>
+<li>
+<p>In this section, we will understand remaining 3 service and their respective execution methods.</p>
+</li>
+</ul>
+<h3 id="understand-confirmationmessages-method">Understand <code>ConfirmationMessages</code> method<a href="#understand-confirmationmessages-method" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>
+<p>In <strong><code>MainWindow.xaml.cs</code></strong> contructor, we register <strong><code>ConfirmationMessagesService</code></strong> service.</p>
+</li>
+<li>
+<p>When we call for <strong><code>ConfirmationMessagesService</code></strong> service, we execute <strong><code>ConfirmationMessages</code></strong> method.</p>
+</li>
+<li>
+<p>Now let us understand <strong><code>ConfirmationMessages</code></strong> method as follows.</p>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In  <strong><code>ConfirmationMessages</code></strong> method, we pass a <strong><code>string</code></strong> as parameter.</p>
+<ul>
+<li><strong>Parameter Name</strong>: <strong><code>messageToShow</code></strong></li>
+<li><strong>Variable Type</strong>: <strong><code>string</code></strong></li>
+<li><strong>Return Type</strong>: <strong><code>Void</code></strong></li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line, we create a variable as follows:</p>
+<ul>
+<li><strong>Variable Name</strong>: <strong><code>result</code></strong></li>
+<li><strong>Variable Type</strong>: <strong><code>var</code></strong></li>
+</ul>
+</li>
+<li>
+<p>In above line, we store result of <strong><code>MessageBox.Show</code></strong> method into <strong><code>result</code></strong> variable.</p>
+</li>
+<li>
+<p>This <strong><code>MessageBox.Show</code></strong> method takes following parameters.</p>
+<ul>
+<li>
+<p><strong>messageBoxText</strong>: <em>A String that specifies the text to display</em>.</p>
+</li>
+<li>
+<p><strong>caption</strong>: A String that specifies the title bar caption to display.</p>
+</li>
+<li>
+<p><strong>button</strong>: A <strong><code>MessageBoxButtons</code></strong> values that specifies which buttons to display in the message box. These buttons are as follows.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Member</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>AbortRetryIgnore</strong></td>
+          <td><code>2: The message box contains Abort, Retry, and Ignore buttons.</code></td>
+      </tr>
+      <tr>
+          <td><strong>CancelTryContinue</strong></td>
+          <td><code>6: Specifies that the message box contains Cancel, Try Again, and Continue buttons.</code></td>
+      </tr>
+      <tr>
+          <td><strong>OK</strong></td>
+          <td><code>0: The message box contains an OK button.</code></td>
+      </tr>
+      <tr>
+          <td><strong>OKCancel</strong></td>
+          <td><code>1: The message box contains OK and Cancel buttons.</code></td>
+      </tr>
+      <tr>
+          <td><strong>RetryCancel</strong></td>
+          <td><code>5: The message box contains Retry and Cancel buttons.</code></td>
+      </tr>
+      <tr>
+          <td><strong>YesNo</strong></td>
+          <td><code>4: The message box contains Yes and No buttons.</code></td>
+      </tr>
+      <tr>
+          <td><strong>YesNoCancel</strong></td>
+          <td><code>3: The message box contains Yes, No, and Cancel buttons.</code></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><strong>icon</strong>: A <strong><code>MessageBoxImage</code></strong> value that specifies the icon to display. These buttons are as follows.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Member</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Asterisk</strong></td>
+          <td><code>64: The message box contains a symbol consisting of a lowercase letter i in a circle.</code></td>
+      </tr>
+      <tr>
+          <td><strong>Error</strong></td>
+          <td><code>16: The message box contains a symbol consisting of white X in a circle with a red background.</code></td>
+      </tr>
+      <tr>
+          <td><strong>Exclamation</strong></td>
+          <td><code>48: The message box contains a symbol consisting of an exclamation point in a triangle with a yellow background.</code></td>
+      </tr>
+      <tr>
+          <td><strong>Hand</strong></td>
+          <td><code>16: The message box contains a symbol consisting of white X in a circle with a red background.</code></td>
+      </tr>
+      <tr>
+          <td><strong>Information</strong></td>
+          <td><code>64: The message box contains a symbol consisting of a lowercase letter i in a circle.</code></td>
+      </tr>
+      <tr>
+          <td><strong>None</strong></td>
+          <td><code>0: The message box contains no symbols.</code></td>
+      </tr>
+      <tr>
+          <td><strong>Stop</strong></td>
+          <td><code>16: The message box contains a symbol consisting of white X in a circle with a red background.</code></td>
+      </tr>
+      <tr>
+          <td><strong>Warning</strong></td>
+          <td><code>48: The message box contains a symbol consisting of an exclamation point in a triangle with a yellow background.</code></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p>Result Value: This <strong><code>MessageBox.Show</code></strong> method return <strong><code>MessageBoxResult</code></strong> value that specifies which message box button is clicked by the user as follows.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Member</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Cancel</strong></td>
+          <td><strong><code>2: The result value of the message box is Cancel.</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>No</strong></td>
+          <td><strong><code>7: The result value of the message box is No.</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>None</strong></td>
+          <td><strong><code>0: The message box returns no result.</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>OK</strong></td>
+          <td><strong><code>1: The result value of the message box is OK.</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>Yes</strong></td>
+          <td><strong><code>6: The result value of the message box is Yes.</code></strong></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>Parameter values we used in our code are as follows:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>messageBoxText</strong></td>
+          <td><strong><code>messageToShow</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>caption</strong></td>
+          <td><strong><code>&quot;Confirmation&quot;</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>button</strong></td>
+          <td><strong><code>MessageBoxButton.YesNo</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>icon</strong></td>
+          <td><strong><code>MessageBoxImage.Question</code></strong></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p>Please visit 🚀 <em><strong><a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.messagebox.show?view=windowsdesktop-7.0">MessageBox.Show Method</a>{:target=&quot;_blank&quot;}</strong></em> article for more details.</p>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line of code, we create a variable as follows:</p>
+<ul>
+<li><strong>Variable Name</strong>: <strong><code>viewModel</code></strong></li>
+<li><strong>Variable Type</strong>: <strong><code>MainWindowViewModel</code></strong></li>
+<li><strong>Value</strong>: <strong><code>DataContext</code></strong> property of <strong><code>MainWindow</code></strong>.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line, we set the value of <strong><code>DeleteFile</code></strong> property.</p>
+</li>
+<li>
+<p>This property is part of <strong><code>viewModel</code></strong> variable.</p>
+</li>
+</ul>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p><strong>Please note that we still not created this propery, so Visual studio will show error.</strong></p>
+
+    </div>
+  </div>
+</div>
+
+<ul>
+<li>We set the value of <strong><code>DeleteFile</code></strong> property to <strong><code>true</code></strong> or <strong><code>false</code></strong>, based on condition.
+<ul>
+<li><strong>Condition</strong>: <strong><code>(result == MessageBoxResult.Yes)</code></strong></li>
+<li>If above condition is <strong><code>true</code></strong>, then final value is <strong><code>true</code></strong>.</li>
+<li>If above condition is <strong><code>false</code></strong>, then final value is <strong><code>false</code></strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="understand-informationmessages-method">Understand <code>InformationMessages</code> method<a href="#understand-informationmessages-method" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Now let us understand <strong><code>InformationMessages</code></strong> method as follows.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Information&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line of code, we <em>show</em> a <strong><code>MessageBox</code></strong> to user.</p>
+</li>
+<li>
+<p>For this, we use <strong><code>MessageBox.Show</code></strong> method.</p>
+</li>
+<li>
+<p>For more details on <strong><code>MessageBox.Show</code></strong> method please read previous section of this article.</p>
+</li>
+<li>
+<p>Parameter values we used in our code are as follows:</p>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>messageBoxText</strong></td>
+          <td><strong><code>messageToShow</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>caption</strong></td>
+          <td><strong><code>&quot;Information&quot;</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>button</strong></td>
+          <td><strong><code>MessageBoxButton.OK</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>icon</strong></td>
+          <td><strong><code>MessageBoxImage.Information</code></strong></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="understand-errormessages-method">Understand <code>ErrorMessages</code> method<a href="#understand-errormessages-method" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Now let us understand <strong><code>ErrorMessages</code></strong> method as follows.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line of code, we <em>show</em> a <strong><code>MessageBox</code></strong> to user.</p>
+</li>
+<li>
+<p>For this, we use <strong><code>MessageBox.Show</code></strong> method.</p>
+</li>
+<li>
+<p>For more details on <strong><code>MessageBox.Show</code></strong> method please read previous section of this article.</p>
+</li>
+<li>
+<p>Parameter values we used in our code are as follows:</p>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>messageBoxText</strong></td>
+          <td><strong><code>messageToShow</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>caption</strong></td>
+          <td><strong><code>&quot;Error&quot;</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>button</strong></td>
+          <td><strong><code>MessageBoxButton.OK</code></strong></td>
+      </tr>
+      <tr>
+          <td><strong>icon</strong></td>
+          <td><strong><code>MessageBoxImage.Error</code></strong></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="update-mainwindowviewmodel-for-message-service">Update <code>MainWindowViewModel</code> For Message Service<a href="#update-mainwindowviewmodel-for-message-service" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>
+<p>Open <strong><code>MainWindowViewModel.cs</code></strong> file.</p>
+</li>
+<li>
+<p>Add <strong><code>DeleteFile</code></strong> property as shown below.</p>
+</li>
+</ul>
+<p><a href="add-message-service/add-delete-property.png">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/add-delete-property_hu_b5a5076bfae3f69c.webp"
+  width="737"
+  height="224"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="add-delete-property"id="h-rh-i-3"
+/></a></p>
+<ul>
+<li>Please see below code for adding <strong><code>DeleteFile</code></strong> property.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">bool</span> <span class="n">_DeleteFile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">DeleteFile</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DeleteFile</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DeleteFile</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h3 id="show-message-for-empty-filepath-property">Show message for Empty <code>FilePath</code> property<a href="#show-message-for-empty-filepath-property" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>
+<p>Show <em>error message</em> to user <em>if we browsed a file or not</em>.</p>
+</li>
+<li>
+<p>Please see below 👇🏻 image for how to add code for <em>showing error message</em>.</p>
+</li>
+</ul>
+<p><a href="add-message-service/show-message-for-empty-file.png">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/show-message-for-empty-file_hu_b5ea39e071e8b7b7.webp"
+  width="1237"
+  height="302"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="show-message-for-empty-file"id="h-rh-i-4"
+/></a></p>
+<ul>
+<li>Please see below code for <em>showing error message</em> on empty browsed file.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Check if we browsed a file</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">FilePath</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Show information that file is deleted.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;Empty File Path.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h3 id="show-message-if-browsed-file-exist-or-not">Show message if browsed file exist or not<a href="#show-message-if-browsed-file-exist-or-not" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>
+<p>Show <em>error message</em> to user <em>if browsed file exist or not</em>.</p>
+</li>
+<li>
+<p>Please see below 👇🏻 image for how to add code for <em>showing error message</em>.</p>
+</li>
+</ul>
+<p><a href="add-message-service/browse-file-did-not-exit.png">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/browse-file-did-not-exit_hu_4e5cba2d2b4cbfe3.webp"
+  width="1378"
+  height="533"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="browse-file-did-not-exit"id="h-rh-i-5"
+/></a></p>
+<ul>
+<li>Please see below code for <em>showing error message</em> on empty browsed file.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Check if browsed file exist or not</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">FilePath</span><span class="p">)</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Show information that file is deleted.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">$&#34;[{FilePath}] did not exist.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h3 id="get-confirmation-from-user">Get Confirmation From User<a href="#get-confirmation-from-user" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Please see below code for <em>Get confirmation from user</em>.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Get confirmation from user</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">$&#34;Do you want to delete [{FilePath}]?&#34;</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h3 id="when-user-declined-confirmation">When User Declined Confirmation<a href="#when-user-declined-confirmation" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>In this section, we check, if user <strong><code>not give confirmation</code></strong> for deleting file.</li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Not confirmed then clear data and exit function.</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!</span><span class="n">DeleteFile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ClearData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// Method for clearing &lt;see cref=&#34;FilePath&#34;/&gt; property.</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">ClearData</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">FilePath</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h3 id="when-user-give-confirmation-for-deleting-file">When User Give Confirmation for Deleting File<a href="#when-user-give-confirmation-for-deleting-file" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Show busy indicator</span>
+</span></span><span class="line"><span class="cl"><span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Delete Selected File</span>
+</span></span><span class="line"><span class="cl">    <span class="n">File</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Hide busy indicator</span>
+</span></span><span class="line"><span class="cl"><span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h3 id="show-success-message-to-user">Show Success Message To User<a href="#show-success-message-to-user" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Please see below code for <em>Show information that file is deleted.</em></li>
+</ul>
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Show information that file is deleted.</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;File sucessfully deleted.&#34;</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+</div>
+  </div>
+
+<h2 id="final-result">Final Result<a href="#final-result" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now we run the application as shown in below 👇🏻 image.</p>
+<p><a href="add-message-service/final">
+
+<img
+  src="/wpf-tutorials/getting-started/add-message-service/final-result.gif"
+  width="656"
+  height="438"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="final-result"id="h-rh-i-6"
+/></a>-result.gif</p>
+<p>Now we are able to <strong>delete browsed file</strong> in MVVM pattern successfully.</p>
+<p><strong>This is it !!!</strong></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+<p>Hope this post helps you to <strong>show message services to users in WPF Prism application</strong>.</p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/wpf-tutorials/delete-browse-file/" class="stretched-link text-reset text-decoration-none">Delete Browse Solidworks Document File</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/wpf-tutorials/insert-solidworks-sketch-ui/" class="stretched-link text-reset text-decoration-none">Insert Solidworks Sketch UI</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+			</div>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

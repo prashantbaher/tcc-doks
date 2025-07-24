@@ -24,6 +24,13 @@
       <description>&lt;p&gt;🚀 Tools &amp;amp; Resources I Use (and Recommend)&lt;/p&gt;&#xA;&lt;p&gt;This is a curated list of the &lt;strong&gt;resources&lt;/strong&gt; that have helped me learn &lt;strong&gt;programming&lt;/strong&gt; and &lt;strong&gt;SolidWorks API automation&lt;/strong&gt; — including books, tutorials, tools, and frameworks.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Syncfusion Account Sign Up and Community Version</title>
+      <link>http://localhost:1313/wpf-tutorials/syncfusion-account-signup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wpf-tutorials/syncfusion-account-signup/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sign Up Syncfusion Account.&lt;/li&gt;&#xA;&lt;li&gt;Download Syncfusion Community Version Control.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;sign-up-syncfusion-account&#34;&gt;Sign Up Syncfusion Account&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Sign Up Page&lt;/em&gt;: 🚀 &lt;strong&gt;&lt;a href=&#34;https://www.syncfusion.com/account/register&#34;&gt;Sign Up Page&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Please see below image for reference.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Visual Basic for Application Introduction</title>
       <link>http://localhost:1313/vba/vba-Introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -36,6 +43,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/knowledge-base/wix4-introduction/</guid>
       <description>&lt;p&gt;Hello all,&lt;/p&gt;&#xA;&lt;p&gt;As mentioned in previous article, I need to learn some topics for my work.&lt;/p&gt;&#xA;&lt;p&gt;One of those topics is Wix4 Toolset.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Install Prism Project Template</title>
+      <link>http://localhost:1313/wpf-tutorials/install-prism-project-template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wpf-tutorials/install-prism-project-template/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Install &lt;strong&gt;WPF Prism Template&lt;/strong&gt; in Visual Studio 2022.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;demo-video&#34;&gt;Demo Video&lt;/h2&gt;&#xA;&lt;p&gt;Below 🎬 video shows how to &lt;strong&gt;Install Prism Project Template&lt;/strong&gt; in &lt;em&gt;Visual Studio 2022&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Visual Basic Editor (VBE)</title>
@@ -52,32 +66,18 @@
       <description>&lt;p&gt;In this article we&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Install Wix4 Visual Studio Extension&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/info-circle svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-info-circle&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0&#34; /&gt;&#xA;  &lt;path d=&#34;M12 9h.01&#34; /&gt;&#xA;  &lt;path d=&#34;M11 12h1v4h1&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;Note&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Open Syncfusion Chromeless Window</title>
+      <link>http://localhost:1313/wpf-tutorials/open-syncfusion-chromeless-window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wpf-tutorials/open-syncfusion-chromeless-window/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create WPF Prism Application Project&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Add Synchfusion Chromeless window&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;demo-video&#34;&gt;Demo Video&lt;/h2&gt;&#xA;&lt;p&gt;Below 🎬 video shows how to &lt;strong&gt;Open Syncfusion Chromeless Window&lt;/strong&gt; in &lt;em&gt;Visual Studio 2022&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Understand Wix V4 Project</title>
       <link>http://localhost:1313/knowledge-base/wix-understand-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/knowledge-base/wix-understand-project/</guid>
       <description>&lt;p&gt;In this article we&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;Understand &lt;strong&gt;Wix V4 Files&lt;/strong&gt; and &lt;strong&gt;Project Structure&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Different types of files in Project&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Purpose of those files&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;wix-project&#34;&gt;Wix Project&lt;/h2&gt;&#xA;&lt;p&gt;In previous 🚀 &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/knowledge-base/wix-vs-extension&#34;&gt;Wix4 Visual Studio Extension&lt;/a&gt;&lt;/strong&gt; article, we created a new Wix V4 project.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>VBE Windows</title>
-      <link>http://localhost:1313/vba/vba-windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/vba-windows/</guid>
-      <description>&lt;p&gt;In this post we look at the following windows in &lt;code&gt;Visual Basic Editor&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Project Window&lt;/li&gt;&#xA;&lt;li&gt;Code Window&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;project-window&#34;&gt;Project Window&lt;/h2&gt;&#xA;&lt;p&gt;When you are working in &lt;code&gt;VBE&lt;/code&gt;, each file open is called a Project.&lt;br&gt;&#xA;You can think of a &lt;code&gt;project&lt;/code&gt; as a &lt;code&gt;collection&lt;/code&gt; of objects.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Sub and Function Procedures</title>
-      <link>http://localhost:1313/vba/sub-and-function-procedure/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vba/sub-and-function-procedure/</guid>
-      <description>&lt;p&gt;The &lt;code&gt;VBA&lt;/code&gt; code that you write in the &lt;code&gt;Visual Basic Editor&lt;/code&gt; is known as a &lt;code&gt;procedure&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The two most common types of procedures are &lt;code&gt;Sub&lt;/code&gt; and &lt;code&gt;Function&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Wix Add Remove Program Details</title>
-      <link>http://localhost:1313/knowledge-base/wix-add-remove-program-details/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/knowledge-base/wix-add-remove-program-details/</guid>
-      <description>&lt;p&gt;In this article we create MSI Details for Add/Remove Program details.&lt;/p&gt;&#xA;&lt;p&gt;Please see below 👇🏻 image of &lt;strong&gt;Visual Studio&lt;/strong&gt; for reference.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

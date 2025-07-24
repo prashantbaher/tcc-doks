@@ -64,7 +64,7 @@ parent = "solidworks"
 
 [[main]]
 name = "WPF Tutorials"
-url = "/wpf-tutorials/"
+url = "/wpf-tutorials/syncfusion-account-signup/"
 weight = 60
 
 [[main]]

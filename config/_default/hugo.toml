@@ -62,6 +62,7 @@ blog = "/blog/:slug/"
 docs = "/docs/:sections[1:]/:slug/"
 vba = "/vba/:sections[1:]/:slug/"
 wix-tutorials = "/wix-tutorials/:sections[1:]/:slug/"
+wpf-tutorials = "/wpf-tutorials/:sections[1:]/:slug/"
 # docs = "/docs/1.0/:sections[1:]/:slug/"
 
 [minify.tdewolff.html]
