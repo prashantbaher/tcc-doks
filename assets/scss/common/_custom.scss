@@ -1,4 +1,11 @@
 // Put your custom SCSS code here
+@import "../chroma-vs.scss";
+
+/* If your site toggles with a data attribute instead of system preference: */
+html[data-bs-theme="dark"] {
+  @import "../chroma-onedark.scss"; // One Dark only when data-bs-theme=dark is present
+}
+
 
 img {
   max-width: 100%;
@@ -11,7 +18,8 @@ img {
 .responsive-video-container {
   position: relative;
   margin-bottom: 1em;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
   overflow: hidden;
   max-width: 100%;
