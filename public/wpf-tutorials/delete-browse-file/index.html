@@ -514,7 +514,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
 <p><em><strong>Delete selected browsed file.</strong></em></p>
 </li>
 <li>
-<p><em><strong>We will continue from previous article 🚀 <a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a>.</strong></em></p>
+<p><em><strong>We will continue from previous article 🚀 <a href="/wpf-tutorials/browse-solidworks-document-ui/" target="_blank">Browse Solidworks Document UI</a>.</strong></em></p>
 </li>
 </ul>
 <h2 id="demo-video">Demo Video<a href="#demo-video" class="anchor" aria-hidden="true">#</a> </h2>
@@ -539,7 +539,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
 <p>Open &ldquo;<strong><code>MainWindow.xaml</code></strong>&rdquo; as shown in below 👇🏻 image.</p>
 </li>
 </ul>
-<p><a href="delete-browse-file/open-xaml-file.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/delete-browse-file/open-xaml-file_hu_336d7c71c3dbcd95.webp"
@@ -549,11 +549,11 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   fetchpriority="auto"
   loading="lazy"
   alt="open-xaml-file"id="h-rh-i-0"
-/></a></p>
+/></p>
 <ul>
 <li>Update &ldquo;<strong><code>MainWindow.xaml</code></strong>&rdquo; as shown in below 👇🏻 image.</li>
 </ul>
-<p><a href="delete-browse-file/update-xaml-code.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/delete-browse-file/update-xaml-code_hu_1e3f71dd287cd550.webp"
@@ -563,7 +563,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   fetchpriority="auto"
   loading="lazy"
   alt="update-xaml-code"id="h-rh-i-1"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
@@ -608,7 +608,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
 <ul>
 <li>Please see below 👇🏻 image for update UI.</li>
 </ul>
-<p><a href="delete-browse-file/update-button-text-ui.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/delete-browse-file/update-button-text-ui_hu_224c1fca1c443693.webp"
@@ -618,18 +618,18 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   fetchpriority="auto"
   loading="lazy"
   alt="update-button-text-ui"id="h-rh-i-2"
-/></a></p>
+/></p>
 <hr>
 <h2 id="update-mainwindowviewmodel">Update MainWindowViewModel<a href="#update-mainwindowviewmodel" class="anchor" aria-hidden="true">#</a> </h2>
 <ul>
 <li>
-<p>In this section, we will update <strong><code>MainWindowViewModel.cs</code></strong> file.</p>
+<p>In this section, we will update <strong><code>MainWindowViewModel.cs {lineNos=true}</code></strong> file.</p>
 </li>
 <li>
 <p>Open &ldquo;<strong><code>MainWindowViewModel.xaml</code></strong>&rdquo; as shown in below 👇🏻 image.</p>
 </li>
 </ul>
-<p><a href="delete-browse-file/open-view-model-file.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/delete-browse-file/open-view-model-file_hu_b175da86e1a62d9e.webp"
@@ -639,7 +639,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   fetchpriority="auto"
   loading="lazy"
   alt="open-view-model-file"id="h-rh-i-3"
-/></a></p>
+/></p>
 <ul>
 <li>
 <p>Go to &ldquo;<strong><code>ExecuteClickCommand()</code></strong>&rdquo; method.</p>
@@ -671,28 +671,28 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">async</span> <span class="k">void</span> <span class="n">ExecuteClickCommand</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Show busy indicator</span>
-</span></span><span class="line"><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Check if we browsed a file</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">FilePath</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Check if browsed file exist or not</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">FilePath</span><span class="p">)</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// Delete selected file.</span>
-</span></span><span class="line"><span class="cl">        <span class="n">File</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Hide busy indicator</span>
-</span></span><span class="line"><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">async</span> <span class="k">void</span> <span class="n">ExecuteClickCommand</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="c1">// Show busy indicator</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="c1">// Check if we browsed a file</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">FilePath</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="c1">// Check if browsed file exist or not</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">FilePath</span><span class="p">)</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="c1">// Delete selected file.</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="n">File</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="c1">// Hide busy indicator</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -701,7 +701,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
 <ul>
 <li>Please see below 👇🏻 image for update UI.</li>
 </ul>
-<p><a href="delete-browse-file/add-delete-file-code.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/delete-browse-file/add-delete-file-code_hu_cf53844bfaf91eb1.webp"
@@ -711,10 +711,10 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-delete-file-code"id="h-rh-i-4"
-/></a></p>
+/></p>
 <h2 id="final-result">Final Result<a href="#final-result" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we run the application as shown in below 👇🏻 image.</p>
-<p><a href="delete-browse-file/run-application.gif">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/delete-browse-file/run-application.gif"
@@ -724,7 +724,7 @@ We will continue from previous article 🚀 Browse Solidworks Document UI.">
   fetchpriority="auto"
   loading="lazy"
   alt="run-application"id="h-rh-i-5"
-/></a></p>
+/></p>
 <p>Now we are able to browse file in MVVM pattern successfully.</p>
 <p><strong>This is it !!!</strong></p>
 <p><em>I hope my efforts will helpful to someone!</em></p>

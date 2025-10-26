@@ -546,7 +546,7 @@ After deleting file, show information message to user.">
 <p><em><strong>After deleting file, show information message to user.</strong></em></p>
 </li>
 <li>
-<p><em><strong>We will continue from previous article 🚀 <a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a>.</strong></em></p>
+<p><em><strong>We will continue from previous article 🚀 <a href="/wpf-tutorials/delete-browse-file/" target="_blank">Delete Browse Solidworks Document File</a>.</strong></em></p>
 </li>
 </ul>
 <h2 id="demo-video">Demo Video<a href="#demo-video" class="anchor" aria-hidden="true">#</a> </h2>
@@ -572,7 +572,7 @@ After deleting file, show information message to user.">
 <p>Please see below 👇🏻 image for reference.</p>
 </li>
 </ul>
-<p><a href="add-message-service/add-messageservicefile-service.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/add-messageservicefile-service_hu_9bae75035c7ee24a.webp"
@@ -582,8 +582,8 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-messageservicefile-service"id="h-rh-i-0"
-/></a></p>
-<p>For reference, how to add <em>Service class</em>, please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#add-service-for-browsing-file-dialog">Add Service for Browsing File Dialog</a></strong></em> article.</p>
+/></p>
+<p>For reference, how to add <em>Service class</em>, please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#add-service-for-browsing-file-dialog/" target="_blank">Add Service for Browsing File Dialog</a></strong></em> article.</p>
 <p>Now we will add following services to this newly created <strong><code>MessagesService</code></strong> class.</p>
 <ul>
 <li>
@@ -597,7 +597,7 @@ After deleting file, show information message to user.">
 </li>
 </ul>
 <p>Please see below 👇🏻 image for reference.</p>
-<p><a href="add-message-service/add-services.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/add-services_hu_f5c1c32a9081a3c2.webp"
@@ -607,7 +607,7 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-services"id="h-rh-i-1"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
@@ -634,19 +634,19 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Services</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">ConfirmationMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">InformationMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">ErrorMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Services</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">ConfirmationMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">InformationMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="kd">internal</span> <span class="k">class</span> <span class="nc">ErrorMessagesService</span> <span class="p">:</span> <span class="n">PubSubEvent</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -654,7 +654,7 @@ After deleting file, show information message to user.">
 
 <ul>
 <li>
-<p>For more details on how to add <em>Services</em>, please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#add-service-for-browsing-file-dialog">Add Service for Browsing File Dialog</a></strong></em> article.</p>
+<p>For more details on how to add <em>Services</em>, please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#add-service-for-browsing-file-dialog/" target="_blank">Add Service for Browsing File Dialog</a></strong></em> article.</p>
 </li>
 <li>
 <p>In above line, we add <strong><code>&lt;string&gt;</code></strong> to all <strong><code>PubSubEvent</code></strong> class.</p>
@@ -679,7 +679,7 @@ After deleting file, show information message to user.">
 <p>Please see below 👇🏻 image for reference.</p>
 </li>
 </ul>
-<p><a href="add-message-service/pass-parameter-to-constructor.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/pass-parameter-to-constructor_hu_3e63065c37d5f5cc.webp"
@@ -689,7 +689,7 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="pass-parameter-to-constructor"id="h-rh-i-2"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
@@ -716,30 +716,30 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Syncfusion.Windows.Shared</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.Services</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.ViewModels</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Views</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="cs">/// Interaction logic for MainWindow.xaml</span>
-</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">ChromelessWindow</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">using</span> <span class="nn">Syncfusion.Windows.Shared</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.Services</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.ViewModels</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Views</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="cs">/// Interaction logic for MainWindow.xaml</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">ChromelessWindow</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="kd">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -782,66 +782,66 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Syncfusion.Windows.Shared</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.Services</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.ViewModels</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Views</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="cs">/// Interaction logic for MainWindow.xaml</span>
-</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">ChromelessWindow</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">BrowseFileDialogService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">BrowseFile</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">ConfirmationMessages</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">InformationMessages</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">ErrorMessages</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">BrowseFile</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">OpenFileDialog</span> <span class="n">openFileDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OpenFileDialog</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">            <span class="n">openFileDialog</span><span class="p">.</span><span class="n">Filter</span> <span class="p">=</span> <span class="s">&#34;Solidworks Part|*.sldprt|Solidworks Assembly|*.sldasm|Solidworks Drawing|*.slddrw&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">openFileDialog</span><span class="p">.</span><span class="n">DefaultExt</span> <span class="p">=</span> <span class="s">&#34;*.sldprt&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kt">bool?</span> <span class="n">result</span> <span class="p">=</span> <span class="n">openFileDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">||</span> <span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">openFileDialog</span><span class="p">.</span><span class="n">FileName</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">                <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">viewModel</span><span class="p">.</span><span class="n">FilePath</span> <span class="p">=</span> <span class="n">openFileDialog</span><span class="p">.</span><span class="n">FileName</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Information&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">using</span> <span class="nn">Syncfusion.Windows.Shared</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.Services</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">using</span> <span class="nn">WPF_Application.ViewModels</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">namespace</span> <span class="nn">WPF_Application.Views</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="cs">/// Interaction logic for MainWindow.xaml</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">ChromelessWindow</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="kd">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">BrowseFileDialogService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">BrowseFile</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">ConfirmationMessages</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">InformationMessages</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">ErrorMessages</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">BrowseFile</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">            <span class="n">OpenFileDialog</span> <span class="n">openFileDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OpenFileDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">            <span class="n">openFileDialog</span><span class="p">.</span><span class="n">Filter</span> <span class="p">=</span> <span class="s">&#34;Solidworks Part|*.sldprt|Solidworks Assembly|*.sldasm|Solidworks Drawing|*.slddrw&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">            <span class="n">openFileDialog</span><span class="p">.</span><span class="n">DefaultExt</span> <span class="p">=</span> <span class="s">&#34;*.sldprt&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">
+</span></span><span class="line"><span class="ln">34</span><span class="cl">            <span class="kt">bool?</span> <span class="n">result</span> <span class="p">=</span> <span class="n">openFileDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">||</span> <span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">openFileDialog</span><span class="p">.</span><span class="n">FileName</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">                <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">
+</span></span><span class="line"><span class="ln">39</span><span class="cl">            <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">            <span class="n">viewModel</span><span class="p">.</span><span class="n">FilePath</span> <span class="p">=</span> <span class="n">openFileDialog</span><span class="p">.</span><span class="n">FileName</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">
+</span></span><span class="line"><span class="ln">43</span><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">            <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">            <span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">
+</span></span><span class="line"><span class="ln">50</span><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">            <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Information&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">
+</span></span><span class="line"><span class="ln">55</span><span class="cl">        <span class="kd">private</span> <span class="k">void</span> <span class="n">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">            <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -859,10 +859,10 @@ After deleting file, show information message to user.">
 </ul>
 </li>
 <li>
-<p><strong><code>BrowseFileDialogService</code></strong> is already explained in 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#understand-service-call-execute-function">Understand Service Call Execute Function</a></strong></em> article.</p>
+<p><strong><code>BrowseFileDialogService</code></strong> is already explained in 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#understand-service-call-execute-function/" target="_blank">Understand Service Call Execute Function</a></strong></em> article.</p>
 </li>
 <li>
-<p>Please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#understand-service-call-execute-function">Understand Service Call Execute Function</a></strong></em> article for more details.</p>
+<p>Please visit 🚀 <em><strong><a href="/wpf-tutorials/browse-solidworks-document-ui/#understand-service-call-execute-function/" target="_blank">Understand Service Call Execute Function</a></strong></em> article for more details.</p>
 </li>
 <li>
 <p>In this section, we will understand remaining 3 service and their respective execution methods.</p>
@@ -883,19 +883,37 @@ After deleting file, show information message to user.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>In  <strong><code>ConfirmationMessages</code></strong> method, we pass a <strong><code>string</code></strong> as parameter.</p>
@@ -909,14 +927,32 @@ After deleting file, show information message to user.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Confirmation&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>In above line, we create a variable as follows:</p>
@@ -1088,10 +1124,25 @@ After deleting file, show information message to user.">
 </table>
 </li>
 <li>
-<p>Please visit 🚀 <em><strong><a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.messagebox.show?view=windowsdesktop-7.0">MessageBox.Show Method</a></strong></em> article for more details.</p>
+<p>Please visit 🚀 <em><strong><a href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.messagebox.show?view=windowsdesktop-7.0" target="_blank">MessageBox.Show Method</a></strong></em> article for more details.</p>
 </li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1099,9 +1150,12 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="n">DataContext</span> <span class="k">as</span> <span class="n">MainWindowViewModel</span><span class="p">;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>In above line of code, we create a variable as follows:</p>
@@ -1115,14 +1169,32 @@ After deleting file, show information message to user.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">viewModel</span><span class="p">.</span><span class="n">DeleteFile</span> <span class="p">=</span> <span class="p">(</span><span class="n">result</span> <span class="p">==</span> <span class="n">MessageBoxResult</span><span class="p">.</span><span class="n">Yes</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>In above line, we set the value of <strong><code>DeleteFile</code></strong> property.</p>
@@ -1177,17 +1249,35 @@ After deleting file, show information message to user.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Information&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Information&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>In above line of code, we <em>show</em> a <strong><code>MessageBox</code></strong> to user.</p>
@@ -1235,17 +1325,35 @@ After deleting file, show information message to user.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>In above line of code, we <em>show</em> a <strong><code>MessageBox</code></strong> to user.</p>
@@ -1295,7 +1403,7 @@ After deleting file, show information message to user.">
 <p>Add <strong><code>DeleteFile</code></strong> property as shown below.</p>
 </li>
 </ul>
-<p><a href="add-message-service/add-delete-property.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/add-delete-property_hu_b5a5076bfae3f69c.webp"
@@ -1305,7 +1413,7 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-delete-property"id="h-rh-i-3"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below code for adding <strong><code>DeleteFile</code></strong> property.</li>
 </ul>
@@ -1332,12 +1440,12 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">bool</span> <span class="n">_DeleteFile</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">DeleteFile</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DeleteFile</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DeleteFile</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">private</span> <span class="kt">bool</span> <span class="n">_DeleteFile</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">DeleteFile</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DeleteFile</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DeleteFile</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1352,7 +1460,7 @@ After deleting file, show information message to user.">
 <p>Please see below 👇🏻 image for how to add code for <em>showing error message</em>.</p>
 </li>
 </ul>
-<p><a href="add-message-service/show-message-for-empty-file.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/show-message-for-empty-file_hu_b5ea39e071e8b7b7.webp"
@@ -1362,7 +1470,7 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="show-message-for-empty-file"id="h-rh-i-4"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below code for <em>showing error message</em> on empty browsed file.</li>
 </ul>
@@ -1389,13 +1497,13 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Check if we browsed a file</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">FilePath</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Show information that file is deleted.</span>
-</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;Empty File Path.&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">// Check if we browsed a file</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">FilePath</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="c1">// Show information that file is deleted.</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;Empty File Path.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1410,7 +1518,7 @@ After deleting file, show information message to user.">
 <p>Please see below 👇🏻 image for how to add code for <em>showing error message</em>.</p>
 </li>
 </ul>
-<p><a href="add-message-service/browse-file-did-not-exit.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/browse-file-did-not-exit_hu_4e5cba2d2b4cbfe3.webp"
@@ -1420,7 +1528,7 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="browse-file-did-not-exit"id="h-rh-i-5"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below code for <em>showing error message</em> on empty browsed file.</li>
 </ul>
@@ -1447,13 +1555,13 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Check if browsed file exist or not</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">FilePath</span><span class="p">)</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Show information that file is deleted.</span>
-</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">$&#34;[{FilePath}] did not exist.&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">// Check if browsed file exist or not</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">FilePath</span><span class="p">)</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="c1">// Show information that file is deleted.</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">$&#34;[{FilePath}] did not exist.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1486,8 +1594,8 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Get confirmation from user</span>
-</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">$&#34;Do you want to delete [{FilePath}]?&#34;</span><span class="p">);</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">// Get confirmation from user</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">$&#34;Do you want to delete [{FilePath}]?&#34;</span><span class="p">);</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1520,17 +1628,17 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Not confirmed then clear data and exit function.</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!</span><span class="n">DeleteFile</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ClearData</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="cs">/// Method for clearing &lt;see cref=&#34;FilePath&#34;/&gt; property.</span>
-</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">ClearData</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">FilePath</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// Not confirmed then clear data and exit function.</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">if</span> <span class="p">(!</span><span class="n">DeleteFile</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">ClearData</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="cs">/// Method for clearing &lt;see cref=&#34;FilePath&#34;/&gt; property.</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">void</span> <span class="n">ClearData</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">FilePath</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1560,18 +1668,18 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Show busy indicator</span>
-</span></span><span class="line"><span class="cl"><span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Delete Selected File</span>
-</span></span><span class="line"><span class="cl">    <span class="n">File</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Hide busy indicator</span>
-</span></span><span class="line"><span class="cl"><span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// Show busy indicator</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="c1">// Delete Selected File</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">File</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1">// Hide busy indicator</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1604,8 +1712,8 @@ After deleting file, show information message to user.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// Show information that file is deleted.</span>
-</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;File sucessfully deleted.&#34;</span><span class="p">);</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">// Show information that file is deleted.</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;File sucessfully deleted.&#34;</span><span class="p">);</span></span></span></code></pre></div>
   </figure>
 </div>
 </div>
@@ -1613,7 +1721,7 @@ After deleting file, show information message to user.">
 
 <h2 id="final-result">Final Result<a href="#final-result" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we run the application as shown in below 👇🏻 image.</p>
-<p><a href="add-message-service/final">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/add-message-service/final-result.gif"
@@ -1623,7 +1731,7 @@ After deleting file, show information message to user.">
   fetchpriority="auto"
   loading="lazy"
   alt="final-result"id="h-rh-i-6"
-/></a>-result.gif</p>
+/></p>
 <p>Now we are able to <strong>delete browsed file</strong> in MVVM pattern successfully.</p>
 <p><strong>This is it !!!</strong></p>
 <p><em>I hope my efforts will helpful to someone!</em></p>

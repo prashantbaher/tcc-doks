@@ -50,7 +50,7 @@
 <meta property="og:url" content="http://localhost:1313/wpf-tutorials/create-line-ui-part-2/">
   <meta property="og:site_name" content="The CAD Coder">
   <meta property="og:title" content="Create Line UI - Part 2">
-  <meta property="og:description" content="Objective In this article we continued from 🚀 _Create Line UI - Part 1{:target=&#34;blank&#34;} article.
+  <meta property="og:description" content="Objective In this article we continued from 🚀 Create Line UI - Part 1 article.
 We will create remaining UI controls and bindings with viewmodels.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
@@ -60,7 +60,7 @@ We will create remaining UI controls and bindings with viewmodels.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/logo.png">
   <meta name="twitter:title" content="Create Line UI - Part 2">
-  <meta name="twitter:description" content="Objective In this article we continued from 🚀 _Create Line UI - Part 1{:target=&#34;blank&#34;} article.
+  <meta name="twitter:description" content="Objective In this article we continued from 🚀 Create Line UI - Part 1 article.
 We will create remaining UI controls and bindings with viewmodels.">
 
     
@@ -529,7 +529,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 
 			</nav>
 			<h2 id="objective">Objective<a href="#objective" class="anchor" aria-hidden="true">#</a> </h2>
-<p>In this article we continued from 🚀 _<em><a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a>{:target=&quot;<em>blank&quot;}</em></em> article.</p>
+<p>In this article we continued from 🚀 <strong><a href="/wpf-tutorials/create-line-ui-part-1/" target="_blank">Create Line UI - Part 1</a></strong> article.</p>
 <p>We will create remaining UI controls and bindings with viewmodels.</p>
 <hr>
 <h2 id="demo-video">Demo Video<a href="#demo-video" class="anchor" aria-hidden="true">#</a> </h2>
@@ -562,7 +562,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 <ul>
 <li>Please see below 👇🏻 image for reference.</li>
 </ul>
-<p><a href="create-line-ui/add-endpoints-properties.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-endpoints-properties_hu_2ed605eeeb280ab.webp"
@@ -572,11 +572,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-endpoints-properties"id="h-rh-i-0"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -584,21 +599,24 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">PointViewModel</span> <span class="n">_startPointViewModel</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">PointViewModel</span> <span class="n">StartPointViewModel</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_startPointViewModel</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_startPointViewModel</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">PointViewModel</span> <span class="n">_endpointViewModel</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">PointViewModel</span> <span class="n">EndPointViewModel</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_endpointViewModel</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_endpointViewModel</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">private</span> <span class="n">PointViewModel</span> <span class="n">_startPointViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kd">public</span> <span class="n">PointViewModel</span> <span class="n">StartPointViewModel</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_startPointViewModel</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_startPointViewModel</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kd">private</span> <span class="n">PointViewModel</span> <span class="n">_endpointViewModel</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kd">public</span> <span class="n">PointViewModel</span> <span class="n">EndPointViewModel</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_endpointViewModel</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">set</span> <span class="p">{</span> <span class="n">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_endpointViewModel</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h3 id="update-constructor">Update Constructor<a href="#update-constructor" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Now we need to update Constructor, so that we can resolve <strong>[<code>StartPointViewModel</code>]</strong> and <strong>[<code>EndPointViewModel</code>]</strong> properties through <strong>DI Container</strong>.</p>
@@ -610,7 +628,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 <p>Please see below 👇🏻 image for reference.</p>
 </li>
 </ul>
-<p><a href="create-line-ui/update-constructor.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/update-constructor_hu_1878c7e1a410d751.webp"
@@ -620,11 +638,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="update-constructor"id="h-rh-i-1"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -632,16 +665,19 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">readonly</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">container</span> <span class="p">=</span> <span class="n">container</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kd">private</span> <span class="k">readonly</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="kd">public</span> <span class="n">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">container</span> <span class="p">=</span> <span class="n">container</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>
 <p>Now, we need to set resolve value of <strong>[<code>StartPointViewModel</code>]</strong> and <strong>[<code>EndPointViewModel</code>]</strong> properties through <strong>DI Container</strong>.</p>
@@ -653,7 +689,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 <p>Please see below 👇🏻 image for reference.</p>
 </li>
 </ul>
-<p><a href="create-line-ui/resolve-properties-through-di.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/resolve-properties-through-di_hu_6c5c010621f5e5e2.webp"
@@ -663,11 +699,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="resolve-properties-through-di"id="h-rh-i-2"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -675,16 +726,19 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">container</span> <span class="p">=</span> <span class="n">container</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">StartPointViewModel</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">EndPointViewModel</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">public</span> <span class="n">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">container</span> <span class="p">=</span> <span class="n">container</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">StartPointViewModel</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="n">EndPointViewModel</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h3 id="add-prism-command">Add [Prism Command]<a href="#add-prism-command" class="anchor" aria-hidden="true">#</a> </h3>
 <ul>
@@ -701,26 +755,44 @@ We will create remaining UI controls and bindings with viewmodels.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">DelegateCommand</span> <span class="n">CreateLineCommand</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_createCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_createCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteCreateLineCommand</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">ExecuteCreateLineCommand</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kd">public</span> <span class="n">DelegateCommand</span> <span class="n">CreateLineCommand</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="n">_createCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_createCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteCreateLineCommand</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">void</span> <span class="n">ExecuteCreateLineCommand</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>Please see below 👇🏻 image for adding <strong>“Prism Command”</strong> in <strong><code>MainWindowViewModel</code></strong>.</li>
 </ul>
-<p><a href="create-line-ui/add-command-in-viewmodel.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-command-in-viewmodel_hu_8600425b88554fce.webp"
@@ -730,7 +802,7 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-command-in-viewmodel"id="h-rh-i-3"
-/></a></p>
+/></p>
 <hr>
 <h3 id="add-code-to-function">Add Code To Function<a href="#add-code-to-function" class="anchor" aria-hidden="true">#</a> </h3>
 <ul>
@@ -747,36 +819,54 @@ We will create remaining UI controls and bindings with viewmodels.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="c#" class="nav-link active" id="tabs-csharp-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-csharp-code-0" type="button" role="tab" aria-controls="tabs-csharp-code-0" aria-selected="true">
+      C#</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="c#" class="tab-pane fade show active" id="tabs-csharp-code-0" role="tabpanel" aria-labelledby="tabs-csharp-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">DelegateCommand</span> <span class="n">CreateLineCommand</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_createCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_createCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteCreateLineCommand</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">async</span> <span class="k">void</span> <span class="n">ExecuteCreateLineCommand</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Show busy indicator</span>
-</span></span><span class="line"><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// Sleeping with 5 sec</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Hide busy indicator</span>
-</span></span><span class="line"><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kd">public</span> <span class="n">DelegateCommand</span> <span class="n">CreateLineCommand</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">_createCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_createCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteCreateLineCommand</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="kd">async</span> <span class="k">void</span> <span class="n">ExecuteCreateLineCommand</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="c1">// Show busy indicator</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="c1">// Sleeping with 5 sec</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="c1">// Hide busy indicator</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="n">IsBusy</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>Please see below 👇🏻 image for waiting code to add.</li>
 </ul>
-<p><a href="create-line-ui/add-code-to-command.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-code-to-command_hu_4b8492ccbb9adbf7.webp"
@@ -786,7 +876,7 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-code-to-command"id="h-rh-i-4"
-/></a></p>
+/></p>
 <hr>
 <h2 id="update-view-mainwindow">Update View [MainWindow]<a href="#update-view-mainwindow" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we need to update a <strong>[MainWindow]</strong> window.</p>
@@ -795,7 +885,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 <ul>
 <li>Please see below 👇🏻 image for reference.</li>
 </ul>
-<p><a href="create-line-ui/add-viewmodel-namespace.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-viewmodel-namespace_hu_10ebf167cc05b540.webp"
@@ -805,11 +895,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-viewmodel-namespace"id="h-rh-i-5"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="xaml" class="nav-link active" id="tabs-xaml-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-xaml-code-0" type="button" role="tab" aria-controls="tabs-xaml-code-0" aria-selected="true">
+      XAML</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="xaml" class="tab-pane fade show active" id="tabs-xaml-code-0" role="tabpanel" aria-labelledby="tabs-xaml-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -817,26 +922,29 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;syncfusion:ChromelessWindow</span>
-</span></span><span class="line"><span class="cl">    <span class="na">x:Class=</span><span class="s">&#34;SolidworksTest.Views.MainWindow&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:x=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:d=</span><span class="s">&#34;http://schemas.microsoft.com/expression/blend/2008&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:mc=</span><span class="s">&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:prism=</span><span class="s">&#34;http://prismlibrary.com/&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:syncfusion=</span><span class="s">&#34;http://schemas.syncfusion.com/wpf&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:view=</span><span class="s">&#34;clr-namespace:SolidworksTest.Views&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">xmlns:viewmodel=</span><span class="s">&#34;clr-namespace:SolidworksTest.ViewModels&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Title=</span><span class="s">&#34;{Binding Title}&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Width=</span><span class="s">&#34;525&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Height=</span><span class="s">&#34;450&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">d:DataContext=</span><span class="s">&#34;{d:DesignInstance viewmodel:MainWindowViewModel}&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">prism:ViewModelLocator.AutoWireViewModel=</span><span class="s">&#34;True&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Background=</span><span class="s">&#34;White&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">WindowStartupLocation=</span><span class="s">&#34;CenterScreen&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">mc:Ignorable=</span><span class="s">&#34;d&#34;</span><span class="nt">&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nt">&lt;syncfusion:ChromelessWindow</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="na">x:Class=</span><span class="s">&#34;SolidworksTest.Views.MainWindow&#34;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="na">xmlns=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="na">xmlns:x=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="na">xmlns:d=</span><span class="s">&#34;http://schemas.microsoft.com/expression/blend/2008&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="na">xmlns:mc=</span><span class="s">&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="na">xmlns:prism=</span><span class="s">&#34;http://prismlibrary.com/&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="na">xmlns:syncfusion=</span><span class="s">&#34;http://schemas.syncfusion.com/wpf&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="na">xmlns:view=</span><span class="s">&#34;clr-namespace:SolidworksTest.Views&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="na">xmlns:viewmodel=</span><span class="s">&#34;clr-namespace:SolidworksTest.ViewModels&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="na">Title=</span><span class="s">&#34;{Binding Title}&#34;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="na">Width=</span><span class="s">&#34;525&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="na">Height=</span><span class="s">&#34;450&#34;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="na">d:DataContext=</span><span class="s">&#34;{d:DesignInstance viewmodel:MainWindowViewModel}&#34;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="na">prism:ViewModelLocator.AutoWireViewModel=</span><span class="s">&#34;True&#34;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="na">Background=</span><span class="s">&#34;White&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="na">WindowStartupLocation=</span><span class="s">&#34;CenterScreen&#34;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="na">mc:Ignorable=</span><span class="s">&#34;d&#34;</span><span class="nt">&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h3 id="add-start-point-view">Add [Start Point] View<a href="#add-start-point-view" class="anchor" aria-hidden="true">#</a> </h3>
 <ul>
@@ -850,21 +958,39 @@ We will create remaining UI controls and bindings with viewmodels.">
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="xaml" class="nav-link active" id="tabs-xaml-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-xaml-code-0" type="button" role="tab" aria-controls="tabs-xaml-code-0" aria-selected="true">
+      XAML</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="xaml" class="tab-pane fade show active" id="tabs-xaml-code-0" role="tabpanel" aria-labelledby="tabs-xaml-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;StackPanel&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/StackPanel&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">&lt;StackPanel&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nt">&lt;/StackPanel&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Inside this <strong><code>&lt;StackPanel&gt;</code></strong> tag, we add <strong><code>&lt;view:PointView&gt;&lt;/view:PointView&gt;</code></strong> tag.</p>
 <ul>
 <li>Please see below 👇🏻 image for reference.</li>
 </ul>
-<p><a href="create-line-ui/add-startpoint.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-startpoint_hu_52efb91fee14b3a1.webp"
@@ -874,11 +1000,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-startpoint"id="h-rh-i-6"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="xaml" class="nav-link active" id="tabs-xaml-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-xaml-code-0" type="button" role="tab" aria-controls="tabs-xaml-code-0" aria-selected="true">
+      XAML</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="xaml" class="tab-pane fade show active" id="tabs-xaml-code-0" role="tabpanel" aria-labelledby="tabs-xaml-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -886,14 +1027,17 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;view:PointView</span>
-</span></span><span class="line"><span class="cl">    <span class="na">HorizontalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">VerticalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">HorizontalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">VerticalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">DataContext=</span><span class="s">&#34;{Binding StartPointViewModel}&#34;</span> <span class="nt">/&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">&lt;view:PointView</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="na">HorizontalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="na">VerticalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="na">HorizontalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="na">VerticalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="na">DataContext=</span><span class="s">&#34;{Binding StartPointViewModel}&#34;</span> <span class="nt">/&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>Above view bind <strong>[<code>DataContext</code>]</strong> property of <strong>[<code>view:PointView</code>]</strong> with <strong><code>StartPointViewModel</code></strong> property of <strong>[<code>MainWindowViewModel</code>]</strong>.</li>
 </ul>
@@ -906,7 +1050,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 <ul>
 <li>Please see below 👇🏻 image for reference.</li>
 </ul>
-<p><a href="create-line-ui/add-endpoint.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-endpoint_hu_ab0b6a8d457033f1.webp"
@@ -916,11 +1060,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-endpoint"id="h-rh-i-7"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="xaml" class="nav-link active" id="tabs-xaml-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-xaml-code-0" type="button" role="tab" aria-controls="tabs-xaml-code-0" aria-selected="true">
+      XAML</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="xaml" class="tab-pane fade show active" id="tabs-xaml-code-0" role="tabpanel" aria-labelledby="tabs-xaml-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -928,14 +1087,17 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;view:PointView</span>
-</span></span><span class="line"><span class="cl">    <span class="na">HorizontalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">VerticalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">HorizontalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">VerticalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">DataContext=</span><span class="s">&#34;{Binding EndPointViewModel}&#34;</span> <span class="nt">/&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">&lt;view:PointView</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="na">HorizontalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="na">VerticalAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="na">HorizontalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="na">VerticalContentAlignment=</span><span class="s">&#34;Stretch&#34;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="na">DataContext=</span><span class="s">&#34;{Binding EndPointViewModel}&#34;</span> <span class="nt">/&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>Above view bind <strong>[<code>DataContext</code>]</strong> property of <strong>[<code>view:PointView</code>]</strong> with <strong><code>EndPointViewModel</code></strong> property of <strong>[<code>MainWindowViewModel</code>]</strong>.</li>
 </ul>
@@ -948,7 +1110,7 @@ We will create remaining UI controls and bindings with viewmodels.">
 <ul>
 <li>Please see below 👇🏻 image for reference.</li>
 </ul>
-<p><a href="create-line-ui/add-create-line-button.png">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/add-create-line-button_hu_4d3f96a6232b66b6.webp"
@@ -958,11 +1120,26 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-create-line-button"id="h-rh-i-8"
-/></a></p>
+/></p>
 <ul>
 <li>Please see below 👇🏻 code sample for reference.</li>
 </ul>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="xaml" class="nav-link active" id="tabs-xaml-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-xaml-code-0" type="button" role="tab" aria-controls="tabs-xaml-code-0" aria-selected="true">
+      XAML</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="xaml" class="tab-pane fade show active" id="tabs-xaml-code-0" role="tabpanel" aria-labelledby="tabs-xaml-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -970,22 +1147,25 @@ We will create remaining UI controls and bindings with viewmodels.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;syncfusion:ButtonAdv</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Width=</span><span class="s">&#34;250&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Height=</span><span class="s">&#34;50&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Command=</span><span class="s">&#34;{Binding CreateLineCommand}&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">IconHeight=</span><span class="s">&#34;0&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">IconWidth=</span><span class="s">&#34;0&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">Label=</span><span class="s">&#34;Click Me&#34;</span> <span class="nt">/&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">&lt;syncfusion:ButtonAdv</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="na">Width=</span><span class="s">&#34;250&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="na">Height=</span><span class="s">&#34;50&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="na">Command=</span><span class="s">&#34;{Binding CreateLineCommand}&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="na">IconHeight=</span><span class="s">&#34;0&#34;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="na">IconWidth=</span><span class="s">&#34;0&#34;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="na">Label=</span><span class="s">&#34;Click Me&#34;</span> <span class="nt">/&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <ul>
 <li>Above view bind <strong>[<code>Command</code>]</strong> property of <strong>[<code>syncfusion:ButtonAdv</code>]</strong> with <strong><code>CreateLineCommand</code></strong> property of <strong>[<code>MainWindowViewModel</code>]</strong>.</li>
 </ul>
 <hr>
 <h2 id="final-result">Final Result<a href="#final-result" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we run the application as shown in below 👇🏻 image.</p>
-<p><a href="create-line-ui/final-result.gif">
+<p>
 
 <img
   src="/wpf-tutorials/getting-started/create-line-ui/final-result.gif"
@@ -995,7 +1175,7 @@ We will create remaining UI controls and bindings with viewmodels.">
   fetchpriority="auto"
   loading="lazy"
   alt="final-result"id="h-rh-i-9"
-/></a></p>
+/></p>
 <p>Now we are able to <strong>Creale Line in Solidworks Sketch</strong> in MVVM pattern successfully.</p>
 <p><strong>This is it !!!</strong></p>
 <p><em>I hope my efforts will helpful to someone!</em></p>

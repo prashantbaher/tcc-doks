@@ -14,7 +14,7 @@
       <link>http://localhost:1313/wpf-tutorials/syncfusion-account-signup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wpf-tutorials/syncfusion-account-signup/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sign Up Syncfusion Account.&lt;/li&gt;&#xA;&lt;li&gt;Download Syncfusion Community Version Control.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;sign-up-syncfusion-account&#34;&gt;Sign Up Syncfusion Account&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Sign Up Page&lt;/em&gt;: 🚀 &lt;strong&gt;&lt;a href=&#34;https://www.syncfusion.com/account/register&#34;&gt;Sign Up Page&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Please see below image for reference.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sign Up Syncfusion Account.&lt;/li&gt;&#xA;&lt;li&gt;Download Syncfusion Community Version Control.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;sign-up-syncfusion-account&#34;&gt;Sign Up Syncfusion Account&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Sign Up Page&lt;/em&gt;: 🚀 &lt;strong&gt;&lt;a href=&#34;https://www.syncfusion.com/account/register&#34; target=&#34;_blank&#34;&gt;Sign Up Page&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Please see below image for reference.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Install Prism Project Template</title>
@@ -35,28 +35,28 @@
       <link>http://localhost:1313/wpf-tutorials/add-syncfusion-busy-indicator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wpf-tutorials/add-syncfusion-busy-indicator/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Add Syncfusion Busy Indicator&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Use Syncfusion Busy Indicator, for Long operation&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;We will continue from previous article 🚀 &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/wpf-tutorials/open-syncfusion-chromeless-window/&#34;&gt;Open Syncfusion Chromeless Window&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Add Syncfusion Busy Indicator&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Use Syncfusion Busy Indicator, for Long operation&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;We will continue from previous article 🚀 &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/wpf-tutorials/open-syncfusion-chromeless-window/&#34; target=&#34;_blank&#34;&gt;Open Syncfusion Chromeless Window&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Add Syncfusion License Key</title>
       <link>http://localhost:1313/wpf-tutorials/add-syncfusion-license-key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wpf-tutorials/add-syncfusion-license-key/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Add Syncfusion License Key&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will continue from previous article 🚀 &lt;a href=&#34;http://localhost:1313/wpf-tutorials/add-syncfusion-busy-indicator/&#34;&gt;Add Syncfusion Busy Indicator&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Will not add new controls to previous code.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Add Syncfusion License Key&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will continue from previous article 🚀 &lt;a href=&#34;http://localhost:1313/wpf-tutorials/add-syncfusion-busy-indicator/&#34; target=&#34;_blank&#34;&gt;Add Syncfusion Busy Indicator&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Will not add new controls to previous code.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Browse Solidworks Document UI</title>
       <link>http://localhost:1313/wpf-tutorials/browse-solidworks-document-ui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wpf-tutorials/browse-solidworks-document-ui/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create Browse Solidworks Document User Interface&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will continue from previous article 🚀 &lt;a href=&#34;http://localhost:1313/wpf-tutorials/browse-solidworks-document-ui/&#34;&gt;Add Syncfusion Busy Indicator&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create Browse Solidworks Document User Interface&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will continue from previous article 🚀 &lt;a href=&#34;http://localhost:1313/wpf-tutorials/browse-solidworks-document-ui/&#34; target=&#34;_blank&#34;&gt;Add Syncfusion Busy Indicator&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Delete Browse Solidworks Document File</title>
       <link>http://localhost:1313/wpf-tutorials/delete-browse-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wpf-tutorials/delete-browse-file/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Browse Solidworks Document File.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Delete selected browsed file.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will continue from previous article 🚀 &lt;a href=&#34;http://localhost:1313/wpf-tutorials/browse-solidworks-document-ui/&#34;&gt;Browse Solidworks Document UI&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Browse Solidworks Document File.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Delete selected browsed file.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will continue from previous article 🚀 &lt;a href=&#34;http://localhost:1313/wpf-tutorials/browse-solidworks-document-ui/&#34; target=&#34;_blank&#34;&gt;Browse Solidworks Document UI&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Add Message Service</title>
@@ -77,7 +77,7 @@
       <link>http://localhost:1313/wpf-tutorials/edit-solidworks-sketch-ui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wpf-tutorials/edit-solidworks-sketch-ui/</guid>
-      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&lt;strong&gt;Create User Interface for Invoking Edit Solidworks Sketch.&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Important Note:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will use same setup as done in 🚀&lt;a href=&#34;http://localhost:1313/wpf-tutorials/insert-solidworks-sketch-ui/&#34;&gt;Insert Solidworks Sketch UI&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&lt;strong&gt;Create User Interface for Invoking Edit Solidworks Sketch.&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Important Note:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;We will use same setup as done in 🚀&lt;a href=&#34;http://localhost:1313/wpf-tutorials/insert-solidworks-sketch-ui/&#34; target=&#34;_blank&#34;&gt;Insert Solidworks Sketch UI&lt;/a&gt;.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

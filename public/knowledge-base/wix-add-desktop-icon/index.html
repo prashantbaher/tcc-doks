@@ -444,7 +444,7 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
 			</nav>
 			<p>In this article we <strong>create Desktop Icon</strong> when MSI install application.</p>
 <p>Please see below 👇🏻 image of <strong>Desktop Icon</strong> for reference.</p>
-<p><a href="wix-add-desktop-icon/installed-desktop-icon.png">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-desktop-icon/installed-desktop-icon_hu_44792d96f38ad71b.webp"
@@ -454,11 +454,11 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="installed-desktop-icon"id="h-rh-i-0"
-/></a></p>
+/></p>
 <hr>
 <h2 id="update-examplecomponentswxs">Update [ExampleComponents.wxs]<a href="#update-examplecomponentswxs" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Below image show content of <strong><code>ExampleComponents.wxs</code></strong></p>
-<p><a href="wix-add-desktop-icon/ExampleComponents.wxs-file.png">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-desktop-icon/ExampleComponents.wxs-file_hu_9a3305b6aa6e2547.webp"
@@ -468,7 +468,7 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="ExampleComponents.wxs-file"id="h-rh-i-1"
-/></a></p>
+/></p>
 
 
 
@@ -575,10 +575,10 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="c">&lt;!--Add output file--&gt;</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="nt">&lt;File</span> <span class="na">Id=</span><span class="s">&#34;ApplicationFile&#34;</span> <span class="na">Source=</span><span class="s">&#34;WPF_Application.exe&#34;</span><span class="nt">&gt;</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">          <span class="c">&lt;!--Add Desktop Shortcut--&gt;</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">&#34;DesktopShortCut&#34;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">                    <span class="na">Directory=</span><span class="s">&#34;DesktopFolder&#34;</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">                    <span class="na">Advertise=</span><span class="s">&#34;yes&#34;</span> <span class="na">Icon=</span><span class="s">&#34;icon.exe&#34;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">                    <span class="na">Name=</span><span class="s">&#34;!(bind.Property.ProductName)&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line hl"><span class="ln"> 8</span><span class="cl">          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">&#34;DesktopShortCut&#34;</span>
+</span></span><span class="line hl"><span class="ln"> 9</span><span class="cl">                    <span class="na">Directory=</span><span class="s">&#34;DesktopFolder&#34;</span>
+</span></span><span class="line hl"><span class="ln">10</span><span class="cl">                    <span class="na">Advertise=</span><span class="s">&#34;yes&#34;</span> <span class="na">Icon=</span><span class="s">&#34;icon.exe&#34;</span>
+</span></span><span class="line hl"><span class="ln">11</span><span class="cl">                    <span class="na">Name=</span><span class="s">&#34;!(bind.Property.ProductName)&#34;</span> <span class="nt">/&gt;</span>
 </span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nt">&lt;/File&gt;</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl">      <span class="nt">&lt;/Component&gt;</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="nt">&lt;/ComponentGroup&gt;</span>
@@ -592,7 +592,7 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
 <p>In above code sample, we &ldquo;<strong>Add Desktop Shortcut</strong>&rdquo;.</p>
 <p>For this we use <strong><code>&lt;Shortcut&gt;</code></strong> tag.</p>
 <p>Please see below 👇🏻 code for reference.</p>
-<p><a href="wix-add-desktop-icon/add-desktop-shortcut-tag.png">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-desktop-icon/add-desktop-shortcut-tag_hu_b64e0bad05f5df32.webp"
@@ -602,7 +602,7 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-desktop-shortcut-tag"id="h-rh-i-2"
-/></a></p>
+/></p>
 <p>After adding <strong><code>&lt;Shortcut&gt;</code></strong> tag, we define some properties of <strong><code>&lt;Shortcut&gt;</code></strong> tag.</p>
 <p>Please see below list of properties for <strong><code>&lt;Shortcut&gt;</code></strong> tag.</p>
 <table>
@@ -675,7 +675,7 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
 <hr>
 <h2 id="build-solution">[Build] Solution<a href="#build-solution" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we need to build solution as shown below.</p>
-<p><a href="wix-add-remove-program-details/build-solution.gif">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-remove-program-details/build-solution.gif"
@@ -685,10 +685,10 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="build-solution"id="h-rh-i-3"
-/></a></p>
+/></p>
 <p>After building solution we need to go to folder where MSI is created.</p>
 <p>Please see below 👇🏻 image for reference.</p>
-<p><a href="wix-add-remove-program-details/open-msi-folder.gif">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-remove-program-details/open-msi-folder.gif"
@@ -698,12 +698,12 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="open-msi-folder"id="h-rh-i-4"
-/></a></p>
+/></p>
 <hr>
 <h2 id="final-result">Final Result<a href="#final-result" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Run the MSI to install application.</p>
 <p>Below image show final result after running installation.</p>
-<p><a href="wix-add-desktop-icon/installed-desktop-icon.png">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-desktop-icon/installed-desktop-icon_hu_44792d96f38ad71b.webp"
@@ -713,7 +713,7 @@ Please see below 👇🏻 image of Desktop Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="installed-desktop-icon"id="h-rh-i-5"
-/></a></p>
+/></p>
 <hr>
 <p>That&rsquo;s it!!!</p>
 <p>Hope this post helps you.</p>

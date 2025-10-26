@@ -442,7 +442,7 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
 			</nav>
 			<p>In this article we <strong>create Menu Folder Icon</strong> when MSI install application.</p>
 <p>Please see below 👇🏻 image of <strong>Menu Folder Icon</strong> for reference.</p>
-<p><a href="wix-add-menu-folder-icon/final-result.gif">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-menu-folder-icon/final-result.gif"
@@ -452,11 +452,11 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="final-result"id="h-rh-i-0"
-/></a></p>
+/></p>
 <hr>
 <h2 id="update-examplecomponentswxs">Update [ExampleComponents.wxs]<a href="#update-examplecomponentswxs" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Below image show content of <strong><code>ExampleComponents.wxs</code></strong></p>
-<p><a href="wix-add-menu-folder-icon/ExampleComponents.wxs-file.png">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-menu-folder-icon/ExampleComponents.wxs-file_hu_ac92bd3806edfabf.webp"
@@ -466,7 +466,7 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="ExampleComponents.wxs-file"id="h-rh-i-1"
-/></a></p>
+/></p>
 
 
 
@@ -545,11 +545,11 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">                    <span class="na">Directory=</span><span class="s">&#34;DesktopFolder&#34;</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl">                    <span class="na">Advertise=</span><span class="s">&#34;yes&#34;</span> <span class="na">Icon=</span><span class="s">&#34;icon.exe&#34;</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">                    <span class="na">Name=</span><span class="s">&#34;!(bind.Property.ProductName)&#34;</span> <span class="nt">/&gt;</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">          <span class="c">&lt;!--Add Menu Folder Shortcut--&gt;</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">&#34;ProgramMenuIcon&#34;</span> <span class="na">Advertise=</span><span class="s">&#34;yes&#34;</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">              <span class="na">Directory=</span><span class="s">&#34;APPFOLDER&#34;</span> <span class="na">Icon=</span><span class="s">&#34;icon.exe&#34;</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">              <span class="na">Name=</span><span class="s">&#34;!(bind.Property.ProductName)&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">          <span class="nt">&lt;/Shortcut&gt;</span>
+</span></span><span class="line hl"><span class="ln">12</span><span class="cl">          <span class="c">&lt;!--Add Menu Folder Shortcut--&gt;</span>
+</span></span><span class="line hl"><span class="ln">13</span><span class="cl">          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">&#34;ProgramMenuIcon&#34;</span> <span class="na">Advertise=</span><span class="s">&#34;yes&#34;</span>
+</span></span><span class="line hl"><span class="ln">14</span><span class="cl">              <span class="na">Directory=</span><span class="s">&#34;APPFOLDER&#34;</span> <span class="na">Icon=</span><span class="s">&#34;icon.exe&#34;</span>
+</span></span><span class="line hl"><span class="ln">15</span><span class="cl">              <span class="na">Name=</span><span class="s">&#34;!(bind.Property.ProductName)&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line hl"><span class="ln">16</span><span class="cl">          <span class="nt">&lt;/Shortcut&gt;</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="nt">&lt;/File&gt;</span>
 </span></span><span class="line"><span class="ln">18</span><span class="cl">      <span class="nt">&lt;/Component&gt;</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="nt">&lt;/ComponentGroup&gt;</span>
@@ -563,7 +563,7 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
 <p>In above code sample, we &ldquo;<strong>Add Menu Folder Shortcut</strong>&rdquo;.</p>
 <p>For this we use <strong><code>&lt;Shortcut&gt;</code></strong> tag.</p>
 <p>Please see below 👇🏻 code for reference.</p>
-<p><a href="wix-add-menu-folder-icon/add-program-menu-shortcut-tag.png">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-menu-folder-icon/add-program-menu-shortcut-tag_hu_f62a66b982d7be8f.webp"
@@ -573,7 +573,7 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="add-program-menu-shortcut-tag"id="h-rh-i-2"
-/></a></p>
+/></p>
 <p>After adding <strong><code>&lt;Shortcut&gt;</code></strong> tag, we define some properties of <strong><code>&lt;Shortcut&gt;</code></strong> tag.</p>
 <p>Please see below list of properties for <strong><code>&lt;Shortcut&gt;</code></strong> tag.</p>
 <table>
@@ -646,7 +646,7 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
 <hr>
 <h2 id="build-solution">[Build] Solution<a href="#build-solution" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now we need to build solution as shown below.</p>
-<p><a href="wix-add-remove-program-details/build-solution.gif">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-remove-program-details/build-solution.gif"
@@ -656,10 +656,10 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="build-solution"id="h-rh-i-3"
-/></a></p>
+/></p>
 <p>After building solution we need to go to folder where MSI is created.</p>
 <p>Please see below 👇🏻 image for reference.</p>
-<p><a href="wix-add-remove-program-details/open-msi-folder.gif">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-remove-program-details/open-msi-folder.gif"
@@ -669,12 +669,12 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="open-msi-folder"id="h-rh-i-4"
-/></a></p>
+/></p>
 <hr>
 <h2 id="final-result">Final Result<a href="#final-result" class="anchor" aria-hidden="true">#</a> </h2>
 <p><strong>Run the MSI</strong> to install application.</p>
 <p>Below 👇🏻 image show final result after running installation.</p>
-<p><a href="wix-add-menu-folder-icon/final-result.gif">
+<p>
 
 <img
   src="/wix-tutorials/getting-started/wix-add-menu-folder-icon/final-result.gif"
@@ -684,7 +684,7 @@ Please see below 👇🏻 image of Menu Folder Icon for reference.">
   fetchpriority="auto"
   loading="lazy"
   alt="final-result"id="h-rh-i-5"
-/></a></p>
+/></p>
 <hr>
 <p>That&rsquo;s it!!!</p>
 <p>Hope this post helps you.</p>
