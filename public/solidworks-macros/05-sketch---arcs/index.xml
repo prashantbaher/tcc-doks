@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Arcs on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/05-sketch---arcs/</link>
+    <description>Recent content in Sketch - Arcs on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/05-sketch---arcs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Create Centerpoint Arc</title>
+      <link>http://localhost:1313/solidworks-macros/create-centerpoint-arc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-centerpoint-arc/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Centerpoint Arc through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Tangent Arc</title>
+      <link>http://localhost:1313/solidworks-macros/create-tangent-arc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-tangent-arc/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Tangent Arc through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create 3-Point Arc</title>
+      <link>http://localhost:1313/solidworks-macros/create-3point-arc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-3point-arc/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a 3-Point Arc through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Polygon</title>
+      <link>http://localhost:1313/solidworks-macros/polygon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/polygon/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Polygon through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/create-tangent-arc&#34;&gt;Sketch - Create Tangent Arc&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

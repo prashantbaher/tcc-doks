@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drawing - Insert Views on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/27-drawing---insert-views/</link>
+    <description>Recent content in Drawing - Insert Views on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/27-drawing---insert-views/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Create Standard 3 View [1st Angle]</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-1stangle-standard3views/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-1stangle-standard3views/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Create Standard 3 View [1st Angle]&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-3rdangle-standard3views/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-3rdangle-standard3views/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Create Standard 3 View [3rd Angle]&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Model View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-insert-modelview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-insert-modelview/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Model View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;We will insert Insert Model View.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Projection View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-insert-projectionview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-insert-projectionview/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Projection View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;We will insert Projection View.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Auxilary View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-insert-auxilaryview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-insert-auxilaryview/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Auxilary View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;We will insert Auxilary View.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Section View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-insert-sectionview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-insert-sectionview/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Section View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;We will insert Section View.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Detail View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-insert-detailview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-insert-detailview/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Detail View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;We will insert Detail View.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Broken-out View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-brokenout-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-brokenout-view/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Broken-out View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;Insert Broken-out View&lt;/strong&gt; in an drawing document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Crop View</title>
+      <link>http://localhost:1313/solidworks-vba-macros/drawing-crop-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/drawing-crop-view/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Crop View&lt;/strong&gt; in &lt;strong&gt;Drawing document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most &lt;strong&gt;easiest&lt;/strong&gt; method of &lt;strong&gt;Insert Crop View&lt;/strong&gt; in an drawing document.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Others on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/99-sketch---others/</link>
+    <description>Recent content in Sketch - Others on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/99-sketch---others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Convert to Construction Sketch</title>
+      <link>http://localhost:1313/solidworks-macros/convert-to-construction-sketch-segment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/convert-to-construction-sketch-segment/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;strong&gt;Convert to Construction Sketch&lt;/strong&gt; in a Sketch.&lt;/p&gt;&#xA;&lt;p&gt;In this post, I explain about &lt;code&gt;CreateConstructionGeometry&lt;/code&gt; method from &lt;strong&gt;Solidworks&lt;/strong&gt;&amp;rsquo;s &lt;code&gt;SketchManager&lt;/code&gt; object.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Split Open/Closed Sketch Entities</title>
+      <link>http://localhost:1313/solidworks-macros/split-sketch-segments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/split-sketch-segments/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Split Open/Closed Sketch Entities using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

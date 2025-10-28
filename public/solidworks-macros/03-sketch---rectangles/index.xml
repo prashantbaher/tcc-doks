@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Rectangles on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/03-sketch---rectangles/</link>
+    <description>Recent content in Sketch - Rectangles on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/03-sketch---rectangles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Create Corner Rectangle</title>
+      <link>http://localhost:1313/solidworks-macros/create-corner-rectangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-corner-rectangle/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Corner Rectangle through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;For this, I take the example from previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/sketch-create-line&#34;&gt;Sketch - Create Lines&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Center Rectangle</title>
+      <link>http://localhost:1313/solidworks-macros/create-center-rectangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-center-rectangle/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Center Rectangle through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/create-corner-rectangle&#34;&gt;Solidworks Macros - Create Corner Rectangle From VBA Macro&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create 3-Point Corner Rectangle</title>
+      <link>http://localhost:1313/solidworks-macros/create-3point-corner-rectangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-3point-corner-rectangle/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create 3-Point Corner Rectangle through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create 3-Point Center Rectangle</title>
+      <link>http://localhost:1313/solidworks-macros/create-3point-center-rectangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-3point-center-rectangle/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create 3-Point Center Rectangle&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/create-3point-corner-rectangle&#34;&gt;Solidworks Macros - Create 3-Point Corner Rectangle&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create A Parallelogram</title>
+      <link>http://localhost:1313/solidworks-macros/create-parallelogram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-parallelogram/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Parallelogram through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/create-3point-corner-rectangle&#34;&gt;Solidworks Macros - Create 3-Point Corner Rectangle&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

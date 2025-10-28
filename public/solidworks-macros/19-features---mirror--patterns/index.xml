@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features - Mirror &amp; Patterns on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/19-features---mirror--patterns/</link>
+    <description>Recent content in Features - Mirror &amp; Patterns on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/19-features---mirror--patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLIDWORKS Macro - Create Mirror</title>
+      <link>http://localhost:1313/solidworks-macros/create-mirror/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-mirror/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-initial-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Objective of this article is to learn &lt;em&gt;how to create &lt;strong&gt;Mirror&lt;/strong&gt; feature through SOLIDWORKS VBA Macros&lt;/em&gt; in SOLIDWORKS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOLIDWORKS Macro - Create Linear Pattern</title>
+      <link>http://localhost:1313/solidworks-macros/create-linear-patterns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-linear-patterns/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-initial-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Objective of this article is to learn &lt;em&gt;how to create &lt;strong&gt;Linear pattern&lt;/strong&gt; feature through SOLIDWORKS VBA Macros&lt;/em&gt; in SOLIDWORKS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Circular Pattern</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-circular-patterns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-circular-patterns/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Circular pattern feature&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Sketch Driven Pattern</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-sketch-driven-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-sketch-driven-pattern/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Sketch Driven pattern feature&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

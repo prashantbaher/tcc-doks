@@ -1,0 +1,3285 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.33758d2c063fdb6977b91f609c2e676c70b30831326d76dca2350eb7601945d813a377425cd5279dc2dec5656893b0a29be880ea7efd7787043b134a3bbb9dec.css" integrity="sha512-M3WNLAY/22l3uR9gnC5nbHCzCDEybXbcojUOt2AZRdgTo3dCXNUnncLexWVok7Cim&#43;iA6n79d4cEOxNKO7ud7A==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/solidworks-vba-macros/create-sketch-driven-pattern/">
+
+  <link rel="canonical" href="http://localhost:1313/solidworks-vba-macros/create-sketch-driven-pattern/">
+
+
+<title>Solidworks VBA Macro - Create Sketch Driven Pattern  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/solidworks-vba-macros/create-sketch-driven-pattern/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Solidworks VBA Macro - Create Sketch Driven Pattern">
+  <meta property="og:description" content="{% include article-notes/intermediate-note.html %}
+Objective In this article we create and understand VBA macro of Sketch Driven pattern feature in SOLIDWORKS CAD Software.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solidworks-macros">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="Solidworks VBA Macro - Create Sketch Driven Pattern">
+  <meta name="twitter:description" content="{% include article-notes/intermediate-note.html %}
+Objective In this article we create and understand VBA macro of Sketch Driven pattern feature in SOLIDWORKS CAD Software.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/",
+       "name": "Solidworks Macros",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/19-features---mirror--patterns/",
+       "name": "Features Mirror \u0026 Patterns",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Solidworks Vba Macro Create Sketch Driven Pattern",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section solidworks-macros" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Solidworks macros</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-macro-guide/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/syncfusion-account-signup/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/wix4-introduction/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+			<div class="col container-fw d-lg-flex flex-lg-row justify-content-center mx-auto">
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#results-we-can-get">Results We Can Get</a></li>
+    <li><a href="#macro-video">Macro Video</a></li>
+    <li><a href="#vba-macro">VBA Macro</a></li>
+    <li><a href="#prerequisite">Prerequisite</a></li>
+    <li><a href="#steps-to-follow">Steps To Follow</a>
+      <ul>
+        <li><a href="#creating-global-variables">Creating Global Variables</a></li>
+        <li><a href="#initializing-required-variables">Initializing Required Variables</a></li>
+        <li><a href="#ask-user-to-select-feature-and-directions">Ask user to select feature and directions</a></li>
+        <li><a href="#mark-selected-entities">Mark selected Entities</a></li>
+        <li><a href="#create-sketch-driven-pattern-feature-definition">Create Sketch Driven Pattern Feature Definition</a></li>
+        <li><a href="#create-sketch-driven-pattern">Create Sketch Driven Pattern</a></li>
+        <li><a href="#final-work">Final work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>Solidworks VBA Macro - Create Sketch Driven Pattern</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#results-we-can-get">Results We Can Get</a></li>
+    <li><a href="#macro-video">Macro Video</a></li>
+    <li><a href="#vba-macro">VBA Macro</a></li>
+    <li><a href="#prerequisite">Prerequisite</a></li>
+    <li><a href="#steps-to-follow">Steps To Follow</a>
+      <ul>
+        <li><a href="#creating-global-variables">Creating Global Variables</a></li>
+        <li><a href="#initializing-required-variables">Initializing Required Variables</a></li>
+        <li><a href="#ask-user-to-select-feature-and-directions">Ask user to select feature and directions</a></li>
+        <li><a href="#mark-selected-entities">Mark selected Entities</a></li>
+        <li><a href="#create-sketch-driven-pattern-feature-definition">Create Sketch Driven Pattern Feature Definition</a></li>
+        <li><a href="#create-sketch-driven-pattern">Create Sketch Driven Pattern</a></li>
+        <li><a href="#final-work">Final work</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>{% include article-notes/intermediate-note.html %}</p>
+<h2 id="objective">Objective<a href="#objective" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Sketch Driven pattern feature</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
+<p>This method is <em><strong>most updated</strong></em> method, so <em><strong>use this method</strong></em> if you want to create a new <strong>Sketch Driven pattern Feature</strong> quickly.</p>
+<h2 id="results-we-can-get">Results We Can Get<a href="#results-we-can-get" class="anchor" aria-hidden="true">#</a> </h2>
+<p>After running our macro we successfully create <strong>Sketch Driven pattern feature</strong> as a result.</p>
+<p>Below image shows the result we get.</p>
+<p><a href="feature-sketch-driven-pattern/final-result-gif.gif">
+
+<img
+  src="/solidworks-macros/19-features---mirror--patterns/feature-sketch-driven-pattern/final-result-gif.gif"
+  width="1366"
+  height="728"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Sketch-Driven-pattern-final-result"id="h-rh-i-0"
+/></a></p>
+<p>We create <strong>Sketch Driven pattern Feature</strong> in following steps in general.</p>
+<ol>
+<li><em>Ask user to select <strong>a Feature</strong>.</em></li>
+<li><em>Ask user to select <strong>a Sketch</strong>.</em></li>
+</ol>
+<p>To get the correct result please follow the steps correctly.
+{: .notice&ndash;warning}</p>
+<h2 id="macro-video">Macro Video<a href="#macro-video" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Below 🎬 video shows <strong>Sketch Driven pattern feature</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+<iframe src="https://www.youtube.com/embed/fNxaGOBhFNw" frameborder="0" allowfullscreen></iframe>
+<br>
+<p><em><strong>Above video is just for visualization and there are no explanation.</strong></em></p>
+<p><em><strong>I have explained each and every line in this article.</strong></em></p>
+<p>It is advisable to watch video, since it help you to better understand the process.
+{: .notice&ndash;warning}</p>
+<h2 id="vba-macro">VBA Macro<a href="#vba-macro" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Below is the <em><strong>VBA macro</strong></em> for creating <em>Sketch Driven pattern Feature</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Selection Manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Entity
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Select Data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Sketch Pattern Feature data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swLocalSketchPatternFeat</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchPatternFeatureData</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Sketch Driven Pattern feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Sketch Driven Pattern program
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to current application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if Solidworks is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks is not opened&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks document variable to opened part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if Solidworks document is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks document is not opened. Please open a document.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks Selection Manager variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Array of Solidworks Entities
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Local variable for selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">  <span class="n">selectItems</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Loop till we select all entities
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Message to show user
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Dim</span> <span class="n">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Update Messages
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Case</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">&#34;Please select a Feature for Pattern.&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Case</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">        <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">&#34;Please select a sketch for Pattern.&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Case</span> <span class="k">Else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">End</span> <span class="k">Select</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Show message to user
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="n">messageToUser</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Loop until we complete our selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">      <span class="c">&#39; Local integer for loop
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c">&#39; Loop until we select
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">        <span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">          <span class="k">Case</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&#39; If the feature is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>            <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelBODYFEATURES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">              <span class="c">&#39; Set the Solidworks Entity object to profile sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>              <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c">&#39; If the profile sketch is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>            <span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelFACES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">              <span class="c">&#39; Inform user to select sketch from Tree
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>              <span class="n">MsgBox</span> <span class="s">&#34;Please select Feature from Feature Tree.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">              <span class="c">&#39; Clear selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>              <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">          <span class="k">Case</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&#39; If the sketch is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>            <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelSKETCHES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">              <span class="c">&#39; Set the Solidworks Entity object to sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>              <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">              
+</span></span><span class="line"><span class="cl">            <span class="c">&#39; If the feature is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>            <span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelBODYFEATURES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">              <span class="c">&#39; Inform user to select sketch from Tree
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>              <span class="n">MsgBox</span> <span class="s">&#34;Please select Sketch from Feature Tree.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">              <span class="c">&#39; Clear selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>              <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">        <span class="k">End</span> <span class="k">Select</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">      <span class="k">Next</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="n">DoEvents</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Wend</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Clear previous selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Increase the selection count
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">Wend</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Local variable for counter
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">  <span class="n">j</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Loop till counter is 2, since we have 2 selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">3</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set the current instance to Solidworks Entity variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Create Select data for this entity
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Select</span> <span class="k">Case</span> <span class="n">j</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Case</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&#39; For feature to mirror, set mark to 1
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="n">4</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Case</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c">&#39; For sketch, set mark to 64
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="n">64</span>
+</span></span><span class="line"><span class="cl">    <span class="k">End</span> <span class="k">Select</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Select the current entity
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">  <span class="k">Wend</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create Sketch pattern feature data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swLocalSketchPatternFeat</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSketchPattern</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create Sketch pattern feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swLocalSketchPatternFeat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if Sketch pattern Feature creates or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Failed to create Sketch pattern Feature.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Erase array data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Erase</span> <span class="n">swObjects</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; View zoom to fit
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Clear all selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="prerequisite">Prerequisite<a href="#prerequisite" class="anchor" aria-hidden="true">#</a> </h2>
+<p>There are some <em>prerequisite</em> for this article.</p>
+<ul>
+<li>Knowledge of <strong>VBA programming language</strong> is ❗<em><strong>required</strong></em>.</li>
+<li>We are <strong>not</strong> creating feature from code but we use existing 🚀 <strong><a href="/solidworks-macros/create-extrude-feature">Extrude feature</a></strong> and 🚀 <strong><a href="/solidworks-macros/create-point/">Sketch Points</a></strong> to create <strong>Sketch Driven pattern feature</strong>.</li>
+</ul>
+<p><em>Below image shown prerequisite 3D model for our demo.</em></p>
+<p><a href="feature-sketch-driven-pattern/prerequisite.png">
+
+<img
+  src="/solidworks-macros/19-features---mirror--patterns/feature-sketch-driven-pattern/prerequisite_hu_2a0672e63bd3672d.webp"
+  width="1365"
+  height="549"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="prerequisite"id="h-rh-i-1"
+/></a></p>
+<p>As shown in above image, there are <em><strong>2 Extrude features</strong></em> in our part.</p>
+<ul>
+<li><code>Base Feature</code> : This is our <strong>Base Extrude feature</strong>.</li>
+<li><code>Feature To Pattern</code> : This is our <strong>feature for pattern</strong>.</li>
+</ul>
+<p>If you want to create these <strong>Extrude</strong> features and <strong>Sketch Points</strong> <em><strong>programmatically</strong></em> then please refer to below article.</p>
+<ul>
+<li>🚀 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
+<li>🚀<strong><a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a></strong></li>
+</ul>
+<p>We will apply checks in this article, so the code we write should be error free most of the time.
+{: .notice}</p>
+<h2 id="steps-to-follow">Steps To Follow<a href="#steps-to-follow" class="anchor" aria-hidden="true">#</a> </h2>
+<p>This <strong>Sketch Driven pattern Feature VBA macro</strong> can be divided into following sections:</p>
+<ol>
+<li><em>Creating Global Variables</em></li>
+<li><em>Initializing required variables</em></li>
+<li><em>Ask user to select feature and directions</em></li>
+<li><em>Mark selected entities</em></li>
+<li><em>Create 🚀 <a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern feature Definition</a></em></li>
+<li><em>Create Sketch Driven Pattern feature using 🚀 <a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern feature Definition</a></em>.</li>
+<li><em>Final work</em></li>
+</ol>
+<p><em><strong>Every section with each line is explained below.</strong></em></p>
+<p>I also give some <em><strong>links (see icon 🚀)</strong></em> so that you can go through them if there are anything I explained in previous articles.
+{: .notice}</p>
+<h3 id="creating-global-variables">Creating Global Variables<a href="#creating-global-variables" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+<li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+<li><strong>Variable Name</strong>: <code>swApp</code></li>
+<li><strong>Type</strong>: <code>SldWorks.SldWorks</code></li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
+<li><strong>Variable Name</strong>: <code>swDoc</code></li>
+<li><strong>Type</strong>: <code>SldWorks.ModelDoc2</code></li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Selection Manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>:  In above line, we create a variable for Solidworks Selection Manager.</li>
+<li><strong>Variable Name</strong>: <code>swSelMgr</code></li>
+<li><strong>Type</strong>: <code>SldWorks.SelectionMgr</code>.</li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Entity
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: In above line, we create a variable for <em>selection and marking</em> of Solidworks Entity.</li>
+<li><strong>Variable Name</strong>: <code>swObject</code></li>
+<li><strong>Type</strong>: <code>SldWorks.Entity</code></li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Select Data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: In above line, we create a variable for <strong>Marking</strong> of Solidworks Select Data.</li>
+<li><strong>Variable Name</strong>: <code>swSelData</code></li>
+<li><strong>Type</strong>: <code>SldWorks.SelectData</code></li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectData_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Sketch Driven Pattern Feature data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swLocalSketchPatternFeat</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchPatternFeatureData</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: In above line, we create a variable for 🚀 <em><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern feature Definition</a></em>.</li>
+<li><strong>Variable Name</strong>: <code>swLocalSketchPatternFeat</code></li>
+<li><strong>Type</strong>: <code>SldWorks.SketchPatternFeatureData</code></li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Variable for Solidworks Sketch Driven pattern Feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Sketch Driven pattern Feature</em>.</li>
+<li><strong>Variable Name</strong>: <code>swFeature</code></li>
+<li><strong>Type</strong>: <code>SldWorks.Feature</code></li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+<p><em><strong>These all are our global variables.</strong></em></p>
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Sketch Driven Pattern program
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create <em>main program for Sketch Driven pattern feature</em>.</li>
+<li>This is a <strong><code>Sub</code></strong> procedure which has name of <strong><code>main</code></strong>.</li>
+<li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+<li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+<h3 id="initializing-required-variables">Initializing Required Variables<a href="#initializing-required-variables" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Inside this section we initialize required variables.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks variable to current application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we set <em>value</em> of <strong><code>swApp</code></strong> variable.</li>
+<li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if Solidworks is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks is not opened&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above code block, we check if we successfully set the value of <strong><code>swApp</code></strong> variable.</li>
+<li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+<li><strong>Condition</strong>: <strong><code>swApp Is Nothing</code></strong></li>
+<li>When this condition is <strong><code>True</code></strong>,
+<ul>
+<li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+<li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
+<li>Then we <strong>stop</strong> our macro here.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks document variable to opened part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we set <em>value</em> of <strong><code>swDoc</code></strong> variable.</li>
+<li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if Solidworks document is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks document is not opened. Please open a document.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above code block, we check if we successfully set the value of <strong><code>swDoc</code></strong> variable.</li>
+<li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+<li><strong>Condition</strong>: <strong><code>swDoc Is Nothing</code></strong></li>
+<li>When this condition is <strong><code>True</code></strong>,
+<ul>
+<li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+<li><strong>Message</strong>: <em>Solidworks document is not opened. Please open a document.</em></li>
+<li>Then we <strong>stop</strong> our macro here.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks Selection Manager variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we set <em>value</em> of <strong><code>swSelMgr</code></strong> variable.</li>
+<li>This <em>value</em> is current document&rsquo;s <em>Selection Manager</em>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Array of Solidworks Entities
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">1</span> <span class="k">To</span> <span class="n">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create an 🚀 <strong><a href="/vba/arrays/">Array</a></strong> of <em>Solidworks Entities</em>.</li>
+<li><strong>Variable Name</strong>: <code>swObjects</code></li>
+<li><strong>Type</strong>: <code>SldWorks.Entity</code></li>
+<li><strong>Length of Array</strong>: <em>(1 To 2)</em></li>
+<li><strong>Reference</strong>: Please visit
+<ul>
+<li><strong>For Solidworks Entities</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+<li><strong>For Arrays in VBA</strong> : 🚀 <strong><a href="/vba/arrays/">Array on this website</a></strong>.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Local variable for selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl"><span class="n">selectItems</span> <span class="o">=</span> <span class="n">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create a variable for selection and set its value.</li>
+<li><strong>Variable Name</strong>: <code>selectItems</code></li>
+<li><strong>Type</strong>: <code>Integer</code></li>
+<li><strong>Value</strong>: <strong><code>1</code></strong></li>
+</ul>
+<h3 id="ask-user-to-select-feature-and-directions">Ask user to select feature and directions<a href="#ask-user-to-select-feature-and-directions" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In this section, we ask user to select <strong>Feature and Sketch</strong> for <em>Sketch Driven Pattern feature</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Loop till we select all entities
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Wend</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line of code we start a <code>While</code> loop.</li>
+<li>We loop until <code>selectItems</code> variable&rsquo;s value is equal to <strong>2</strong>.</li>
+<li><strong>Reference</strong>: 🚀 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Message to show user
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create a variable to show a messages we want to show before selection.</li>
+<li><strong>Variable Name</strong>: <code>messageToUser</code></li>
+<li><strong>Type</strong>: <code>String</code></li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Update Messages
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">&#34;Please select a Feature for Pattern.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">&#34;Please select a sketch for Pattern.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="k">Else</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">Select</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above code block, we use a <code>Select</code> statement to update message.</li>
+<li>We use the <code>case</code> on <code>selectItems</code>.
+<ul>
+<li><strong>Case 1</strong>: <code>messageToUser</code> update to <code>&quot;Please select a Feature for Pattern.&quot;</code></li>
+<li><strong>Case 2</strong>: <code>messageToUser</code> update to <code>&quot;Please select a sketch for Pattern.&quot;</code></li>
+</ul>
+</li>
+<li><strong>Reference</strong>:  🚀 <strong><a href="/vba/if-then-structure-select-case/#select-case-example">Select statement</a></strong> article of this website.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Show message to user
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">MsgBox</span> <span class="n">messageToUser</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we show the message to user.</li>
+<li>Below image shows the message for <strong>Feature selection</strong> to the user.</li>
+</ul>
+<p><a href="feature-sketch-driven-pattern/message-to-select-feature-for-sketch-driven-pattern.png">
+
+<img
+  src="/solidworks-macros/19-features---mirror--patterns/feature-sketch-driven-pattern/message-to-select-feature-for-sketch-driven-pattern_hu_c67abd58b1a94686.webp"
+  width="220"
+  height="133"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="message-to-select-feature-for-sketch-driven-pattern"id="h-rh-i-2"
+/></a></p>
+<ul>
+<li>Below image shows the message for <strong>Sketch selection</strong> to the user.</li>
+</ul>
+<p><a href="feature-sketch-driven-pattern/message-to-select-sketch-for-sketch-driven-pattern.png">
+
+<img
+  src="/solidworks-macros/19-features---mirror--patterns/feature-sketch-driven-pattern/message-to-select-sketch-for-sketch-driven-pattern_hu_c0d68c8f7f53fae6.webp"
+  width="214"
+  height="133"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="message-to-select-sketch-for-sketch-driven-pattern"id="h-rh-i-3"
+/></a></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Loop until we complete our selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">Wend</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create another <code>While</code> loop.</li>
+<li>This loops continues to run until we select the our <strong>Feature</strong> and <strong>Edge</strong> for circular pattern.</li>
+<li><strong>Reference</strong>: 🚀 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Local integer for loop
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create a variable as a counter.</li>
+<li><strong>Variable Name</strong>: <code>i</code></li>
+<li><strong>Type</strong>: <code>Integer</code></li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Loop until we select
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Next</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create a <code>For</code> loop.</li>
+<li>This loops start from <code>i = 1</code> to number of <code>objects</code> we select.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Update Messages
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Select</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we use a <code>Select</code> statement for selection entities.</li>
+<li>We use the <code>case</code> on <code>selectItems</code>.</li>
+<li><strong>Reference</strong>:  🚀 <strong><a href="/vba/if-then-structure-select-case/#select-case-example">Select statement</a></strong> article of this website.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Case</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">	<span class="c">&#39; If the profile sketch is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelBODYFEATURES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set the Solidworks Entity object to feature for Linear pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; If the face is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelFACES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Inform user to select feature from Feature Tree
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="s">&#34;Please select Feature from Feature Tree.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Clear selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>Above code block we use for <strong><code>Case 1</code></strong>.</li>
+<li>In above code block, we use  🚀 <strong><a href="/vba/if-then-structure-select-case/">IF/ElseIf statement</a></strong>  with conditions.</li>
+<li>The  🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code>True</code> when selected <code>object</code> is type of <em><strong>SOLIDWORKS Body Feature</strong></em>.</li>
+<li>Similarly,  🚀 <strong><a href="/vba/if-then-structure-select-case/">ElseIf statement</a></strong>  is <code>True</code> when select <code>object</code> is type of <em><strong>SOLIDWORKS Face</strong></em>.</li>
+</ul>
+<p>When we select the sketch from Model view, then selected object is <em>SOLIDWORKS Face</em>.
+<br>
+When we select the sketch from Feature Tree, then select object is <em>SOLIDWORKS Body Feature</em>.
+{: .notice}</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set the Solidworks Entity object to feature for Linear pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>When  🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is <strong><code>True</code></strong> we run above line.</li>
+<li>In above line, we set the object inside array.
+<ul>
+<li><em>Array of SOLIDWORKS Entities</em> = <code>swObjects</code></li>
+<li><em>Indexed Entity Object</em> = <code>swObjects[selectItems]</code></li>
+</ul>
+</li>
+<li><strong>Indexed Entity Object</strong> value set by <code>GetSelectedObject6()</code> method.
+<ul>
+<li><code>GetSelectedObject6()</code> method is part of <strong>SOLIDWORKS Selection Manager</strong>.</li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr~GetSelectedObject6.html">online Solidworks API Help</a></strong>.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Inform user to select feature from Feature Tree
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">MsgBox</span> <span class="s">&#34;Please select feature from Feature Tree.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Clear selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>When 🚀 <strong><a href="/vba/if-then-structure-select-case/">ElseIf statement</a></strong> is <strong><code>True</code></strong> we execute run above lines.</li>
+<li><strong>1st Line</strong>: We show a message to user to select <strong>Feature</strong> from <em>Feature Tree</em>.</li>
+<li><strong>2nd Line</strong>: After that we clear our selection.</li>
+</ul>
+<p>We do this because if selected object type is <em>SOLIDWORKS Face</em> then we can not assign this object as SOLIDWORKS Entity inside array.
+{: .notice}</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Case</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; If the sketch is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelSKETCHES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set the Solidworks Entity object to sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; If the feature is selected
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelBODYFEATURES</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Inform user to select sketch from Tree
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">MsgBox</span> <span class="s">&#34;Please select Sketch from Feature Tree.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Clear selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>Above code block we use for <strong><code>Case 2</code></strong>.</li>
+<li>In above line, we use  🚀 <strong><a href="/vba/if-then-structure-select-case/">IF/ElseIf statement</a></strong>  with <em>conditions</em>.</li>
+<li>🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code>True</code> when selected <code>object</code> is type of <em>SOLIDWORKS Sketch</em>.</li>
+<li>Similarly,  🚀 <strong><a href="/vba/if-then-structure-select-case/">ElseIf statement</a></strong>  is <code>True</code> when select <code>object</code> is type of <strong>SOLIDWORKS Body</strong>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set the Solidworks Entity object to selected sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">1</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>When 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is <code>True</code> we execute code given below.</li>
+<li>In above line, we set the indexed object inside array.
+<ul>
+<li><em>Array of SOLIDWORKS Entities</em> = <code>swObjects</code></li>
+<li><em>Indexed Entity Object</em> = <code>swObjects[selectItems]</code></li>
+</ul>
+</li>
+<li><strong>Indexed Entity Object</strong> value set by <code>GetSelectedObject6()</code> method.
+<ul>
+<li><code>GetSelectedObject6()</code> method is part of <strong>SOLIDWORKS Selection Manager</strong>.</li>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr~GetSelectedObject6.html">online Solidworks API Help</a></strong>.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Inform user to select sketch from Tree
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">MsgBox</span> <span class="s">&#34;Please select Sketch from Feature Tree.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Clear selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>When 🚀 <strong><a href="/vba/if-then-structure-select-case/">ElseIf statement</a></strong> is <code>True</code> we execute code given below.</li>
+<li><strong>1st Line</strong>: We show a message to user to select <strong>Sketch</strong>.</li>
+<li><strong>2nd Line</strong>: We clear our selection.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">DoEvents</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>After <code>For</code> loop end, we have a call for <strong><code>DoEvents</code></strong> function.</li>
+<li>This function repeats the <code>While</code> loop until we complete <strong>Feature or Sketch</strong> selection.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Clear previous selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Increase the selection count
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="n">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong>1st Line</strong>: We clear previous selection.</li>
+<li><strong>2nd Line</strong>: Increment the <strong><code>selectItems</code></strong> count by 1.</li>
+</ul>
+<p>After increment the selected count we continue our <code>while</code> loop.</p>
+<h3 id="mark-selected-entities">Mark selected Entities<a href="#mark-selected-entities" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In previous section, we complete our selection.</p>
+<p>In this section, we complete <strong>Select and Mark entities</strong> correctly from our Array.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Local variable for counter
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">=</span> <span class="n">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create a variable as a counter.</li>
+<li><strong>Variable Name</strong>: <code>j</code></li>
+<li><strong>Type</strong>: <code>Integer</code></li>
+<li><strong>Value</strong>: <strong><code>1</code></strong></li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Loop till counter is 2, since we have 2 selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Wend</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create a <code>while</code> loop.</li>
+<li><strong>Condition</strong>: that <em>counter value</em> of <strong><code>j</code></strong> should be <em>less than 3.</em></li>
+<li><strong>Reference</strong>: 🚀 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set the current instance to Solidworks Entity variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we set the SOLIDWORKS Entity variable to current object from array.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create Select data for this entity
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we create SOLIDWORKS Select Data for current SOLIDWORKS Entity object.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Update Messages
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Select</span> <span class="k">Case</span> <span class="n">j</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Select</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line of code, we use a <code>Select</code> statement for selection entities.</li>
+<li>We use the <code>case</code> on <code>j</code>.</li>
+<li><strong>Reference</strong>:  🚀 <strong><a href="/vba/if-then-structure-select-case/#select-case-example">Select statement</a></strong> article of this website.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Case</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; For feature to pattern, set mark to 4
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="n">4</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>Above code block, we use for <strong><code>Case 1</code></strong>.</li>
+<li>In above lines, we set <strong>Mark</strong> to <strong><code>4</code></strong>.</li>
+<li>For <em><strong>Sketch Driven Pattern</strong></em> feature, <strong><code>Mark</code></strong> values can be follows:</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Any&hellip;</th>
+          <th>Must be preselected and marked with a value of&hellip;</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Feature</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>Points</td>
+          <td>32</td>
+      </tr>
+      <tr>
+          <td>Sketches</td>
+          <td>64</td>
+      </tr>
+      <tr>
+          <td>Faces</td>
+          <td>128</td>
+      </tr>
+      <tr>
+          <td>Bodies</td>
+          <td>256</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern feature</a></strong> in <em>SOLIDWORS API Help</em>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Case</span> <span class="n">2</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; For sketch, set mark to 64
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="n">64</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>Above code sample we use for <strong><code>Case 2</code></strong>.</li>
+<li>In above lines, we update the <strong>Mark</strong> to <strong><code>64</code></strong>.</li>
+<li>For <em><strong>Sketch Driven Pattern</strong></em> feature, <strong><code>Mark</code></strong> values can be follows:</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Any&hellip;</th>
+          <th>Must be preselected and marked with a value of&hellip;</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Feature</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>Points</td>
+          <td>32</td>
+      </tr>
+      <tr>
+          <td>Sketches</td>
+          <td>64</td>
+      </tr>
+      <tr>
+          <td>Faces</td>
+          <td>128</td>
+      </tr>
+      <tr>
+          <td>Bodies</td>
+          <td>256</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern feature</a></strong> in <em>SOLIDWORS API Help</em>.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Select the current entity
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we select the object.</li>
+<li>We select it by using <code>Select4</code> method of <em>SOLIDWORKS Entity object</em>.</li>
+<li>This method takes 2 arguments.
+<ul>
+<li><strong>Append</strong> - <em><code>True</code> appends the entity to the selection list, <code>False</code> replaces the selection list with this entity.</em></li>
+<li><strong>Data</strong> - <em>Pointer to the <strong><code>ISelectData</code></strong> object.</em></li>
+</ul>
+</li>
+<li>We use following values as parameter.
+<ul>
+<li><strong>Append</strong> - <strong><code>True</code></strong></li>
+<li><strong>Data</strong> - <strong><code>swSelData</code></strong></li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>After <strong><code>Select</code></strong> statement, we increment the counter variable <strong><code>j</code></strong> by <strong>1</strong>.</p>
+<h3 id="create-sketch-driven-pattern-feature-definition">Create Sketch Driven Pattern Feature Definition<a href="#create-sketch-driven-pattern-feature-definition" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In this section we create  🚀 <em><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern feature Definition</a></em> and set its properties for <strong>Sketch Driven Pattern</strong>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create Sketch pattern feature data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swLocalSketchPatternFeat</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSketchPattern</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line of code we set the value of variable <code>swLocalSketchPatternFeat</code> by <code>CreateDefinition</code> method.</p>
+</li>
+<li>
+<p><code>CreateDefinition</code> method is part of <code>FeatureManager</code> object.</p>
+</li>
+<li>
+<p><code>FeatureManager</code> is again part of <code>swDoc</code> variable i.e. <code>ModelDoc2</code> object.
+This <code>CreateDefinition</code> method takes following parameters as explained:</p>
+<ul>
+<li><strong>Type</strong> - <em><code>Feature name ID</code> as defined in <code>swFeatureNameID_e</code></em>.
+<ul>
+<li><code>swFmBoundingBox</code> <em>(bounding box)</em></li>
+<li><code>swFmCirPattern</code> <em>(circular pattern)</em></li>
+<li><code>swFmCurvePattern</code> <em>(curve-driven pattern)</em></li>
+<li><code>swFmDerivedLPattern</code> <em>(derived-driven pattern)</em></li>
+<li><code>swFmDimPattern</code> <em>(variable/dimension pattern)</em></li>
+<li><code>swFmFillPattern</code> <em>(fill pattern)</em></li>
+<li><code>swFmGroundPlane</code> <em>(ground plane)</em></li>
+<li><code>swFmLibraryFeature</code> <em>(library)</em></li>
+<li><code>swFmLocalChainPattern</code> <em>(chain component pattern)</em></li>
+<li><code>swFmLocalCirPattern</code> <em>(circular component pattern)</em></li>
+<li><code>swFmLocalCurvePattern</code> <em>(curve-driven component pattern)</em></li>
+<li><code>swFmLocalLPattern</code> <em>(linear component pattern)</em></li>
+<li><code>swFmLocalSketchPattern</code> <em>(sketch-driven component pattern)</em></li>
+<li><code>swFmLPattern</code> <em>(linear pattern)</em></li>
+<li><code>swFmNormalCut</code> <em>(sheet metal normal cut)</em></li>
+<li><code>swFmRefCurve</code> <em>(projection curve)</em></li>
+<li><code>swFmRefSurface</code> <em>(surface sweep)</em></li>
+<li><code>swFmSketchPattern</code> <em>(sketch-driven pattern)</em></li>
+<li><code>swFmSweep</code> <em>(boss sweep)</em></li>
+<li><code>swFmSweepCut</code> <em>(cut sweep)</em></li>
+<li><code>swFmSweepThread</code> <em>(Thread)</em></li>
+<li><code>swFmTabAndSlot</code> <em>(tab and slot)</em></li>
+<li><code>swFmTablePattern</code> <em>(table pattern)</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Return Value</strong> : This <code>CreateDefinition</code> method return <strong>feature or pattern-specific</strong> feature data object.</p>
+</li>
+<li>
+<p>In our code, I have used following values:</p>
+<ul>
+<li><strong>Type</strong> - <em>I use <code>swFmSketchPattern</code> as <code>Feature name ID</code></em>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Reference</strong>: For more details about</p>
+<ul>
+<li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
+<li><strong>Sketch Driven Pattern Feature data</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">online Solidworks API Help</a></strong> for Sketch Driven Pattern Feature data.</li>
+</ul>
+<h3 id="create-sketch-driven-pattern">Create Sketch Driven Pattern<a href="#create-sketch-driven-pattern" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In this section, we create Sketch Driven Pattern.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create Sketch pattern feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swLocalSketchPatternFeat</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>
+<p>In above line, we set the value of variable <code>swFeature</code> by <code>CreateFeature</code> method.</p>
+</li>
+<li>
+<p>This <code>CreateFeature</code> method takes following parameters as explained:</p>
+<ul>
+<li><strong>FeatureData</strong> - <em><code>Feature or pattern-specific</code> feature data object</em>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Return Value</strong> : This <code>CreateFeature</code> method return 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IFeature.html">Feature</a></strong> data object.</p>
+<ul>
+<li><code>CreateFeature</code> method is part of <code>FeatureManager</code> object.</li>
+<li>This <code>FeatureManager</code> is again part of <code>swDoc</code> variable i.e. <code>ModelDoc2</code> object.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reference</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager <code>FeatureManager</code>.</p>
+</li>
+<li>
+<p>In our code, I have used following values:</p>
+<ul>
+<li><strong>FeatureData</strong> - <em>I use <code>swLocalSketchPatternFeat</code> as feature data object which we defined previously</em>.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if Sketch pattern Feature creates or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Failed to create Sketch pattern Feature.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above code block, we check if we successfully create 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPatternFeatureData.html">Sketch Driven Pattern Feature</a></strong> or not.</li>
+<li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+<li><strong>Condition</strong>: <strong><code>swFeature Is Nothing</code></strong></li>
+<li>When this condition is <strong><code>True</code></strong>,
+<ul>
+<li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+<li><strong>Message</strong>: <em>Failed to create Circular Pattern.</em></li>
+<li>Then we <strong>stop</strong> our macro here.</li>
+</ul>
+</li>
+</ul>
+<p><a href="feature-sketch-driven-pattern/final-result-gif.gif">
+
+<img
+  src="/solidworks-macros/19-features---mirror--patterns/feature-sketch-driven-pattern/final-result-gif.gif"
+  width="1366"
+  height="728"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Sketch-Driven-pattern-final-result"id="h-rh-i-4"
+/></a></p>
+<h3 id="final-work">Final work<a href="#final-work" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In this section, after creating <strong>Sketch Driven Pattern</strong> feature, we have to do some cleaning work so that we can use this macro frequently.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Erase array data
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Erase</span> <span class="n">swObjects</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we <strong>erase</strong> data from <em>SOLIDWORKS Entity array</em>.</li>
+<li>For this we use <strong><code>Erase</code></strong> function in-build in VBA.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; View zoom to fit
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we make our view zoom to fit the model.</li>
+<li>For this we use <code>ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code>swDoc</code> variable.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Clear all selection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>In above line, we clear all previous selection.</li>
+<li>For this we use <code>ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code>swDoc</code> variable.</li>
+</ul>
+<p><strong>This is it !!!</strong></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+<p>Hope this post helps you to <strong>create Sketch Driven Pattern feature</strong> with SOLIDWORKS VBA Macros.</p>
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
+<ul>
+<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
+</ul>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/solidworks-vba-macros/create-circular-patterns/" class="stretched-link text-reset text-decoration-none">Solidworks VBA Macro - Create Circular Pattern</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/solidworks-vba-macros/create-rib/" class="stretched-link text-reset text-decoration-none">Solidworks VBA Macro - Create Rib</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+			</div>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

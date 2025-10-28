@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features - Transformation on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/20-features---transformation/</link>
+    <description>Recent content in Features - Transformation on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/20-features---transformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Create Rib</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-rib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-rib/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Rib feature&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Draft</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-draft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-draft/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Draft feature&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Shell</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-shell/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article I want to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create Shell feature&lt;/li&gt;&#xA;&lt;li&gt;From VBA Macro&lt;/li&gt;&#xA;&lt;li&gt;Without using Userforms.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This method is &lt;em&gt;&lt;strong&gt;most updated&lt;/strong&gt;&lt;/em&gt; method, so &lt;em&gt;&lt;strong&gt;use this method&lt;/strong&gt;&lt;/em&gt; if you want to create a new &lt;strong&gt;Shell Feature&lt;/strong&gt; quickly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Wrap</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-wrap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-wrap/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Wrap feature&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Scale</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-scale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-scale/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Scale feature&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

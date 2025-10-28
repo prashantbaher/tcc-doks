@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Slots on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/06-sketch---slots/</link>
+    <description>Recent content in Sketch - Slots on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/06-sketch---slots/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Create a Straight Slot</title>
+      <link>http://localhost:1313/solidworks-macros/create-straight-slot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-straight-slot/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Straight Slot through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create a Centerpoint Straight Slot</title>
+      <link>http://localhost:1313/solidworks-macros/create-centerpoint-straight-slot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-centerpoint-straight-slot/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Centerpoint Straight Slot through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create a 3-Point Arc Slot</title>
+      <link>http://localhost:1313/solidworks-macros/create-3point-arc-slot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-3point-arc-slot/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a 3-Point Arc Slot through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create a Centerpoint Arc Slot</title>
+      <link>http://localhost:1313/solidworks-macros/create-centerpoint-arc-slot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-centerpoint-arc-slot/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Centerpoint Arc Slot through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

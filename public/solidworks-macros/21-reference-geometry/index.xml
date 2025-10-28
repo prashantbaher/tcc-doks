@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference Geometry on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/21-reference-geometry/</link>
+    <description>Recent content in Reference Geometry on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/21-reference-geometry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Create Reference Plane</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-reference-plane/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-reference-plane/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Reference Plane&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Reference Axis</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-reference-axis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-reference-axis/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Reference Axis&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Reference Co-Ordinate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-reference-coordinate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-reference-coordinate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Reference Co-Ordinate&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Create Reference Point</title>
+      <link>http://localhost:1313/solidworks-vba-macros/create-reference-point/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/create-reference-point/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Reference Point&lt;/strong&gt; in &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

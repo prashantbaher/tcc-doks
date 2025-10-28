@@ -46,7 +46,7 @@ url = "/solidworks/"
 
 [[main]]
 name = "Solidworks VBA Macro"
-url = "/solidworks/solidworks-vba-macro/"
+url = "/Solidworks-macro-guide/"
 weight = 31
 parent = "solidworks"
 

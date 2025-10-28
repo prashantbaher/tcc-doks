@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assembly - Components on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/25-assembly---components/</link>
+    <description>Recent content in Assembly - Components on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/25-assembly---components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Insert Virtual Part</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-insert-virtual-part/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-insert-virtual-part/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Virtual Part&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;inserting Virtual part&lt;/strong&gt; in as assembly document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Insert Virtual Assembly</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-insert-virtual-assembly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-insert-virtual-assembly/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Virtual Assembly&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;inserting Virtual Assembly&lt;/strong&gt; in an assembly document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Copy With Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-copy-with-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-copy-with-mate/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Copy With Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;Copy Part/Assembly with Mate&lt;/strong&gt; in an assembly document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Hide Component</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-hide-component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-hide-component/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Hide selected Component&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;Hiding selected Component&lt;/strong&gt; in an assembly document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Show Component</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-show-component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-show-component/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Show Component&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;Show Component&lt;/strong&gt; in an assembly document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Suppress Component</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-suppress-component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-suppress-component/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Suppress Component&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;Suppress Component&lt;/strong&gt; in an assembly document.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Unsuppress Component</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-unsuppress-component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-unsuppress-component/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Unsuppress Component&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;This is most updated method of &lt;strong&gt;Unsuppress Component&lt;/strong&gt; in an assembly document.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

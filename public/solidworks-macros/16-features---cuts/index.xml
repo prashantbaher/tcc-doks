@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features - Cuts on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/16-features---cuts/</link>
+    <description>Recent content in Features - Cuts on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/16-features---cuts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLIDWORKS Macro - Create Extrude Cut</title>
+      <link>http://localhost:1313/solidworks-macros/create-extrude-cut-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-extrude-cut-feature/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create &lt;strong&gt;Extrude Cut&lt;/strong&gt; through SOLIDWORKS VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOLIDWORKS Macro - Create Revolve Cut</title>
+      <link>http://localhost:1313/solidworks-macros/create-revolve-cut-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-revolve-cut-feature/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create &lt;strong&gt;Revolve Cut&lt;/strong&gt; through SOLIDWORKS VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOLIDWORKS Macro - Create Sweep Cut</title>
+      <link>http://localhost:1313/solidworks-macros/create-sweep-cut-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-sweep-cut-feature/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-initial-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Objective of this article is to learn &lt;em&gt;how to create &lt;strong&gt;Sweep Cut&lt;/strong&gt; through SOLIDWORKS VBA Macros&lt;/em&gt; in SOLIDWORKS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOLIDWORKS Macro - Create Lofted Cut</title>
+      <link>http://localhost:1313/solidworks-macros/create-loft-cut-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-loft-cut-feature/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-initial-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Objective of this article is to learn &lt;em&gt;how to create &lt;strong&gt;Lofted Cut&lt;/strong&gt; through SOLIDWORKS VBA Macros&lt;/em&gt; in SOLIDWORKS.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

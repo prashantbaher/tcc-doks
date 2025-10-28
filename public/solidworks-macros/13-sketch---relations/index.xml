@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Relations on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/13-sketch---relations/</link>
+    <description>Recent content in Sketch - Relations on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/13-sketch---relations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Toggle (Hide/Show) Sketch Relations</title>
+      <link>http://localhost:1313/solidworks-macros/toggle-display-sketch-relation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/toggle-display-sketch-relation/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Toggle (Hide/Show) Sketch Relations using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Add Sketch Relations (Constraints)</title>
+      <link>http://localhost:1313/solidworks-macros/add-sketch-relations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/add-sketch-relations/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Add Sketch Relations (Constraints) using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

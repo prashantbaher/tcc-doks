@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assembly - General on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/22-assembly---general/</link>
+    <description>Recent content in Assembly - General on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/22-assembly---general/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Insert Component</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-insert-component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-insert-component/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Insert Component&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Unfix Component</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-unfix-component/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-unfix-component/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of &lt;strong&gt;Unfix Component(s)&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

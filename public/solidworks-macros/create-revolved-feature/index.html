@@ -1,0 +1,2445 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.33758d2c063fdb6977b91f609c2e676c70b30831326d76dca2350eb7601945d813a377425cd5279dc2dec5656893b0a29be880ea7efd7787043b134a3bbb9dec.css" integrity="sha512-M3WNLAY/22l3uR9gnC5nbHCzCDEybXbcojUOt2AZRdgTo3dCXNUnncLexWVok7Cim&#43;iA6n79d4cEOxNKO7ud7A==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/solidworks-macros/create-revolved-feature/">
+
+  <link rel="canonical" href="http://localhost:1313/solidworks-macros/create-revolved-feature/">
+
+
+<title>Solidworks Macro - Create Revolved Boss/Base  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/solidworks-macros/create-revolved-feature/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Solidworks Macro - Create Revolved Boss/Base">
+  <meta property="og:description" content="Objective In this post, I tell you about how to create Revolved Boss/Base through Solidworks VBA Macros in a sketch.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solidworks-macros">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="Solidworks Macro - Create Revolved Boss/Base">
+  <meta name="twitter:description" content="Objective In this post, I tell you about how to create Revolved Boss/Base through Solidworks VBA Macros in a sketch.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/",
+       "name": "Solidworks Macros",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/15-features---extrudes/",
+       "name": "Features Extrudes",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Solidworks Macro Create Revolved Boss Base",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section solidworks-macros" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Solidworks macros</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-macro-guide/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/syncfusion-account-signup/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/wix4-introduction/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+			<div class="col container-fw d-lg-flex flex-lg-row justify-content-center mx-auto">
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#code-sample">Code Sample</a></li>
+    <li><a href="#prerequisite">Prerequisite</a></li>
+    <li><a href="#understanding-the-code">Understanding the Code</a></li>
+    <li><a href="#method-parameters-details">Method Parameters Details</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>Solidworks Macro - Create Revolved Boss/Base</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#code-sample">Code Sample</a></li>
+    <li><a href="#prerequisite">Prerequisite</a></li>
+    <li><a href="#understanding-the-code">Understanding the Code</a></li>
+    <li><a href="#method-parameters-details">Method Parameters Details</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h2 id="objective">Objective<a href="#objective" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this post, I tell you about <em>how to create Revolved Boss/Base through Solidworks VBA Macros</em> in a sketch.</p>
+<p>In this post, I tell you about <code>FeatureRevolve2</code> method from <strong>Solidworks</strong> <code>FeatureManager</code> object.</p>
+<p>This method is <em><strong>most updated</strong></em> method, I found in <em>Solidworks API Help</em>.</p>
+<p>So <em><strong>use this method</strong></em> if you want to create a new <strong>Revolved Boss/Base</strong>.</p>
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube<a href="#video-of-code-on-youtube" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Please see below video on <strong>how to create Revolved Boss/Base</strong> from Solidworks VBA Macros.</p>
+<!--
+<iframe src="https://www.youtube.com/embed/oOsEvLge_0s" frameborder="0" allowfullscreen></iframe>
+<br>
+-->
+<p>Please note that there are <strong>no explaination</strong> in the video.</p>
+<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+<h2 id="code-sample">Code Sample<a href="#code-sample" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Below is the <code>code</code> sample for creating <em>Revolved Boss/Base</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Revolve Boss/Extrude program
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to current application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if Solidworks is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks is not opened&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks document variable to opened part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if Solidworks document is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks document is not opened. Please open a document.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39;-----------------------BELOW IS THE SOLUTION----------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Local variables used as Conversion Factors
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Use a Select Case, to get the length of active Unit and set the different factors
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="n">0</span><span class="p">)</span>       <span class="c">&#39; GetUnits function gives us, active unit
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swMM</span>       <span class="c">&#39; If length is in MM
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swCM</span>       <span class="c">&#39; If length is in CM
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">100</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c">&#39; If length is in FEET
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="n">0254</span> <span class="o">*</span> <span class="n">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c">&#39; If length is in FEET &amp; INCHES
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>  <span class="c">&#39; For length we use sama as Inch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c">&#39; If length is in ANGSTROM
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">10000000000</span><span class="p">#</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c">&#39; If length is in NANOMETER
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000000</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c">&#39; If length is in MICRON
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000</span>
+</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">Select</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39;----------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Select Sketch 1 in opened part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Sketch1&#34;</span><span class="p">,</span> <span class="s">&#34;SKETCH&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if failed to select sketch 1
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Failed to select sketch 1.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>    
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create Revolve Feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">FeatureRevolve2</span><span class="p">(</span><span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">swEndConditions_e</span><span class="p">.</span><span class="n">swEndCondBlind</span><span class="p">,</span> <span class="n">swEndConditions_e</span><span class="p">.</span><span class="n">swEndCondBlind</span><span class="p">,</span> <span class="n">AngleConversionFactor</span> <span class="o">*</span> <span class="n">360</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">swThinWallType_e</span><span class="p">.</span><span class="n">swThinWallOneDirection</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Check if Revolve Feature creates or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Failed to create Revolve Feature.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">End</span> <span class="k">If</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="prerequisite">Prerequisite<a href="#prerequisite" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this article there are some <em>prerequisite</em>.</p>
+<p>We are <strong>not</strong> creating sketches from code but we use <strong>existing sketch</strong> to <em>create Revolve feature</em>.</p>
+<p>Also, we will apply checks in this article, so that code we write should be error free.</p>
+<h2 id="understanding-the-code">Understanding the Code<a href="#understanding-the-code" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+<p>I also give some link so that you can go through them if there are anything I explained in previous posts.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>This line forces us to define every variable we are going to use.</p>
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we create a variable which we named as <code>swApp</code> and the type of this <code>swApp</code> variable is <code>SldWorks.SldWorks</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we create a variable which we named as <code>swDoc</code> and the type of this <code>swDoc</code> variable is <code>SldWorks.ModelDoc2</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we Create a variable which we named as <code>swFeature</code> and the type of this <code>swFeature</code> variable is <code>SldWorks.Feature</code>.</p>
+<p>We create variable <code>swFeature</code> for <strong>Solidworks Feature</strong>.</p>
+<p>To see methods and properties related to <code>Feature</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of Solidworks API Help</a></strong></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we create a variable named <code>BoolStatus</code> as <code>Boolean</code> object type.</p>
+<p>These all are our global variables.</p>
+<p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
+<p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
+<p>I have also place <code>boolean</code> type object at top also, because after certain point we will <em>need</em> this variable frequently.</p>
+<p>Thus, I have started placing it here.</p>
+<p>Next is our <code>Sub</code> procedure which has name of <code>main</code>.</p>
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we set the value of our Solidworks variable <code>swApp</code>; which we define earlier; to Solidworks application.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if Solidworks is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks is not opened&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if Solidworks application variable is <em>successfully assigned</em> to current Solidworks application.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks document variable to opened part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code, we set Solidwors document <code>swDoc</code> variable to currently open part document.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if Solidworks document is opened or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Solidworks document is not opened. Please open a document.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if Solidworks document <code>swDoc</code> is opened.</p>
+<p>If Solidworks document is not opened then code execute inside the code and inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+<p>After showing message our program <strong>exit</strong> from here itself.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39;-----------------------BELOW IS THE SOLUTION----------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Local variables used as Conversion Factors
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Use a Select Case, to get the length of active Unit and set the different factors
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="n">0</span><span class="p">)</span>       <span class="c">&#39; GetUnits function gives us, active unit
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swMM</span>       <span class="c">&#39; If length is in MM
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swCM</span>       <span class="c">&#39; If length is in CM
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">100</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c">&#39; If length is in FEET
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="n">0254</span> <span class="o">*</span> <span class="n">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c">&#39; If length is in FEET &amp; INCHES
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>  <span class="c">&#39; For length we use sama as Inch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c">&#39; If length is in ANGSTROM
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">10000000000</span><span class="p">#</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c">&#39; If length is in NANOMETER
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c">&#39; If length is in MICRON
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Select</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">&#39;</span><span class="o">----------------------------------------------------------------</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code, we get and update unit conversion variable as per document unit.</p>
+<p>For more detail about why we are using this code sample, please visit <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article.</p>
+<p>In this line, we set the value of our variable to new document.</p>
+<p>For <strong>detailed information</strong> about these lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Select Sketch 1 in opened part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Sketch1&#34;</span><span class="p">,</span> <span class="s">&#34;SKETCH&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we select the <em>Sketch1</em> by using <code>SelectByID2</code> method from <code>Extension</code> object.</p>
+<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if failed to select sketch 1
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Failed to select sketch 1.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span> </span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to select the <code>Sketch1</code> or not.</p>
+<p>If we failed to select then inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create Revolve Feature
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">FeatureRevolve2</span><span class="p">(</span><span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">swEndConditions_e</span><span class="p">.</span><span class="n">swEndCondBlind</span><span class="p">,</span> <span class="n">swEndConditions_e</span><span class="p">.</span><span class="n">swEndCondBlind</span><span class="p">,</span> <span class="n">AngleConversionFactor</span> <span class="o">*</span> <span class="n">360</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">swThinWallType_e</span><span class="p">.</span><span class="n">swThinWallOneDirection</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code we set the value of variable <code>swFeature</code> by <code>FeatureRevolve2</code> method.</p>
+<p><code>FeatureRevolve2</code> method is part of <code>FeatureManager</code> object.</p>
+<p>This <code>FeatureManager</code> is again part of <code>swDoc</code> variable i.e. <code>ModelDoc2</code> object.</p>
+<h2 id="method-parameters-details">Method Parameters Details<a href="#method-parameters-details" class="anchor" aria-hidden="true">#</a> </h2>
+<p>This <code>FeatureRevolve2</code> method takes following parameters as explained:</p>
+<ul>
+<li>
+<p><strong>SingleDir</strong> - <em><code>True</code> if the revolve is in one direction, <code>False</code> if in both directions</em>.</p>
+</li>
+<li>
+<p><strong>IsSolid</strong> - <em><code>True</code> if this is a <strong>Solid</strong> revolve feature, <code>False</code> if not.</em></p>
+</li>
+<li>
+<p><strong>IsThin</strong> - <em><code>True</code> if this is a <strong>Thin</strong> revolve feature, <code>False</code> if not.</em></p>
+</li>
+<li>
+<p><strong>IsCut</strong> - <em><code>True</code> if this is a <strong>Cut</strong> revolve feature, <code>False</code> if not.</em></p>
+</li>
+<li>
+<p><strong>ReverseDir</strong> - <em><code>True</code> reverses the angle of the revolution, <code>False</code> does not; only applies if <code>Dir1Type</code> is not <code>swEndConditions_e.swEndCondMidPlane</code>.</em></p>
+</li>
+<li>
+<p><strong>BothDirectionUpToSameEntity</strong> - <em><code>True</code> if the revolve is up to the same entity in both directions, <code>False</code> if not; only applies if <code>SingleDir</code> is <code>False</code> and <code>Dir1Type</code> and <code>Dir2Type</code> are <code>swEndConditions_e.swEndCondUpToVertex</code>, <code>swEndConditions_e.swEndCondUpToSurface</code>, or <code>swEndConditions_e.swEndCondOffsetFromSurface</code>).</em></p>
+</li>
+<li>
+<p><strong>Dir1Type</strong> - <em>Revolve end condition in <strong>direction 1</strong> as defined in <code>swEndConditions_e</code>.</em></p>
+<p>End Conditions has following enumeration values:</p>
+<ul>
+<li>
+<p><code>swEndCondBlind</code> or <strong>0</strong></p>
+</li>
+<li>
+<p><code>swEndCondMidPlane</code> or <strong>6</strong></p>
+</li>
+<li>
+<p><code>swEndCondOffsetFromSurface</code> or <strong>5</strong></p>
+</li>
+<li>
+<p><code>swEndCondThroughAll</code> or <strong>1</strong></p>
+</li>
+<li>
+<p><code>swEndCondThroughAllBoth</code> or <strong>9</strong></p>
+</li>
+<li>
+<p><code>swEndCondThroughNext</code> or <strong>2</strong></p>
+</li>
+<li>
+<p><code>swEndCondUpToBody</code> or <strong>7</strong></p>
+</li>
+<li>
+<p><code>swEndCondUpToNext</code> or <strong>11</strong></p>
+</li>
+<li>
+<p><code>swEndCondUpToSelection</code> or <strong>10</strong></p>
+</li>
+<li>
+<p><code>swEndCondUpToSurface</code> or <strong>4</strong> = Do not use; superseded by <code>swEndCondUpToSelection</code></p>
+</li>
+<li>
+<p><code>swEndCondUpToVertex</code> or <strong>3</strong> = Do not use; superseded by <code>swEndCondUpToSelection</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dir2Type</strong> - <em>Revolve end condition in <strong>direction 2</strong>; as defined in <code>swEndConditions_e</code> and only applies if <code>Dir1Type</code> is not <code>swEndConditions_e.swEndCondMidPlane</code>.</em></p>
+</li>
+<li>
+<p><strong>Dir1Angle</strong> - <em>Angle in radians of revolution in <strong>direction 1</strong>; only applies if <code>Dir1Type</code> is <code>swEndConditions_e.swEndCondBlind</code>.</em></p>
+</li>
+<li>
+<p><strong>Dir2Angle</strong> - <em>Angle in radians of revolution in <strong>direction 2</strong>; only applies if <code>Dir2Type</code> is <code>swEndConditions_e.swEndCondBlind</code>.</em></p>
+</li>
+<li>
+<p><strong>OffsetReverse1</strong> - <em><code>True</code> to reverse the offset direction in <strong>direction 1</strong>, <code>False</code> to not; only applies if <code>Dir1Type</code> is <code>swEndConditions_e.swEndCondOffsetFromSurface</code>.</em></p>
+</li>
+<li>
+<p><strong>OffsetReverse2</strong> - <em><code>True</code> to reverse the offset direction in <strong>direction 2</strong>, <code>False</code> to not; only applies if <code>Dir2Type</code> is <code>swEndConditions_e.swEndCondOffsetFromSurface</code>.</em></p>
+</li>
+<li>
+<p><strong>OffsetDistance1</strong> - <em>Offset distance in <strong>direction 1</strong>; only applies if <code>Dir1Type</code> is <code>swEndConditions_e.swEndCondOffsetFromSurface</code>.</em></p>
+</li>
+<li>
+<p><strong>OffsetDistance2</strong> - <em>Offset distance in <strong>direction 2</strong>; only applies if <code>Dir2Type</code> is <code>swEndConditions_e.swEndCondOffsetFromSurface</code>.</em></p>
+</li>
+<li>
+<p><strong>ThinType</strong> - <em>Type and direction as defined in <code>swThinWallType_e</code>.</em></p>
+<p>Thin wall types has following enumeration values:</p>
+<ul>
+<li>
+<p><code>swThinWallMidPlane</code> or <strong>2</strong></p>
+</li>
+<li>
+<p><code>swThinWallOneDirection</code> or <strong>0</strong></p>
+</li>
+<li>
+<p><code>swThinWallOppDirection</code> or <strong>1</strong></p>
+</li>
+<li>
+<p><code>swThinWallTwoDirection</code> or <strong>3</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ThinThickness1</strong> - <em>Wall thickness in <strong>direction 1</strong> (if ThinType is <code>swThinWallType_e.swThinWallMidPlane</code>, (ThinThickness1)/2 is used for each direction).</em></p>
+</li>
+<li>
+<p><strong>ThinThickness2</strong> - <em>Wall thickness in <strong>direction 2</strong> (only applies if ThinType is <code>swThinWallType_e.swThinWallTwoDirection</code>).</em></p>
+</li>
+<li>
+<p><strong>Merge</strong> - <em><code>True</code> to merge the results into a multi-body part, <code>False</code> to not.</em></p>
+</li>
+<li>
+<p><strong>UseFeatScope</strong> - <em><code>True</code> if the feature only affects selected bodies, <code>False</code> if the feature affects all bodies.</em></p>
+</li>
+<li>
+<p><strong>UseAutoSelect</strong> - <em><code>True</code> to automatically select all bodies and have the feature affect those bodies, <code>False</code> to select the bodies or components that the feature affects.</em></p>
+</li>
+</ul>
+<p><strong>Return Value</strong> : This <code>FeatureRevolve2</code> method retun <code>Feature</code> object.</p>
+<p>To see methods and properties related to <code>Feature</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of Solidworks API Help</a></strong>.</p>
+<p>In our code, I have used following values:</p>
+<ul>
+<li>
+<p><strong>SingleDir</strong> - <em>I use <code>True</code> for revolve is in one direction</em>.</p>
+</li>
+<li>
+<p><strong>IsSolid</strong> - <em>I use <code>True</code> for <strong>Solid</strong> revolve feature</em>.</p>
+</li>
+<li>
+<p><strong>IsThin</strong> - <em>I use <code>False</code> for <strong>Thin</strong> revolve feature</em>.</p>
+</li>
+<li>
+<p><strong>IsCut</strong> - <em>I use <code>False</code> for <strong>Cut</strong> revolve feature</em>.</p>
+</li>
+<li>
+<p><strong>ReverseDir</strong> - <em>I use <code>False</code> for reverses the angle of the revolution</em>.</p>
+</li>
+<li>
+<p><strong>BothDirectionUpToSameEntity</strong> - <em>I use <code>True</code> for revolve is up to the same entity in both directions</em>.</p>
+<p>Since <strong>SingleDir</strong> is <code>True</code>, setting the value to <code>True</code> is invalid.
+{: .notice&ndash;warning}</p>
+</li>
+<li>
+<p><strong>Dir1Type</strong> - <em>I use <code>swEndConditions_e.swEndCondBlind</code> for Revolve end condition in direction 1</em>.</p>
+</li>
+<li>
+<p><strong>Dir2Type</strong> - <em>I use <code>swEndConditions_e.swEndCondBlind</code> for Revolve end condition in direction 2</em>.</p>
+</li>
+<li>
+<p><strong>Dir1Angle</strong> - <em>I use <code>AngleConversionFactor * 360</code> for Angle in radians of revolution in direction 1</em>.</p>
+</li>
+<li>
+<p><strong>Dir2Angle</strong> - <em>I use <code>0</code> for Angle in radians of revolution in direction 2</em>.</p>
+</li>
+<li>
+<p><strong>OffsetReverse1</strong> - <em>I use <code>False</code> for reverse the offset direction in direction 1</em>.</p>
+</li>
+<li>
+<p><strong>OffsetReverse2</strong> - <em>I use <code>False</code> for reverse the offset direction in direction 2</em>.</p>
+</li>
+<li>
+<p><strong>OffsetDistance1</strong> - <em>I use <code>0</code> for Offset distance in direction 1</em>.</p>
+</li>
+<li>
+<p><strong>OffsetDistance2</strong> - <em>I use <code>0</code> for Offset distance in direction 2</em>.</p>
+</li>
+<li>
+<p><strong>ThinType</strong> - <em>I use <code>swThinWallType_e.swThinWallOneDirection</code> for Type and direction</em>.</p>
+</li>
+<li>
+<p><strong>ThinThickness1</strong> - <em>I use <code>0</code> for Wall thickness in direction 1</em>.</p>
+</li>
+<li>
+<p><strong>ThinThickness2</strong> - <em>I use <code>0</code> for Wall thickness in direction 2</em>.</p>
+</li>
+<li>
+<p><strong>Merge</strong> - <em>I use <code>True</code> for merge the results into a multi-body part</em>.</p>
+</li>
+<li>
+<p><strong>UseFeatScope</strong> - <em>I use <code>False</code> for the feature affects all bodies</em>.</p>
+</li>
+<li>
+<p><strong>UseAutoSelect</strong> - <em>I use <code>True</code> for automatically select all bodies and have the feature affect those bodies</em>.</p>
+</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Check if Revolve Feature creates or not
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">&#34;Failed to create Revolve Feature.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Exit</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl"><span class="nf">End</span> <span class="k">If</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create Revolve Feature or not.</p>
+<p>If we failed to select then inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+<p>Now we run the macro and after running macro we get extrude as shown in below image.</p>
+<!-- [![final_Image](feature-revolve/final_Image.svg)](feature-revolve/final_Image.svg) -->
+<hr>
+<p><strong>This is it !!!</strong></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+<p>Hope this post helps you to <strong>create Revolve Boss</strong> with Solidworks VBA Macros.</p>
+<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
+<ul>
+<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
+</ul>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/solidworks-macros/create-extrude-feature/" class="stretched-link text-reset text-decoration-none">Solidworks Macro - Create Extrude/Boss</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/solidworks-macros/create-sweep-feature/" class="stretched-link text-reset text-decoration-none">Solidworks Macro - Create Sweep Base</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+			</div>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

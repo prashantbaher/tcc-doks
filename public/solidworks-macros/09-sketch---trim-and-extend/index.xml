@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Trim and Extend on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/09-sketch---trim-and-extend/</link>
+    <description>Recent content in Sketch - Trim and Extend on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/09-sketch---trim-and-extend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Trim Sketch Entities</title>
+      <link>http://localhost:1313/solidworks-macros/trim-entities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/trim-entities/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to Trim Sketch Entities using Solidworks VBA Macros&lt;/em&gt; in a Sketch.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;video-of-code-on-youtube&#34;&gt;Video of Code on YouTube&lt;/h2&gt;&#xA;&lt;p&gt;Please see below video how visually we &lt;em&gt;Trim Sketch Entities&lt;/em&gt; in &lt;strong&gt;Solidworks VBA macro&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Extend Sketch Entities</title>
+      <link>http://localhost:1313/solidworks-macros/extend-entities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/extend-entities/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to Extend Sketch Entities using Solidworks VBA Macros&lt;/em&gt; in a Sketch.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;video-of-code-on-youtube&#34;&gt;Video of Code on YouTube&lt;/h2&gt;&#xA;&lt;p&gt;Please see below video how visually we &lt;em&gt;Extend Sketch Entities&lt;/em&gt; in &lt;strong&gt;Solidworks VBA macro&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

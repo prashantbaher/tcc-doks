@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assembly - Standard Mates on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/22-assembly---standard-mates/</link>
+    <description>Recent content in Assembly - Standard Mates on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/22-assembly---standard-mates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Add Coincident Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-conicident-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-conicident-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Coincident Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Add Parallel Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-parallel-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-parallel-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Parallel Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Add Perpendicular Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-perpendicular-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-perpendicular-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Perpendicular Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Add Tangent Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-tangent-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-tangent-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Tangent Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Add Concentric Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-concentric-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-concentric-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Concentric Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Add Distance Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-distance-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-distance-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Distance Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Add Angle Mate</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-angle-mate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-angle-mate/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article we &lt;strong&gt;create and understand&lt;/strong&gt; VBA macro of adding &lt;strong&gt;Angle Mate&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; of &lt;em&gt;SOLIDWORKS CAD Software&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

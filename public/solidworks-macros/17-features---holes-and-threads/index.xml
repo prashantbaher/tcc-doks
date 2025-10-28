@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features - Holes and Threads on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/17-features---holes-and-threads/</link>
+    <description>Recent content in Features - Holes and Threads on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/17-features---holes-and-threads/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLIDWORKS Macro - Create Holes from Hole Wizard</title>
+      <link>http://localhost:1313/solidworks-macros/create-hole-from-hole-wizard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-hole-from-hole-wizard/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-initial-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Objective of this article is to learn &lt;em&gt;how to create &lt;strong&gt;Holes using 👉 &lt;a href=&#34;https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~holewizard.html&#34;&gt;Hole Wizard&lt;/a&gt;&lt;/strong&gt; through SOLIDWORKS VBA Macros&lt;/em&gt; in SOLIDWORKS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOLIDWORKS Macro - Create Threads</title>
+      <link>http://localhost:1313/solidworks-macros/create-threads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-threads/</guid>
+      <description>&lt;p&gt;{% include article-notes/intermediate-initial-note.html %}&lt;/p&gt;&#xA;&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;Objective of this article is to learn &lt;em&gt;how to create &lt;strong&gt;👉 &lt;a href=&#34;https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IThreadFeatureData_members.html&#34;&gt;Thread Feature&lt;/a&gt;&lt;/strong&gt; through SOLIDWORKS VBA Macros&lt;/em&gt; in SOLIDWORKS.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

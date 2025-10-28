@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assembly - Misc on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/26-assembly---misc/</link>
+    <description>Recent content in Assembly - Misc on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/26-assembly---misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks VBA Macro - Insert Folder</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-insert-folder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-insert-folder/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Insert Folder&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;We will insert an empty folder in Feature Tree.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks VBA Macro - Traverse Components Sequentially</title>
+      <link>http://localhost:1313/solidworks-vba-macros/assembly-traverse-sequentially/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-vba-macros/assembly-traverse-sequentially/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this article, we understand &amp;ldquo;how to&amp;rdquo; &lt;strong&gt;Traverse Components Sequentially&lt;/strong&gt; in &lt;strong&gt;Assembly document&lt;/strong&gt; from VBA macro.&lt;/p&gt;&#xA;&lt;p&gt;There are no direct method to &lt;strong&gt;Traverse Components in Sequentially&lt;/strong&gt; manner.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

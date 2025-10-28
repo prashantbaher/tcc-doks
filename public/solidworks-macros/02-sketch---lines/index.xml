@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Lines on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/02-sketch---lines/</link>
+    <description>Recent content in Sketch - Lines on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/02-sketch---lines/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Sketch Macro - Create Line</title>
+      <link>http://localhost:1313/solidworks-macros/sketch-create-line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/sketch-create-line/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create 2D Line through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;For this, I take the example from previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/select-plane-from-tree&#34;&gt;Solidworks Macros - Open Assembly and Drawing document&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Sketch Macro - Create CenterLine</title>
+      <link>http://localhost:1313/solidworks-macros/sketch-create-centerline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/sketch-create-centerline/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create 2D CenterLine through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/sketch-create-line&#34;&gt;Solidworks Sketch Macros - Create Line&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

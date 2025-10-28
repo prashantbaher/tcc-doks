@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features - Extrudes on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/15-features---extrudes/</link>
+    <description>Recent content in Features - Extrudes on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/15-features---extrudes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Create Extrude/Boss</title>
+      <link>http://localhost:1313/solidworks-macros/create-extrude-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-extrude-feature/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Extrude/Boss through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;code&gt;FeatureExtrusion3&lt;/code&gt; method from &lt;strong&gt;Solidworks&lt;/strong&gt; &lt;code&gt;FeatureManager&lt;/code&gt; object.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Revolved Boss/Base</title>
+      <link>http://localhost:1313/solidworks-macros/create-revolved-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-revolved-feature/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Revolved Boss/Base through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Sweep Base</title>
+      <link>http://localhost:1313/solidworks-macros/create-sweep-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-sweep-feature/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Sweep Base through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Lofted Base/Boss</title>
+      <link>http://localhost:1313/solidworks-macros/create-lofted-boss-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-lofted-boss-feature/</guid>
+      <description>&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Lofted Base/Boss through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,2632 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.33758d2c063fdb6977b91f609c2e676c70b30831326d76dca2350eb7601945d813a377425cd5279dc2dec5656893b0a29be880ea7efd7787043b134a3bbb9dec.css" integrity="sha512-M3WNLAY/22l3uR9gnC5nbHCzCDEybXbcojUOt2AZRdgTo3dCXNUnncLexWVok7Cim&#43;iA6n79d4cEOxNKO7ud7A==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/solidworks-macros/edit-linear-skech-pattern/">
+
+  <link rel="canonical" href="http://localhost:1313/solidworks-macros/edit-linear-skech-pattern/">
+
+
+<title>Solidworks Macro - Edit Linear Sketch Pattern  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/solidworks-macros/edit-linear-skech-pattern/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Solidworks Macro - Edit Linear Sketch Pattern">
+  <meta property="og:description" content="In this post, I tell you about how to Edit Linear Sketch Pattern using Solidworks VBA Macros in a Sketch.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solidworks-macros">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="Solidworks Macro - Edit Linear Sketch Pattern">
+  <meta name="twitter:description" content="In this post, I tell you about how to Edit Linear Sketch Pattern using Solidworks VBA Macros in a Sketch.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/",
+       "name": "Solidworks Macros",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/11-sketch---patterns/",
+       "name": "Sketch Patterns",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Solidworks Macro Edit Linear Sketch Pattern",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section solidworks-macros" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Solidworks macros</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-macro-guide/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/syncfusion-account-signup/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/wix4-introduction/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+			<div class="col container-fw d-lg-flex flex-lg-row justify-content-center mx-auto">
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#for-experience-macro-developers">For Experience Macro Developers</a></li>
+    <li><a href="#for-beginner-macro-developers">For Beginner Macro Developers</a>
+      <ul>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#note">NOTE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>Solidworks Macro - Edit Linear Sketch Pattern</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#for-experience-macro-developers">For Experience Macro Developers</a></li>
+    <li><a href="#for-beginner-macro-developers">For Beginner Macro Developers</a>
+      <ul>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#note">NOTE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>In this post, I tell you about <strong>how to Edit Linear Sketch Pattern using Solidworks VBA Macros</strong> in a Sketch.</p>
+<p>This post is extension of previous <strong><a href="/solidworks-macros/linear-skech-pattern">Solidworks Macro - Linear Sketch Pattern</a></strong> post.</p>
+<p>I recommend you to read <strong><a href="/solidworks-macros/linear-skech-pattern">Solidworks Macro - Linear Sketch Pattern</a></strong> post because we are using same code sample.</p>
+<hr>
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube<a href="#video-of-code-on-youtube" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Please see below video how we can <em>Edit Linear Sketch Pattern</em> in <strong>Solidworks VBA macro</strong>.</p>
+<iframe src="https://www.youtube.com/embed/4pLUprIxXHU" frameborder="0" allowfullscreen></iframe>
+<br>
+<p>Please note that there is <strong>no explanation</strong> in the video.</p>
+<p>Why we write our code this way is <strong>explained</strong> in this post.</p>
+<hr>
+<h2 id="for-experience-macro-developers">For Experience Macro Developers<a href="#for-experience-macro-developers" class="anchor" aria-hidden="true">#</a> </h2>
+<p>If you are an experienced <strong>Solidworks Macro developer</strong>, then you are looking for a specific code sample.</p>
+<p>Below is the code for <strong>Edit Linear Sketch Pattern</strong> from <strong>Solidworks VBA Macro</strong>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;(3,2)(2,1)&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>Method Name</strong>: <code>EditLinearSketchStepAndRepeat</code></p>
+<p><strong>Description</strong>: Edit <em>Linear Sketch Pattern</em>.</p>
+<p><strong>Prerequisites</strong>: To <em>edit</em> a <strong>Linear Sketch Pattern</strong> a Solidworks Sketch entity or entities, first, we need the following things:</p>
+<ol>
+<li>Existing Linear Sketch Pattern</li>
+</ol>
+<p><strong>How it works</strong>:</p>
+<ul>
+<li>
+<p>For <strong>Edit a Linear Sketch Pattern</strong>, first, we need to <strong>create</strong> a variable of <code>Boolean</code> type.</p>
+</li>
+<li>
+<p>After creating variable, we need to set the value of this <code>Boolean</code> variable.</p>
+</li>
+<li>
+<p>For this, we used <code>EditLinearSketchStepAndRepeat</code> method from <strong>Solidworks Sketch Manager</strong>.</p>
+</li>
+<li>
+<p>This <code>EditLinearSketchStepAndRepeat</code> method set the value of <code>Boolean</code> type variable.</p>
+</li>
+<li>
+<p>If the editing of <em>Linear Sketch Pattern</em> is <strong>successful</strong> then <code>EditLinearSketchStepAndRepeat</code> method return <strong>True</strong> value otherwise <code>EditLinearSketchStepAndRepeat</code> returns <strong>False</strong> value.</p>
+</li>
+</ul>
+<p>This <code>EditLinearSketchStepAndRepeat</code> method takes the following parameters as explained:</p>
+<ul>
+<li>
+<p><strong>NumX</strong>: <em>Total number of instances along the <strong>x</strong> axis, including the seed i.e. original entity/entities.</em></p>
+</li>
+<li>
+<p><strong>NumY</strong>: <em>Total number of instances along the <strong>y</strong> axis, including the seed i.e. original entity/entities.</em></p>
+</li>
+<li>
+<p><strong>SpacingX</strong>: <em>Spacing between instances along the <strong>x</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>SpacingY</strong>: <em>Spacing between instances along the <strong>y</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>AngleX</strong>: <em>Angle for direction 1 relative to the <strong>x</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>AngleY</strong>: <em>Angle for direction 1 relative to the <strong>y</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>DeleteInstances</strong>: <em>Number of instances to delete, passed as a string in the format: &ldquo;(a) (b) (c)&rdquo;.</em></p>
+</li>
+<li>
+<p><strong>XSpacingDim</strong>: <em>True to display the spacing between instances dimension along the <strong>x</strong> axis in the graphics area, false to not</em></p>
+</li>
+<li>
+<p><strong>YSpacingDim</strong>: <em>True to display the spacing between instances dimension along the <strong>y</strong> axis in the graphics area, false to not</em></p>
+</li>
+<li>
+<p><strong>AngleDim</strong>: <em>True to display the angle dimension between axes in the graphics area, false to not.</em></p>
+</li>
+<li>
+<p><strong>CreateNumOfInstancesDimInXDir</strong>: <em>True to display the number of instances in the <strong>x</strong> direction dimension in the graphics area, false to not.</em></p>
+</li>
+<li>
+<p><strong>CreateNumOfInstancesDimInYDir</strong>: <em>True to display the number of instances in the <strong>y</strong> direction dimension in the graphics area, false to not.</em></p>
+</li>
+<li>
+<p><strong>Seed</strong>: <em>List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Line1_Line2_Line3_Line4 for a rectangular-shaped seed pattern).</em></p>
+</li>
+</ul>
+<p><strong>Return Value</strong>:</p>
+<ul>
+<li>
+<p><strong>True</strong>: <em>If Editing of Linear Sketch Pattern is &ldquo;Success&rdquo;.</em></p>
+</li>
+<li>
+<p><strong>False</strong>: <em>If Editing of Linear Sketch Pattern is &ldquo;Fail&rdquo;.</em></p>
+</li>
+</ul>
+<p>If you want more detailed explaination then please read further otherwise this will help you to <em>edit</em> a <strong>Linear Sketch Pattern</strong>.</p>
+<hr>
+<h2 id="for-beginner-macro-developers">For Beginner Macro Developers<a href="#for-beginner-macro-developers" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this post, I tell you about <code>EditLinearSketchStepAndRepeat</code> method from <strong>Solidworks</strong> <code>SketchManager</code> object.</p>
+<p>This method is <em><strong>most updated</strong></em> method, I found in <em>Solidworks API Help</em>.</p>
+<p>So <em><strong>use this method</strong></em> if you want to <em>edit Linear Sketch Pattern</em>.</p>
+<p>Below is the <code>code</code> sample to <em>edit Linear Sketch Pattern</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create Variable for Solidworks Sketch Segment
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create string type variable for storing default part location
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks document to new part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Select Front Plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Sketch manager for our sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Insert a sketch into selected plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Sketch Segment value and Create a Circle
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; De-select the lines after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Select Circle we want to Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Arc1&#34;</span><span class="p">,</span> <span class="s">&#34;SKETCHSEGMENT&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">3</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; De-select the Sketch Segment after Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Show Front View after Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Zoom to fit screen in Solidworks Window
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Edit a Linear Sketch Pattern &lt;--- FROM HERE IS THE LAST LINE I EXPLAIN
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Since this post is <em>an extension</em> of previous <strong><a href="/solidworks-macros/linear-skech-pattern">Solidworks Macro - Linear Sketch Pattern</a></strong> post, then I will start explaining from <strong>Last line</strong> only.</p>
+<p>If you want to understand every line of code, then please visit <strong><a href="/solidworks-macros/linear-skech-pattern">Solidworks Macro - Linear Sketch Pattern</a></strong> post &ldquo;first&rdquo;, then read this post.</p>
+<p>By doing this, <em>you learn 2 thing</em>:</p>
+<ol>
+<li>
+<p><em>How to create a Linear Sketch Pattern</em></p>
+</li>
+<li>
+<p><em>How to edit/modify an existing Linear Sketch Pattern</em></p>
+</li>
+</ol>
+<p>I also give some <em>links</em> so that you can go through them if there are anything I <em>explained</em> in previous posts.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>For &ldquo;<strong>editing</strong>&rdquo; a Linear Sketch pattern, we need <code>EditLinearSketchStepAndRepeat</code> method from <em>Solidworks Sketch Manager</em> object/variable.</p>
+<p>This <code>EditLinearSketchStepAndRepeat</code> method takes the following parameters as explained:</p>
+<ul>
+<li>
+<p><strong>NumX</strong>: <em>Total number of instances along the <strong>x</strong> axis, including the seed i.e. original entity/entities.</em></p>
+</li>
+<li>
+<p><strong>NumY</strong>: <em>Total number of instances along the <strong>y</strong> axis, including the seed i.e. original entity/entities.</em></p>
+</li>
+<li>
+<p><strong>SpacingX</strong>: <em>Spacing between instances along the <strong>x</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>SpacingY</strong>: <em>Spacing between instances along the <strong>y</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>AngleX</strong>: <em>Angle for direction 1 relative to the <strong>x</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>AngleY</strong>: <em>Angle for direction 1 relative to the <strong>y</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>DeleteInstances</strong>: <em>Number of instances to delete, passed as a string in the format: &ldquo;(a) (b) (c)&rdquo;.</em></p>
+</li>
+<li>
+<p><strong>XSpacingDim</strong>: <em>True to display the spacing between instances dimension along the <strong>x</strong> axis in the graphics area, false to not</em></p>
+</li>
+<li>
+<p><strong>YSpacingDim</strong>: <em>True to display the spacing between instances dimension along the <strong>y</strong> axis in the graphics area, false to not</em></p>
+</li>
+<li>
+<p><strong>AngleDim</strong>: <em>True to display the angle dimension between axes in the graphics area, false to not.</em></p>
+</li>
+<li>
+<p><strong>CreateNumOfInstancesDimInXDir</strong>: <em>True to display the number of instances in the <strong>x</strong> direction dimension in the graphics area, false to not.</em></p>
+</li>
+<li>
+<p><strong>CreateNumOfInstancesDimInYDir</strong>: <em>True to display the number of instances in the <strong>y</strong> direction dimension in the graphics area, false to not.</em></p>
+</li>
+<li>
+<p><strong>Seed</strong>: <em>List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Line1_Line2_Line3_Line4 for a rectangular-shaped seed pattern).</em></p>
+</li>
+</ul>
+<p><strong>NOTE:</strong> In <em>Seed</em>, adding underscore(_) after selected entity is important, otherwise code will note work.</p>
+<p>After the function complete, we get following results:</p>
+<p><strong>Return Value</strong>:</p>
+<ul>
+<li>
+<p><strong>True</strong>: <em>If Editing of Linear Sketch Pattern is &ldquo;Success&rdquo;.</em></p>
+</li>
+<li>
+<p><strong>False</strong>: <em>If Editing of Linear Sketch Pattern is &ldquo;Fail&rdquo;.</em></p>
+</li>
+</ul>
+<p>In our code, I have used following values:</p>
+<ul>
+<li>
+<p><strong>NumX</strong> : <em>I have used <strong>5</strong> as Total number of instances along the <strong>x</strong> axis including original circle.</em></p>
+</li>
+<li>
+<p><strong>NumY</strong> : <em>I have used <strong>1</strong> as Total number of instances along the <strong>y</strong> axis which includes original circle only.</em></p>
+</li>
+</ul>
+<blockquote>
+<p><em>Even uf you don&rsquo;t want to pattern in <strong>Y</strong> direction, you have to give atleast 1 as a value. Same goes for <strong>X</strong> direction.</em></p></blockquote>
+<ul>
+<li>
+<p><strong>SpacingX</strong> : <em>I use <strong>1</strong> as Spacing between instances along the <strong>x</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>SpacingY</strong> : <em>I use <strong>0</strong> Spacing between instances along the <strong>y</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>AngleX</strong> : <em>I use <strong>0</strong> Angle for direction 1 relative to the <strong>x</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>AngleY</strong> : <em>I use <strong>0</strong> Angle for direction 1 relative to the <strong>y</strong> axis.</em></p>
+</li>
+<li>
+<p><strong>DeleteInstances</strong> : <em>I use <strong>&quot;&quot;</strong> as Number of instances to delete, because I don&rsquo;t want to delete any instances.</em></p>
+</li>
+<li>
+<p><strong>XSpacingDim</strong> : <em>I use <strong>True</strong> to display the spacing between instances dimension along the <strong>x</strong> axis in the graphics area.</em></p>
+</li>
+<li>
+<p><strong>YSpacingDim</strong> : <em>I use <strong>False</strong> to display the spacing between instances dimension along the <strong>y</strong> axis in the graphics area.</em></p>
+</li>
+<li>
+<p><strong>AngleDim</strong> : <em>I use <strong>True</strong> to display the angle dimension between axes in the graphics area.</em></p>
+</li>
+<li>
+<p><strong>CreateNumOfInstancesDimInXDir</strong> : <em>I use <strong>True</strong> to display the number of instances in the <strong>x</strong> direction dimension in the graphics area.</em></p>
+</li>
+<li>
+<p><strong>CreateNumOfInstancesDimInYDir</strong> : <em>I use <strong>False</strong> to display the number of instances in the <strong>y</strong> direction dimension in the graphics area.</em></p>
+</li>
+<li>
+<p><strong>Seed</strong> : <em>I use <strong>Arc1_</strong> as the seed of this Edit Pattern Function. We can select multiple sketch entities into existing Linear Sketch Pattern.</em></p>
+</li>
+</ul>
+<hr>
+<h3 id="cases">Cases<a href="#cases" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In this section, we will go through different cases by</p>
+<ul>
+<li>
+<p><em>Modifying different parameters</em></p>
+<ol>
+<li>
+<p><em>A basic 1 line description</em></p>
+</li>
+<li>
+<p><em>Sample Code of parameter modification</em></p>
+</li>
+</ol>
+</li>
+<li>
+<p><em>See images, before and after parameter modification</em></p>
+</li>
+</ul>
+<hr>
+<h4 id="case-1--increase-total-number-of-instances-along-the-x-axis">CASE 1 : Increase Total number of instances along the &ldquo;X&rdquo; axis<a href="#case-1--increase-total-number-of-instances-along-the-x-axis" class="anchor" aria-hidden="true">#</a> </h4>
+<p>To increase Total number of instances along the &ldquo;X&rdquo; axis, we need to update <strong>NumX</strong> parameter in <code>EditLinearSketchStepAndRepeat</code> method.</p>
+<p>In my previous <strong><a href="/solidworks-macros/linear-skech-pattern">Solidworks Macro - Linear Sketch Pattern</a></strong> post, we created a Linear pattern <em>3 instances</em> in <em>x-direction</em>.</p>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above code, we update the number of instances from <em>3 instances</em> to <em>5 instances</em>.</p>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows before and after we update <strong>number of instance in X-direction</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/after-linear-pattern_hu_8dee75002b72e40e.webp"
+  width="1035"
+  height="811"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="after-linear-pattern"id="h-rh-i-0"
+/></p>
+<p><strong>After Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-numX_hu_dea487059535e9db.webp"
+  width="1038"
+  height="811"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-numX"id="h-rh-i-1"
+/></p>
+<hr>
+<h4 id="case-2--increase-total-number-of-instances-along-the-y-axis">CASE 2 : Increase Total number of instances along the &ldquo;Y&rdquo; axis<a href="#case-2--increase-total-number-of-instances-along-the-y-axis" class="anchor" aria-hidden="true">#</a> </h4>
+<p>To increase Total number of instances along the &ldquo;Y&rdquo; axis, we need to update <strong>NumY</strong> parameter in <code>EditLinearSketchStepAndRepeat</code> method.</p>
+<p>If we increase the number of instances in <em>Y-direction</em>, then we also need to give value for <strong>SpacingY</strong> parameter.</p>
+<p><em>We need following parameters to update:</em></p>
+<ul>
+<li>
+<p><strong>NumY</strong></p>
+</li>
+<li>
+<p><strong>SpacingY</strong></p>
+</li>
+</ul>
+<p><em>We will use following values for these parameters:</em></p>
+<ul>
+<li>
+<p><strong>NumY</strong>: <em>4</em></p>
+</li>
+<li>
+<p><strong>SpacingY</strong>: <em>0.75</em></p>
+</li>
+</ul>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows before and after we update <strong>number of instance in Y-direction</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-numX_hu_dea487059535e9db.webp"
+  width="1038"
+  height="811"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-numX"id="h-rh-i-2"
+/></p>
+<p><strong>After Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-numY_hu_b1acad1a381a4c3b.webp"
+  width="1037"
+  height="810"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-numY"id="h-rh-i-3"
+/></p>
+<p><em><strong>NOTE:</strong></em></p>
+<p>As you notice in previous image, when you give values for <strong>NumY</strong> and <strong>SpacingY</strong>, number of instances increased in X-direction!</p>
+<p><em>Why the instances are increased in X-direction not in Y-direction as I was expecting?</em></p>
+<p>This question comes in my mind after seeing the result!</p>
+<p>Reason is that we did not give value of <strong>AngleY</strong> parameter.</p>
+<p>If you provide the value of <strong>AngleY</strong> parameter then we can have instances in Y-direction.</p>
+<p>More detail with example in <strong>CASE 4</strong>.</p>
+<hr>
+<h4 id="case-3--update-angle-for-direction-1-along-the-x-axis">CASE 3 : Update Angle for direction 1 along the &ldquo;X&rdquo; axis<a href="#case-3--update-angle-for-direction-1-along-the-x-axis" class="anchor" aria-hidden="true">#</a> </h4>
+<p>To update Angle for <em>direction 1</em> along the &ldquo;X&rdquo; axis, we need to update <strong>AngleX</strong> parameter in <code>EditLinearSketchStepAndRepeat</code> method.</p>
+<p><em>We will use following value for <strong>AngleX</strong> parameter:</em></p>
+<ul>
+<li><strong>AngleX</strong>: <em>0.785</em>.</li>
+</ul>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows before and after we update <strong>Angle for direction 1 along the &ldquo;X&rdquo; axis</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-numY_hu_b1acad1a381a4c3b.webp"
+  width="1037"
+  height="810"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-numY"id="h-rh-i-4"
+/></p>
+<p><strong>After Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-angleX_hu_648cbbe2deae5a5.webp"
+  width="1036"
+  height="812"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-angleX"id="h-rh-i-5"
+/></p>
+<p><em><strong>NOTE:</strong></em></p>
+<p>In this case, we use <strong>AngleX</strong> = <em>0.785</em>.</p>
+<p>This value is in <em><strong>Radian</strong></em>.</p>
+<p>Hence, <em>0.785</em> Radian = <em>44.999 Degree</em></p>
+<p>So we have update Angle for direction 1 in <strong>~45 degree</strong>.</p>
+<hr>
+<h4 id="case-4--update-angle-for-direction-1-along-the-y-axis">CASE 4 : Update Angle for direction 1 along the &ldquo;Y&rdquo; axis<a href="#case-4--update-angle-for-direction-1-along-the-y-axis" class="anchor" aria-hidden="true">#</a> </h4>
+<p>To update Angle for <em>direction 2</em> along the &ldquo;Y&rdquo; axis, we need to update <strong>AngleY</strong> parameter in <code>EditLinearSketchStepAndRepeat</code> method.</p>
+<p><em>We will use following value for <strong>AngleY</strong> parameter:</em></p>
+<ul>
+<li><strong>AngleX</strong>: <em>1.5708</em>.</li>
+</ul>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows before and after we update <strong>Angle for direction 2 along the &ldquo;Y&rdquo; axis</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-angleX_hu_648cbbe2deae5a5.webp"
+  width="1036"
+  height="812"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-angleX"id="h-rh-i-6"
+/></p>
+<p><strong>After Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-angleY_hu_e713098bcc8395ed.webp"
+  width="1037"
+  height="809"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-angleX"id="h-rh-i-7"
+/></p>
+<p><em><strong>NOTE:</strong></em></p>
+<p>In this case, we use <strong>AngleY</strong> = <em>1.5708</em>.</p>
+<p>This value is in <em><strong>Radian</strong></em>.</p>
+<p>Hence, <em>1.5708</em> Radian = <em>90 Degree</em></p>
+<p>So we have update Angle for direction 1 in <strong>90 degree</strong>.</p>
+<hr>
+<h4 id="case-5--number-of-instances-to-delete">CASE 5 : Number of instances to delete<a href="#case-5--number-of-instances-to-delete" class="anchor" aria-hidden="true">#</a> </h4>
+<p>Ok, this one is a little &ldquo;<strong>tricky</strong>&rdquo;!!!</p>
+<p>We want to delete some instance now.</p>
+<p>For deleting instances, we need following:</p>
+<ul>
+<li>
+<p>Deleting instance&rsquo;s position with respect to <strong>X and Y directions</strong>.</p>
+</li>
+<li>
+<p>Those position in a particular format.</p>
+</li>
+</ul>
+<p><em><strong>Grid Position Image:</strong></em></p>
+<p>I tried my best to describe you this position system in Grid format using image.</p>
+<p>Please see below image for this Grid position.</p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-deleteInstances_hu_cbbc889c8bd47ad8.webp"
+  width="1037"
+  height="811"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-deleteInstances"id="h-rh-i-8"
+/></p>
+<p>We are going to delete 2 instances.</p>
+<p><strong>1st Instance</strong>: First we will get the position of this instance.</p>
+<ul>
+<li>
+<p><strong>In X-Direction</strong>: As you can see in above image, position of this instance is 3 in Grid position system for X-Direction.</p>
+</li>
+<li>
+<p><strong>In Y-Direction</strong>: As you can see in above image, position of this instance is 2 in Grid position system for Y-Direction.</p>
+</li>
+</ul>
+<p><strong>2nd Instance</strong>: First we will get the position of this instance.</p>
+<ul>
+<li>
+<p><strong>In X-Direction</strong>: As you can see in above image, position of this instance is 2 in Grid position system for X-Direction.</p>
+</li>
+<li>
+<p><strong>In Y-Direction</strong>: As you can see in above image, position of this instance is 1 in Grid position system for Y-Direction.</p>
+</li>
+</ul>
+<p><strong>Position in special format</strong>: After we get the position, we need to put &ldquo;Grid position&rdquo; of each instance inside <em>a bracket (or paranthesis)</em>.</p>
+<p>One thing to note here is that, there should be no &ldquo;<strong>comma</strong>&rdquo; between <strong>bracket (or paranthesis)</strong>.</p>
+<p>Please see below code sample for detail.</p>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;(3,2)(2,1)&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h4 id="case-6--display-the-spacing-between-instances-dimension-along-the-y-axis">CASE 6 : Display the spacing between instances dimension along the &ldquo;Y&rdquo; axis<a href="#case-6--display-the-spacing-between-instances-dimension-along-the-y-axis" class="anchor" aria-hidden="true">#</a> </h4>
+<p>In our code sample, we display the spacing between instances dimension along the <strong>X</strong> axis.</p>
+<p>We do this by <strong><code>XSpacingDim = True</code></strong>.</p>
+<p>If we want to display the spacing between instances dimension along the <strong>Y</strong> axis.</p>
+<p>For that we need to set <strong><code>YSpacingDim = True</code></strong>.</p>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;(3,2)(2,1)&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows after we update value for <strong>display dimension along the <strong>Y</strong> axis</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-YSpacingDim_hu_91ee0a8f8afd5675.webp"
+  width="1035"
+  height="812"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-YSpacingDim"id="h-rh-i-9"
+/></p>
+<hr>
+<h4 id="case-7--display-the-angle-dimension-between-axes">CASE 7 : Display the angle dimension between axes<a href="#case-7--display-the-angle-dimension-between-axes" class="anchor" aria-hidden="true">#</a> </h4>
+<p>In our code sample, we display the angle dimension between axes.</p>
+<p>We do this by <strong><code>AngleDim = True</code></strong>.</p>
+<p>If we don&rsquo;t want to display the angle dimension between axes then we need to set <strong><code>AngleDim = False</code></strong>.</p>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;(3,2)(2,1)&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows after we update value to <code>False</code> for <strong>the angle dimension between axes</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-AngleDim_hu_e773a5605546caa0.webp"
+  width="1037"
+  height="813"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-AngleDim"id="h-rh-i-10"
+/></p>
+<hr>
+<h4 id="case-8--display-the-number-of-instances-in-the-x-direction">CASE 8 : Display the number of instances in the &ldquo;X&rdquo; direction<a href="#case-8--display-the-number-of-instances-in-the-x-direction" class="anchor" aria-hidden="true">#</a> </h4>
+<p>In our code sample, we display the number of instances along the <strong>X</strong> axis.</p>
+<p>We do this by <strong><code>CreateNumOfInstancesDimInXDir = True</code></strong>.</p>
+<p>If we don&rsquo;t want to display the number of instances along the <strong>X</strong> axis then we need to set <strong><code>CreateNumOfInstancesDimInXDir = False</code></strong>.</p>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;(3,2)(2,1)&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows after we update value to <code>False</code> for <strong>not display the number of instances in the X direction</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-CreateNumOfInstancesDimInXDir_hu_cdc61b2279fa8763.webp"
+  width="1036"
+  height="813"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-CreateNumOfInstancesDimInXDir"id="h-rh-i-11"
+/></p>
+<hr>
+<h4 id="case-9--display-the-number-of-instances-in-the-y-direction">CASE 9 : Display the number of instances in the &ldquo;Y&rdquo; direction<a href="#case-9--display-the-number-of-instances-in-the-y-direction" class="anchor" aria-hidden="true">#</a> </h4>
+<p>In our code sample, we don&rsquo;t display the number of instances along the <strong>Y</strong> axis.</p>
+<p>We do this by <strong><code>CreateNumOfInstancesDimInYDir = False</code></strong>.</p>
+<p>If we want to display the number of instances along the <strong>Y</strong> axis then we need to set <strong><code>CreateNumOfInstancesDimInYDir = True</code></strong>.</p>
+<p><em><strong>Code sample:</strong></em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Edit a Linear Sketch Pattern
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">EditLinearSketchStepAndRepeat</span><span class="p">(</span><span class="n">5</span><span class="p">,</span> <span class="n">4</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">75</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">785</span><span class="p">,</span> <span class="n">1</span><span class="p">.</span><span class="n">5708</span><span class="p">,</span> <span class="s">&#34;(3,2)(2,1)&#34;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="s">&#34;Arc1_&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em><strong>Example Images:</strong></em></p>
+<p>Below image shows after we update value to <code>True</code> for <strong>display the number of instances in the Y direction</strong>.</p>
+<p><strong>Before Edit Linear Sketch Pattern</strong></p>
+<p>
+
+<img
+  src="/solidworks-macros/11-sketch---patterns/sketch-patterns/edit-linear-pattern-CreateNumOfInstancesDimInYDir_hu_c1b1f94fef4708f8.webp"
+  width="1036"
+  height="811"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="edit-linear-pattern-CreateNumOfInstancesDimInXDir"id="h-rh-i-12"
+/></p>
+<hr>
+<h4 id="case-10--multiple-entities-as-seed">CASE 10 : Multiple entities as Seed<a href="#case-10--multiple-entities-as-seed" class="anchor" aria-hidden="true">#</a> </h4>
+<p>In our code sample, we use only <strong>1 circle</strong> for <em>Linear Sketch pattern</em>.</p>
+<p>But in many cases we need to select <strong>many sketch entities</strong>.</p>
+<p>In this condition, add the entities name with <strong>an underscore (_)</strong> one by one.</p>
+<p>For example, we want to pattern a Ractangle, in this case, value of seed should be following:</p>
+<ul>
+<li><strong>Seed</strong> : <strong><code>Line1_Line2_Line3_Line4_</code></strong></li>
+</ul>
+<hr>
+<h3 id="note">NOTE<a href="#note" class="anchor" aria-hidden="true">#</a> </h3>
+<p>It is <em><strong>very important</strong></em> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <em><strong>Meter only</strong></em>.</p>
+<p>Please see below for detail:</p>
+<ul>
+<li>
+<p>Length: <strong>Meter</strong></p>
+</li>
+<li>
+<p>Angle: <strong>Radian</strong></p>
+</li>
+</ul>
+<p>Solidworks API does not care about your application&rsquo;s Unit systems.</p>
+<p>For example, I works in <strong>ANSI</strong> system means <em>inches</em> for distance. But when I used <strong>Solidworks API</strong> through <em>VBA macros or C#</em>, I need to converted numeric values.</p>
+<p>Because Solidworks API output the distance in <strong>Meter</strong> which is not my requirement.</p>
+<hr>
+<p><strong>This is it !!!</strong></p>
+<p>If you found anything to add or update, please let me know on my e-mail.</p>
+<p>Hope this post helps you to <em>Edit a Linear Sketch Pattern</em> with Solidworks VBA Macros.</p>
+<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
+<ul>
+<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
+</ul>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/solidworks-macros/linear-skech-pattern/" class="stretched-link text-reset text-decoration-none">Solidworks Macro - Linear Sketch Pattern</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/solidworks-macros/circular-skech-pattern/" class="stretched-link text-reset text-decoration-none">Solidworks Macro - Circular Sketch Pattern</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+			</div>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

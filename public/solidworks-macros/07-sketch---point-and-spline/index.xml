@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Point and Spline on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/07-sketch---point-and-spline/</link>
+    <description>Recent content in Sketch - Point and Spline on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/07-sketch---point-and-spline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Create a Point</title>
+      <link>http://localhost:1313/solidworks-macros/create-point/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-point/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Point through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/sketch-create-line&#34;&gt;Sketch - Create Lines&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create a Spline</title>
+      <link>http://localhost:1313/solidworks-macros/create-spline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-spline/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create a Spline through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;This post take some functionality from previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/create-point&#34;&gt;Sketch - Create Create a Point&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Circles on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/04-sketch---circles/</link>
+    <description>Recent content in Sketch - Circles on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/04-sketch---circles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Create Circle</title>
+      <link>http://localhost:1313/solidworks-macros/create-circle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-circle/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Circle through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is almost identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/sketch-create-line&#34;&gt;Solidworks Sketch Macros - Create Line&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Circle By Radius</title>
+      <link>http://localhost:1313/solidworks-macros/create-circle-by-radius/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-circle-by-radius/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Circle By Radius through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Create Perimeter Circle</title>
+      <link>http://localhost:1313/solidworks-macros/create-perimeter-circle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/create-perimeter-circle/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;em&gt;how to create Perimeter Circle through Solidworks VBA Macros&lt;/em&gt; in a sketch.&lt;/p&gt;&#xA;&lt;p&gt;The process is identical with previous &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/solidworks-macros/create-circle&#34;&gt;Solidworks Sketch Macros - Create Circle&lt;/a&gt;&lt;/strong&gt; post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

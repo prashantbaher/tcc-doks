@@ -1,0 +1,2936 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.33758d2c063fdb6977b91f609c2e676c70b30831326d76dca2350eb7601945d813a377425cd5279dc2dec5656893b0a29be880ea7efd7787043b134a3bbb9dec.css" integrity="sha512-M3WNLAY/22l3uR9gnC5nbHCzCDEybXbcojUOt2AZRdgTo3dCXNUnncLexWVok7Cim&#43;iA6n79d4cEOxNKO7ud7A==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/solidworks-macros/create-spline/">
+
+  <link rel="canonical" href="http://localhost:1313/solidworks-macros/create-spline/">
+
+
+<title>Solidworks Macro - Create a Spline  |  The CAD Coder</title>
+<meta name="description" content="Automate CAD with powerful macros and tools!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/solidworks-macros/create-spline/">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Solidworks Macro - Create a Spline">
+  <meta property="og:description" content="In this post, I tell you about how to create a Spline through Solidworks VBA Macros in a sketch.
+This post take some functionality from previous Sketch - Create Create a Point post.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solidworks-macros">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="Solidworks Macro - Create a Spline">
+  <meta name="twitter:description" content="In this post, I tell you about how to create a Spline through Solidworks VBA Macros in a sketch.
+This post take some functionality from previous Sketch - Create Create a Point post.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "The Cad Coder",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/",
+       "name": "Solidworks Macros",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/solidworks-macros/07-sketch---point-and-spline/",
+       "name": "Sketch Point and Spline",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Solidworks Macro Create a Spline",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+<script>
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
+</script>
+
+</head>
+
+  
+  <body class="single section solidworks-macros" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">The CAD Coder</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Solidworks macros</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">The CAD Coder</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/">Knowledge Base</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/vba/vba-introduction/">VBA</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Solidworks<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu shadow rounded border-0">
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-macro-guide/">Solidworks VBA Macro</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-csharp-api/">Solidworks C# API</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:1313/solidworks-cpp-api/">Solidworks C&#43;&#43; API</a></li>
+                  </ul>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/wpf-tutorials/syncfusion-account-signup/">WPF Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/knowledge-base/wix4-introduction/">Wix4 Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/resources/">Resources</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/aboutme/">About</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.linkedin.com/in/prashantbaher/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M6 20v-10h4v10h-4z"></path><path d="M14 20v-5c0 -1.5 .5 -3.5 3 -3.5s3.5 2.5 3.5 4.5v4h-4v-3c0 -1.5 -.5 -2.5 -1.5 -2.5s-1.5 .5 -1.5 2v3h-4z"></path></svg><small class="ms-2 visually-hidden">LinkedIn</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.facebook.com/TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path></svg><small class="ms-2 visually-hidden">Facebook</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://www.youtube.com/@TheCadCoder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor"><path d="M31.67 8.87a4 4 0 0 0-2.82-2.83C26.13 5.33 16 5.33 16 5.33s-10.13 0-12.85.71A4 4 0 0 0 .33 8.87 41.13 41.13 0 0 0 0 16a41.13 41.13 0 0 0 .33 7.13 4 4 0 0 0 2.82 2.83c2.72.71 12.85.71 12.85.71s10.13 0 12.85-.71a4 4 0 0 0 2.82-2.83A41.13 41.13 0 0 0 32 16a41.13 41.13 0 0 0-.33-7.13zM12.8 21.2V10.8l8.53 5.2z"/></svg><small class="ms-2 visually-hidden">YouTube</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>General - Functions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/Solidworks-macro-guide/">VBA In Solidworks</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-new-document/">Solidworks Macro - Open new Part document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-assembly-and-drawing/">Solidworks Macro - Open Assembly and Drawing document</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/select-plane-from-tree/">Solidworks Macro - Selection Methods</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/open-saved-document/">Solidworks Macro - Open Saved Documents</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Lines</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-line/">Solidworks Sketch Macro - Create Line</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/sketch-create-centerline/">Solidworks Sketch Macro - Create CenterLine</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Rectangles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-corner-rectangle/">Solidworks Macro - Create Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-center-rectangle/">Solidworks Macro - Create Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-corner-rectangle/">Solidworks Macro - Create 3-Point Corner Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-center-rectangle/">Solidworks Macro - Create 3-Point Center Rectangle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-parallelogram/">Solidworks Macro - Create A Parallelogram</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Circles</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-circle/">Solidworks Macro - Create Circle</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-circle-by-radius/">Solidworks Macro - Create Circle By Radius</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-perimeter-circle/">Solidworks Macro - Create Perimeter Circle</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Arcs</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc/">Solidworks Macro - Create Centerpoint Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-tangent-arc/">Solidworks Macro - Create Tangent Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc/">Solidworks Macro - Create 3-Point Arc</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/polygon/">Solidworks Macro - Create Polygon</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Slots</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-straight-slot/">Solidworks Macro - Create a Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-straight-slot/">Solidworks Macro - Create a Centerpoint Straight Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-3point-arc-slot/">Solidworks Macro - Create a 3-Point Arc Slot</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-centerpoint-arc-slot/">Solidworks Macro - Create a Centerpoint Arc Slot</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Sketch - Point and Spline</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-point/">Solidworks Macro - Create a Point</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/solidworks-macros/create-spline/">Solidworks Macro - Create a Spline</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Fillet and Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-fillet/">Solidworks Macro - Create a Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sketch-chamfer/">Solidworks Macro - Create a Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Trim and Extend</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/trim-entities/">Solidworks Macro - Trim Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/extend-entities/">Solidworks Macro - Extend Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Offset and Mirror</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/offset-entities/">Solidworks Macro - Offset Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/mirror-entities/">Solidworks Macro - Mirror Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/linear-skech-pattern/">Solidworks Macro - Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-linear-skech-pattern/">Solidworks Macro - Edit Linear Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/circular-skech-pattern/">Solidworks Macro - Circular Sketch Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/edit-circular-skech-pattern/">Solidworks Macro - Edit Circular Sketch Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Move and Rotate</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/move-copy-sketch-entities/">Solidworks Macro - Move/Copy Sketch Entities</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/rotate-copy-sketch-entities/">Solidworks Macro - Rotate/Copy Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Relations</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/toggle-display-sketch-relation/">Solidworks Macro - Toggle (Hide/Show) Sketch Relations</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/add-sketch-relations/">Solidworks Macro - Add Sketch Relations (Constraints)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Dimensions</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/add-dimension-methods/">Solidworks Macro - Add dimension to Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Extrudes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-feature/">Solidworks Macro - Create Extrude/Boss</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolved-feature/">Solidworks Macro - Create Revolved Boss/Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-lofted-boss-feature/">Solidworks Macro - Create Lofted Base/Boss</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Cuts</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-extrude-cut-feature/">SOLIDWORKS Macro - Create Extrude Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-revolve-cut-feature/">SOLIDWORKS Macro - Create Revolve Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-sweep-cut-feature/">SOLIDWORKS Macro - Create Sweep Cut</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-loft-cut-feature/">SOLIDWORKS Macro - Create Lofted Cut</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Holes and Threads</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-hole-from-hole-wizard/">SOLIDWORKS Macro - Create Holes from Hole Wizard</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-threads/">SOLIDWORKS Macro - Create Threads</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Fillet &amp; Chamfer</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-fillet/">SOLIDWORKS Macro - Create Fillet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-chamfer/">SOLIDWORKS Macro - Create Chamfer</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Mirror &amp; Patterns</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/create-mirror/">SOLIDWORKS Macro - Create Mirror</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/create-linear-patterns/">SOLIDWORKS Macro - Create Linear Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-circular-patterns/">Solidworks VBA Macro - Create Circular Pattern</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Solidworks VBA Macro - Create Sketch Driven Pattern</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Features - Transformation</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-rib/">Solidworks VBA Macro - Create Rib</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-draft/">Solidworks VBA Macro - Create Draft</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-shell/">Solidworks VBA Macro - Create Shell</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-wrap/">Solidworks VBA Macro - Create Wrap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-scale/">Solidworks VBA Macro - Create Scale</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Reference Geometry</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-plane/">Solidworks VBA Macro - Create Reference Plane</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-axis/">Solidworks VBA Macro - Create Reference Axis</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-coordinate/">Solidworks VBA Macro - Create Reference Co-Ordinate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/create-reference-point/">Solidworks VBA Macro - Create Reference Point</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - General</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-component/">Solidworks VBA Macro - Insert Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unfix-component/">Solidworks VBA Macro - Unfix Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Standard Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-conicident-mate/">Solidworks VBA Macro - Add Coincident Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-parallel-mate/">Solidworks VBA Macro - Add Parallel Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Solidworks VBA Macro - Add Perpendicular Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-tangent-mate/">Solidworks VBA Macro - Add Tangent Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-concentric-mate/">Solidworks VBA Macro - Add Concentric Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-distance-mate/">Solidworks VBA Macro - Add Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-angle-mate/">Solidworks VBA Macro - Add Angle Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Advanced Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-width-mate/">Solidworks VBA Macro - Add Width Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-symmetric-mate/">Solidworks VBA Macro - Add Symmetric Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Editing Mates</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-rename-mate/">Solidworks VBA Macro - Rename Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Solidworks VBA Macro - Edit Distance Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Solidworks VBA Macro - Toggle Mate Alignment</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-delete-mate/">Solidworks VBA Macro - Delete Mate</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Components</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Solidworks VBA Macro - Insert Virtual Part</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Solidworks VBA Macro - Insert Virtual Assembly</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-copy-with-mate/">Solidworks VBA Macro - Copy With Mate</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-hide-component/">Solidworks VBA Macro - Hide Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-show-component/">Solidworks VBA Macro - Show Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-suppress-component/">Solidworks VBA Macro - Suppress Component</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-unsuppress-component/">Solidworks VBA Macro - Unsuppress Component</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Assembly - Misc</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-insert-folder/">Solidworks VBA Macro - Insert Folder</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Solidworks VBA Macro - Traverse Components Sequentially</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Insert Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [1st Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Solidworks VBA Macro - Create Standard 3 View [3rd Angle]</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-modelview/">Solidworks VBA Macro - Insert Model View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-projectionview/">Solidworks VBA Macro - Insert Projection View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Solidworks VBA Macro - Insert Auxilary View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-sectionview/">Solidworks VBA Macro - Insert Section View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-detailview/">Solidworks VBA Macro - Insert Detail View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-brokenout-view/">Solidworks VBA Macro - Insert Broken-out View</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-crop-view/">Solidworks VBA Macro - Insert Crop View</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - View Position and Boundary</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-position/">Solidworks VBA Macro - Get View Position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Solidworks VBA Macro - Get View Outer Boundary</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Get Views and Views Count</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">Solidworks VBA Macro - First/Next View In Current Sheet</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Solidworks VBA Macro - Get Total View count in Drawing</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Solidworks VBA Macro - Loop All Sheets &amp; Views in Drawing</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Drawing - Break Views</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-insert-break-view/">Solidworks VBA Macro - Insert Break view</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-position/">Solidworks VBA Macro - Update Break line position</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Solidworks VBA Macro - Update Break Line Gap</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-vba-macros/drawing-update-breakline-type/">Solidworks VBA Macro - Update Break Line Type</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Sketch - Others</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/solidworks-macros/convert-to-construction-sketch-segment/">Solidworks Macro - Convert to Construction Sketch</a>
+  </li>
+
+  <li>
+      <a href="/solidworks-macros/split-sketch-segments/">Solidworks Macro - Split Open/Closed Sketch Entities</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+			<div class="col container-fw d-lg-flex flex-lg-row justify-content-center mx-auto">
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#for-experience-macro-developer">For Experience Macro Developer</a></li>
+    <li><a href="#for-beginners-macro-developers">For Beginners Macro Developers</a>
+      <ul>
+        <li><a href="#understanding-the-code">Understanding the Code</a></li>
+        <li><a href="#note">NOTE</a></li>
+      </ul>
+    </li>
+    <li><a href="#vba-language-feature-used-in-this-post">VBA Language feature used in this post</a></li>
+    <li><a href="#solidworks-api-objects">Solidworks API Objects</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+			<h1>Solidworks Macro - Create a Spline</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+    <li><a href="#for-experience-macro-developer">For Experience Macro Developer</a></li>
+    <li><a href="#for-beginners-macro-developers">For Beginners Macro Developers</a>
+      <ul>
+        <li><a href="#understanding-the-code">Understanding the Code</a></li>
+        <li><a href="#note">NOTE</a></li>
+      </ul>
+    </li>
+    <li><a href="#vba-language-feature-used-in-this-post">VBA Language feature used in this post</a></li>
+    <li><a href="#solidworks-api-objects">Solidworks API Objects</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>In this post, I tell you about <em>how to create a Spline through Solidworks VBA Macros</em> in a sketch.</p>
+<p>This post take some functionality from previous <strong><a href="/solidworks-macros/create-point">Sketch - Create Create a Point</a></strong> post.</p>
+<p>Hence if you have not read <strong><a href="/solidworks-macros/create-point">Sketch - Create Create a Point</a></strong> post, then it is <strong>recommended</strong> that please read it 1st.</p>
+<hr>
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube<a href="#video-of-code-on-youtube" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Please see below video how visually we can create <em>a Spline</em> from <strong>Solidworks VBA macro</strong>.</p>
+<iframe src="https://www.youtube.com/embed/B_W-f3cqUPM" frameborder="0" allowfullscreen></iframe>
+<p>Please note that there are no explaination given in the video.</p>
+<p>Explaination of each line and why we write code this way is explained here.</p>
+<hr>
+<h2 id="for-experience-macro-developer">For Experience Macro Developer<a href="#for-experience-macro-developer" class="anchor" aria-hidden="true">#</a> </h2>
+<p>If you are an experience <strong>Solidworks Macro developer</strong>, then you are looking for a specific code sample.</p>
+<p>Below is the code for creating <strong>A Spline</strong> from <strong>Solidworks VBA Macro</strong>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Segment
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Set the value of Solidworks Sketch segment by &#34;CreateSpline2&#34; method from Solidworks sketch manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateSpline2</span><span class="p">((</span><span class="n">pointArray</span><span class="p">),</span> <span class="k">True</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>For creating a <strong>Spline</strong> first you need to <strong>Create</strong> a variable of <code>SketchSegment</code> type.</p>
+<p>After creating variable, you need to set the value of this variable.</p>
+<p>For this you used <code>CreateSpline2</code> method from <strong>Solidworks Sketch Manager</strong>.</p>
+<p>This <code>CreateSpline2</code> method set the value of <code>SketchSegment</code> type variable.</p>
+<p>This <code>CreateSpline2</code> method takes following parameters as explained:</p>
+<ul>
+<li>
+<p><strong>PointData</strong> : <em>Array of X,Y,Z point coordinates to use in creating the spline</em>.</p>
+</li>
+<li>
+<p><strong>SimulateNaturalEnds</strong> : <em>True to simulate natural ends, false to not simulate natural ends</em>.</p>
+</li>
+</ul>
+<p>If you want a more detail explaination then please read further otherwise this will help you to <strong>Create a Spline From VBA Macro</strong>.</p>
+<hr>
+<h2 id="for-beginners-macro-developers">For Beginners Macro Developers<a href="#for-beginners-macro-developers" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this post, I tell you about <code>CreateSpline2</code> method from <strong>Solidworks</strong> <code>SketchManager</code> object.</p>
+<p>By this method we create <em>a simple Spline from a sequence of points</em>.</p>
+<p>This method is <em><strong>most updated</strong></em> method, I found in <em>Solidworks API Help</em>.</p>
+<p>So <em><strong>use this method</strong></em> if you want to create <strong>a new Spline</strong>.</p>
+<p>Below is the <code>code</code> sample for creating <em>a Spline</em>.</p>
+<blockquote>
+<p>Please don&rsquo;t get distracted by length of code, I  just want to do everything programatically. So that you have some sort of experience in developing logic.</p></blockquote>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketch</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Sketch</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Point
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchPoint</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchPoint</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Segment
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks application variable to Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Creating string type variable for storing default part location
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks document to new part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Select Front Plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Sketch manager for our sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Insert a sketch into selected plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create integer type local variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Loop through 0 to 10
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="n">10</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Create integer type variables
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Dim</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">incrementFactor</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set value of incrementFactor
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">incrementFactor</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set value of x co-ordinate
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">x</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set value of y co-ordinate
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">incrementFactor</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set value of z co-ordinate
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">z</span> <span class="o">=</span> <span class="n">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Create a Sketch Point using x, y &amp; z variables
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swSketchPoint</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreatePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; De-select the points after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks Sketch variable to active sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketch</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">ActiveSketch</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create variant type variable named &#34;sketchPointArray&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">sketchPointArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Get all the points in this active sketch and store them into our variant type variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">sketchPointArray</span> <span class="o">=</span> <span class="n">swSketch</span><span class="p">.</span><span class="n">GetSketchPoints2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Creating a new Collection,
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="c">&#39; we use this collecction to store x,y,z co-ordinates of all sketch points
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">pointCollection</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">Collection</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Loop through all points in &#34;sketchPointArray&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="n">UBound</span><span class="p">(</span><span class="n">sketchPointArray</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Set Solidworks sketch point variable to current point
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swSketchPoint</span> <span class="o">=</span> <span class="n">sketchPointArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Add X co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Add Y co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Add Z co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create an array variable, this is Double type variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">point</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Define the size of array Dynamically
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">ReDim</span> <span class="n">point</span><span class="p">(</span><span class="n">0</span> <span class="k">To</span> <span class="n">pointCollection</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Loop through the collection we have
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="p">(</span><span class="n">pointCollection</span><span class="p">.</span><span class="n">Count</span> <span class="o">-</span> <span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&#39; Add each item of collection into our array variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">point</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">pointCollection</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create a local variable name &#34;pointArray&#34; of variant type
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">pointArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set the new created variable equal to point array variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">pointArray</span> <span class="o">=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Exit the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; De-select the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Select Front Plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Insert a sketch into &#34;Front Plane&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set the value of Solidworks Sketch segment by &#34;CreateSpline2&#34; method from Solidworks sketch manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateSpline2</span><span class="p">((</span><span class="n">pointArray</span><span class="p">),</span> <span class="k">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; De-select the Spline after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Zoom to fit screen in Solidworks Window
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Exit the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Force Re-build the model
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">Rebuild</span> <span class="p">(</span><span class="n">swRebuildOptions_e</span><span class="p">.</span><span class="n">swForceRebuildAll</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="understanding-the-code">Understanding the Code<a href="#understanding-the-code" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Now let us walk through <em>each line</em> in the above code, and <strong>understand</strong> the meaning of every line.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>This line forces us to define every variable we are going to use.</p>
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we are creating a variable which we named as <code>swApp</code> and the type of this <code>swApp</code> variable is <code>SldWorks.SldWorks</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we are creating a variable which we named as <code>swDoc</code> and the type of this <code>swDoc</code> variable is <code>SldWorks.ModelDoc2</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we create a variable named <code>BoolStatus</code> as <code>Boolean</code> object type.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we create variable <code>swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
+<p>As the name suggested, a <strong>Sketch Manager</strong> holds variours methods and properties to manage <em>Sketches</em>.</p>
+<p>To see methods and properties related to <code>SketchManager</code> object, please visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this page of Solidworks API Help</a></strong></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketch</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Sketch</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we are creating a variable which we named as <code>swSketch</code> and the type of this <code>swSketch</code> variable is <code>SldWorks.Sketch</code>.</p>
+<p>We create variable <code>swSketch</code> for <strong>Solidworks Sketches</strong>.</p>
+<p>To see methods and properties related to <code>Sketch</code> object, please visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketch_members.html?verRedirect=1">this page of Solidworks API Help</a></strong></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Point
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchPoint</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchPoint</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we are creating a variable which we named as <code>swSketchPoint</code> and the type of this <code>swSketchPoint</code> variable is <code>SldWorks.SketchPoint</code>.</p>
+<p>We create variable <code>swSketchPoint</code> for <strong>Solidworks Sketch Points</strong>.</p>
+<p>To see methods and properties related to <code>SketchPoint</code> object, please visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPoint_members.html">this page of Solidworks API Help</a></strong></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks Sketch Segment
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we are creating a variable which we named as <code>swSketchSegment</code> and the type of this <code>swSketchSegment</code> variable is <code>SldWorks.SketchSegment</code>.</p>
+<p>We create variable <code>swSketchSegment</code> for <strong>Solidworks Sketch Segments</strong>.</p>
+<p>To see methods and properties related to <code>swSketchSegment</code> object, please visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html">this page of Solidworks API Help</a></strong></p>
+<p>These all are our global variables.</p>
+<p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
+<p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
+<p>I have also place <code>boolean</code> type object at top also, because after certain point we will <em>need</em> this variable frequently.</p>
+<p>Thus, I have started placing it here.</p>
+<p>Next is our <code>Sub</code> procedure named as <code>main</code>. This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we are setting the value of our Solidworks variable <code>swApp</code> which we defined earlier to Solidworks application.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating string type variable for storing default part location
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In 1st statement of above example, we are defining a variable of <code>string</code> type and named it as <code>defaultTemplate</code>.</p>
+<p>This variable <code>defaultTemplate</code>, holds the location the location of <strong>Default Part Template</strong>.</p>
+<p>In 2nd line of above example. we assign value to our newly define <code>defaultTemplate</code> variable.</p>
+<p>We assign the value by using a <em>Method</em> named <code>GetUserPreferenceStringValue()</code>.</p>
+<p>This method is a part of our main Solidworks variable <code>swApp</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks document to new part document
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In this line, we set the value of our <code>swDoc</code> variable to new document.</p>
+<p>For <strong>more detailed information</strong> about above lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+<p>I have discussed them <strong>thoroghly</strong> in <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post, so do checkout this post if you don&rsquo;t understand above code.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Selecting Front Plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we select the <em>front plane</em> by using <code>SelectByID2</code> method from <code>Extension</code> object.</p>
+<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+<p>I have discussed about different <em>Selection methods</em> in details in <strong><a href="/solidworks-macros/select-plane-from-tree">Soldworks Macros - Selection Methods</a></strong> post, so do visit this post for more <em>Selection methods</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Sketch manager for our sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we set the <strong>Solidworks Sketch manager</strong> variable to current document&rsquo;s sketch manager.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Inserting a sketch into selected plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we use <code>InsertSketch</code> method of <em>SketchManager</em> and give <code>True</code> value.</p>
+<p>This method allows us to insert/exit <strong>a sketch</strong> in selected plane.</p>
+<p><strong>Now I have created a sequence of Points for our Spline.</strong></p>
+<p>Because if you already have co-ordinates of points in your machine somewhere you can use the approach I shown here to create a Spline.</p>
+<blockquote>
+<p>TIP: I like to save co-ordinates in MS Excel file and then use it.</p></blockquote>
+<hr>
+<h4 id="creating-sequence-of-points">Creating sequence of Points<a href="#creating-sequence-of-points" class="anchor" aria-hidden="true">#</a> </h4>
+<p><em>Below code shows how to create Sequence of Points.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create integer type local variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Loop through 0 to 10
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="n">10</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create integer type variables
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">incrementFactor</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of incrementFactor
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">incrementFactor</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of x co-ordinate
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">x</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of y co-ordinate
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">incrementFactor</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of z co-ordinate
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">z</span> <span class="o">=</span> <span class="n">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create a Sketch Point using x, y &amp; z variables
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchPoint</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreatePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; De-select the points after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em>Let us understand each line of code and how above Lines of code creates a number of points.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create integer type local variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">i</span> <span class="ow">As</span> <span class="kt">Integer</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we create a local variable named <code>i</code> of <strong>integer</strong> type.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Looping through 1 to 10
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="n">10</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">Next</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above lines, we create a <code>For</code> loop.</p>
+<p>This loop iterate the value of <code>i</code> variable from <strong>0 -&gt; 10</strong>.</p>
+<p>I use max value of <strong>10</strong>, because I want to create 10 points.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create integer type variables
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">incrementFactor</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Set value of incrementFactor
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">incrementFactor</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Setting values of x, y and z
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">x</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">incrementFactor</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">0</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above lines, we 1st declare 4 variable <em>x, y, z and incrementFactor</em> of <strong>integer</strong> type.</p>
+<p><em>x, y and z</em> are co-ordinates of a single point in <em>X, Y</em> and <em>Z</em> direction.</p>
+<p><em>incrementFactor</em> is the factor by which I want to increase the value of <em>Y co-ordinate</em> of a single point.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set value of incrementFactor
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">incrementFactor</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, I set the value of <em>incrementFactor</em>.</p>
+<p>This value is <strong>0.5</strong> times of value of <code>i</code> variable.</p>
+<p>Example: <code>i = 3</code> then <em>incrementFactor = 3 * 0.5 =&gt; incrementFactor = 1.5</em></p>
+<p>In next 3 lines, we set the values of <em>x, y and z</em>.</p>
+<p>For all points, we set the value of <em>z</em> to <strong>0</strong> because we want to place our points in <strong>X-Y plane</strong>.</p>
+<p>If the value of <code>i = 0</code>, then we set the value of <em>x</em> equal to <em>i</em>.</p>
+<p>This makes <code>x = 0</code> also.</p>
+<p>Now, we set the value of <em>y</em> which is equal to <strong>SUM</strong> of <em>x</em> and <em>incrementFactor</em>.</p>
+<p>Hence for <em>i = 0</em>, <em>x = 0</em>, <em>y = 0</em> and <em>incrementFactor = 0</em>.</p>
+<p>For <em>i = 1</em>, <em>x = 1</em>, <em>y = 1.5</em> and <em>incrementFactor = 0.5</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create a Sketch Point using x, y &amp; z variables
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchPoint</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreatePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we create a Point using <code>CreatePoint</code> function of <code>swSketchManager</code> variable with the values of <em>x, y and z</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; De-select the Points after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In the this line of code, we de-select the created <em>Points</em>.</p>
+<p>For de-selecting, we use <code>ClearSelection2</code> method from our Solidworks document variable <code>swDoc</code>.</p>
+<hr>
+<h4 id="create-a-collection-of-points-co-ordinates">Create a Collection of Points Co-ordinates<a href="#create-a-collection-of-points-co-ordinates" class="anchor" aria-hidden="true">#</a> </h4>
+<p>After creating points, I want to do following things:</p>
+<ol>
+<li>
+<p>Get all points in this sketch</p>
+</li>
+<li>
+<p>Add co-ordinates of each point into a collection</p>
+</li>
+</ol>
+<p><em><strong>Why I want to do this when I already know co-ordinates of all points in previous section?</strong></em></p>
+<p>It is because I create points from this macro hence I know their co-ordinates.</p>
+<p>I can add them to collection there BUT I want to take this opportunity to show following things:</p>
+<ul>
+<li>
+<p>How you get points of an Sketch.</p>
+</li>
+<li>
+<p>How to create a Collection and Add values in it.</p>
+</li>
+</ul>
+<p><em>Below code shows how to do all those things.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks Sketch variable to active sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketch</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">ActiveSketch</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variant type variable named &#34;sketchPointArray&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">sketchPointArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Get all the points in this active sketch and store them into our variant type variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">sketchPointArray</span> <span class="o">=</span> <span class="n">swSketch</span><span class="p">.</span><span class="n">GetSketchPoints2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating a new Collection,
+</span></span></span><span class="line"><span class="cl"><span class="c">&#39; we use this collecction to store x,y,z co-ordinates of all sketch points
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">pointCollection</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">Collection</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Loop through all points in &#34;sketchPointArray&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="n">UBound</span><span class="p">(</span><span class="n">sketchPointArray</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks sketch point variable to current point
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchPoint</span> <span class="o">=</span> <span class="n">sketchPointArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Add X co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Add Y co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Add Z co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="n">i</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em>Let us understand each line of code.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks Sketch variable to active sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketch</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">ActiveSketch</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In the above line, I set the value of <em>Solidworks Sketch</em> variable <code>swSketch</code> to active sketch.</p>
+<p>For this we use <code>ActiveSketch</code> method of <em>Solidworks Sketch Manager</em> variable <code>swSketchManager</code>.</p>
+<p>This method give us a <code>SldWorks.Sketch</code> type return value which we store into <code>swSketch</code> variable.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variant type variable named &#34;sketchPointArray&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">sketchPointArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Get all the points in this active sketch and store them into our variant type variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">sketchPointArray</span> <span class="o">=</span> <span class="n">swSketch</span><span class="p">.</span><span class="n">GetSketchPoints2</span><span class="p">()</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In 1st line of above code, I create a variable <code>sketchPointArray</code>.</p>
+<p>This variable is <code>Variant</code> type variable.</p>
+<p>In 2nd line of above code, I set the value of variable <code>sketchPointArray</code> using <code>GetSketchPoints2()</code> method.</p>
+<p>We use <code>GetSketchPoints2()</code> method from our <em>Solidworks Sketch</em> type variable <code>swSketch</code>.</p>
+<p><code>GetSketchPoints2()</code> method gives us all points in this sketch and we store those points into <code>sketchPointArray</code> variable.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating a new Collection,
+</span></span></span><span class="line"><span class="cl"><span class="c">&#39; we use this collecction to store x,y,z co-ordinates of all sketch points
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">pointCollection</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">Collection</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In the above line, I create variable <code>pointCollection</code> of <strong>Collection</strong> type.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Loop through all points in &#34;sketchPointArray&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="n">UBound</span><span class="p">(</span><span class="n">sketchPointArray</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="n">i</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above lines, we create a <code>For</code> loop.</p>
+<p>This loop iterate the value of <code>i</code> variable from <strong>0 -&gt; UBound(sketchPointArray)</strong>.</p>
+<p>I use max value of <strong>UBound(sketchPointArray)</strong>, because I want to iterate through Maximum number of points we get from the <code>GetSketchPoints2()</code> method.</p>
+<p>If number of points are other than <em>10</em>, then <code>UBound(sketchPointArray)</code> method return only that number of points.</p>
+<p>Hence it is <strong>useful</strong> to know for future use.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks sketch point variable to current point
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchPoint</span> <span class="o">=</span> <span class="n">sketchPointArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Now inside, this loop in 1st line we set <em>Solidworks sketch point</em> variable to <strong>current</strong> point of <code>sketchPointArray</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Add X co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Add Y co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Add Z co-ordinate of current point into collection
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span> <span class="p">(</span><span class="n">swSketchPoint</span><span class="p">.</span><span class="n">z</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above 3 lines, we add <em>X, Y and Z</em> co-ordinates of current point into our collection.</p>
+<h4 id="preparing-co-ordinates-of-points">Preparing Co-ordinates of Points<a href="#preparing-co-ordinates-of-points" class="anchor" aria-hidden="true">#</a> </h4>
+<p>You know from <strong><a href="#for-experience-macro-developer">For Experience Macro Developers</a></strong> section, we need an <em>Array</em> of <strong>PointData</strong>.</p>
+<p>This array contains <em>X, Y and Z</em> co-ordinates for Spline Points.</p>
+<p>Now I tried to add <em>X, Y and Z</em> co-ordinates directly into an Array and then use this array to create Spline.</p>
+<p>But it did not work, hence I had to store all <em>X, Y and Z</em> co-ordinates 1st into <strong>Collection</strong>.</p>
+<p>Now I have all co-ordinates in my <strong>Collection</strong> and I have to create an <code>Array</code> for Spline from this <strong>Collection</strong>.</p>
+<p><em>Below code sample show how to prepare Co-ordinate points for Spline</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create an array variable, this is Double type variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">point</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Define the size of array Dynamically
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">ReDim</span> <span class="n">point</span><span class="p">(</span><span class="n">0</span> <span class="k">To</span> <span class="n">pointCollection</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Loop through the collection we have
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="p">(</span><span class="n">pointCollection</span><span class="p">.</span><span class="n">Count</span> <span class="o">-</span> <span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Add each item of collection into our array variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">point</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">pointCollection</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Create a local variable name &#34;pointArray&#34; of variant type
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">pointArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Set the new created variable equal to point array variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">pointArray</span> <span class="o">=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Exit the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; De-select the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em>Let us understand each line of above code sample.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create an array variable, this is Double type variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">point</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Define the size of array Dynamically
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">ReDim</span> <span class="n">point</span><span class="p">(</span><span class="n">0</span> <span class="k">To</span> <span class="n">pointCollection</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above code, 1st line creates an <code>Array</code> variable. This is <code>double</code> type variable.</p>
+<p>If you don&rsquo;t know what an array is, then please visit <strong><a href="/vba/arrays">VBA Arrays</a></strong> post.</p>
+<p>In 2nd line, we define the size of array. This size is <em>dynamic</em> means it <strong>automatic</strong> in nature.</p>
+<p>We don&rsquo;t have to give exact value every time, this code adjust the values if there is any change in our <em>Collection</em>.</p>
+<p>This size of this array is <em>from</em> 0 to Number of Co-ordinates in the collection.</p>
+<p>In our case size of array is <strong>0 -&gt; 30</strong>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Loop through the collection we have
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">To</span> <span class="p">(</span><span class="n">pointCollection</span><span class="p">.</span><span class="n">Count</span> <span class="o">-</span> <span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&#39; Add each item of collection into our array variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">point</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">pointCollection</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">Next</span> <span class="n">i</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above code we 1st create a <em>Loop</em>.</p>
+<p>This <em>Loop</em> iterate <em>from 0</em> to <em>pointCollection.Count - 1</em>.</p>
+<p>Why <em>pointCollection.Count - 1</em> ? It is because <em>pointCollection.Count</em> starts from <em>1</em> and our loop start with <em>0</em>.</p>
+<p>Because of additional 1 count in <em>pointCollection</em>, we need to remove 1 from the count.</p>
+<p>Inside this loop, we add every item of <em>pointCollection</em> into our <strong>point() array</strong>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create a local variable name &#34;pointArray&#34; of variant type
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">pointArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Set the new created variable equal to point array variable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">pointArray</span> <span class="o">=</span> <span class="n">point</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In 1st line of above code, we create local variable &ldquo;pointArray&rdquo;. This variable is <code>Variant</code> type.</p>
+<p>In 2nd line of above code, we set the value of variable &ldquo;pointArray&rdquo; to value of variable &ldquo;point&rdquo;.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Exit the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; De-select the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In 1st line of above code, we Exit the sketch.</p>
+<p>In 2nd line of above code, we De-select the sketch.</p>
+<h4 id="create-spline">Create Spline<a href="#create-spline" class="anchor" aria-hidden="true">#</a> </h4>
+<p>Now we have all information available for creating <strong>a Spline</strong>.</p>
+<p><em>Below code sample shows how to create a Spline.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Select Front Plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Insert a sketch into &#34;Front Plane&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Set the value of Solidworks Sketch segment by &#34;CreateSpline2&#34; method from Solidworks sketch manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateSpline2</span><span class="p">((</span><span class="n">pointArray</span><span class="p">),</span> <span class="k">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; De-select the Spline after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Zoom to fit screen in Solidworks Window
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Exit the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&#39; Force Re-build the model
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">Rebuild</span> <span class="p">(</span><span class="n">swRebuildOptions_e</span><span class="p">.</span><span class="n">swForceRebuildAll</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><em>Let us understand each line of above code sample.</em></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Selecting Front Plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we select the <em>front plane</em> by using <code>SelectByID2</code> method from <code>Extension</code> object.</p>
+<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+<p>I have discussed about different <em>Selection methods</em> in details in <strong><a href="/solidworks-macros/select-plane-from-tree">Soldworks Macros - Selection Methods</a></strong> post, so do visit this post for more <em>Selection methods</em>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Inserting a sketch into selected plane
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we use <code>InsertSketch</code> method of <em>SketchManager</em> and give <code>True</code> value.</p>
+<p>This method allows us to insert/exit <strong>a sketch</strong> in selected plane.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set the value of Solidworks Sketch segment by &#34;CreateSpline2&#34; method from Solidworks sketch manager
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateSpline2</span><span class="p">((</span><span class="n">pointArray</span><span class="p">),</span> <span class="k">True</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line we set the value of <em>Solidworks Sketch segment variable</em> <code>swSketchSegment</code>.</p>
+<p>For this we use, <code>CreateSpline2</code> method from <em>Solidworks sketch manager variable</em> <code>swSketchManager</code>.</p>
+<p>This <code>CreateSpline2</code> method takes following parameters as explained:</p>
+<p><strong>PointData</strong> : <em>Array of X,Y,Z point coordinates to use in creating the spline</em>.</p>
+<p><strong>SimulateNaturalEnds</strong> : <em>True to simulate natural ends, false to not simulate natural ends</em>.</p>
+<p>Below Image described <strong>the Parameters for a Spline</strong>.</p>
+<p>
+
+<img
+  src="/solidworks-macros/07-sketch---point-and-spline/splines/spline_parameters_hu_c8b53cfcf2d31896.webp"
+  width="345"
+  height="331"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="spline_parameters"id="h-rh-i-0"
+/></p>
+<p>In this <code>CreateSpline2</code> method, we pass our <code>pointArray</code> variable as <strong>PointData</strong>.</p>
+<p>We want our spline to simulate natural ends. Hence we <code>True</code> as second parameter.</p>
+<hr>
+<h3 id="note">NOTE<a href="#note" class="anchor" aria-hidden="true">#</a> </h3>
+<p>It is <em><strong>very important</strong></em> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <em><strong>Meter only</strong></em>.</p>
+<p><em>Solidworks API</em> does not care about your application&rsquo;s Unit systems.</p>
+<p>For example, I works in <strong>ANSI</strong> system means &ldquo;inches&rdquo; for distance.</p>
+<p>But when I used Solidworks API through <em>VBA macros</em> or <em>C#</em>, I have to use <strong>converted</strong> numeric values.</p>
+<p>Because Solidworks API output the distance in <strong>Meter</strong> only; which is not my requirement.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; De-select the Spline after creation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we de-select the created <em>Spline</em>.</p>
+<p>For de-selecting, we use <code>ClearSelection2</code> method from our Solidworks document variable <code>swDoc</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Zoom to fit screen in Solidworks Window
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line we use <em>zoom to fit</em> command.</p>
+<p>For Zoom to fit, we use <code>ViewZoomtofit</code> method from our Solidworks document variable <code>swDoc</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Exit the sketch
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we exit the sketch.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Force Re-build the model
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">Rebuild</span> <span class="p">(</span><span class="n">swRebuildOptions_e</span><span class="p">.</span><span class="n">swForceRebuildAll</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>In above line, we Force Re-build the model the model.</p>
+<p>For &ldquo;Force Re-build&rdquo; we use <strong>Rebuild</strong> method from <em>Solidworks Document variable</em> <code>swDoc</code>.</p>
+<p>In this <strong>Rebuild</strong> method, we use <code>swRebuildOptions_e.swForceRebuildAll</code> option for re-build all.</p>
+<p>This is it !!!</p>
+<p>It is a BIG post but I tried to explain all.</p>
+<p>If you found anything to add or update, please let me know on my e-mail.</p>
+<hr>
+<h2 id="vba-language-feature-used-in-this-post">VBA Language feature used in this post<a href="#vba-language-feature-used-in-this-post" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this post used some features of <strong>VBA programming language</strong>.</p>
+<p>This section of post, has some brief information about the VBA programming language specific features.</p>
+<ol>
+<li>
+<p>We use <strong>Option Explicit</strong> for capturing un-declared variables. If you want to read more about <strong>Option Explicit</strong> then please visit <strong><a href="/vba/declaring-and-scoping-of-variables">Declaring and Scoping of Variables</a></strong>.</p>
+</li>
+<li>
+<p>Then we create <strong>variable</strong> for different data types. If you don&rsquo;t know about them, then please visit <strong><a href="/vba/variables">Variables</a></strong> and <strong><a href="/vba/programming-concepts/#data-types-in-vba">Data-types</a></strong> posts of this blog. These posts will help you to understand what <strong>Variables</strong> are and how to use them.</p>
+</li>
+<li>
+<p>Then we create <strong>main Sub procedure</strong> for our macro. If you don&rsquo;t know about the <strong>Sub procedure</strong>, then I suggest you to visit <strong><a href="/vba/sub-and-function-procedure">VBA Sub and Function Procedures</a></strong> and <strong><a href="/vba/executing-procedures">Executing Sub and Function Procedures</a></strong> posts of this blog. These posts will help you to understand what <strong>Procedures</strong> are and how to use them.</p>
+</li>
+<li>
+<p>In most part we create some variables and set their values. We set those values by using some <strong>functions</strong> provided from objects. If you don&rsquo;t know about the <strong>functions</strong>, then you should visit <strong><a href="/vba/functions">VBA Functions</a></strong> and <strong><a href="/vba/more-functions">VBA Functions that do more</a></strong> posts of this blog. These posts will help you to understand what <strong>functions</strong> are and how to use them.</p>
+</li>
+<li>
+<p>For creating a sequence of points and data for Spline, we use a <strong>For-Next loop</strong>. We use a loop to set values of x, y and z co-ordinates of each points. If you don&rsquo;t know about the <strong>For-Next loop</strong>, then you should visit <strong><a href="/vba/looping">VBA Looping</a></strong> post of this blog. This posts will help you to understand what <strong>For-Next loop</strong> are and how to use them.</p>
+</li>
+<li>
+<p>For storing co-ordinates of points we use <strong>Collection</strong>. In an <strong>Collection</strong>, we store objects or data. This is very helpful and important language feature. If you don&rsquo;t know about the <strong>Collection</strong>, then you should visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/concepts/collections">Collections (Visual Basic)</a></strong> from <strong>Microsoft Official Document Website</strong>. This will help you to understand what <strong>Collection</strong> are and how to use them.</p>
+</li>
+<li>
+<p>For creating Spline we use an <strong>Array</strong>. An <strong>Array</strong> is similar to <strong>Collection</strong>, in which we store objects or data. But Array is more basic version actually Array is a basic programming feature and used frequently <em>C and C++ programming languages</em>. This is also very helpful and important language feature. If you don&rsquo;t know about the <strong>Array</strong>, then you should visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/arrays/index">Arrays in Visual Basic</a></strong> from <strong>Microsoft Official Document Website</strong>. This will help you to understand what <strong>Array</strong> are and how to use them.</p>
+</li>
+</ol>
+<hr>
+<h2 id="solidworks-api-objects">Solidworks API Objects<a href="#solidworks-api-objects" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this post, for creating a <strong>Point</strong>, we use <em>Solidworks API objects and their methods</em>.</p>
+<p>This section contains the list of all <strong>Solidworks Objects</strong> used in this post.</p>
+<p>I have also attached links of these <strong>Solidworks API Objects</strong> in <strong>API Help website</strong>.</p>
+<p>If you want to explore those objects, you can use these links.</p>
+<p>These Solidworks API Objects are listed below:</p>
+<ul>
+<li><strong>Solidworks Application Object</strong></li>
+</ul>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Application Object</strong> object you can visit <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this link</a></strong>.</p>
+<ul>
+<li><strong>Solidworks Document Object</strong></li>
+</ul>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Document Object</strong> object you can visit <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this link</a></strong>.</p>
+<ul>
+<li><strong>Solidworks Sketch Manager Object</strong></li>
+</ul>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Manager Object</strong> you can visit <strong><a href="http://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this link</a></strong>.</p>
+<ul>
+<li><strong>Solidworks Sketches Object</strong></li>
+</ul>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketches Object</strong> you can visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketch_members.html?verRedirect=1">this link</a></strong>.</p>
+<ul>
+<li><strong>Solidworks Sketch Point Object</strong></li>
+</ul>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Point Object</strong> you can visit <strong><a href="http://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPoint_members.html">this link</a></strong>.</p>
+<ul>
+<li><strong>Solidworks Sketch Segment Object</strong></li>
+</ul>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Segment Object</strong> you can visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html">this link</a></strong>.</p>
+<hr>
+<p>Hope this post helps you to <em>create a Spline</em> in Sketches with Solidworks VB Macros.</p>
+<p>For more such tutorials on <strong>Solidworks VBA Macros</strong>, do come to this blog after sometime.</p>
+<p>Till then, Happy learning!!!</p>
+<ul>
+<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
+</ul>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/solidworks-macros/create-point/" class="stretched-link text-reset text-decoration-none">Solidworks Macro - Create a Point</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/solidworks-macros/create-sketch-fillet/" class="stretched-link text-reset text-decoration-none">Solidworks Macro - Create a Fillet</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+			</div>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2369991ae7670dc0c533c0a66142f2e8025973140211517495657e96c516ffde.js"
+  integrity="sha256-I2mZGudnDcDFM8CmYULy6AJZcxQCEVF0lWV&#43;lsUW/94=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

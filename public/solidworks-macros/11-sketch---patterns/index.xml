@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch - Patterns on The CAD Coder</title>
+    <link>http://localhost:1313/solidworks-macros/11-sketch---patterns/</link>
+    <description>Recent content in Sketch - Patterns on The CAD Coder</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) The CAD Coder</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/solidworks-macros/11-sketch---patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidworks Macro - Linear Sketch Pattern</title>
+      <link>http://localhost:1313/solidworks-macros/linear-skech-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/linear-skech-pattern/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Linear Sketch Pattern using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;video-of-code-on-youtube&#34;&gt;Video of Code on YouTube&lt;/h2&gt;&#xA;&lt;p&gt;Please see below video how visually we &lt;em&gt;Linear Sketch Pattern&lt;/em&gt; in &lt;strong&gt;Solidworks VBA macro&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Edit Linear Sketch Pattern</title>
+      <link>http://localhost:1313/solidworks-macros/edit-linear-skech-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/edit-linear-skech-pattern/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Edit Linear Sketch Pattern using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Circular Sketch Pattern</title>
+      <link>http://localhost:1313/solidworks-macros/circular-skech-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/circular-skech-pattern/</guid>
+      <description>&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Circular Sketch Pattern using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;video-of-code-on-youtube&#34;&gt;Video of Code on YouTube&lt;/h2&gt;&#xA;&lt;p&gt;Please see below video how visually we &lt;em&gt;Circular Sketch Pattern&lt;/em&gt; in &lt;strong&gt;Solidworks VBA macro&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solidworks Macro - Edit Circular Sketch Pattern</title>
+      <link>http://localhost:1313/solidworks-macros/edit-circular-skech-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/solidworks-macros/edit-circular-skech-pattern/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this post, I tell you about &lt;strong&gt;how to Edit Circular Sketch Pattern using Solidworks VBA Macros&lt;/strong&gt; in a Sketch.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
