@@ -35,7 +35,7 @@
       <link>http://localhost:1313/solidworks-macros/select-plane-from-tree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/solidworks-macros/select-plane-from-tree/</guid>
-      <description>&lt;p&gt;In this post, we select &lt;strong&gt;Default planes&lt;/strong&gt; with following methods:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;By &lt;code&gt;SelectByID&lt;/code&gt; method From &lt;code&gt;ModelDoc2&lt;/code&gt; Interface&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;By &lt;code&gt;SelectByID2&lt;/code&gt; method From &lt;code&gt;IModelDocExtension&lt;/code&gt; Interface&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this post, we select &lt;strong&gt;Default planes&lt;/strong&gt; with following methods.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;By &lt;code&gt;SelectByID&lt;/code&gt; method From &lt;code&gt;ModelDoc2&lt;/code&gt; Interface.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;By &lt;code&gt;SelectByID2&lt;/code&gt; method From &lt;code&gt;IModelDocExtension&lt;/code&gt; Interface.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Solidworks Macro - Open Saved Documents</title>

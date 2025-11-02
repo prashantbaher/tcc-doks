@@ -1763,12 +1763,8 @@ We open document with 2 different methods.">
 			<p>In this post, I tell you how to <em>open a saved document</em> in Solidworks using <em>VBA Macro</em>.</p>
 <p>We open document with 2 different methods.</p>
 <ol>
-<li>
-<p>By <code>OpenDoc</code> method</p>
-</li>
-<li>
-<p>By <code>OpenDoc6</code> method</p>
-</li>
+<li>By <code>OpenDoc</code> method</li>
+<li>By <code>OpenDoc6</code> method</li>
 </ol>
 <h2 id="video-of-code-on-youtube">Video of Code on YouTube<a href="#video-of-code-on-youtube" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Please see below video on <strong>how to Open Saved Documents</strong> from Visual Studio.</p>
@@ -1785,54 +1781,83 @@ We open document with 2 different methods.">
 
 <p>Please note that there are <strong>no explaination</strong> in the video.</p>
 <p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+<hr>
 <h2 id="by-opendoc-method">By OpenDoc method<a href="#by-opendoc-method" class="anchor" aria-hidden="true">#</a> </h2>
 <p>This is <strong>the simplest</strong> method to open a saved part from your computer.</p>
-<p>In this method we just need two information.</p>
+<p>In this method we just need two information:</p>
 <ul>
-<li>
-<p>Location of document to open</p>
-</li>
-<li>
-<p>Type of document which we want to open</p>
-</li>
+<li>Location of document to open</li>
+<li>Type of document which we want to open</li>
 </ul>
 <p>Below is the example code for opening a saved document using <code>OpenDoc</code> method.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Main function of our VBA program
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">      
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Open a saved document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">OpenDoc</span><span class="p">(</span><span class="s">&#34;H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT&#34;</span><span class="p">,</span> <span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Selecting Front Plane
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">      
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="c">&#39; Open a saved document
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">OpenDoc</span><span class="p">(</span><span class="s">&#34;H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT&#34;</span><span class="p">,</span> <span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">      
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="c">&#39; Selecting Front Plane
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>I have already explained every line except <em>middle line</em> in above code sample in previous posts.</p>
-<p>To open a saved document we used following lline.</p>
+<p>To open a saved document we used following line:</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1840,139 +1865,212 @@ We open document with 2 different methods.">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Open a saved document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">OpenDoc</span><span class="p">(</span><span class="s">&#34;H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT&#34;</span><span class="p">,</span> <span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Open a saved document
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">OpenDoc</span><span class="p">(</span><span class="s">&#34;H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT&#34;</span><span class="p">,</span> <span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Here, we set the <code>ModelDoc2</code> variable <code>swDoc</code> to a value.</p>
 <p>This value is <em>return</em> or <em>provided</em> by <code>OpenDoc</code> method.</p>
 <p>This method is part of <em>Solidworks document</em>.</p>
-<p>Since we define <code>swApp</code> variable as Solidworks document hence we 1st call <code>swApp</code> and then using <code>Dot operator</code> we access the <code>OpenDoc</code> method.</p>
-<p><code>OpenDoc</code> method takes 2 <em>arguments</em> or <em>parameter</em>.</p>
-<p><em>FileName</em> : Document name or full path if not in current directory, including extension.</p>
-<p><em>Type</em> : Document type as define in <code>swDocumentTypes_e</code> as follows.</p>
+<p>Since we define <code>swApp</code> variable as Solidworks document hence we first call <code>swApp</code> and then using <code>Dot operator</code> we access the <code>OpenDoc</code> method.</p>
+<p><code>OpenDoc</code> method takes 2 <em>arguments</em> or <em>parameters</em>.</p>
 <ul>
 <li>
-<p><code>swDocASSEMBLY</code></p>
+<p><strong>FileName</strong>: Document name or full path if not in current directory, including extension.</p>
 </li>
 <li>
-<p><code>swDocDRAWING</code></p>
-</li>
-<li>
-<p><code>swDocLAYOUT</code></p>
-</li>
-<li>
-<p><code>swDocNONE</code></p>
-</li>
-<li>
-<p><code>swDocPART</code></p>
-</li>
-<li>
-<p><code>swDocSDM</code></p>
+<p><strong>Type</strong>: Document type as defined in <code>swDocumentTypes_e</code> as follows:</p>
+<ul>
+<li><code>swDocASSEMBLY</code></li>
+<li><code>swDocDRAWING</code></li>
+<li><code>swDocLAYOUT</code></li>
+<li><code>swDocNONE</code></li>
+<li><code>swDocPART</code></li>
+<li><code>swDocSDM</code></li>
+</ul>
 </li>
 </ul>
-<blockquote>
-<p>If you want to open a Library feature part then we use <code>swDocPART</code> as document type.</p></blockquote>
-<p><strong>Return Value</strong> - If the document opens then this method returns <code>True</code> and otherwise <code>False</code>.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>If you want to open a Library feature part then we use <code>swDocPART</code> as document type.</p>
+
+    </div>
+  </div>
+</div>
+
+<p><strong>Return Value</strong> — If the document opens then this method returns <code>True</code>, otherwise <code>False</code>.</p>
 <p>If you just want to open a saved document then this method is what you are looking for.</p>
 <p>For most of the part, <code>OpenDoc</code> method works well.</p>
-<p>If you want more option while opening a document, then next method is for you.</p>
+<p>If you want more options while opening a document, then next method is for you.</p>
 <hr>
 <h2 id="by-opendoc6-method">By OpenDoc6 method<a href="#by-opendoc6-method" class="anchor" aria-hidden="true">#</a> </h2>
-<p><code>OpenDoc6</code> method is extension to <code>OpenDoc</code> with some additional parameters.</p>
+<p><code>OpenDoc6</code> method is an extension to <code>OpenDoc</code> with some additional parameters.</p>
 <p>How <code>OpenDoc6</code> works is shown in below code sample:</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Main function of our VBA program
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Open an saved document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">OpenDoc6</span><span class="p">(</span><span class="s">&#34;H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT&#34;</span><span class="p">,</span> <span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">,</span> <span class="n">swOpenDocOptions_e</span><span class="p">.</span><span class="n">swOpenDocOptions_Silent</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Selecting Front Plane
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="c">&#39; Open an saved document
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">OpenDoc6</span><span class="p">(</span><span class="s">&#34;H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT&#34;</span><span class="p">,</span> <span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">,</span> <span class="n">swOpenDocOptions_e</span><span class="p">.</span><span class="n">swOpenDocOptions_Silent</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="c">&#39; Selecting Front Plane
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c"></span>    <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>This code sample is similar is to previous example code except for <code>OpenDoc6</code> method takes extra 4 parameters.</p>
-<p><code>OpenDoc6</code> method takes 6 <em>arguments</em> or <em>parameter</em>.</p>
-<p><em>FileName</em> : Document name or full path if not in current directory, including extension.</p>
-<p><em>Type</em> : Document type as define in <code>swDocumentTypes_e</code> as follows.</p>
+</div>
+  </div>
+
+<p>This code sample is similar to the previous example code except for the fact that <code>OpenDoc6</code> method takes extra 4 parameters.</p>
+<p><code>OpenDoc6</code> method takes 6 <em>arguments</em> or <em>parameters</em>.</p>
 <ul>
 <li>
-<p><code>swDocASSEMBLY</code></p>
+<p><strong>FileName</strong>: Document name or full path if not in current directory, including extension.</p>
 </li>
 <li>
-<p><code>swDocDRAWING</code></p>
-</li>
-<li>
-<p><code>swDocLAYOUT</code></p>
-</li>
-<li>
-<p><code>swDocNONE</code></p>
-</li>
-<li>
-<p><code>swDocPART</code></p>
-</li>
-<li>
-<p><code>swDocSDM</code></p>
+<p><strong>Type</strong>: Document type as defined in <code>swDocumentTypes_e</code> as follows:</p>
+<ul>
+<li><code>swDocASSEMBLY</code></li>
+<li><code>swDocDRAWING</code></li>
+<li><code>swDocLAYOUT</code></li>
+<li><code>swDocNONE</code></li>
+<li><code>swDocPART</code></li>
+<li><code>swDocSDM</code></li>
+</ul>
 </li>
 </ul>
-<blockquote>
-<p>If you want to open a Library feature part then we use <code>swDocPART</code> as document type.</p></blockquote>
-<p><em>Options</em> : Mode in which to open the document as defined in <code>swOpenDocOptions_e</code>.</p>
-<p>For more details about <em>Options</em> parameters, please visit <strong><a href="https://help.solidworks.com/2017/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swOpenDocOptions_e.html">this page of Solidworks API Help</a></strong>.</p>
-<p><em>Configuration</em> : Configuration in which you want to open this document.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>If you want to open a Library feature part then we use <code>swDocPART</code> as document type.</p>
+
+    </div>
+  </div>
+</div>
+
 <ul>
 <li>
-<p>Applies to <em>Part</em> and <em>Assemblies</em>, not <em>drawings</em>.</p>
+<p><strong>Options</strong>: Mode in which to open the document as defined in <code>swOpenDocOptions_e</code>.</p>
+<p>For more details about <em>Options</em> parameters, please visit 🚀 <strong><a href="https://help.solidworks.com/2025/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swOpenDocOptions_e.html" target="_blank">this page of Solidworks API Help</a></strong>.</p>
 </li>
 <li>
-<p>If this argument is <em>empty</em> or the specified configuration is <em>not present</em> in the model, the model is opened in the last-used configuration.</p>
+<p><strong>Configuration</strong>: Configuration in which you want to open this document.</p>
+<ul>
+<li>Applies to <em>Part</em> and <em>Assemblies</em>, not <em>Drawings</em>.</li>
+<li>If this argument is <em>empty</em> or the specified configuration is <em>not present</em> in the model, the model is opened in the last-used configuration.</li>
+</ul>
 </li>
 </ul>
 <p>I used an <code>&quot;&quot;</code> in the above code sample, because I want to open part file in last saved configuration.</p>
-<p>If you don&rsquo;t know about <code>&quot;&quot;</code>, then this symbol represent an <strong>empty string</strong>.</p>
-<p>When we don&rsquo;t want to pass any value as <code>string</code>, at that time I use <code>&quot;&quot;</code>.</p>
+<p>If you don&rsquo;t know about <code>&quot;&quot;</code>, then this symbol represents an <strong>empty string</strong>.</p>
+<p>When we don&rsquo;t want to pass any value as <code>string</code>, at that time we use <code>&quot;&quot;</code>.</p>
 <p>You can also use <code>&quot;&quot;</code> when you want to pass an empty string in VBA.</p>
-<p><em>Errors</em> : Load errors as defined in <code>swFileLoadError_e</code>.</p>
-<p>For more details about <em>Errors</em> parameters, please visit <strong><a href="http://help.solidworks.com/2017/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swFileLoadError_e.html">this page of Solidworks API Help</a></strong>.</p>
-<p>Since this parameter is <code>long</code> type, and I don&rsquo;t want to enter any value from the provided list; I used <strong>0</strong> as value.</p>
-<p>If you want to use options from option link then you can use values from there.</p>
+<ul>
+<li>
+<p><strong>Errors</strong>: Load errors as defined in <code>swFileLoadError_e</code>.</p>
+<p>For more details about <em>Errors</em> parameters, please visit 🚀 <strong><a href="http://help.solidworks.com/2025/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swFileLoadError_e.html" target="_blank">this page of Solidworks API Help</a></strong>.</p>
+</li>
+</ul>
+<p>Since this parameter is of <code>Long</code> type, and I don&rsquo;t want to enter any value from the provided list, I used <strong>0</strong> as value.</p>
+<p>If you want to use options from the option link then you can use values from there.</p>
 <p>It is just I don&rsquo;t want to load any error information about the part.</p>
-<p><em>Warnings</em> : Warnings or extra information generated during the open operation as defined in <code>swFileLoadWarning_e</code>.</p>
-<p>For more details about <em>Warnings</em> parameters, please visit <strong><a href="http://help.solidworks.com/2017/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swFileLoadWarning_e.html">this page of Solidworks API Help</a>.</strong></p>
+<ul>
+<li>
+<p><strong>Warnings</strong>: Warnings or extra information generated during the open operation as defined in <code>swFileLoadWarning_e</code>.</p>
+<p>For more details about <em>Warnings</em> parameters, please visit 🚀 <strong><a href="http://help.solidworks.com/2025/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swFileLoadWarning_e.html" target="_blank">this page of Solidworks API Help</a></strong>.</p>
+</li>
+</ul>
 <p>As in the previous parameter, I use <strong>0</strong> as value.</p>
-<p><strong>Return Value</strong> - If the document opens then this method returns <code>True</code> and otherwise <code>False</code>.</p>
-<p>As you can see, in <code>OpenDoc6</code> method, we need to defined the extra parameters compared to <code>OpenDoc</code> method.</p>
-<p>It is worth noted that, <code>OpenDoc6</code> method is the most updated method for opening a saved document.</p>
-<p>Hence if did not use any of the above method, I would recommend you to use <code>OpenDoc6</code> method.</p>
+<p><strong>Return Value</strong> — If the document opens then this method returns <code>True</code>, otherwise <code>False</code>.</p>
+<p>As you can see, in <code>OpenDoc6</code> method, we need to define the extra parameters compared to <code>OpenDoc</code> method.</p>
+<p>It is worth noting that, <code>OpenDoc6</code> method is the most updated method for opening a saved document.</p>
+<p>Hence if you did not use any of the above methods, I would recommend you to use <code>OpenDoc6</code> method.</p>
+<hr>
 <p>Hope this post helps you to understand opening methods with Solidworks VB Macros.</p>
 <p>For more such tutorials on Solidworks VBA Macros, do come to this blog after sometime.</p>
 <p>Till then, Happy learning!!!</p>
-<ul>
-<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+<!-- 🚀 <a href="/download-solidworks-macros/" target="_blank">🎁 Download 5 Free SolidWorks Macros →</a> -->
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>

@@ -1774,20 +1774,57 @@
 <p>Before going to solution let us see what is the issue we are trying to address.</p>
 <p>In my all previous posts, you can see a <strong>NOTE</strong> (shown below) about Solidworks API.</p>
 <hr>
-<p><strong>NOTE</strong></p>
-<p>It is <em><strong>very important</strong></em> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <em><strong>Meter only</strong></em>.</p>
-<p>Please see below for detail:</p>
-<ul>
-<li>
-<p>Length: <strong>Meter</strong></p>
-</li>
-<li>
-<p>Angle: <strong>Radian</strong></p>
-</li>
-</ul>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>It is <em><strong>very important</strong></em> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <em><strong>Meter only</strong></em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Quantity</th>
+          <th>Unit</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Length</td>
+          <td>Meter</td>
+      </tr>
+      <tr>
+          <td>Angle</td>
+          <td>Radian</td>
+      </tr>
+  </tbody>
+</table>
 <p>Solidworks API does not care about your application&rsquo;s Unit systems.</p>
 <p>For example, I works in <strong>ANSI</strong> system means <em>inches</em> for distance. But when I used <strong>Solidworks API</strong> through <em>VBA macros or C#</em>, I need to converted numeric values.</p>
 <p>Because Solidworks API output the distance in <strong>Meter</strong> which is not my requirement.</p>
+
+    </div>
+  </div>
+</div>
+
 <hr>
 <p><strong>So in this post we address this issue and use this solution in future posts.</strong></p>
 <p>For this we take following steps:</p>
@@ -1811,115 +1848,133 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Manager
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Create Variable for Solidworks Sketch Segment
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Main function of our VBA program
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Create string type variable for storing default part location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set value of this string type variable to &#34;Default part template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Solidworks document to new part document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;-----------------------BELOW IS THE SOLUTION----------------------------------------
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Local variables used as Conversion Factors
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
-</span></span><span class="line"><span class="cl">  <span class="k">Dim</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Use a Select Case, to get the length of active Unit and set the different factors
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="n">0</span><span class="p">)</span>       <span class="c">&#39; GetUnits function gives us, active unit
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> 
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swMM</span>       <span class="c">&#39; If length is in MM
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swCM</span>       <span class="c">&#39; If length is in CM
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">100</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c">&#39; If length is in FEET
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="n">0254</span> <span class="o">*</span> <span class="n">12</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c">&#39; If length is in FEET &amp; INCHES
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>  <span class="c">&#39; For length we use sama as Inch
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c">&#39; If length is in ANGSTROM
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">10000000000</span><span class="p">#</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c">&#39; If length is in NANOMETER
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000000</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c">&#39; If length is in MICRON
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000</span>
-</span></span><span class="line"><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  <span class="k">End</span> <span class="k">Select</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39;----------------------------------------------------------------
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Select Front Plane
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Sketch manager for our sketch
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Insert a sketch into selected plane
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Set Sketch Segment value and Create a Circle
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; De-select the Sketch Segment after Circular Sketch Pattern
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Show Front View after Circular Sketch Pattern
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">&#39; Zoom to fit screen in Solidworks Window
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">  1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="c">&#39; Create variable for Solidworks application
+</span></span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">
+</span></span><span class="line"><span class="ln">  6</span><span class="cl"><span class="c">&#39; Create variable for Solidworks document
+</span></span></span><span class="line"><span class="ln">  7</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">
+</span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="ln"> 10</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Manager
+</span></span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="c">&#39; Create Variable for Solidworks Sketch Segment
+</span></span></span><span class="line"><span class="ln"> 16</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">  <span class="c">&#39; Set Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln"> 22</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">  <span class="c">&#39; Create string type variable for storing default part location
+</span></span></span><span class="line"><span class="ln"> 25</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">  <span class="c">&#39; Set value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="ln"> 28</span><span class="cl"><span class="c"></span>  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">  <span class="c">&#39; Set Solidworks document to new part document
+</span></span></span><span class="line"><span class="ln"> 31</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">  <span class="c">&#39;-----------------------BELOW IS THE SOLUTION----------------------------------------
+</span></span></span><span class="line"><span class="ln"> 34</span><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">  <span class="c">&#39; Local variables used as Conversion Factors
+</span></span></span><span class="line"><span class="ln"> 36</span><span class="cl"><span class="c"></span>  <span class="k">Dim</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">  <span class="k">Dim</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">  <span class="c">&#39; Use a Select Case, to get the length of active Unit and set the different factors
+</span></span></span><span class="line"><span class="ln"> 40</span><span class="cl"><span class="c"></span>  <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="n">0</span><span class="p">)</span>       <span class="c">&#39; GetUnits function gives us, active unit
+</span></span></span><span class="line"><span class="ln"> 41</span><span class="cl"><span class="c"></span>    
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">    <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
+</span></span></span><span class="line"><span class="ln"> 43</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> 
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">    <span class="k">Case</span> <span class="n">swMM</span>       <span class="c">&#39; If length is in MM
+</span></span></span><span class="line"><span class="ln"> 47</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">    <span class="k">Case</span> <span class="n">swCM</span>       <span class="c">&#39; If length is in CM
+</span></span></span><span class="line"><span class="ln"> 51</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">100</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">    <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
+</span></span></span><span class="line"><span class="ln"> 55</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">    <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c">&#39; If length is in FEET
+</span></span></span><span class="line"><span class="ln"> 59</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="n">0254</span> <span class="o">*</span> <span class="n">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">    <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c">&#39; If length is in FEET &amp; INCHES
+</span></span></span><span class="line"><span class="ln"> 63</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>  <span class="c">&#39; For length we use sama as Inch
+</span></span></span><span class="line"><span class="ln"> 64</span><span class="cl"><span class="c"></span>      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">    <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c">&#39; If length is in ANGSTROM
+</span></span></span><span class="line"><span class="ln"> 67</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">10000000000</span><span class="p">#</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">    <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c">&#39; If length is in NANOMETER
+</span></span></span><span class="line"><span class="ln"> 71</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000000</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">    <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c">&#39; If length is in MICRON
+</span></span></span><span class="line"><span class="ln"> 75</span><span class="cl"><span class="c"></span>      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">  <span class="k">End</span> <span class="k">Select</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">  <span class="c">&#39;----------------------------------------------------------------
+</span></span></span><span class="line"><span class="ln"> 80</span><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">  <span class="c">&#39; Select Front Plane
+</span></span></span><span class="line"><span class="ln"> 82</span><span class="cl"><span class="c"></span>  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">  <span class="c">&#39; Set Sketch manager for our sketch
+</span></span></span><span class="line"><span class="ln"> 85</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">  <span class="c">&#39; Insert a sketch into selected plane
+</span></span></span><span class="line"><span class="ln"> 88</span><span class="cl"><span class="c"></span>  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">  <span class="c">&#39; Set Sketch Segment value and Create a Circle
+</span></span></span><span class="line"><span class="ln"> 91</span><span class="cl"><span class="c"></span>  <span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">  <span class="c">&#39; De-select the Sketch Segment after Circular Sketch Pattern
+</span></span></span><span class="line"><span class="ln"> 94</span><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">  <span class="c">&#39; Show Front View after Circular Sketch Pattern
+</span></span></span><span class="line"><span class="ln"> 97</span><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">  <span class="c">&#39; Zoom to fit screen in Solidworks Window
+</span></span></span><span class="line"><span class="ln">100</span><span class="cl"><span class="c"></span>  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">
+</span></span><span class="line"><span class="ln">102</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <hr>
 <h3 id="understanding-the-code">Understanding the Code<a href="#understanding-the-code" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
@@ -1927,17 +1982,50 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>This line forces us to define every variable we are going to use.</p>
-<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+<p>For more information please visit 🚀 <strong><a href="/solidworks-macros/open-new-document/" target="_blank">Solidworks Macros - Open new Part document</a></strong> post.</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1945,53 +2033,125 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Create variable for Solidworks application
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we create a variable which we named as <code>swApp</code> and the type of this <code>swApp</code> variable is <code>SldWorks.SldWorks</code>.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Create variable for Solidworks document
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we create a variable which we named as <code>swDoc</code> and the type of this <code>swDoc</code> variable is <code>SldWorks.ModelDoc2</code>.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Boolean Variable
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Boolean Variable
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we create a variable named <code>BoolStatus</code> as <code>Boolean</code> object type.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Manager
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Manager
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above line, we create variable <code>swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
 <p>As the name suggested, a <strong>Sketch Manager</strong> holds variours methods and properties to manage <em>Sketches</em>.</p>
-<p>To see methods and properties related to <code>SketchManager</code> object, please visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this page</a></strong></p>
+<p>To see methods and properties related to <code>SketchManager</code> object, please visit 🚀 <strong><a href="https://help.solidworks.com/2025/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html" target="_blank">this page</a></strong></p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1999,13 +2159,16 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Segment
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Create variable for Solidworks Sketch Segment
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we Create a variable which we named as <code>swSketchSegment</code> and the type of this <code>swSketchSegment</code> variable is <code>SldWorks.SketchSegment</code>.</p>
 <p>We create variable <code>swSketchSegment</code> for <strong>Solidworks Sketch Segments</strong>.</p>
-<p>To see methods and properties related to <code>swSketchSegment</code> object, please visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html">this page</a></strong></p>
+<p>To see methods and properties related to <code>swSketchSegment</code> object, please visit 🚀 <strong><a href="http://help.solidworks.com/2025/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html" target="_blank">this page</a></strong></p>
 <p>These all are our global variables.</p>
 <p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
 <p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
@@ -2016,30 +2179,66 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Set Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we set the value of our Solidworks variable <code>swApp</code>; which we define earlier; to Solidworks application.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Create string type variable for storing default part location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Set value of this string type variable to &#34;Default part template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Create string type variable for storing default part location
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c">&#39; Set value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c"></span><span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In 1st statement of above example, we are defining a variable of <code>string</code> type and named it as <code>defaultTemplate</code>.</p>
 <p>This variable <code>defaultTemplate</code>, hold the location the location of <strong>Default Part Template</strong>.</p>
 <p>In 2nd line of above example. we assign value to our newly define <code>defaultTemplate</code> variable.</p>
@@ -2048,19 +2247,52 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Solidworks document to new part document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Set Solidworks document to new part document
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we set the value of our <code>swDoc</code> variable to new document.</p>
-<p>For <strong>detailed information</strong> about these lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
-<p>I have discussed them <strong>thoroghly</strong> in <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post, so do checkout that post if you want to understand above code in more detail.</p>
+<p>For <strong>detailed information</strong> about these lines please visit 🚀 <strong><a href="/solidworks-macros/open-new-document" target="_blank">Solidworks Macros - Open new Part document</a></strong> post.</p>
+<p>I have discussed them <strong>thoroghly</strong> in 🚀 <strong><a href="/solidworks-macros/open-new-document" target="_blank">Solidworks Macros - Open new Part document</a></strong> post, so do checkout that post if you want to understand above code in more detail.</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -2068,67 +2300,131 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Local variables used as Conversion Factors
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
-</span></span><span class="line"><span class="cl"><span class="k">Dim</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Local variables used as Conversion Factors
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">Dim</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above line we define our <em>local variable</em> we use as <em>Conversion Factors</em>.</p>
 <p>Since this <em>VBA program</em> is <strong>small</strong>, we declare them in our <code>Sub</code> function.</p>
 <p>If we have multiple functions, then we will create them with other <strong>Global variables</strong>.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Use a Select Case, to get the length of active Unit and set the different factors
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="n">0</span><span class="p">)</span>       <span class="c">&#39; GetUnits function gives us, active unit
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> 
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swMM</span>       <span class="c">&#39; If length is in MM
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swCM</span>       <span class="c">&#39; If length is in CM
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">100</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c">&#39; If length is in FEET
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="n">0254</span> <span class="o">*</span> <span class="n">12</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c">&#39; If length is in FEET &amp; INCHES
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>  <span class="c">&#39; For length we use sama as Inch
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c">&#39; If length is in ANGSTROM
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">10000000000</span><span class="p">#</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c">&#39; If length is in NANOMETER
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000000</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c">&#39; If length is in MICRON
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Select</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c">&#39; Use a Select Case, to get the length of active Unit and set the different factors
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="n">0</span><span class="p">)</span>       <span class="c">&#39; GetUnits function gives us, active unit
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c"></span>  
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> 
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="k">Case</span> <span class="n">swMM</span>       <span class="c">&#39; If length is in MM
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="k">Case</span> <span class="n">swCM</span>       <span class="c">&#39; If length is in CM
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">100</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c">&#39; If length is in FEET
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="n">0254</span> <span class="o">*</span> <span class="n">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  
+</span></span><span class="line"><span class="ln">24</span><span class="cl">  <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c">&#39; If length is in FEET &amp; INCHES
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>  <span class="c">&#39; For length we use sama as Inch
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c"></span>    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c">&#39; If length is in ANGSTROM
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">10000000000</span><span class="p">#</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">  
+</span></span><span class="line"><span class="ln">32</span><span class="cl">  <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c">&#39; If length is in NANOMETER
+</span></span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000000</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">  
+</span></span><span class="line"><span class="ln">36</span><span class="cl">  <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c">&#39; If length is in MICRON
+</span></span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="c"></span>    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">/</span> <span class="n">1000000</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="k">End</span> <span class="k">Select</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>Above we use a <code>Select Case</code> statement and apply <code>GetUnits(0)</code> method on <code>swDoc</code> variable to get the <em>active unit</em> of <em>current document</em>.</p>
-<blockquote>
-<p>If you want to know more about <code>Select Case</code> statment then please visit <strong><a href="/vba/if-then-structure-select-case">If-Then and Select Case structure</a></strong> post.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
 
+      </div>
+    <div class="callout-body">
+      <p>If you want to know more about <code>Select Case</code> statment then please visit  🚀 <strong><a href="/vba/if-then-structure-select-case" target="_blank">If-Then and Select Case structure</a></strong> post.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -2136,11 +2432,14 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> 
-</span></span><span class="line"><span class="cl">  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Case</span> <span class="n">swMETER</span>    <span class="c">&#39; If length is in Meter
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span>  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> 
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>As shown in above code, when the is <code>swMETER</code> then we define the value of these factors.</p>
 <p>In this case, it is:</p>
 <ul>
@@ -2151,45 +2450,150 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
-</span></span><span class="line"><span class="cl">  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c">&#39; If length is in INCHES
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span>  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">0254</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="n">1</span> <span class="o">*</span> <span class="n">0</span><span class="p">.</span><span class="n">01745329</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this case, it is:</p>
 <ul>
-<li>
-<p>LengthConversionFactor = 0.0254</p>
-<blockquote>
-<p>I write the value in <code>(1 * 0.0254)</code> format to show a relation of values with &ldquo;METER&rdquo;.</p></blockquote>
-</li>
-<li>
-<p>AngleConversionFactor = 0.01745329</p>
-<blockquote>
-<p>I write the value in <code>(1 * 0.01745329)</code> format to show a relation of values with &ldquo;RADIAN&rdquo;.</p></blockquote>
-</li>
+<li>LengthConversionFactor = 0.0254</li>
 </ul>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>I write the value in <code>(1 * 0.0254)</code> format to show a relation of values with &ldquo;<strong>METER</strong>&rdquo;.</p>
+
+    </div>
+  </div>
+</div>
+
+<ul>
+<li>AngleConversionFactor = 0.01745329</li>
+</ul>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>I write the value in <code>(1 * 0.01745329)</code> format to show a relation of values with &ldquo;<strong>RADIAN</strong>&rdquo;.</p>
+
+    </div>
+  </div>
+</div>
+
 <p><em><strong>Similar is for all other CASES.</strong></em></p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Select Front Plane
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Select Front Plane
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">&#34;Front Plane&#34;</span><span class="p">,</span> <span class="s">&#34;PLANE&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above line, we select the <em>front plane</em> by using <code>SelectByID2</code> method from <code>Extension</code> object.</p>
-<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+<p>For more information about selection method please visit 🚀 <strong><a href="/solidworks-macros/select-plane-from-tree" target="_blank">Solidworks Macros - Selection Methods</a></strong> post.</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -2197,40 +2601,79 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Sketch manager for our sketch
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Set Sketch manager for our sketch
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above line, we set the <em>Sketch manager</em> variable to <em>current document&rsquo;s sketch manager</em>.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Insert a sketch into selected plane
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Insert a sketch into selected plane
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above line, we use <code>InsertSketch</code> method of <em>SketchManager</em> and give <code>True</code> value.</p>
 <p>This method allows us to insert a sketch in selected plane.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Set Sketch Segment value and Create a Circle
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Set Sketch Segment value and Create a Circle
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In above line, we set the value of Solidworks Sketch Segment variable <code>swSketchSegment</code> by <code>CreateCircleByRadius</code> method from <em>Solidworks Sketch Manager</em>.</p>
 <p>This <code>CreateCircleByRadius</code> method creates <em>a Circle</em> at given point with radius.</p>
-<p>For more information about <code>CreateCircleByRadius</code> method, you can read my <strong><a href="/solidworks-macros/create-circle-by-radius">Solidworks Macro - Create Circle By Radius From VBA Macro</a></strong> post.</p>
+<p>For more information about <code>CreateCircleByRadius</code> method, you can read my 🚀 <strong><a href="/solidworks-macros/create-circle-by-radius" target="_blank">Solidworks Macro - Create Circle By Radius From VBA Macro</a></strong> post.</p>
 <p>That post describe all the parameters we need for this <code>CreateCircleByRadius</code> method in details.</p>
 <p>In above line, we create a Circle with:</p>
 <ul>
@@ -2258,29 +2701,65 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; De-select the Sketch after creation
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; De-select the Sketch after creation
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In the above line of code, we deselect the <strong>Sketch</strong> after the <em>Circular Sketch Pattern</em> operation.</p>
 <p>For de-selecting, we use <code>ClearSelection2</code> method from our Solidworks document name <code>swDoc</code>.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Show Front View after Circular Sketch Pattern
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Show Front View after Circular Sketch Pattern
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In the above line of code, we update the <em>view orientation</em> to <strong>Front View</strong>.</p>
 <p>In my machine, after inserting a sketch view orientation does not changed.</p>
 <p>Because of this I have to update the view to <strong>Front view</strong>.</p>
@@ -2330,15 +2809,33 @@
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Zoom to fit screen in Solidworks Window
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Zoom to fit screen in Solidworks Window
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this last line we use <em>zoom to fit</em> command.</p>
 <p>For Zoom to fit, we use <code>ViewZoomtofit</code> method from our Solidworks document variable <code>swDoc</code>.</p>
 <p>This is it !!!</p>
@@ -2350,26 +2847,26 @@
 <ol>
 <li>We use <strong>Option Explicit</strong> for capturing un-declared variables.</li>
 </ol>
-<p>If you want to read more about <strong>Option Explicit</strong> then please visit <strong><a href="/vba/declaring-and-scoping-of-variables">Declaring and Scoping of Variables</a></strong>.</p>
+<p>If you want to read more about <strong>Option Explicit</strong> then please visit 🚀 <strong><a href="/vba/declaring-and-scoping-of-variables" target="_blank">Declaring and Scoping of Variables</a></strong>.</p>
 <ol start="2">
 <li>Then we create <strong>variable</strong> for different data types.</li>
 </ol>
-<p>If you know in detail about the <strong>Variables</strong>, then please visit <strong><a href="/vba/vba-variables">Variables</a></strong> and <strong><a href="/vba/vba-programming-concepts-comments-and-datatypes">Data-types</a></strong> posts of this blog.</p>
+<p>If you know in detail about the <strong>Variables</strong>, then please visit 🚀 <strong><a href="/vba/vba-variables" target="_blank">Variables</a></strong> and 🚀 <strong><a href="/vba/vba-programming-concepts-comments-and-datatypes" target="_blank">Data-types</a></strong> posts of this blog.</p>
 <p>It will help you to understand what <strong>Variables</strong> are and how to use them.</p>
 <ol start="3">
 <li>Then we create <strong>main Sub procedure</strong> for our macro.</li>
 </ol>
-<p>If you know in detail about the <strong>Sub procedure</strong>, then I suggest you to visit <strong><a href="/vba/vba-sub-and-function-procedure">VBA Sub and Function Procedures</a></strong> and <strong><a href="/vba/vba-executing-procedures">Executing Sub and Function Procedures</a></strong> posts of this blog.</p>
+<p>If you know in detail about the <strong>Sub procedure</strong>, then I suggest you to visit 🚀 <strong><a href="/vba/vba-sub-and-function-procedure" target="_blank">VBA Sub and Function Procedures</a></strong> and 🚀 <strong><a href="/vba/vba-executing-procedures" target="_blank">Executing Sub and Function Procedures</a></strong> posts of this blog.</p>
 <p>It will help you to understand what <strong>Procedures</strong> are and how to use them.</p>
 <ol start="4">
 <li>In most part we create some variables and set their values. We set those values by using some <strong>functions</strong> provided from objects.</li>
 </ol>
-<p>If you don&rsquo;t know about the <strong>functions</strong>, then you should visit <strong><a href="/vba/vba-functions">VBA Functions</a></strong> and <strong><a href="/vba/vba-more-function">VBA Functions that do more</a></strong> posts of this blog.</p>
+<p>If you don&rsquo;t know about the <strong>functions</strong>, then you should visit 🚀 <strong><a href="/vba/vba-functions" target="_blank">VBA Functions</a></strong> and 🚀 <strong><a href="/vba/vba-more-function" target="_blank">VBA Functions that do more</a></strong> posts of this blog.</p>
 <p>It will help you to understand what <strong>functions</strong> are and how to use them.</p>
 <ol start="5">
 <li>We use <strong>Select Case</strong> for checking <em>Length</em> of active unit.</li>
 </ol>
-<p>If you want to read more about <strong>Select Case</strong> then please visit <strong><a href="/vba/vba-if-then-structure-select-case">If-Then and Select Case structure</a></strong>.</p>
+<p>If you want to read more about <strong>Select Case</strong> then please visit 🚀 <strong><a href="/vba/vba-if-then-structure-select-case" target="_blank">If-Then and Select Case structure</a></strong>.</p>
 <hr>
 <h2 id="solidworks-api-objects">Solidworks API Objects<a href="#solidworks-api-objects" class="anchor" aria-hidden="true">#</a> </h2>
 <p>In this post of <strong>Circular Sketch Pattern</strong>, we use <em>Solidworks API objects and their methods</em>.</p>
@@ -2380,19 +2877,19 @@
 <ul>
 <li>
 <p><strong>Solidworks Application Object</strong></p>
-<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Application Object</strong> object you can visit <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this link</a></strong>.</p>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Application Object</strong> object you can visit 🚀 <strong><a href="http://help.solidworks.com/2025/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html" target="_blank">this link</a></strong>.</p>
 </li>
 <li>
 <p><strong>Solidworks Document Object</strong></p>
-<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Document Object</strong> object you can visit <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this link</a></strong>.</p>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Document Object</strong> object you can visit 🚀 <strong><a href="http://help.solidworks.com/2025/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html" target="_blank">this link</a></strong>.</p>
 </li>
 <li>
 <p><strong>Solidworks Sketch Manager Object</strong></p>
-<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Manager Object</strong> you can visit <strong><a href="help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this link</a></strong>.</p>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Manager Object</strong> you can visit 🚀 <strong><a href="http://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html" target="_blank">this link</a></strong>.</p>
 </li>
 <li>
 <p><strong>Solidworks Sketch Segment Object</strong></p>
-<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Segment Object</strong> you can visit <strong><a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html">this link</a></strong>.</p>
+<p>If you want explore <em><strong>Properties and Methods/Functions</strong></em> of <strong>Solidworks Sketch Segment Object</strong> you can visit 🚀 <strong><a href="http://help.solidworks.com/2025/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html" target="_blank">this link</a></strong>.</p>
 </li>
 </ul>
 <hr>
@@ -2403,9 +2900,7 @@
 <p><em>If you like the post then please share it with your friends also.</em></p>
 <p><em>Do let me know by you like this post or not!</em></p>
 <p><em>Till then, Happy learning!!!</em></p>
-<ul>
-<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+<!-- - [🎁 Download 5 Free SolidWorks Macros →](/download-solidworks-macros/) -->
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
