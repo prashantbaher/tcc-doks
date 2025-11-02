@@ -1730,7 +1730,13 @@ Also we understand each and every line of written code. So that you can understa
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#code-sample">Code Sample</a></li>
+    <li><a href="#code-details">Code Details</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -1739,7 +1745,18 @@ Also we understand each and every line of written code. So that you can understa
 			<h1>Solidworks Macro - Open new Part document</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#code-sample">Code Sample</a></li>
+    <li><a href="#code-details">Code Details</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
 			<p>As the title suggested, in this post, we open new document <strong>from</strong> <em>Solidworks VBA macros</em>.</p>
 <p>Also we <em>understand</em> each and every line of written code. So that you can understand why we written those lines and get some knowledge about how to write macro properly.</p>
@@ -1755,9 +1772,25 @@ Also we understand each and every line of written code. So that you can understa
   <br>
 </div>
 
-<p>To do this, we first need to create a new empty macro. If you don&rsquo;t know how to create an empty macro; then please go to this <strong><a href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks</a></strong> post.</p>
+<p>To do this, we first need to create a new empty macro. If you don&rsquo;t know how to create an empty macro; then please go to this 🚀 <strong><a href="/Solidworks-macro-guide/" target="_blank">VBA in Solidworks</a></strong> post.</p>
+<h2 id="code-sample">Code Sample<a href="#code-sample" class="anchor" aria-hidden="true">#</a> </h2>
 <p>After creating an empty macro, you need to copy paste below code into this empty macro.</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1765,51 +1798,117 @@ Also we understand each and every line of written code. So that you can understa
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Main function of our VBA program
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Creating string type variable for storing default part location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">&#39; Setting Solidworks document to new part document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c">&#39; Main function of our VBA program
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"></span><span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="c">&#39; Creating string type variable for storing default part location
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c"></span>    <span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c"></span>    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="c">&#39; Setting Solidworks document to new part document
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c"></span>    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">End</span> <span class="k">Sub</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
+<h2 id="code-details">Code Details<a href="#code-details" class="anchor" aria-hidden="true">#</a> </h2>
 <p>This code opens <strong>a new default part</strong> template in Solidworks.</p>
 <p>Now let us walk through <em>each line</em> in the above code, and <strong>understand</strong> the meaning of every line.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">Option</span> <span class="n">Explicit</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>This line forces us to define every variable we are going to use.</p>
-<p>This is <strong>very important</strong> because if you don&rsquo;t declare above line, it is very difficult to caught <em>typo errors</em> in variable names.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>This is <strong>very important</strong> because if you don&rsquo;t declare above line, it is very difficult to caught <em>typo errors</em> in variable names.</p>
 <p>This type of error comes, when you mistakenly type wrong spelling of your defined variable.</p>
 <p>In this case, VBE thinks that you have defined a new variable and use this variable.</p>
 <p>This causes issues because your program runs perfectly but you didn&rsquo;t get the desired result.</p>
 <p>This most of the time discourage people and ultimately they left the programming.</p>
 <p>So be on safe side and use this <strong>Option Explicit</strong> line in your every module.</p>
 
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1817,94 +1916,296 @@ Also we understand each and every line of written code. So that you can understa
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>As the comments in above code sample shows, in these 2 lines we are creating variables of different type.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks application
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we are creating a variable which we named as <code>swApp</code> and the type of this <code>swApp</code> variable is <code>SldWorks.SldWorks</code>.</p>
 <p>If we <strong>omit</strong> 1 <code>SldWorks</code>, then our <em>VBE</em> show error if we try to run this macro.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Creating variable for Solidworks document
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we are creating a variable which we named as <code>swDoc</code> and the type of this <code>swDoc</code> variable is <code>SldWorks.ModelDoc2</code>.</p>
 <p>Here, if we omit <code>SldWorks</code>, the compiler won&rsquo;t give error. I used it to know who is the parent object.</p>
 <p><code>ModelDoc2</code> is the a <strong>object</strong>, which holds properties and methods related to this a document.</p>
 <p>These methods and properties are common to <em>part</em>, <em>assembly</em> and <em>drawing</em> documents.</p>
-<p>You can see more about <code>ModelDoc2</code> in this help <a href="http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2.html?verRedirect=1">link</a>.</p>
+<p>You can see more about <code>ModelDoc2</code> in this help 🚀 <strong><a href="http://help.solidworks.com/2025/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2.html?verRedirect=1" target="_blank">link</a></strong>.</p>
 <p>Next is our <code>Sub</code> procedure named <code>main</code>. This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks variable to Solidworks application
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Setting Solidworks variable to Solidworks application
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In this line, we are setting the value of our Solidworks variable which we define earlier to Solidworks application.</p>
-<blockquote>
-<p>Now it important to know that when you defined a variable of different type, which is not a common type, then you need to set the variable also.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Now it important to know that when you defined a variable of different type, which is not a common type, then you need to set the variable also.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>This is a standard way to set Solidworks application. This way is given in many Solidworks API VBA example.</p>
 
 
 
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
+
+
 <div class="expressive-code">
   <figure class="frame not-content">
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Creating string type variable for storing default part location
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</span></span><span class="line"><span class="cl"><span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Creating string type variable for storing default part location
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Dim</span> <span class="n">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c">&#39; Setting value of this string type variable to &#34;Default part template&#34;
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c"></span><span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>In 1st statement of above example, we are defining a variable of <code>string</code> type and named it as <code>defaultTemplate</code>.</p>
 <p>This variable <code>defaultTemplate</code>, hold the location the location of <strong>Default Part Template</strong>.</p>
 <p>In 2nd line of above example. we assign value to our newly define <code>defaultTemplate</code> variable.</p>
 <p>We assign the value by using a <em>Method</em> named <code>GetUserPreferenceStringValue()</code>. This method is a part of our main Solidworks variable <code>swApp</code>.</p>
 <p>To access this method, we need to write <code>swApp</code> variable and then use a &ldquo;.&rdquo; to access the <em>Public properties</em> and <em>Methods</em> inside this variable.</p>
-<blockquote>
-<p>This &ldquo;.&rdquo; is called <strong>Dot operator</strong>. This operator provides us the access to the <em><strong>Public properties</strong></em> and <em><strong>Methods</strong></em> inside an object.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>This &ldquo;.&rdquo; is called <strong>Dot operator</strong>. This operator provides us the access to the <em><strong>Public properties</strong></em> and <em><strong>Methods</strong></em> inside an object.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>When you type after a &ldquo;.&rdquo; you will notice that <em>Visual Basic Editor</em> automatically provides a list of properties and methods inside this <code>swApp</code> object. This helps us to write correct name for these methods and properties.</p>
 <p>Now we get the function <code>GetUserPreferenceStringValue()</code>. But this function needs some input to work with. This inputs are generally called <strong>Parameters</strong>.</p>
-<blockquote>
-<p>In programming voculabury, we need to pass the parameter to this function so that this function can worked.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>In programming vocabulary, we need to pass the parameter to this function so that this function can work.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>This input parameter is a single value from a list of other values. This list is stored in <code>swUserPreferenceStringValue_e</code> object.</p>
 <p>In Solidworks API, if anything has <code>_e</code> after it, it means that this object contains some type of lists. It is important to know because we frequently use these type of lists. They are called <strong>enum</strong>. The value they hold is called <strong>Constant</strong>.</p>
 <p>So our function <code>GetUserPreferenceStringValue()</code> needs some constant value from <code>swUserPreferenceStringValue_e</code> enum list to work.</p>
 <p>Since we want <em>Default part template</em>, we use <code>swDefaultTemplatePart</code> constant value from the <code>swUserPreferenceStringValue_e</code> enum list.</p>
-<blockquote>
-<p>Please note that there are lots of values inside this enum list. You can see these values from this <a href="http://help.solidworks.com/2019/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html">link</a>.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Please note that there are lots of values inside this enum list. You can see these values from this 🚀 <strong><a href="http://help.solidworks.com/2025/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html" target="_blank">link</a></strong>.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Now we just need to set the value of our <code>swDoc</code> variable to new document. We set the value as shown in below code snippet.</p>
 
+
+
+
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button data-toggle-tab="vba" class="nav-link active" id="tabs-vba-code-0-tab" data-bs-toggle="tab" data-bs-target="#tabs-vba-code-0" type="button" role="tab" aria-controls="tabs-vba-code-0" aria-selected="true">
+      vba</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div data-pane="vba" class="tab-pane fade show active" id="tabs-vba-code-0" role="tabpanel" aria-labelledby="tabs-vba-code-0-tab" tabindex="0">
+      
 
 
 <div class="expressive-code">
@@ -1912,49 +2213,78 @@ Also we understand each and every line of written code. So that you can understa
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="c">&#39; Setting Solidworks document to new part document
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">&#39; Setting Solidworks document to new part document
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span></span></span></code></pre></div>
   </figure>
 </div>
+</div>
+  </div>
+
 <p>To set the value of <code>swDoc</code>, we use <code>NewDocument()</code> method. This method is inside <code>swApp</code>, hence we first need to invoke <code>swApp</code> and then by using <em>Dot operator</em> we access the <code>NewDocument()</code> method.</p>
 <p>Now this method needs 4 parameters (or input values) to work. If we don&rsquo;t provide any of these required value we get errors.</p>
 <p>These 4 parameters are as follows:</p>
-<ul>
-<li>
-<p><em>TemplateName</em></p>
-<ul>
-<li>This can be a full path of the template, which we use to create New document.</li>
-</ul>
-</li>
-<li>
-<p><em>PaperSize</em></p>
-<ul>
-<li>Size of paper</li>
-</ul>
-</li>
-<li>
-<p><em>Width</em></p>
-<ul>
-<li>Width of paper</li>
-</ul>
-</li>
-<li>
-<p><em>Height</em></p>
-<ul>
-<li>Height of paper</li>
-</ul>
-</li>
-</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>TemplateName</strong></td>
+          <td>This can be a full path of the template, which we use to create a new document.</td>
+      </tr>
+      <tr>
+          <td><strong>PaperSize</strong></td>
+          <td>Size of paper.</td>
+      </tr>
+      <tr>
+          <td><strong>Width</strong></td>
+          <td>Width of paper.</td>
+      </tr>
+      <tr>
+          <td><strong>Height</strong></td>
+          <td>Height of paper.</td>
+      </tr>
+  </tbody>
+</table>
 <p>When successfully implemented, this method creates a new document.</p>
-<p>If this method failes to create a new document in that case this return <code>NULL</code> value. We can use this <code>NULL</code> value to check if the operation is successfull or not.</p>
+<p>If this method fails to create a new document, in that case this returns <code>NULL</code> value. We can use this <code>NULL</code> value to check if the operation is successful or not.</p>
 <p>In our example, we use <code>defaultTemplate</code> variable as <em>TemplateName</em> parameter and use <strong>0</strong> in all other 3 parameter.</p>
-<blockquote>
-<p>Please note that <em>PaperSize</em>, <em>Width</em> and <em>Height</em> is used only if we want to create a new <strong>Drawing document</strong>.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Note</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Please note that <em>PaperSize</em>, <em>Width</em> and <em>Height</em> is used only if we want to create a new <strong>Drawing document</strong>.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>This is all for now. This post is getting too long.</p>
 <p>In next post I will tell you how to create a new <em>Assembly</em> document and new <em>Drawing</em> document.</p>
-<ul>
-<li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+<!-- - [🎁 Download 5 Free SolidWorks Macros →](/download-solidworks-macros/) -->
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
