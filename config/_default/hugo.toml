@@ -1,5 +1,5 @@
 title = "The CAD Coder"
-baseurl = "https://thecadcoder.com"
+baseurl = "https://DocksWebDeployment.github.io/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
